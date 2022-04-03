@@ -4,6 +4,7 @@
   "main": "src/app.jsx",
   "scripts": {
     "server": "node server/main.js",
+    "build": "react-scripts build",
     "devServer": "nodemon --watch server server/main.js",
     "client": "esbuild --bundle --minify --target=es6 --outfile=public/bundle.js src/app.jsx",
     "devClient": "nodemon --watch client --exec ./node_modules/.bin/esbuild --bundle --sourcemap --target=es6 --outfile=public/bundle.js src/app.jsx",
