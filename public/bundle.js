@@ -25437,17 +25437,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   defineJQueryPlugin(Toast);
 
   // src/app.jsx
-  var import_react10 = __toESM(require_react(), 1);
-  var import_react_dom = __toESM(require_react_dom(), 1);
+  var import_react10 = __toESM(require_react());
+  var import_react_dom = __toESM(require_react_dom());
 
   // src/Simulator.jsx
-  var import_react9 = __toESM(require_react(), 1);
+  var import_react9 = __toESM(require_react());
 
   // src/components/Standings/DivisionStandingsTable.jsx
-  var import_react2 = __toESM(require_react(), 1);
+  var import_react2 = __toESM(require_react());
 
   // src/components/Standings/DivisionStandings.jsx
-  var import_react = __toESM(require_react(), 1);
+  var import_react = __toESM(require_react());
   var DivisionStandings = class extends import_react.default.Component {
     render() {
       const { game } = this.props;
@@ -25474,16 +25474,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   DivisionStandings.propTypes = {};
 
   // src/components/PlayoffGames/PlayoffGamesTable.jsx
-  var import_react8 = __toESM(require_react(), 1);
+  var import_react8 = __toESM(require_react());
 
   // src/components/PlayoffGames/ConferenceGamesTable.jsx
-  var import_react7 = __toESM(require_react(), 1);
+  var import_react7 = __toESM(require_react());
 
   // src/components/PlayoffGames/WildCardGame.jsx
-  var import_react5 = __toESM(require_react(), 1);
+  var import_react5 = __toESM(require_react());
 
   // src/components/PlayoffGames/TeamInfoLeft.jsx
-  var import_react3 = __toESM(require_react(), 1);
+  var import_react3 = __toESM(require_react());
   var TeamInfoLeft = class extends import_react3.default.Component {
     render() {
       const { seed, team, wins, losses, ties } = this.props;
@@ -25528,7 +25528,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   TeamInfoLeft.propTypes = {};
 
   // src/components/PlayoffGames/TeamInfoRight.jsx
-  var import_react4 = __toESM(require_react(), 1);
+  var import_react4 = __toESM(require_react());
   var TeamInfoRight = class extends import_react4.default.Component {
     render() {
       const { seed, team, wins, losses, ties } = this.props;
@@ -25600,7 +25600,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   WildCardGame.propTypes = {};
 
   // src/components/PlayoffGames/ByeTeamGame.jsx
-  var import_react6 = __toESM(require_react(), 1);
+  var import_react6 = __toESM(require_react());
   var ByeTeamGame = class extends import_react6.default.Component {
     render() {
       const { game } = this.props;

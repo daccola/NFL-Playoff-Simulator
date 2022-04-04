@@ -4,6 +4,7 @@ import DivisionStandingsTable from './components/Standings/DivisionStandingsTabl
 import PlayoffGamesTable from './components/PlayoffGames/PlayoffGamesTable';
 
 export default class Simulator extends React.Component {
+  //Load all games
   //TODO ALL
   constructor (props) {
     super(props)
