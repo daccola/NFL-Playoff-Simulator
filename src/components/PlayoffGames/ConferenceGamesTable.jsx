@@ -2,31 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import WildCardGame from './WildCardGame'
-import ByeTeamGame from './ByeTeamGame'
+import WildCardGamesTable from './WildCardGamesTable'
+//import ByeTeamGame from './ByeTeamGame'
+import ByeTeamTable from './ByeTeamTable'
 
-export default class ConferenceGamesTable extends React.Component {
-  render () {
-    //TODO Update Props
-    const { game } = this.props
+export default function ConferenceGamesTable (props) {
+  const { game } = props
 
-    return (
-        //TODO Update 
-        <div className="row">
-            <div className="col-12">
-                <ByeTeamGame />
-            </div>
-            <div className="col-12">
-                <WildCardGame />
-            </div>
-            <div className="col-12">
-                <WildCardGame />
-            </div>
-            <div className="col-12">
-                <WildCardGame />
-            </div>
-        </div>
-    )
-  }
+  return (
+    <div className="row">
+      <div className="col-12">
+        <ByeTeamTable />
+      </div>
+      <div className="col-12">
+        <WildCardGamesTable />
+      </div>
+    </div>
+  )
 }
 
 ConferenceGamesTable.propTypes = {

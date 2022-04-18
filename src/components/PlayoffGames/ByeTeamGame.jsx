@@ -3,23 +3,19 @@ import PropTypes from 'prop-types'
 
 import TeamInfoLeft from './TeamInfoLeft'
 
-export default class ByeTeamGame extends React.Component {
-  render () {
-    //TODO Update Props
-    const { game } = this.props
+export default function ByeTeamGame(props) {
+  const { game } = props
 
-    return (
-        <div className="row">
-            <div className="col-6">
-                {/* TODO Update  */}
-                <TeamInfoLeft seed={1} wins={16} losses={0} ties={0} team={'Green Bay'}/>
-            </div>
-            <div className="col-6">
-              {/* TODO NOTHING */}
-            </div>
-        </div>
-    )
-  }
+  return (
+    <div className="row">
+      <div className="col-6">
+        <TeamInfoLeft seed={1} wins={16} losses={0} ties={0} team={'Green Bay'}/>
+      </div>
+      <div className="col-6">
+        {/* TODO NOTHING */}
+      </div>
+    </div>
+  )  
 }
 
 ByeTeamGame.propTypes = {

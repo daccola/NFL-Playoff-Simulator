@@ -3,37 +3,27 @@ import PropTypes from 'prop-types'
 
 import DivisionStandings from './DivisionStandings.jsx';
  
-export default class DivisionStandingsTable extends React.Component {
-  render () {
-    //TODO Update Props
-    const { game } = this.props
+export default function DivisionStandingsTable (props) {
+  const { teams } = props
 
-    return (
-        //TODO Update ALL
-        <table className="table table-striped">
-        <thead>
-          {/* <tr>
-            <th scope="col">NFC NORTH</th>
-            <th scope="col">RECORD</th>
-          </tr> */}
-        </thead>
-        <tbody>
-          <tr>
-            <td><DivisionStandings/></td>
-            <td><DivisionStandings/></td>
-            <td><DivisionStandings/></td>
-            <td><DivisionStandings/></td>
-          </tr>
-          <tr>
-            <td><DivisionStandings/></td>
-            <td><DivisionStandings/></td>
-            <td><DivisionStandings/></td>
-            <td><DivisionStandings/></td>
-          </tr>
-        </tbody>
-      </table>
-    )
-  }
+  return (
+    <table className="table">
+      <tbody>
+        <tr>
+          <td><DivisionStandings conference='AFC' division='East'/></td>
+          <td><DivisionStandings conference='AFC' division='North'/></td>
+          <td><DivisionStandings conference='NFC' division='East'/></td>
+          <td><DivisionStandings conference='NFC' division='North'/></td>
+        </tr>
+        <tr>
+          <td><DivisionStandings conference='AFC' division='West'/></td>
+          <td><DivisionStandings conference='AFC'division='South'/></td>
+          <td><DivisionStandings conference='NFC' division='West'/></td>
+          <td><DivisionStandings conference='NFC' division='South'/></td>
+        </tr>
+      </tbody>
+    </table>
+  )
 }
 
 DivisionStandings.propTypes = {
