@@ -4,8 +4,17 @@ import Axios from 'axios'
 import DivisionStandingsTable from './components/Standings/DivisionStandingsTable';
 import PlayoffGamesTable from './components/PlayoffGames/PlayoffGamesTable';
 
+import { Paper, Grid, Container } from '@mui/material'
+
 import RegularSeasonWeekTable from './components/RegularSeasonGames/RegularSeasonWeekTable';
 import RegularSeasonGamesTable from './components/RegularSeasonGames/RegularSeasonGamesTable';
+import TempStandings from './TempStandings';
+
+import MuiTable from './components/RegularSeasonGames/MUI_REGULAR_SEASON_GAME_TABLE.jsx'
+import MuiBar from './MUI_BAR';
+import MuiPlay from './components/PlayoffGames/MUI_PLAYOFF_COL.jsx'
+import MuiStandingsTable from './components/Standings/MUI_DIVISION_STANDINGS_TABLE';
+import MuiTableGroup from './components/Standings/MUI_TABLE_GROUP';
 //import RegularSeasonGame from './components/RegularSeasonGames/RegularSeasonGame';
 
 export default function Simulator(props) {
@@ -31,6 +40,7 @@ export default function Simulator(props) {
       })
       .catch((error) => {
         //TODO
+        console.log('here')
         alert('Failed to retrieve movie data')
         console.error('Failed to retrieve movie data')
         console.error(error)
@@ -43,11 +53,63 @@ export default function Simulator(props) {
   }, [userCurrentWeekNumber])
 
   return (
-    <div className='container'>
-      <RegularSeasonWeekTable userCurrentWeek="1" weekCallback={setUserCurrentWeekNumber}/>
+
+      <Container maxWidth={false} disableGutters sx={{bgcolor: '#eeeeee'}}>
+        <MuiBar />
+        {/* <Container maxWidth={false} disableGutters sx={{ bgcolor: '#eeeeee' }} > */}
+        <Grid container spacing={3} columns={24} sx={{p:2}}>
+          <Grid item>
+            <Paper sx={{p:1}}>
+              <MuiTable />
+            </Paper>
+          </Grid>
+          <Grid item xs={5} >
+            <Paper
+              sx={{
+                p: 2,
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <MuiTableGroup />
+            </Paper>
+          </Grid>
+          <Grid item xs={14}>
+            <Paper
+              sx={{
+                p: 2,
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Grid container spacing={3} >
+                <Grid item xs={6}>
+                  <MuiPlay />
+                </Grid>
+                <Grid item xs={6}>
+                  <MuiPlay />
+                </Grid>
+              </Grid>
+            </Paper>
+          </Grid>
+          <Grid item xs={5} >
+            <Paper
+              sx={{
+                p: 2,
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <MuiTableGroup />
+            </Paper>
+          </Grid>        
+        </Grid>
+          {/* </Container> */}
+      {/* <RegularSeasonWeekTable userCurrentWeek="1" weekCallback={setUserCurrentWeekNumber}/>
       <RegularSeasonGamesTable games={currentGames}/>
       <PlayoffGamesTable />
       <DivisionStandingsTable />
-    </div>
+      <TempStandings /> */}
+      </ Container>
   )
 }
