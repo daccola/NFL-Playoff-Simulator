@@ -2459,11 +2459,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React64 = require_react();
+          var React52 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React64.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React52.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format2) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2495,7 +2495,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React64) {
+          if (!React52) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3711,7 +3711,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React64.Children.forEach(children, function(child) {
+            React52.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3722,7 +3722,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React64.Children.forEach(props.children, function(child) {
+                React52.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10915,7 +10915,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React64.Component().refs;
+          var emptyRefsObject = new React52.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -21443,14 +21443,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       var mergeConfig = require_mergeConfig();
       var validator2 = require_validator();
       var validators = validator2.validators;
-      function Axios3(instanceConfig) {
+      function Axios2(instanceConfig) {
         this.defaults = instanceConfig;
         this.interceptors = {
           request: new InterceptorManager(),
           response: new InterceptorManager()
         };
       }
-      Axios3.prototype.request = function request(configOrUrl, config) {
+      Axios2.prototype.request = function request(configOrUrl, config) {
         if (typeof configOrUrl === "string") {
           config = config || {};
           config.url = configOrUrl;
@@ -21518,12 +21518,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
         return promise;
       };
-      Axios3.prototype.getUri = function getUri(config) {
+      Axios2.prototype.getUri = function getUri(config) {
         config = mergeConfig(this.defaults, config);
         return buildURL(config.url, config.params, config.paramsSerializer).replace(/^\?/, "");
       };
       utils.forEach(["delete", "get", "head", "options"], function forEachMethodNoData(method) {
-        Axios3.prototype[method] = function(url, config) {
+        Axios2.prototype[method] = function(url, config) {
           return this.request(mergeConfig(config || {}, {
             method,
             url,
@@ -21532,7 +21532,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         };
       });
       utils.forEach(["post", "put", "patch"], function forEachMethodWithData(method) {
-        Axios3.prototype[method] = function(url, data, config) {
+        Axios2.prototype[method] = function(url, data, config) {
           return this.request(mergeConfig(config || {}, {
             method,
             url,
@@ -21540,7 +21540,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           }));
         };
       });
-      module.exports = Axios3;
+      module.exports = Axios2;
     }
   });
 
@@ -21655,13 +21655,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       "use strict";
       var utils = require_utils();
       var bind = require_bind();
-      var Axios3 = require_Axios();
+      var Axios2 = require_Axios();
       var mergeConfig = require_mergeConfig();
       var defaults = require_defaults();
       function createInstance(defaultConfig) {
-        var context = new Axios3(defaultConfig);
-        var instance = bind(Axios3.prototype.request, context);
-        utils.extend(instance, Axios3.prototype, context);
+        var context = new Axios2(defaultConfig);
+        var instance = bind(Axios2.prototype.request, context);
+        utils.extend(instance, Axios2.prototype, context);
         utils.extend(instance, context);
         instance.create = function create(instanceConfig) {
           return createInstance(mergeConfig(defaultConfig, instanceConfig));
@@ -21669,7 +21669,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         return instance;
       }
       var axios = createInstance(defaults);
-      axios.Axios = Axios3;
+      axios.Axios = Axios2;
       axios.Cancel = require_Cancel();
       axios.CancelToken = require_CancelToken();
       axios.isCancel = require_isCancel();
@@ -22470,7 +22470,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       if (true) {
         (function() {
           "use strict";
-          var React64 = require_react();
+          var React52 = require_react();
           var _assign = require_object_assign();
           var REACT_ELEMENT_TYPE = 60103;
           var REACT_PORTAL_TYPE = 60106;
@@ -22527,7 +22527,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }
             return null;
           }
-          var ReactSharedInternals = React64.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React52.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function error(format2) {
             {
               for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
@@ -28522,392 +28522,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   defineJQueryPlugin(Toast);
 
   // src/app.jsx
-  var import_react32 = __toESM(require_react(), 1);
+  var import_react20 = __toESM(require_react(), 1);
   var import_react_dom = __toESM(require_react_dom(), 1);
 
   // src/Simulator.jsx
-  var import_react31 = __toESM(require_react(), 1);
-  var import_axios2 = __toESM(require_axios2(), 1);
+  var import_react19 = __toESM(require_react(), 1);
+  var import_axios = __toESM(require_axios2(), 1);
 
   // src/components/Standings/DivisionStandingsTable.jsx
-  var import_react2 = __toESM(require_react(), 1);
-
-  // src/components/Standings/DivisionStandings.jsx
-  var import_react = __toESM(require_react(), 1);
-  function DivisionStandings(props) {
-    const { conference, division } = props;
-    return /* @__PURE__ */ import_react.default.createElement("table", {
-      className: "table table-striped"
-    }, /* @__PURE__ */ import_react.default.createElement("thead", null, /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("th", {
-      scope: "col"
-    }, conference, " ", division), /* @__PURE__ */ import_react.default.createElement("th", {
-      scope: "col"
-    }, "RECORD"))), /* @__PURE__ */ import_react.default.createElement("tbody", null, /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Green Bay"), /* @__PURE__ */ import_react.default.createElement("td", null, "16-0")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Green Bay"), /* @__PURE__ */ import_react.default.createElement("td", null, "16-0")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Green Bay"), /* @__PURE__ */ import_react.default.createElement("td", null, "16-0")), /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("td", null, "Green Bay"), /* @__PURE__ */ import_react.default.createElement("td", null, "16-0"))));
-  }
-  DivisionStandings.propTypes = {};
-
-  // src/components/Standings/DivisionStandingsTable.jsx
-  DivisionStandings.propTypes = {};
-
-  // src/components/PlayoffGames/PlayoffGamesTable.jsx
-  var import_react10 = __toESM(require_react(), 1);
-
-  // src/components/PlayoffGames/ConferenceGamesTable.jsx
-  var import_react9 = __toESM(require_react(), 1);
-
-  // src/components/PlayoffGames/WildCardGame.jsx
-  var import_react5 = __toESM(require_react(), 1);
-
-  // src/components/PlayoffGames/TeamInfoLeft.jsx
-  var import_react3 = __toESM(require_react(), 1);
-  function TeamInfoLeft(props) {
-    const { seed, team, wins, losses, ties } = props;
-    let seedString = "";
-    switch (seed) {
-      case 1:
-        seedString = "1st Seed";
-        break;
-      case 2:
-        seedString = "2nd Seed";
-        break;
-      case 3:
-        seedString = "3rd Seed";
-        break;
-      default:
-        seedString = seed + "th Seed";
-    }
-    return /* @__PURE__ */ import_react3.default.createElement("div", {
-      className: "row",
-      style: { backgroundColor: "yellow" }
-    }, /* @__PURE__ */ import_react3.default.createElement("div", {
-      className: "col-4"
-    }, /* @__PURE__ */ import_react3.default.createElement("img", {
-      src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
-      alt: "TODO",
-      className: "col-12"
-    })), /* @__PURE__ */ import_react3.default.createElement("div", {
-      className: "col-8"
-    }, /* @__PURE__ */ import_react3.default.createElement("div", {
-      className: "row"
-    }, /* @__PURE__ */ import_react3.default.createElement("small", {
-      className: "col-12"
-    }, seedString), /* @__PURE__ */ import_react3.default.createElement("small", {
-      className: "col-12"
-    }, team), ties === 0 ? /* @__PURE__ */ import_react3.default.createElement("small", {
-      className: "col-12"
-    }, wins, "-", losses) : /* @__PURE__ */ import_react3.default.createElement("small", {
-      className: "col-12"
-    }, wins, "-", losses, "-", ties))));
-  }
-  TeamInfoLeft.propTypes = {};
-
-  // src/components/PlayoffGames/TeamInfoRight.jsx
-  var import_react4 = __toESM(require_react(), 1);
-  function TeamInfoRight(props) {
-    const { seed, team, wins, losses, ties } = props;
-    let seedString = "";
-    switch (seed) {
-      case 1:
-        seedString = "1st Seed";
-        break;
-      case 2:
-        seedString = "2nd Seed";
-        break;
-      case 3:
-        seedString = "3rd Seed";
-        break;
-      default:
-        seedString = seed + "th Seed";
-    }
-    return /* @__PURE__ */ import_react4.default.createElement("div", {
-      className: "row",
-      style: { backgroundColor: "yellow" }
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
-      className: "col-8"
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
-      className: "row"
-    }, /* @__PURE__ */ import_react4.default.createElement("small", {
-      className: "col-12"
-    }, seedString), /* @__PURE__ */ import_react4.default.createElement("small", {
-      className: "col-12"
-    }, team), ties === 0 ? /* @__PURE__ */ import_react4.default.createElement("small", {
-      className: "col-12"
-    }, wins, "-", losses) : /* @__PURE__ */ import_react4.default.createElement("small", {
-      className: "col-12"
-    }, wins, "-", losses, "-", ties))), /* @__PURE__ */ import_react4.default.createElement("div", {
-      className: "col-4"
-    }, /* @__PURE__ */ import_react4.default.createElement("img", {
-      src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
-      alt: "TODO",
-      className: "col-12"
-    })));
-  }
-  TeamInfoRight.propTypes = {};
-
-  // src/components/PlayoffGames/WildCardGame.jsx
-  function WildCardGame(props) {
-    const { game } = props;
-    return /* @__PURE__ */ import_react5.default.createElement("div", {
-      className: "row"
-    }, /* @__PURE__ */ import_react5.default.createElement("div", {
-      className: "col-6"
-    }, /* @__PURE__ */ import_react5.default.createElement(TeamInfoLeft, {
-      wins: 16,
-      losses: 0,
-      ties: 0,
-      seed: 6,
-      team: "Green Bay"
-    })), /* @__PURE__ */ import_react5.default.createElement("div", {
-      className: "col-6"
-    }, /* @__PURE__ */ import_react5.default.createElement(TeamInfoRight, {
-      wins: 16,
-      losses: 0,
-      ties: 0,
-      seed: 6,
-      team: "Green Bay"
-    })));
-  }
-  WildCardGame.propTypes = {};
-
-  // src/components/PlayoffGames/WildCardGamesTable.jsx
-  var import_react6 = __toESM(require_react(), 1);
-  function WildCardGamesTable(props) {
-    const { game } = props;
-    return /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "row",
-      style: { backgroundColor: "purple" }
-    }, /* @__PURE__ */ import_react6.default.createElement("small", null, "WILD-CARD GAMES"), /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "col-12"
-    }, /* @__PURE__ */ import_react6.default.createElement(WildCardGame, null)), /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "col-12"
-    }, /* @__PURE__ */ import_react6.default.createElement(WildCardGame, null)), /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "col-12"
-    }, /* @__PURE__ */ import_react6.default.createElement(WildCardGame, null)));
-  }
-  WildCardGamesTable.propTypes = {};
-
-  // src/components/PlayoffGames/ByeTeamTable.jsx
   var import_react8 = __toESM(require_react(), 1);
-
-  // src/components/PlayoffGames/ByeTeamGame.jsx
-  var import_react7 = __toESM(require_react(), 1);
-  function ByeTeamGame(props) {
-    const { game } = props;
-    return /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "row"
-    }, /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "col-6"
-    }, /* @__PURE__ */ import_react7.default.createElement(TeamInfoLeft, {
-      seed: 1,
-      wins: 16,
-      losses: 0,
-      ties: 0,
-      team: "Green Bay"
-    })), /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "col-6"
-    }));
-  }
-  ByeTeamGame.propTypes = {};
-
-  // src/components/PlayoffGames/ByeTeamTable.jsx
-  function ByeTeamTable(props) {
-    const { game } = props;
-    return /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "row",
-      style: { backgroundColor: "purple" }
-    }, /* @__PURE__ */ import_react8.default.createElement("small", null, "FIRST-ROUND BYE"), /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "col-12"
-    }, /* @__PURE__ */ import_react8.default.createElement(ByeTeamGame, null)));
-  }
-  ByeTeamTable.propTypes = {};
-
-  // src/components/PlayoffGames/ConferenceGamesTable.jsx
-  function ConferenceGamesTable(props) {
-    const { game } = props;
-    return /* @__PURE__ */ import_react9.default.createElement("div", {
-      className: "row"
-    }, /* @__PURE__ */ import_react9.default.createElement("div", {
-      className: "col-12"
-    }, /* @__PURE__ */ import_react9.default.createElement(ByeTeamTable, null)), /* @__PURE__ */ import_react9.default.createElement("div", {
-      className: "col-12"
-    }, /* @__PURE__ */ import_react9.default.createElement(WildCardGamesTable, null)));
-  }
-  ConferenceGamesTable.propTypes = {};
-
-  // src/components/PlayoffGames/PlayoffGamesTable.jsx
-  function PlayoffGamesTable(props) {
-    const { game } = props;
-    return /* @__PURE__ */ import_react10.default.createElement("div", {
-      className: "row"
-    }, /* @__PURE__ */ import_react10.default.createElement("div", {
-      className: "col-4"
-    }, /* @__PURE__ */ import_react10.default.createElement(ConferenceGamesTable, null)), /* @__PURE__ */ import_react10.default.createElement("div", {
-      className: "col-4"
-    }, /* @__PURE__ */ import_react10.default.createElement("img", {
-      src: "https://cdn.imgbin.com/24/5/8/imgbin-nfl-green-bay-packers-super-bowl-xlv-super-bowl-li-vince-lombardi-trophy-new-york-giants-silver-nfl-super-bowl-trophy-illustration-fa0m4Jmh7c0wxL07QFZyBjaC2.jpg",
-      alt: "TODO",
-      className: "col-12"
-    })), /* @__PURE__ */ import_react10.default.createElement("div", {
-      className: "col-4"
-    }, /* @__PURE__ */ import_react10.default.createElement(ConferenceGamesTable, null)));
-  }
-  PlayoffGamesTable.propTypes = {};
-
-  // node_modules/@mui/material/colors/common.js
-  var common = {
-    black: "#000",
-    white: "#fff"
-  };
-  var common_default = common;
-
-  // node_modules/@mui/material/colors/red.js
-  var red = {
-    50: "#ffebee",
-    100: "#ffcdd2",
-    200: "#ef9a9a",
-    300: "#e57373",
-    400: "#ef5350",
-    500: "#f44336",
-    600: "#e53935",
-    700: "#d32f2f",
-    800: "#c62828",
-    900: "#b71c1c",
-    A100: "#ff8a80",
-    A200: "#ff5252",
-    A400: "#ff1744",
-    A700: "#d50000"
-  };
-  var red_default = red;
-
-  // node_modules/@mui/material/colors/purple.js
-  var purple = {
-    50: "#f3e5f5",
-    100: "#e1bee7",
-    200: "#ce93d8",
-    300: "#ba68c8",
-    400: "#ab47bc",
-    500: "#9c27b0",
-    600: "#8e24aa",
-    700: "#7b1fa2",
-    800: "#6a1b9a",
-    900: "#4a148c",
-    A100: "#ea80fc",
-    A200: "#e040fb",
-    A400: "#d500f9",
-    A700: "#aa00ff"
-  };
-  var purple_default = purple;
-
-  // node_modules/@mui/material/colors/blue.js
-  var blue = {
-    50: "#e3f2fd",
-    100: "#bbdefb",
-    200: "#90caf9",
-    300: "#64b5f6",
-    400: "#42a5f5",
-    500: "#2196f3",
-    600: "#1e88e5",
-    700: "#1976d2",
-    800: "#1565c0",
-    900: "#0d47a1",
-    A100: "#82b1ff",
-    A200: "#448aff",
-    A400: "#2979ff",
-    A700: "#2962ff"
-  };
-  var blue_default = blue;
-
-  // node_modules/@mui/material/colors/lightBlue.js
-  var lightBlue = {
-    50: "#e1f5fe",
-    100: "#b3e5fc",
-    200: "#81d4fa",
-    300: "#4fc3f7",
-    400: "#29b6f6",
-    500: "#03a9f4",
-    600: "#039be5",
-    700: "#0288d1",
-    800: "#0277bd",
-    900: "#01579b",
-    A100: "#80d8ff",
-    A200: "#40c4ff",
-    A400: "#00b0ff",
-    A700: "#0091ea"
-  };
-  var lightBlue_default = lightBlue;
-
-  // node_modules/@mui/material/colors/green.js
-  var green = {
-    50: "#e8f5e9",
-    100: "#c8e6c9",
-    200: "#a5d6a7",
-    300: "#81c784",
-    400: "#66bb6a",
-    500: "#4caf50",
-    600: "#43a047",
-    700: "#388e3c",
-    800: "#2e7d32",
-    900: "#1b5e20",
-    A100: "#b9f6ca",
-    A200: "#69f0ae",
-    A400: "#00e676",
-    A700: "#00c853"
-  };
-  var green_default = green;
-
-  // node_modules/@mui/material/colors/orange.js
-  var orange = {
-    50: "#fff3e0",
-    100: "#ffe0b2",
-    200: "#ffcc80",
-    300: "#ffb74d",
-    400: "#ffa726",
-    500: "#ff9800",
-    600: "#fb8c00",
-    700: "#f57c00",
-    800: "#ef6c00",
-    900: "#e65100",
-    A100: "#ffd180",
-    A200: "#ffab40",
-    A400: "#ff9100",
-    A700: "#ff6d00"
-  };
-  var orange_default = orange;
-
-  // node_modules/@mui/material/colors/grey.js
-  var grey = {
-    50: "#fafafa",
-    100: "#f5f5f5",
-    200: "#eeeeee",
-    300: "#e0e0e0",
-    400: "#bdbdbd",
-    500: "#9e9e9e",
-    600: "#757575",
-    700: "#616161",
-    800: "#424242",
-    900: "#212121",
-    A100: "#f5f5f5",
-    A200: "#eeeeee",
-    A400: "#bdbdbd",
-    A700: "#616161"
-  };
-  var grey_default = grey;
-
-  // node_modules/@babel/runtime/helpers/esm/extends.js
-  function _extends() {
-    _extends = Object.assign || function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends.apply(this, arguments);
-  }
 
   // node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
   function _objectWithoutPropertiesLoose(source, excluded) {
@@ -28925,8 +28548,28 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     return target;
   }
 
+  // node_modules/@babel/runtime/helpers/esm/extends.js
+  function _extends() {
+    _extends = Object.assign || function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends.apply(this, arguments);
+  }
+
+  // node_modules/@mui/material/Stack/Stack.js
+  var React11 = __toESM(require_react());
+  var import_prop_types4 = __toESM(require_prop_types());
+
   // node_modules/@emotion/styled/dist/emotion-styled.browser.esm.js
-  var import_react15 = __toESM(require_react());
+  var import_react5 = __toESM(require_react());
 
   // node_modules/@emotion/memoize/dist/emotion-memoize.browser.esm.js
   function memoize(fn2) {
@@ -28947,12 +28590,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var emotion_is_prop_valid_browser_esm_default = isPropValid;
 
   // node_modules/@emotion/styled/base/dist/emotion-styled-base.browser.esm.js
-  var React13 = __toESM(require_react());
-  var import_react13 = __toESM(require_react());
+  var React3 = __toESM(require_react());
+  var import_react3 = __toESM(require_react());
 
   // node_modules/@emotion/react/dist/emotion-react.browser.esm.js
-  var React12 = __toESM(require_react());
-  var import_react12 = __toESM(require_react());
+  var React2 = __toESM(require_react());
+  var import_react2 = __toESM(require_react());
 
   // node_modules/@emotion/sheet/dist/emotion-sheet.browser.esm.js
   function sheetForTag(tag) {
@@ -29763,8 +29406,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var emotion_cache_browser_esm_default = createCache;
 
   // node_modules/@emotion/react/dist/emotion-element-cbed451f.browser.esm.js
-  var React11 = __toESM(require_react());
-  var import_react11 = __toESM(require_react());
+  var React = __toESM(require_react());
+  var import_react = __toESM(require_react());
 
   // node_modules/@emotion/utils/dist/emotion-utils.browser.esm.js
   var isBrowser = true;
@@ -30125,7 +29768,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
 
   // node_modules/@emotion/react/dist/emotion-element-cbed451f.browser.esm.js
   var hasOwnProperty = {}.hasOwnProperty;
-  var EmotionCacheContext = /* @__PURE__ */ (0, import_react11.createContext)(typeof HTMLElement !== "undefined" ? /* @__PURE__ */ emotion_cache_browser_esm_default({
+  var EmotionCacheContext = /* @__PURE__ */ (0, import_react.createContext)(typeof HTMLElement !== "undefined" ? /* @__PURE__ */ emotion_cache_browser_esm_default({
     key: "css"
   }) : null);
   if (true) {
@@ -30133,16 +29776,16 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   }
   var CacheProvider = EmotionCacheContext.Provider;
   var withEmotionCache = function withEmotionCache2(func) {
-    return /* @__PURE__ */ (0, import_react11.forwardRef)(function(props, ref) {
-      var cache = (0, import_react11.useContext)(EmotionCacheContext);
+    return /* @__PURE__ */ (0, import_react.forwardRef)(function(props, ref) {
+      var cache = (0, import_react.useContext)(EmotionCacheContext);
       return func(props, cache, ref);
     });
   };
-  var ThemeContext = /* @__PURE__ */ (0, import_react11.createContext)({});
+  var ThemeContext = /* @__PURE__ */ (0, import_react.createContext)({});
   if (true) {
     ThemeContext.displayName = "EmotionThemeContext";
   }
-  var useInsertionEffect2 = React11["useInsertionEffect"] ? React11["useInsertionEffect"] : function useInsertionEffect3(create) {
+  var useInsertionEffect2 = React["useInsertionEffect"] ? React["useInsertionEffect"] : function useInsertionEffect3(create) {
     create();
   };
   function useInsertionEffectMaybe(create) {
@@ -30171,7 +29814,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     } else if (props.className != null) {
       className = props.className + " ";
     }
-    var serialized = serializeStyles(registeredStyles, void 0, (0, import_react11.useContext)(ThemeContext));
+    var serialized = serializeStyles(registeredStyles, void 0, (0, import_react.useContext)(ThemeContext));
     if (serialized.name.indexOf("-") === -1) {
       var labelFromStack = props[labelPropName];
       if (labelFromStack) {
@@ -30187,11 +29830,11 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     }
     newProps.ref = ref;
     newProps.className = className;
-    return /* @__PURE__ */ (0, import_react11.createElement)(import_react11.Fragment, null, /* @__PURE__ */ (0, import_react11.createElement)(Insertion, {
+    return /* @__PURE__ */ (0, import_react.createElement)(import_react.Fragment, null, /* @__PURE__ */ (0, import_react.createElement)(Insertion, {
       cache,
       serialized,
       isStringTag: typeof WrappedComponent === "string"
-    }), /* @__PURE__ */ (0, import_react11.createElement)(WrappedComponent, newProps));
+    }), /* @__PURE__ */ (0, import_react.createElement)(WrappedComponent, newProps));
   });
   if (true) {
     Emotion.displayName = "EmotionCssPropInternal";
@@ -30275,7 +29918,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       umdName: "emotionReact"
     }
   };
-  var useInsertionEffect5 = React12["useInsertionEffect"] ? React12["useInsertionEffect"] : import_react12.useLayoutEffect;
+  var useInsertionEffect5 = React2["useInsertionEffect"] ? React2["useInsertionEffect"] : import_react2.useLayoutEffect;
   var warnedAboutCssPropForGlobal = false;
   var Global = /* @__PURE__ */ withEmotionCache(function(props, cache) {
     if (!warnedAboutCssPropForGlobal && (props.className || props.css)) {
@@ -30283,8 +29926,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       warnedAboutCssPropForGlobal = true;
     }
     var styles = props.styles;
-    var serialized = serializeStyles([styles], void 0, (0, import_react12.useContext)(ThemeContext));
-    var sheetRef = (0, import_react12.useRef)();
+    var serialized = serializeStyles([styles], void 0, (0, import_react2.useContext)(ThemeContext));
+    var sheetRef = (0, import_react2.useRef)();
     useInsertionEffect5(function() {
       var key = cache.key + "-global";
       var sheet = new cache.sheet.constructor({
@@ -30432,11 +30075,11 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     var content = {
       css: css2,
       cx,
-      theme: (0, import_react12.useContext)(ThemeContext)
+      theme: (0, import_react2.useContext)(ThemeContext)
     };
     var ele = props.children(content);
     hasRendered = true;
-    return /* @__PURE__ */ (0, import_react12.createElement)(import_react12.Fragment, null, /* @__PURE__ */ (0, import_react12.createElement)(Insertion3, {
+    return /* @__PURE__ */ (0, import_react2.createElement)(import_react2.Fragment, null, /* @__PURE__ */ (0, import_react2.createElement)(Insertion3, {
       cache,
       serializedArr
     }), ele);
@@ -30482,7 +30125,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     }
     return shouldForwardProp2;
   };
-  var useInsertionEffect7 = React13["useInsertionEffect"] ? React13["useInsertionEffect"] : function useInsertionEffect8(create) {
+  var useInsertionEffect7 = React3["useInsertionEffect"] ? React3["useInsertionEffect"] : function useInsertionEffect8(create) {
     create();
   };
   function useInsertionEffectMaybe2(create) {
@@ -30549,7 +30192,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
           for (var key in props) {
             mergedProps[key] = props[key];
           }
-          mergedProps.theme = (0, import_react13.useContext)(ThemeContext);
+          mergedProps.theme = (0, import_react3.useContext)(ThemeContext);
         }
         if (typeof props.className === "string") {
           className = getRegisteredStyles(cache.registered, classInterpolations, props.className);
@@ -30572,11 +30215,11 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
         }
         newProps.className = className;
         newProps.ref = ref;
-        return /* @__PURE__ */ (0, import_react13.createElement)(import_react13.Fragment, null, /* @__PURE__ */ (0, import_react13.createElement)(Insertion5, {
+        return /* @__PURE__ */ (0, import_react3.createElement)(import_react3.Fragment, null, /* @__PURE__ */ (0, import_react3.createElement)(Insertion5, {
           cache,
           serialized,
           isStringTag: typeof FinalTag === "string"
-        }), /* @__PURE__ */ (0, import_react13.createElement)(FinalTag, newProps));
+        }), /* @__PURE__ */ (0, import_react3.createElement)(FinalTag, newProps));
       });
       Styled.displayName = identifierName !== void 0 ? identifierName : "Styled(" + (typeof baseTag === "string" ? baseTag : baseTag.displayName || baseTag.name || "Component") + ")";
       Styled.defaultProps = tag.defaultProps;
@@ -30909,24 +30552,24 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   }
 
   // node_modules/@mui/utils/esm/useEnhancedEffect.js
-  var React14 = __toESM(require_react());
-  var useEnhancedEffect = typeof window !== "undefined" ? React14.useLayoutEffect : React14.useEffect;
+  var React4 = __toESM(require_react());
+  var useEnhancedEffect = typeof window !== "undefined" ? React4.useLayoutEffect : React4.useEffect;
   var useEnhancedEffect_default = useEnhancedEffect;
 
   // node_modules/@mui/utils/esm/useEventCallback.js
-  var React15 = __toESM(require_react());
+  var React5 = __toESM(require_react());
   function useEventCallback(fn2) {
-    const ref = React15.useRef(fn2);
+    const ref = React5.useRef(fn2);
     useEnhancedEffect_default(() => {
       ref.current = fn2;
     });
-    return React15.useCallback((...args) => (0, ref.current)(...args), []);
+    return React5.useCallback((...args) => (0, ref.current)(...args), []);
   }
 
   // node_modules/@mui/utils/esm/useForkRef.js
-  var React16 = __toESM(require_react());
+  var React6 = __toESM(require_react());
   function useForkRef(refA, refB) {
-    return React16.useMemo(() => {
+    return React6.useMemo(() => {
       if (refA == null && refB == null) {
         return null;
       }
@@ -30938,7 +30581,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   }
 
   // node_modules/@mui/utils/esm/useIsFocusVisible.js
-  var React17 = __toESM(require_react());
+  var React7 = __toESM(require_react());
   var hadKeyboardEvent = true;
   var hadFocusVisibleRecently = false;
   var hadFocusVisibleRecentlyTimeout;
@@ -31007,12 +30650,12 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     return hadKeyboardEvent || focusTriggersKeyboardModality(target);
   }
   function useIsFocusVisible() {
-    const ref = React17.useCallback((node2) => {
+    const ref = React7.useCallback((node2) => {
       if (node2 != null) {
         prepare(node2.ownerDocument);
       }
     }, []);
-    const isFocusVisibleRef = React17.useRef(false);
+    const isFocusVisibleRef = React7.useRef(false);
     function handleBlurVisible() {
       if (isFocusVisibleRef.current) {
         hadFocusVisibleRecently = true;
@@ -31957,7 +31600,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   }
 
   // node_modules/@mui/system/esm/createBox.js
-  var React20 = __toESM(require_react());
+  var React10 = __toESM(require_react());
 
   // node_modules/clsx/dist/clsx.m.js
   function toVal(mix) {
@@ -32123,19 +31766,19 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var createTheme_default = createTheme;
 
   // node_modules/@mui/private-theming/useTheme/ThemeContext.js
-  var React18 = __toESM(require_react());
-  var ThemeContext2 = /* @__PURE__ */ React18.createContext(null);
+  var React8 = __toESM(require_react());
+  var ThemeContext2 = /* @__PURE__ */ React8.createContext(null);
   if (true) {
     ThemeContext2.displayName = "ThemeContext";
   }
   var ThemeContext_default = ThemeContext2;
 
   // node_modules/@mui/private-theming/useTheme/useTheme.js
-  var React19 = __toESM(require_react());
+  var React9 = __toESM(require_react());
   function useTheme2() {
-    const theme = React19.useContext(ThemeContext_default);
+    const theme = React9.useContext(ThemeContext_default);
     if (true) {
-      React19.useDebugValue(theme);
+      React9.useDebugValue(theme);
     }
     return theme;
   }
@@ -32168,7 +31811,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       styleFunctionSx: styleFunctionSx2 = styleFunctionSx_default
     } = options;
     const BoxRoot = styled("div")(styleFunctionSx2);
-    const Box2 = /* @__PURE__ */ React20.forwardRef(function Box3(inProps, ref) {
+    const Box2 = /* @__PURE__ */ React10.forwardRef(function Box3(inProps, ref) {
       const theme = useTheme_default(defaultTheme3);
       const _extendSxProp = extendSxProp(inProps), {
         className,
@@ -32628,6 +32271,146 @@ The following color spaces are supported: srgb, display-p3, a98-rgb, prophoto-rg
       }
     }, mixins);
   }
+
+  // node_modules/@mui/material/colors/common.js
+  var common = {
+    black: "#000",
+    white: "#fff"
+  };
+  var common_default = common;
+
+  // node_modules/@mui/material/colors/grey.js
+  var grey = {
+    50: "#fafafa",
+    100: "#f5f5f5",
+    200: "#eeeeee",
+    300: "#e0e0e0",
+    400: "#bdbdbd",
+    500: "#9e9e9e",
+    600: "#757575",
+    700: "#616161",
+    800: "#424242",
+    900: "#212121",
+    A100: "#f5f5f5",
+    A200: "#eeeeee",
+    A400: "#bdbdbd",
+    A700: "#616161"
+  };
+  var grey_default = grey;
+
+  // node_modules/@mui/material/colors/purple.js
+  var purple = {
+    50: "#f3e5f5",
+    100: "#e1bee7",
+    200: "#ce93d8",
+    300: "#ba68c8",
+    400: "#ab47bc",
+    500: "#9c27b0",
+    600: "#8e24aa",
+    700: "#7b1fa2",
+    800: "#6a1b9a",
+    900: "#4a148c",
+    A100: "#ea80fc",
+    A200: "#e040fb",
+    A400: "#d500f9",
+    A700: "#aa00ff"
+  };
+  var purple_default = purple;
+
+  // node_modules/@mui/material/colors/red.js
+  var red = {
+    50: "#ffebee",
+    100: "#ffcdd2",
+    200: "#ef9a9a",
+    300: "#e57373",
+    400: "#ef5350",
+    500: "#f44336",
+    600: "#e53935",
+    700: "#d32f2f",
+    800: "#c62828",
+    900: "#b71c1c",
+    A100: "#ff8a80",
+    A200: "#ff5252",
+    A400: "#ff1744",
+    A700: "#d50000"
+  };
+  var red_default = red;
+
+  // node_modules/@mui/material/colors/orange.js
+  var orange = {
+    50: "#fff3e0",
+    100: "#ffe0b2",
+    200: "#ffcc80",
+    300: "#ffb74d",
+    400: "#ffa726",
+    500: "#ff9800",
+    600: "#fb8c00",
+    700: "#f57c00",
+    800: "#ef6c00",
+    900: "#e65100",
+    A100: "#ffd180",
+    A200: "#ffab40",
+    A400: "#ff9100",
+    A700: "#ff6d00"
+  };
+  var orange_default = orange;
+
+  // node_modules/@mui/material/colors/blue.js
+  var blue = {
+    50: "#e3f2fd",
+    100: "#bbdefb",
+    200: "#90caf9",
+    300: "#64b5f6",
+    400: "#42a5f5",
+    500: "#2196f3",
+    600: "#1e88e5",
+    700: "#1976d2",
+    800: "#1565c0",
+    900: "#0d47a1",
+    A100: "#82b1ff",
+    A200: "#448aff",
+    A400: "#2979ff",
+    A700: "#2962ff"
+  };
+  var blue_default = blue;
+
+  // node_modules/@mui/material/colors/lightBlue.js
+  var lightBlue = {
+    50: "#e1f5fe",
+    100: "#b3e5fc",
+    200: "#81d4fa",
+    300: "#4fc3f7",
+    400: "#29b6f6",
+    500: "#03a9f4",
+    600: "#039be5",
+    700: "#0288d1",
+    800: "#0277bd",
+    900: "#01579b",
+    A100: "#80d8ff",
+    A200: "#40c4ff",
+    A400: "#00b0ff",
+    A700: "#0091ea"
+  };
+  var lightBlue_default = lightBlue;
+
+  // node_modules/@mui/material/colors/green.js
+  var green = {
+    50: "#e8f5e9",
+    100: "#c8e6c9",
+    200: "#a5d6a7",
+    300: "#81c784",
+    400: "#66bb6a",
+    500: "#4caf50",
+    600: "#43a047",
+    700: "#388e3c",
+    800: "#2e7d32",
+    900: "#1b5e20",
+    A100: "#b9f6ca",
+    A200: "#69f0ae",
+    A400: "#00e676",
+    A700: "#00c853"
+  };
+  var green_default = green;
 
   // node_modules/@mui/material/styles/createPalette.js
   var _excluded7 = ["mode", "contrastThreshold", "tonalOffset"];
@@ -33095,21 +32878,17 @@ const theme2 = createTheme({ palette: {
   }
   var createTheme_default2 = createTheme2;
 
-  // node_modules/@mui/material/styles/useTheme.js
-  var React21 = __toESM(require_react());
-
   // node_modules/@mui/material/styles/defaultTheme.js
   var defaultTheme = createTheme_default2();
   var defaultTheme_default = defaultTheme;
 
-  // node_modules/@mui/material/styles/useTheme.js
-  function useTheme5() {
-    const theme = useTheme_default(defaultTheme_default);
-    if (true) {
-      React21.useDebugValue(theme);
-    }
-    return theme;
-  }
+  // node_modules/@mui/material/styles/styled.js
+  var rootShouldForwardProp = (prop) => shouldForwardProp(prop) && prop !== "classes";
+  var styled2 = createStyled3({
+    defaultTheme: defaultTheme_default,
+    rootShouldForwardProp
+  });
+  var styled_default = styled2;
 
   // node_modules/@mui/material/styles/useThemeProps.js
   function useThemeProps2({
@@ -33123,23 +32902,644 @@ const theme2 = createTheme({ palette: {
     });
   }
 
-  // node_modules/@mui/material/styles/styled.js
-  var rootShouldForwardProp = (prop) => shouldForwardProp(prop) && prop !== "classes";
-  var styled2 = createStyled3({
-    defaultTheme: defaultTheme_default,
-    rootShouldForwardProp
+  // node_modules/@mui/material/Stack/Stack.js
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var _excluded11 = ["component", "direction", "spacing", "divider", "children"];
+  function joinChildren(children, separator) {
+    const childrenArray = React11.Children.toArray(children).filter(Boolean);
+    return childrenArray.reduce((output, child, index) => {
+      output.push(child);
+      if (index < childrenArray.length - 1) {
+        output.push(/* @__PURE__ */ React11.cloneElement(separator, {
+          key: `separator-${index}`
+        }));
+      }
+      return output;
+    }, []);
+  }
+  var getSideFromDirection = (direction) => {
+    return {
+      row: "Left",
+      "row-reverse": "Right",
+      column: "Top",
+      "column-reverse": "Bottom"
+    }[direction];
+  };
+  var style3 = ({
+    ownerState,
+    theme
+  }) => {
+    let styles = _extends({
+      display: "flex"
+    }, handleBreakpoints({
+      theme
+    }, resolveBreakpointValues({
+      values: ownerState.direction,
+      breakpoints: theme.breakpoints.values
+    }), (propValue) => ({
+      flexDirection: propValue
+    })));
+    if (ownerState.spacing) {
+      const transformer = createUnarySpacing(theme);
+      const base = Object.keys(theme.breakpoints.values).reduce((acc, breakpoint) => {
+        if (ownerState.spacing[breakpoint] != null || ownerState.direction[breakpoint] != null) {
+          acc[breakpoint] = true;
+        }
+        return acc;
+      }, {});
+      const directionValues = resolveBreakpointValues({
+        values: ownerState.direction,
+        base
+      });
+      const spacingValues = resolveBreakpointValues({
+        values: ownerState.spacing,
+        base
+      });
+      const styleFromPropValue = (propValue, breakpoint) => {
+        return {
+          "& > :not(style) + :not(style)": {
+            margin: 0,
+            [`margin${getSideFromDirection(breakpoint ? directionValues[breakpoint] : ownerState.direction)}`]: getValue2(transformer, propValue)
+          }
+        };
+      };
+      styles = deepmerge(styles, handleBreakpoints({
+        theme
+      }, spacingValues, styleFromPropValue));
+    }
+    return styles;
+  };
+  var StackRoot = styled_default("div", {
+    name: "MuiStack",
+    slot: "Root",
+    overridesResolver: (props, styles) => {
+      return [styles.root];
+    }
+  })(style3);
+  var Stack = /* @__PURE__ */ React11.forwardRef(function Stack2(inProps, ref) {
+    const themeProps = useThemeProps2({
+      props: inProps,
+      name: "MuiStack"
+    });
+    const props = extendSxProp(themeProps);
+    const {
+      component = "div",
+      direction = "column",
+      spacing: spacing2 = 0,
+      divider,
+      children
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded11);
+    const ownerState = {
+      direction,
+      spacing: spacing2
+    };
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(StackRoot, _extends({
+      as: component,
+      ownerState,
+      ref
+    }, other, {
+      children: divider ? joinChildren(children, divider) : children
+    }));
   });
-  var styled_default = styled2;
+  true ? Stack.propTypes = {
+    children: import_prop_types4.default.node,
+    component: import_prop_types4.default.elementType,
+    direction: import_prop_types4.default.oneOfType([import_prop_types4.default.oneOf(["column-reverse", "column", "row-reverse", "row"]), import_prop_types4.default.arrayOf(import_prop_types4.default.oneOf(["column-reverse", "column", "row-reverse", "row"])), import_prop_types4.default.object]),
+    divider: import_prop_types4.default.node,
+    spacing: import_prop_types4.default.oneOfType([import_prop_types4.default.arrayOf(import_prop_types4.default.oneOfType([import_prop_types4.default.number, import_prop_types4.default.string])), import_prop_types4.default.number, import_prop_types4.default.object, import_prop_types4.default.string]),
+    sx: import_prop_types4.default.oneOfType([import_prop_types4.default.arrayOf(import_prop_types4.default.oneOfType([import_prop_types4.default.func, import_prop_types4.default.object, import_prop_types4.default.bool])), import_prop_types4.default.func, import_prop_types4.default.object])
+  } : void 0;
+  var Stack_default = Stack;
+
+  // src/components/Standings/DivisionStandings.jsx
+  var import_react7 = __toESM(require_react(), 1);
+
+  // node_modules/@mui/material/Table/Table.js
+  var React13 = __toESM(require_react());
+  var import_prop_types5 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/Table/TableContext.js
+  var React12 = __toESM(require_react());
+  var TableContext = /* @__PURE__ */ React12.createContext();
+  if (true) {
+    TableContext.displayName = "TableContext";
+  }
+  var TableContext_default = TableContext;
+
+  // node_modules/@mui/material/Table/tableClasses.js
+  function getTableUtilityClass(slot) {
+    return generateUtilityClass("MuiTable", slot);
+  }
+  var tableClasses = generateUtilityClasses("MuiTable", ["root", "stickyHeader"]);
+
+  // node_modules/@mui/material/Table/Table.js
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
+  var _excluded12 = ["className", "component", "padding", "size", "stickyHeader"];
+  var useUtilityClasses = (ownerState) => {
+    const {
+      classes,
+      stickyHeader
+    } = ownerState;
+    const slots = {
+      root: ["root", stickyHeader && "stickyHeader"]
+    };
+    return composeClasses(slots, getTableUtilityClass, classes);
+  };
+  var TableRoot = styled_default("table", {
+    name: "MuiTable",
+    slot: "Root",
+    overridesResolver: (props, styles) => {
+      const {
+        ownerState
+      } = props;
+      return [styles.root, ownerState.stickyHeader && styles.stickyHeader];
+    }
+  })(({
+    theme,
+    ownerState
+  }) => _extends({
+    display: "table",
+    width: "100%",
+    borderCollapse: "collapse",
+    borderSpacing: 0,
+    "& caption": _extends({}, theme.typography.body2, {
+      padding: theme.spacing(2),
+      color: theme.palette.text.secondary,
+      textAlign: "left",
+      captionSide: "bottom"
+    })
+  }, ownerState.stickyHeader && {
+    borderCollapse: "separate"
+  }));
+  var defaultComponent = "table";
+  var Table = /* @__PURE__ */ React13.forwardRef(function Table2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiTable"
+    });
+    const {
+      className,
+      component = defaultComponent,
+      padding: padding2 = "normal",
+      size = "medium",
+      stickyHeader = false
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded12);
+    const ownerState = _extends({}, props, {
+      component,
+      padding: padding2,
+      size,
+      stickyHeader
+    });
+    const classes = useUtilityClasses(ownerState);
+    const table = React13.useMemo(() => ({
+      padding: padding2,
+      size,
+      stickyHeader
+    }), [padding2, size, stickyHeader]);
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(TableContext_default.Provider, {
+      value: table,
+      children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(TableRoot, _extends({
+        as: component,
+        role: component === defaultComponent ? null : "table",
+        ref,
+        className: clsx_m_default(classes.root, className),
+        ownerState
+      }, other))
+    });
+  });
+  true ? Table.propTypes = {
+    children: import_prop_types5.default.node,
+    classes: import_prop_types5.default.object,
+    className: import_prop_types5.default.string,
+    component: import_prop_types5.default.elementType,
+    padding: import_prop_types5.default.oneOf(["checkbox", "none", "normal"]),
+    size: import_prop_types5.default.oneOfType([import_prop_types5.default.oneOf(["medium", "small"]), import_prop_types5.default.string]),
+    stickyHeader: import_prop_types5.default.bool,
+    sx: import_prop_types5.default.oneOfType([import_prop_types5.default.arrayOf(import_prop_types5.default.oneOfType([import_prop_types5.default.func, import_prop_types5.default.object, import_prop_types5.default.bool])), import_prop_types5.default.func, import_prop_types5.default.object])
+  } : void 0;
+  var Table_default = Table;
+
+  // node_modules/@mui/material/TableBody/TableBody.js
+  var React15 = __toESM(require_react());
+  var import_prop_types6 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/Table/Tablelvl2Context.js
+  var React14 = __toESM(require_react());
+  var Tablelvl2Context = /* @__PURE__ */ React14.createContext();
+  if (true) {
+    Tablelvl2Context.displayName = "Tablelvl2Context";
+  }
+  var Tablelvl2Context_default = Tablelvl2Context;
+
+  // node_modules/@mui/material/TableBody/tableBodyClasses.js
+  function getTableBodyUtilityClass(slot) {
+    return generateUtilityClass("MuiTableBody", slot);
+  }
+  var tableBodyClasses = generateUtilityClasses("MuiTableBody", ["root"]);
+
+  // node_modules/@mui/material/TableBody/TableBody.js
+  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
+  var _excluded13 = ["className", "component"];
+  var useUtilityClasses2 = (ownerState) => {
+    const {
+      classes
+    } = ownerState;
+    const slots = {
+      root: ["root"]
+    };
+    return composeClasses(slots, getTableBodyUtilityClass, classes);
+  };
+  var TableBodyRoot = styled_default("tbody", {
+    name: "MuiTableBody",
+    slot: "Root",
+    overridesResolver: (props, styles) => styles.root
+  })({
+    display: "table-row-group"
+  });
+  var tablelvl2 = {
+    variant: "body"
+  };
+  var defaultComponent2 = "tbody";
+  var TableBody = /* @__PURE__ */ React15.forwardRef(function TableBody2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiTableBody"
+    });
+    const {
+      className,
+      component = defaultComponent2
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded13);
+    const ownerState = _extends({}, props, {
+      component
+    });
+    const classes = useUtilityClasses2(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Tablelvl2Context_default.Provider, {
+      value: tablelvl2,
+      children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(TableBodyRoot, _extends({
+        className: clsx_m_default(classes.root, className),
+        as: component,
+        ref,
+        role: component === defaultComponent2 ? null : "rowgroup",
+        ownerState
+      }, other))
+    });
+  });
+  true ? TableBody.propTypes = {
+    children: import_prop_types6.default.node,
+    classes: import_prop_types6.default.object,
+    className: import_prop_types6.default.string,
+    component: import_prop_types6.default.elementType,
+    sx: import_prop_types6.default.oneOfType([import_prop_types6.default.arrayOf(import_prop_types6.default.oneOfType([import_prop_types6.default.func, import_prop_types6.default.object, import_prop_types6.default.bool])), import_prop_types6.default.func, import_prop_types6.default.object])
+  } : void 0;
+  var TableBody_default = TableBody;
+
+  // node_modules/@mui/material/TableCell/TableCell.js
+  var React16 = __toESM(require_react());
+  var import_prop_types7 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/utils/capitalize.js
   var capitalize_default = capitalize;
+
+  // node_modules/@mui/material/TableCell/tableCellClasses.js
+  function getTableCellUtilityClass(slot) {
+    return generateUtilityClass("MuiTableCell", slot);
+  }
+  var tableCellClasses = generateUtilityClasses("MuiTableCell", ["root", "head", "body", "footer", "sizeSmall", "sizeMedium", "paddingCheckbox", "paddingNone", "alignLeft", "alignCenter", "alignRight", "alignJustify", "stickyHeader"]);
+  var tableCellClasses_default = tableCellClasses;
+
+  // node_modules/@mui/material/TableCell/TableCell.js
+  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
+  var _excluded14 = ["align", "className", "component", "padding", "scope", "size", "sortDirection", "variant"];
+  var useUtilityClasses3 = (ownerState) => {
+    const {
+      classes,
+      variant,
+      align,
+      padding: padding2,
+      size,
+      stickyHeader
+    } = ownerState;
+    const slots = {
+      root: ["root", variant, stickyHeader && "stickyHeader", align !== "inherit" && `align${capitalize_default(align)}`, padding2 !== "normal" && `padding${capitalize_default(padding2)}`, `size${capitalize_default(size)}`]
+    };
+    return composeClasses(slots, getTableCellUtilityClass, classes);
+  };
+  var TableCellRoot = styled_default("td", {
+    name: "MuiTableCell",
+    slot: "Root",
+    overridesResolver: (props, styles) => {
+      const {
+        ownerState
+      } = props;
+      return [styles.root, styles[ownerState.variant], styles[`size${capitalize_default(ownerState.size)}`], ownerState.padding !== "normal" && styles[`padding${capitalize_default(ownerState.padding)}`], ownerState.align !== "inherit" && styles[`align${capitalize_default(ownerState.align)}`], ownerState.stickyHeader && styles.stickyHeader];
+    }
+  })(({
+    theme,
+    ownerState
+  }) => _extends({}, theme.typography.body2, {
+    display: "table-cell",
+    verticalAlign: "inherit",
+    borderBottom: `1px solid
+    ${theme.palette.mode === "light" ? lighten(alpha(theme.palette.divider, 1), 0.88) : darken(alpha(theme.palette.divider, 1), 0.68)}`,
+    textAlign: "left",
+    padding: 16
+  }, ownerState.variant === "head" && {
+    color: theme.palette.text.primary,
+    lineHeight: theme.typography.pxToRem(24),
+    fontWeight: theme.typography.fontWeightMedium
+  }, ownerState.variant === "body" && {
+    color: theme.palette.text.primary
+  }, ownerState.variant === "footer" && {
+    color: theme.palette.text.secondary,
+    lineHeight: theme.typography.pxToRem(21),
+    fontSize: theme.typography.pxToRem(12)
+  }, ownerState.size === "small" && {
+    padding: "6px 16px",
+    [`&.${tableCellClasses_default.paddingCheckbox}`]: {
+      width: 24,
+      padding: "0 12px 0 16px",
+      "& > *": {
+        padding: 0
+      }
+    }
+  }, ownerState.padding === "checkbox" && {
+    width: 48,
+    padding: "0 0 0 4px"
+  }, ownerState.padding === "none" && {
+    padding: 0
+  }, ownerState.align === "left" && {
+    textAlign: "left"
+  }, ownerState.align === "center" && {
+    textAlign: "center"
+  }, ownerState.align === "right" && {
+    textAlign: "right",
+    flexDirection: "row-reverse"
+  }, ownerState.align === "justify" && {
+    textAlign: "justify"
+  }, ownerState.stickyHeader && {
+    position: "sticky",
+    top: 0,
+    zIndex: 2,
+    backgroundColor: theme.palette.background.default
+  }));
+  var TableCell = /* @__PURE__ */ React16.forwardRef(function TableCell2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiTableCell"
+    });
+    const {
+      align = "inherit",
+      className,
+      component: componentProp,
+      padding: paddingProp,
+      scope: scopeProp,
+      size: sizeProp,
+      sortDirection,
+      variant: variantProp
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded14);
+    const table = React16.useContext(TableContext_default);
+    const tablelvl23 = React16.useContext(Tablelvl2Context_default);
+    const isHeadCell = tablelvl23 && tablelvl23.variant === "head";
+    let component;
+    if (componentProp) {
+      component = componentProp;
+    } else {
+      component = isHeadCell ? "th" : "td";
+    }
+    let scope = scopeProp;
+    if (!scope && isHeadCell) {
+      scope = "col";
+    }
+    const variant = variantProp || tablelvl23 && tablelvl23.variant;
+    const ownerState = _extends({}, props, {
+      align,
+      component,
+      padding: paddingProp || (table && table.padding ? table.padding : "normal"),
+      size: sizeProp || (table && table.size ? table.size : "medium"),
+      sortDirection,
+      stickyHeader: variant === "head" && table && table.stickyHeader,
+      variant
+    });
+    const classes = useUtilityClasses3(ownerState);
+    let ariaSort = null;
+    if (sortDirection) {
+      ariaSort = sortDirection === "asc" ? "ascending" : "descending";
+    }
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TableCellRoot, _extends({
+      as: component,
+      ref,
+      className: clsx_m_default(classes.root, className),
+      "aria-sort": ariaSort,
+      scope,
+      ownerState
+    }, other));
+  });
+  true ? TableCell.propTypes = {
+    align: import_prop_types7.default.oneOf(["center", "inherit", "justify", "left", "right"]),
+    children: import_prop_types7.default.node,
+    classes: import_prop_types7.default.object,
+    className: import_prop_types7.default.string,
+    component: import_prop_types7.default.elementType,
+    padding: import_prop_types7.default.oneOf(["checkbox", "none", "normal"]),
+    scope: import_prop_types7.default.string,
+    size: import_prop_types7.default.oneOf(["small", "medium"]),
+    sortDirection: import_prop_types7.default.oneOf(["asc", "desc", false]),
+    sx: import_prop_types7.default.oneOfType([import_prop_types7.default.arrayOf(import_prop_types7.default.oneOfType([import_prop_types7.default.func, import_prop_types7.default.object, import_prop_types7.default.bool])), import_prop_types7.default.func, import_prop_types7.default.object]),
+    variant: import_prop_types7.default.oneOf(["body", "footer", "head"])
+  } : void 0;
+  var TableCell_default = TableCell;
+
+  // node_modules/@mui/material/TableHead/TableHead.js
+  var React17 = __toESM(require_react());
+  var import_prop_types8 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/TableHead/tableHeadClasses.js
+  function getTableHeadUtilityClass(slot) {
+    return generateUtilityClass("MuiTableHead", slot);
+  }
+  var tableHeadClasses = generateUtilityClasses("MuiTableHead", ["root"]);
+
+  // node_modules/@mui/material/TableHead/TableHead.js
+  var import_jsx_runtime6 = __toESM(require_jsx_runtime());
+  var _excluded15 = ["className", "component"];
+  var useUtilityClasses4 = (ownerState) => {
+    const {
+      classes
+    } = ownerState;
+    const slots = {
+      root: ["root"]
+    };
+    return composeClasses(slots, getTableHeadUtilityClass, classes);
+  };
+  var TableHeadRoot = styled_default("thead", {
+    name: "MuiTableHead",
+    slot: "Root",
+    overridesResolver: (props, styles) => styles.root
+  })({
+    display: "table-header-group"
+  });
+  var tablelvl22 = {
+    variant: "head"
+  };
+  var defaultComponent3 = "thead";
+  var TableHead = /* @__PURE__ */ React17.forwardRef(function TableHead2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiTableHead"
+    });
+    const {
+      className,
+      component = defaultComponent3
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded15);
+    const ownerState = _extends({}, props, {
+      component
+    });
+    const classes = useUtilityClasses4(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Tablelvl2Context_default.Provider, {
+      value: tablelvl22,
+      children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(TableHeadRoot, _extends({
+        as: component,
+        className: clsx_m_default(classes.root, className),
+        ref,
+        role: component === defaultComponent3 ? null : "rowgroup",
+        ownerState
+      }, other))
+    });
+  });
+  true ? TableHead.propTypes = {
+    children: import_prop_types8.default.node,
+    classes: import_prop_types8.default.object,
+    className: import_prop_types8.default.string,
+    component: import_prop_types8.default.elementType,
+    sx: import_prop_types8.default.oneOfType([import_prop_types8.default.arrayOf(import_prop_types8.default.oneOfType([import_prop_types8.default.func, import_prop_types8.default.object, import_prop_types8.default.bool])), import_prop_types8.default.func, import_prop_types8.default.object])
+  } : void 0;
+  var TableHead_default = TableHead;
+
+  // node_modules/@mui/material/TableRow/TableRow.js
+  var React18 = __toESM(require_react());
+  var import_prop_types9 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/TableRow/tableRowClasses.js
+  function getTableRowUtilityClass(slot) {
+    return generateUtilityClass("MuiTableRow", slot);
+  }
+  var tableRowClasses = generateUtilityClasses("MuiTableRow", ["root", "selected", "hover", "head", "footer"]);
+  var tableRowClasses_default = tableRowClasses;
+
+  // node_modules/@mui/material/TableRow/TableRow.js
+  var import_jsx_runtime7 = __toESM(require_jsx_runtime());
+  var _excluded16 = ["className", "component", "hover", "selected"];
+  var useUtilityClasses5 = (ownerState) => {
+    const {
+      classes,
+      selected,
+      hover,
+      head,
+      footer
+    } = ownerState;
+    const slots = {
+      root: ["root", selected && "selected", hover && "hover", head && "head", footer && "footer"]
+    };
+    return composeClasses(slots, getTableRowUtilityClass, classes);
+  };
+  var TableRowRoot = styled_default("tr", {
+    name: "MuiTableRow",
+    slot: "Root",
+    overridesResolver: (props, styles) => {
+      const {
+        ownerState
+      } = props;
+      return [styles.root, ownerState.head && styles.head, ownerState.footer && styles.footer];
+    }
+  })(({
+    theme
+  }) => ({
+    color: "inherit",
+    display: "table-row",
+    verticalAlign: "middle",
+    outline: 0,
+    [`&.${tableRowClasses_default.hover}:hover`]: {
+      backgroundColor: theme.palette.action.hover
+    },
+    [`&.${tableRowClasses_default.selected}`]: {
+      backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+      "&:hover": {
+        backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity + theme.palette.action.hoverOpacity)
+      }
+    }
+  }));
+  var defaultComponent4 = "tr";
+  var TableRow = /* @__PURE__ */ React18.forwardRef(function TableRow2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiTableRow"
+    });
+    const {
+      className,
+      component = defaultComponent4,
+      hover = false,
+      selected = false
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded16);
+    const tablelvl23 = React18.useContext(Tablelvl2Context_default);
+    const ownerState = _extends({}, props, {
+      component,
+      hover,
+      selected,
+      head: tablelvl23 && tablelvl23.variant === "head",
+      footer: tablelvl23 && tablelvl23.variant === "footer"
+    });
+    const classes = useUtilityClasses5(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(TableRowRoot, _extends({
+      as: component,
+      ref,
+      className: clsx_m_default(classes.root, className),
+      role: component === defaultComponent4 ? null : "row",
+      ownerState
+    }, other));
+  });
+  true ? TableRow.propTypes = {
+    children: import_prop_types9.default.node,
+    classes: import_prop_types9.default.object,
+    className: import_prop_types9.default.string,
+    component: import_prop_types9.default.elementType,
+    hover: import_prop_types9.default.bool,
+    selected: import_prop_types9.default.bool,
+    sx: import_prop_types9.default.oneOfType([import_prop_types9.default.arrayOf(import_prop_types9.default.oneOfType([import_prop_types9.default.func, import_prop_types9.default.object, import_prop_types9.default.bool])), import_prop_types9.default.func, import_prop_types9.default.object])
+  } : void 0;
+  var TableRow_default = TableRow;
+
+  // src/components/Standings/DivisionStandings.jsx
+  function DivisionStandings(props) {
+    return /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement(Table_default, {
+      size: "small"
+    }, /* @__PURE__ */ import_react7.default.createElement(TableHead_default, null, /* @__PURE__ */ import_react7.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react7.default.createElement(TableCell_default, null, "NF NORTH"), /* @__PURE__ */ import_react7.default.createElement(TableCell_default, null, "RECORD"))), /* @__PURE__ */ import_react7.default.createElement(TableBody_default, null, /* @__PURE__ */ import_react7.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react7.default.createElement(TableCell_default, null, "Green Bay"), /* @__PURE__ */ import_react7.default.createElement(TableCell_default, null, "16-0-0")), /* @__PURE__ */ import_react7.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react7.default.createElement(TableCell_default, null, "Green Bay"), /* @__PURE__ */ import_react7.default.createElement(TableCell_default, null, "16-0")), /* @__PURE__ */ import_react7.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react7.default.createElement(TableCell_default, null, "Green Bay"), /* @__PURE__ */ import_react7.default.createElement(TableCell_default, null, "16-0")), /* @__PURE__ */ import_react7.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react7.default.createElement(TableCell_default, null, "Green Bay"), /* @__PURE__ */ import_react7.default.createElement(TableCell_default, null, "16-0")))));
+  }
+  DivisionStandings.propTypes = {};
+
+  // src/components/Standings/DivisionStandingsTable.jsx
+  function DivisionStandingsTable(props) {
+    return /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(Stack_default, {
+      spacing: 2
+    }, /* @__PURE__ */ import_react8.default.createElement(DivisionStandings, null), /* @__PURE__ */ import_react8.default.createElement(DivisionStandings, null), /* @__PURE__ */ import_react8.default.createElement(DivisionStandings, null), /* @__PURE__ */ import_react8.default.createElement(DivisionStandings, null)));
+  }
+  DivisionStandings.propTypes = {};
+
+  // node_modules/@mui/material/styles/useTheme.js
+  var React21 = __toESM(require_react());
+  function useTheme5() {
+    const theme = useTheme_default(defaultTheme_default);
+    if (true) {
+      React21.useDebugValue(theme);
+    }
+    return theme;
+  }
 
   // node_modules/@mui/material/utils/createSvgIcon.js
   var React23 = __toESM(require_react());
 
   // node_modules/@mui/material/SvgIcon/SvgIcon.js
   var React22 = __toESM(require_react());
-  var import_prop_types4 = __toESM(require_prop_types());
+  var import_prop_types10 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/SvgIcon/svgIconClasses.js
   function getSvgIconUtilityClass(slot) {
@@ -33148,10 +33548,10 @@ const theme2 = createTheme({ palette: {
   var svgIconClasses = generateUtilityClasses("MuiSvgIcon", ["root", "colorPrimary", "colorSecondary", "colorAction", "colorError", "colorDisabled", "fontSizeInherit", "fontSizeSmall", "fontSizeMedium", "fontSizeLarge"]);
 
   // node_modules/@mui/material/SvgIcon/SvgIcon.js
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime());
-  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
-  var _excluded11 = ["children", "className", "color", "component", "fontSize", "htmlColor", "inheritViewBox", "titleAccess", "viewBox"];
-  var useUtilityClasses = (ownerState) => {
+  var import_jsx_runtime8 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime9 = __toESM(require_jsx_runtime());
+  var _excluded17 = ["children", "className", "color", "component", "fontSize", "htmlColor", "inheritViewBox", "titleAccess", "viewBox"];
+  var useUtilityClasses6 = (ownerState) => {
     const {
       color: color2,
       fontSize: fontSize2,
@@ -33214,7 +33614,7 @@ const theme2 = createTheme({ palette: {
       inheritViewBox = false,
       titleAccess,
       viewBox = "0 0 24 24"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded11);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded17);
     const ownerState = _extends({}, props, {
       color: color2,
       component,
@@ -33227,8 +33627,8 @@ const theme2 = createTheme({ palette: {
     if (!inheritViewBox) {
       more.viewBox = viewBox;
     }
-    const classes = useUtilityClasses(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(SvgIconRoot, _extends({
+    const classes = useUtilityClasses6(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(SvgIconRoot, _extends({
       as: component,
       className: clsx_m_default(classes.root, className),
       ownerState,
@@ -33238,32 +33638,32 @@ const theme2 = createTheme({ palette: {
       role: titleAccess ? "img" : void 0,
       ref
     }, more, other, {
-      children: [children, titleAccess ? /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("title", {
+      children: [children, titleAccess ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("title", {
         children: titleAccess
       }) : null]
     }));
   });
   true ? SvgIcon.propTypes = {
-    children: import_prop_types4.default.node,
-    classes: import_prop_types4.default.object,
-    className: import_prop_types4.default.string,
-    color: import_prop_types4.default.oneOfType([import_prop_types4.default.oneOf(["inherit", "action", "disabled", "primary", "secondary", "error", "info", "success", "warning"]), import_prop_types4.default.string]),
-    component: import_prop_types4.default.elementType,
-    fontSize: import_prop_types4.default.oneOfType([import_prop_types4.default.oneOf(["inherit", "large", "medium", "small"]), import_prop_types4.default.string]),
-    htmlColor: import_prop_types4.default.string,
-    inheritViewBox: import_prop_types4.default.bool,
-    shapeRendering: import_prop_types4.default.string,
-    sx: import_prop_types4.default.oneOfType([import_prop_types4.default.arrayOf(import_prop_types4.default.oneOfType([import_prop_types4.default.func, import_prop_types4.default.object, import_prop_types4.default.bool])), import_prop_types4.default.func, import_prop_types4.default.object]),
-    titleAccess: import_prop_types4.default.string,
-    viewBox: import_prop_types4.default.string
+    children: import_prop_types10.default.node,
+    classes: import_prop_types10.default.object,
+    className: import_prop_types10.default.string,
+    color: import_prop_types10.default.oneOfType([import_prop_types10.default.oneOf(["inherit", "action", "disabled", "primary", "secondary", "error", "info", "success", "warning"]), import_prop_types10.default.string]),
+    component: import_prop_types10.default.elementType,
+    fontSize: import_prop_types10.default.oneOfType([import_prop_types10.default.oneOf(["inherit", "large", "medium", "small"]), import_prop_types10.default.string]),
+    htmlColor: import_prop_types10.default.string,
+    inheritViewBox: import_prop_types10.default.bool,
+    shapeRendering: import_prop_types10.default.string,
+    sx: import_prop_types10.default.oneOfType([import_prop_types10.default.arrayOf(import_prop_types10.default.oneOfType([import_prop_types10.default.func, import_prop_types10.default.object, import_prop_types10.default.bool])), import_prop_types10.default.func, import_prop_types10.default.object]),
+    titleAccess: import_prop_types10.default.string,
+    viewBox: import_prop_types10.default.string
   } : void 0;
   SvgIcon.muiName = "SvgIcon";
   var SvgIcon_default = SvgIcon;
 
   // node_modules/@mui/material/utils/createSvgIcon.js
-  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime10 = __toESM(require_jsx_runtime());
   function createSvgIcon(path, displayName) {
-    const Component = (props, ref) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(SvgIcon_default, _extends({
+    const Component = (props, ref) => /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(SvgIcon_default, _extends({
       "data-testid": `${displayName}Icon`,
       ref
     }, props, {
@@ -33305,8 +33705,8 @@ const theme2 = createTheme({ palette: {
   }
 
   // node_modules/react-transition-group/esm/TransitionGroupContext.js
-  var import_react17 = __toESM(require_react());
-  var TransitionGroupContext_default = import_react17.default.createContext(null);
+  var import_react9 = __toESM(require_react());
+  var TransitionGroupContext_default = import_react9.default.createContext(null);
 
   // node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
   function _assertThisInitialized(self) {
@@ -33317,18 +33717,18 @@ const theme2 = createTheme({ palette: {
   }
 
   // node_modules/react-transition-group/esm/TransitionGroup.js
-  var import_prop_types5 = __toESM(require_prop_types());
-  var import_react19 = __toESM(require_react());
+  var import_prop_types11 = __toESM(require_prop_types());
+  var import_react11 = __toESM(require_react());
 
   // node_modules/react-transition-group/esm/utils/ChildMapping.js
-  var import_react18 = __toESM(require_react());
+  var import_react10 = __toESM(require_react());
   function getChildMapping(children, mapFn) {
     var mapper = function mapper2(child) {
-      return mapFn && (0, import_react18.isValidElement)(child) ? mapFn(child) : child;
+      return mapFn && (0, import_react10.isValidElement)(child) ? mapFn(child) : child;
     };
     var result = /* @__PURE__ */ Object.create(null);
     if (children)
-      import_react18.Children.map(children, function(c) {
+      import_react10.Children.map(children, function(c) {
         return c;
       }).forEach(function(child) {
         result[child.key] = mapper(child);
@@ -33374,7 +33774,7 @@ const theme2 = createTheme({ palette: {
   }
   function getInitialChildMapping(props, onExited) {
     return getChildMapping(props.children, function(child) {
-      return (0, import_react18.cloneElement)(child, {
+      return (0, import_react10.cloneElement)(child, {
         onExited: onExited.bind(null, child),
         in: true,
         appear: getProp(child, "appear", props),
@@ -33388,25 +33788,25 @@ const theme2 = createTheme({ palette: {
     var children = mergeChildMappings(prevChildMapping, nextChildMapping);
     Object.keys(children).forEach(function(key) {
       var child = children[key];
-      if (!(0, import_react18.isValidElement)(child))
+      if (!(0, import_react10.isValidElement)(child))
         return;
       var hasPrev = key in prevChildMapping;
       var hasNext = key in nextChildMapping;
       var prevChild = prevChildMapping[key];
-      var isLeaving = (0, import_react18.isValidElement)(prevChild) && !prevChild.props.in;
+      var isLeaving = (0, import_react10.isValidElement)(prevChild) && !prevChild.props.in;
       if (hasNext && (!hasPrev || isLeaving)) {
-        children[key] = (0, import_react18.cloneElement)(child, {
+        children[key] = (0, import_react10.cloneElement)(child, {
           onExited: onExited.bind(null, child),
           in: true,
           exit: getProp(child, "exit", nextProps),
           enter: getProp(child, "enter", nextProps)
         });
       } else if (!hasNext && hasPrev && !isLeaving) {
-        children[key] = (0, import_react18.cloneElement)(child, {
+        children[key] = (0, import_react10.cloneElement)(child, {
           in: false
         });
-      } else if (hasNext && hasPrev && (0, import_react18.isValidElement)(prevChild)) {
-        children[key] = (0, import_react18.cloneElement)(child, {
+      } else if (hasNext && hasPrev && (0, import_react10.isValidElement)(prevChild)) {
+        children[key] = (0, import_react10.cloneElement)(child, {
           onExited: onExited.bind(null, child),
           in: prevChild.props.in,
           exit: getProp(child, "exit", nextProps),
@@ -33488,30 +33888,30 @@ const theme2 = createTheme({ palette: {
       delete props.enter;
       delete props.exit;
       if (Component === null) {
-        return /* @__PURE__ */ import_react19.default.createElement(TransitionGroupContext_default.Provider, {
+        return /* @__PURE__ */ import_react11.default.createElement(TransitionGroupContext_default.Provider, {
           value: contextValue
         }, children);
       }
-      return /* @__PURE__ */ import_react19.default.createElement(TransitionGroupContext_default.Provider, {
+      return /* @__PURE__ */ import_react11.default.createElement(TransitionGroupContext_default.Provider, {
         value: contextValue
-      }, /* @__PURE__ */ import_react19.default.createElement(Component, props, children));
+      }, /* @__PURE__ */ import_react11.default.createElement(Component, props, children));
     };
     return TransitionGroup2;
-  }(import_react19.default.Component);
+  }(import_react11.default.Component);
   TransitionGroup.propTypes = true ? {
-    component: import_prop_types5.default.any,
-    children: import_prop_types5.default.node,
-    appear: import_prop_types5.default.bool,
-    enter: import_prop_types5.default.bool,
-    exit: import_prop_types5.default.bool,
-    childFactory: import_prop_types5.default.func
+    component: import_prop_types11.default.any,
+    children: import_prop_types11.default.node,
+    appear: import_prop_types11.default.bool,
+    enter: import_prop_types11.default.bool,
+    exit: import_prop_types11.default.bool,
+    childFactory: import_prop_types11.default.func
   } : {};
   TransitionGroup.defaultProps = defaultProps;
   var TransitionGroup_default = TransitionGroup;
 
   // node_modules/@mui/material/Paper/Paper.js
   var React26 = __toESM(require_react());
-  var import_prop_types6 = __toESM(require_prop_types());
+  var import_prop_types12 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Paper/paperClasses.js
   function getPaperUtilityClass(slot) {
@@ -33520,8 +33920,8 @@ const theme2 = createTheme({ palette: {
   var paperClasses = generateUtilityClasses("MuiPaper", ["root", "rounded", "outlined", "elevation", "elevation0", "elevation1", "elevation2", "elevation3", "elevation4", "elevation5", "elevation6", "elevation7", "elevation8", "elevation9", "elevation10", "elevation11", "elevation12", "elevation13", "elevation14", "elevation15", "elevation16", "elevation17", "elevation18", "elevation19", "elevation20", "elevation21", "elevation22", "elevation23", "elevation24"]);
 
   // node_modules/@mui/material/Paper/Paper.js
-  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
-  var _excluded12 = ["className", "component", "elevation", "square", "variant"];
+  var import_jsx_runtime11 = __toESM(require_jsx_runtime());
+  var _excluded18 = ["className", "component", "elevation", "square", "variant"];
   var getOverlayAlpha = (elevation) => {
     let alphaValue;
     if (elevation < 1) {
@@ -33531,7 +33931,7 @@ const theme2 = createTheme({ palette: {
     }
     return (alphaValue / 100).toFixed(2);
   };
-  var useUtilityClasses2 = (ownerState) => {
+  var useUtilityClasses7 = (ownerState) => {
     const {
       square,
       elevation,
@@ -33579,21 +33979,21 @@ const theme2 = createTheme({ palette: {
       elevation = 1,
       square = false,
       variant = "elevation"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded12);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded18);
     const ownerState = _extends({}, props, {
       component,
       elevation,
       square,
       variant
     });
-    const classes = useUtilityClasses2(ownerState);
+    const classes = useUtilityClasses7(ownerState);
     if (true) {
       const theme = useTheme5();
       if (theme.shadows[elevation] === void 0) {
         console.error([`MUI: The elevation provided <Paper elevation={${elevation}}> is not available in the theme.`, `Please make sure that \`theme.shadows[${elevation}]\` is defined.`].join("\n"));
       }
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(PaperRoot, _extends({
+    return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(PaperRoot, _extends({
       as: component,
       ownerState,
       className: clsx_m_default(classes.root, className),
@@ -33601,10 +34001,10 @@ const theme2 = createTheme({ palette: {
     }, other));
   });
   true ? Paper.propTypes = {
-    children: import_prop_types6.default.node,
-    classes: import_prop_types6.default.object,
-    className: import_prop_types6.default.string,
-    component: import_prop_types6.default.elementType,
+    children: import_prop_types12.default.node,
+    classes: import_prop_types12.default.object,
+    className: import_prop_types12.default.string,
+    component: import_prop_types12.default.elementType,
     elevation: chainPropTypes(integerPropType_default, (props) => {
       const {
         elevation,
@@ -33615,24 +34015,24 @@ const theme2 = createTheme({ palette: {
       }
       return null;
     }),
-    square: import_prop_types6.default.bool,
-    sx: import_prop_types6.default.oneOfType([import_prop_types6.default.arrayOf(import_prop_types6.default.oneOfType([import_prop_types6.default.func, import_prop_types6.default.object, import_prop_types6.default.bool])), import_prop_types6.default.func, import_prop_types6.default.object]),
-    variant: import_prop_types6.default.oneOfType([import_prop_types6.default.oneOf(["elevation", "outlined"]), import_prop_types6.default.string])
+    square: import_prop_types12.default.bool,
+    sx: import_prop_types12.default.oneOfType([import_prop_types12.default.arrayOf(import_prop_types12.default.oneOfType([import_prop_types12.default.func, import_prop_types12.default.object, import_prop_types12.default.bool])), import_prop_types12.default.func, import_prop_types12.default.object]),
+    variant: import_prop_types12.default.oneOfType([import_prop_types12.default.oneOf(["elevation", "outlined"]), import_prop_types12.default.string])
   } : void 0;
   var Paper_default = Paper;
 
   // node_modules/@mui/material/ButtonBase/ButtonBase.js
   var React29 = __toESM(require_react());
-  var import_prop_types9 = __toESM(require_prop_types());
+  var import_prop_types15 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/ButtonBase/TouchRipple.js
   var React28 = __toESM(require_react());
-  var import_prop_types8 = __toESM(require_prop_types());
+  var import_prop_types14 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/ButtonBase/Ripple.js
   var React27 = __toESM(require_react());
-  var import_prop_types7 = __toESM(require_prop_types());
-  var import_jsx_runtime6 = __toESM(require_jsx_runtime());
+  var import_prop_types13 = __toESM(require_prop_types());
+  var import_jsx_runtime12 = __toESM(require_jsx_runtime());
   function Ripple(props) {
     const {
       className,
@@ -33666,24 +34066,24 @@ const theme2 = createTheme({ palette: {
       }
       return void 0;
     }, [onExited, inProp, timeout]);
-    return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", {
+    return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", {
       className: rippleClassName,
       style: rippleStyles,
-      children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", {
+      children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("span", {
         className: childClassName
       })
     });
   }
   true ? Ripple.propTypes = {
-    classes: import_prop_types7.default.object.isRequired,
-    className: import_prop_types7.default.string,
-    in: import_prop_types7.default.bool,
-    onExited: import_prop_types7.default.func,
-    pulsate: import_prop_types7.default.bool,
-    rippleSize: import_prop_types7.default.number,
-    rippleX: import_prop_types7.default.number,
-    rippleY: import_prop_types7.default.number,
-    timeout: import_prop_types7.default.number.isRequired
+    classes: import_prop_types13.default.object.isRequired,
+    className: import_prop_types13.default.string,
+    in: import_prop_types13.default.bool,
+    onExited: import_prop_types13.default.func,
+    pulsate: import_prop_types13.default.bool,
+    rippleSize: import_prop_types13.default.number,
+    rippleX: import_prop_types13.default.number,
+    rippleY: import_prop_types13.default.number,
+    timeout: import_prop_types13.default.number.isRequired
   } : void 0;
   var Ripple_default = Ripple;
 
@@ -33692,8 +34092,8 @@ const theme2 = createTheme({ palette: {
   var touchRippleClasses_default = touchRippleClasses;
 
   // node_modules/@mui/material/ButtonBase/TouchRipple.js
-  var import_jsx_runtime7 = __toESM(require_jsx_runtime());
-  var _excluded13 = ["center", "classes", "className"];
+  var import_jsx_runtime13 = __toESM(require_jsx_runtime());
+  var _excluded19 = ["center", "classes", "className"];
   var _ = (t) => t;
   var _t;
   var _t2;
@@ -33812,7 +34212,7 @@ const theme2 = createTheme({ palette: {
       center: centerProp = false,
       classes = {},
       className
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded13);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded19);
     const [ripples, setRipples] = React28.useState([]);
     const nextKey = React28.useRef(0);
     const rippleCallback = React28.useRef(null);
@@ -33839,7 +34239,7 @@ const theme2 = createTheme({ palette: {
         rippleSize,
         cb
       } = params;
-      setRipples((oldRipples) => [...oldRipples, /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(TouchRippleRipple, {
+      setRipples((oldRipples) => [...oldRipples, /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(TouchRippleRipple, {
         classes: {
           ripple: clsx_m_default(classes.ripple, touchRippleClasses_default.ripple),
           rippleVisible: clsx_m_default(classes.rippleVisible, touchRippleClasses_default.rippleVisible),
@@ -33958,11 +34358,11 @@ const theme2 = createTheme({ palette: {
       start: start2,
       stop
     }), [pulsate, start2, stop]);
-    return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(TouchRippleRoot, _extends({
+    return /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(TouchRippleRoot, _extends({
       className: clsx_m_default(classes.root, touchRippleClasses_default.root, className),
       ref: container
     }, other, {
-      children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(TransitionGroup_default, {
+      children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(TransitionGroup_default, {
         component: null,
         exit: true,
         children: ripples
@@ -33970,9 +34370,9 @@ const theme2 = createTheme({ palette: {
     }));
   });
   true ? TouchRipple.propTypes = {
-    center: import_prop_types8.default.bool,
-    classes: import_prop_types8.default.object,
-    className: import_prop_types8.default.string
+    center: import_prop_types14.default.bool,
+    classes: import_prop_types14.default.object,
+    className: import_prop_types14.default.string
   } : void 0;
   var TouchRipple_default = TouchRipple;
 
@@ -33984,10 +34384,10 @@ const theme2 = createTheme({ palette: {
   var buttonBaseClasses_default = buttonBaseClasses;
 
   // node_modules/@mui/material/ButtonBase/ButtonBase.js
-  var import_jsx_runtime8 = __toESM(require_jsx_runtime());
-  var import_jsx_runtime9 = __toESM(require_jsx_runtime());
-  var _excluded14 = ["action", "centerRipple", "children", "className", "component", "disabled", "disableRipple", "disableTouchRipple", "focusRipple", "focusVisibleClassName", "LinkComponent", "onBlur", "onClick", "onContextMenu", "onDragLeave", "onFocus", "onFocusVisible", "onKeyDown", "onKeyUp", "onMouseDown", "onMouseLeave", "onMouseUp", "onTouchEnd", "onTouchMove", "onTouchStart", "tabIndex", "TouchRippleProps", "touchRippleRef", "type"];
-  var useUtilityClasses3 = (ownerState) => {
+  var import_jsx_runtime14 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime15 = __toESM(require_jsx_runtime());
+  var _excluded20 = ["action", "centerRipple", "children", "className", "component", "disabled", "disableRipple", "disableTouchRipple", "focusRipple", "focusVisibleClassName", "LinkComponent", "onBlur", "onClick", "onContextMenu", "onDragLeave", "onFocus", "onFocusVisible", "onKeyDown", "onKeyUp", "onMouseDown", "onMouseLeave", "onMouseUp", "onTouchEnd", "onTouchMove", "onTouchStart", "tabIndex", "TouchRippleProps", "touchRippleRef", "type"];
+  var useUtilityClasses8 = (ownerState) => {
     const {
       disabled,
       focusVisible,
@@ -34072,7 +34472,7 @@ const theme2 = createTheme({ palette: {
       TouchRippleProps,
       touchRippleRef,
       type
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded14);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded20);
     const buttonRef = React29.useRef(null);
     const rippleRef = React29.useRef(null);
     const handleRippleRef = useForkRef_default(rippleRef, touchRippleRef);
@@ -34227,8 +34627,8 @@ const theme2 = createTheme({ palette: {
       tabIndex,
       focusVisible
     });
-    const classes = useUtilityClasses3(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(ButtonBaseRoot, _extends({
+    const classes = useUtilityClasses8(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(ButtonBaseRoot, _extends({
       as: ComponentProp,
       className: clsx_m_default(classes.root, className),
       ownerState,
@@ -34249,7 +34649,7 @@ const theme2 = createTheme({ palette: {
       tabIndex: disabled ? -1 : tabIndex,
       type
     }, buttonProps, other, {
-      children: [children, enableTouchRipple ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(TouchRipple_default, _extends({
+      children: [children, enableTouchRipple ? /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(TouchRipple_default, _extends({
         ref: handleRippleRef,
         center: centerRipple
       }, TouchRippleProps)) : null]
@@ -34257,49 +34657,49 @@ const theme2 = createTheme({ palette: {
   });
   true ? ButtonBase.propTypes = {
     action: refType_default,
-    centerRipple: import_prop_types9.default.bool,
-    children: import_prop_types9.default.node,
-    classes: import_prop_types9.default.object,
-    className: import_prop_types9.default.string,
+    centerRipple: import_prop_types15.default.bool,
+    children: import_prop_types15.default.node,
+    classes: import_prop_types15.default.object,
+    className: import_prop_types15.default.string,
     component: elementTypeAcceptingRef_default,
-    disabled: import_prop_types9.default.bool,
-    disableRipple: import_prop_types9.default.bool,
-    disableTouchRipple: import_prop_types9.default.bool,
-    focusRipple: import_prop_types9.default.bool,
-    focusVisibleClassName: import_prop_types9.default.string,
-    href: import_prop_types9.default.any,
-    LinkComponent: import_prop_types9.default.elementType,
-    onBlur: import_prop_types9.default.func,
-    onClick: import_prop_types9.default.func,
-    onContextMenu: import_prop_types9.default.func,
-    onDragLeave: import_prop_types9.default.func,
-    onFocus: import_prop_types9.default.func,
-    onFocusVisible: import_prop_types9.default.func,
-    onKeyDown: import_prop_types9.default.func,
-    onKeyUp: import_prop_types9.default.func,
-    onMouseDown: import_prop_types9.default.func,
-    onMouseLeave: import_prop_types9.default.func,
-    onMouseUp: import_prop_types9.default.func,
-    onTouchEnd: import_prop_types9.default.func,
-    onTouchMove: import_prop_types9.default.func,
-    onTouchStart: import_prop_types9.default.func,
-    sx: import_prop_types9.default.oneOfType([import_prop_types9.default.arrayOf(import_prop_types9.default.oneOfType([import_prop_types9.default.func, import_prop_types9.default.object, import_prop_types9.default.bool])), import_prop_types9.default.func, import_prop_types9.default.object]),
-    tabIndex: import_prop_types9.default.number,
-    TouchRippleProps: import_prop_types9.default.object,
-    touchRippleRef: import_prop_types9.default.oneOfType([import_prop_types9.default.func, import_prop_types9.default.shape({
-      current: import_prop_types9.default.shape({
-        pulsate: import_prop_types9.default.func.isRequired,
-        start: import_prop_types9.default.func.isRequired,
-        stop: import_prop_types9.default.func.isRequired
+    disabled: import_prop_types15.default.bool,
+    disableRipple: import_prop_types15.default.bool,
+    disableTouchRipple: import_prop_types15.default.bool,
+    focusRipple: import_prop_types15.default.bool,
+    focusVisibleClassName: import_prop_types15.default.string,
+    href: import_prop_types15.default.any,
+    LinkComponent: import_prop_types15.default.elementType,
+    onBlur: import_prop_types15.default.func,
+    onClick: import_prop_types15.default.func,
+    onContextMenu: import_prop_types15.default.func,
+    onDragLeave: import_prop_types15.default.func,
+    onFocus: import_prop_types15.default.func,
+    onFocusVisible: import_prop_types15.default.func,
+    onKeyDown: import_prop_types15.default.func,
+    onKeyUp: import_prop_types15.default.func,
+    onMouseDown: import_prop_types15.default.func,
+    onMouseLeave: import_prop_types15.default.func,
+    onMouseUp: import_prop_types15.default.func,
+    onTouchEnd: import_prop_types15.default.func,
+    onTouchMove: import_prop_types15.default.func,
+    onTouchStart: import_prop_types15.default.func,
+    sx: import_prop_types15.default.oneOfType([import_prop_types15.default.arrayOf(import_prop_types15.default.oneOfType([import_prop_types15.default.func, import_prop_types15.default.object, import_prop_types15.default.bool])), import_prop_types15.default.func, import_prop_types15.default.object]),
+    tabIndex: import_prop_types15.default.number,
+    TouchRippleProps: import_prop_types15.default.object,
+    touchRippleRef: import_prop_types15.default.oneOfType([import_prop_types15.default.func, import_prop_types15.default.shape({
+      current: import_prop_types15.default.shape({
+        pulsate: import_prop_types15.default.func.isRequired,
+        start: import_prop_types15.default.func.isRequired,
+        stop: import_prop_types15.default.func.isRequired
       })
     })]),
-    type: import_prop_types9.default.oneOfType([import_prop_types9.default.oneOf(["button", "reset", "submit"]), import_prop_types9.default.string])
+    type: import_prop_types15.default.oneOfType([import_prop_types15.default.oneOf(["button", "reset", "submit"]), import_prop_types15.default.string])
   } : void 0;
   var ButtonBase_default = ButtonBase;
 
   // node_modules/@mui/material/IconButton/IconButton.js
   var React30 = __toESM(require_react());
-  var import_prop_types10 = __toESM(require_prop_types());
+  var import_prop_types16 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/IconButton/iconButtonClasses.js
   function getIconButtonUtilityClass(slot) {
@@ -34309,9 +34709,9 @@ const theme2 = createTheme({ palette: {
   var iconButtonClasses_default = iconButtonClasses;
 
   // node_modules/@mui/material/IconButton/IconButton.js
-  var import_jsx_runtime10 = __toESM(require_jsx_runtime());
-  var _excluded15 = ["edge", "children", "className", "color", "disabled", "disableFocusRipple", "size"];
-  var useUtilityClasses4 = (ownerState) => {
+  var import_jsx_runtime16 = __toESM(require_jsx_runtime());
+  var _excluded21 = ["edge", "children", "className", "color", "disabled", "disableFocusRipple", "size"];
+  var useUtilityClasses9 = (ownerState) => {
     const {
       classes,
       disabled,
@@ -34397,7 +34797,7 @@ const theme2 = createTheme({ palette: {
       disabled = false,
       disableFocusRipple = false,
       size = "medium"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded15);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded21);
     const ownerState = _extends({}, props, {
       edge,
       color: color2,
@@ -34405,8 +34805,8 @@ const theme2 = createTheme({ palette: {
       disableFocusRipple,
       size
     });
-    const classes = useUtilityClasses4(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(IconButtonRoot, _extends({
+    const classes = useUtilityClasses9(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(IconButtonRoot, _extends({
       className: clsx_m_default(classes.root, className),
       centerRipple: true,
       focusRipple: !disableFocusRipple,
@@ -34418,28 +34818,28 @@ const theme2 = createTheme({ palette: {
     }));
   });
   true ? IconButton.propTypes = {
-    children: chainPropTypes(import_prop_types10.default.node, (props) => {
+    children: chainPropTypes(import_prop_types16.default.node, (props) => {
       const found = React30.Children.toArray(props.children).some((child) => /* @__PURE__ */ React30.isValidElement(child) && child.props.onClick);
       if (found) {
         return new Error(["MUI: You are providing an onClick event listener to a child of a button element.", "Prefer applying it to the IconButton directly.", "This guarantees that the whole <button> will be responsive to click events."].join("\n"));
       }
       return null;
     }),
-    classes: import_prop_types10.default.object,
-    className: import_prop_types10.default.string,
-    color: import_prop_types10.default.oneOfType([import_prop_types10.default.oneOf(["inherit", "default", "primary", "secondary", "error", "info", "success", "warning"]), import_prop_types10.default.string]),
-    disabled: import_prop_types10.default.bool,
-    disableFocusRipple: import_prop_types10.default.bool,
-    disableRipple: import_prop_types10.default.bool,
-    edge: import_prop_types10.default.oneOf(["end", "start", false]),
-    size: import_prop_types10.default.oneOfType([import_prop_types10.default.oneOf(["small", "medium", "large"]), import_prop_types10.default.string]),
-    sx: import_prop_types10.default.oneOfType([import_prop_types10.default.arrayOf(import_prop_types10.default.oneOfType([import_prop_types10.default.func, import_prop_types10.default.object, import_prop_types10.default.bool])), import_prop_types10.default.func, import_prop_types10.default.object])
+    classes: import_prop_types16.default.object,
+    className: import_prop_types16.default.string,
+    color: import_prop_types16.default.oneOfType([import_prop_types16.default.oneOf(["inherit", "default", "primary", "secondary", "error", "info", "success", "warning"]), import_prop_types16.default.string]),
+    disabled: import_prop_types16.default.bool,
+    disableFocusRipple: import_prop_types16.default.bool,
+    disableRipple: import_prop_types16.default.bool,
+    edge: import_prop_types16.default.oneOf(["end", "start", false]),
+    size: import_prop_types16.default.oneOfType([import_prop_types16.default.oneOf(["small", "medium", "large"]), import_prop_types16.default.string]),
+    sx: import_prop_types16.default.oneOfType([import_prop_types16.default.arrayOf(import_prop_types16.default.oneOfType([import_prop_types16.default.func, import_prop_types16.default.object, import_prop_types16.default.bool])), import_prop_types16.default.func, import_prop_types16.default.object])
   } : void 0;
   var IconButton_default = IconButton;
 
   // node_modules/@mui/material/Typography/Typography.js
   var React31 = __toESM(require_react());
-  var import_prop_types11 = __toESM(require_prop_types());
+  var import_prop_types17 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Typography/typographyClasses.js
   function getTypographyUtilityClass(slot) {
@@ -34448,9 +34848,9 @@ const theme2 = createTheme({ palette: {
   var typographyClasses = generateUtilityClasses("MuiTypography", ["root", "h1", "h2", "h3", "h4", "h5", "h6", "subtitle1", "subtitle2", "body1", "body2", "inherit", "button", "caption", "overline", "alignLeft", "alignRight", "alignCenter", "alignJustify", "noWrap", "gutterBottom", "paragraph"]);
 
   // node_modules/@mui/material/Typography/Typography.js
-  var import_jsx_runtime11 = __toESM(require_jsx_runtime());
-  var _excluded16 = ["align", "className", "component", "gutterBottom", "noWrap", "paragraph", "variant", "variantMapping"];
-  var useUtilityClasses5 = (ownerState) => {
+  var import_jsx_runtime17 = __toESM(require_jsx_runtime());
+  var _excluded23 = ["align", "className", "component", "gutterBottom", "noWrap", "paragraph", "variant", "variantMapping"];
+  var useUtilityClasses10 = (ownerState) => {
     const {
       align,
       gutterBottom,
@@ -34530,7 +34930,7 @@ const theme2 = createTheme({ palette: {
       paragraph = false,
       variant = "body1",
       variantMapping = defaultVariantMapping
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded16);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded23);
     const ownerState = _extends({}, props, {
       align,
       color: color2,
@@ -34543,8 +34943,8 @@ const theme2 = createTheme({ palette: {
       variantMapping
     });
     const Component = component || (paragraph ? "p" : variantMapping[variant] || defaultVariantMapping[variant]) || "span";
-    const classes = useUtilityClasses5(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(TypographyRoot, _extends({
+    const classes = useUtilityClasses10(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(TypographyRoot, _extends({
       as: Component,
       ref,
       ownerState,
@@ -34552,23 +34952,23 @@ const theme2 = createTheme({ palette: {
     }, other));
   });
   true ? Typography.propTypes = {
-    align: import_prop_types11.default.oneOf(["center", "inherit", "justify", "left", "right"]),
-    children: import_prop_types11.default.node,
-    classes: import_prop_types11.default.object,
-    className: import_prop_types11.default.string,
-    component: import_prop_types11.default.elementType,
-    gutterBottom: import_prop_types11.default.bool,
-    noWrap: import_prop_types11.default.bool,
-    paragraph: import_prop_types11.default.bool,
-    sx: import_prop_types11.default.oneOfType([import_prop_types11.default.arrayOf(import_prop_types11.default.oneOfType([import_prop_types11.default.func, import_prop_types11.default.object, import_prop_types11.default.bool])), import_prop_types11.default.func, import_prop_types11.default.object]),
-    variant: import_prop_types11.default.oneOfType([import_prop_types11.default.oneOf(["body1", "body2", "button", "caption", "h1", "h2", "h3", "h4", "h5", "h6", "inherit", "overline", "subtitle1", "subtitle2"]), import_prop_types11.default.string]),
-    variantMapping: import_prop_types11.default.object
+    align: import_prop_types17.default.oneOf(["center", "inherit", "justify", "left", "right"]),
+    children: import_prop_types17.default.node,
+    classes: import_prop_types17.default.object,
+    className: import_prop_types17.default.string,
+    component: import_prop_types17.default.elementType,
+    gutterBottom: import_prop_types17.default.bool,
+    noWrap: import_prop_types17.default.bool,
+    paragraph: import_prop_types17.default.bool,
+    sx: import_prop_types17.default.oneOfType([import_prop_types17.default.arrayOf(import_prop_types17.default.oneOfType([import_prop_types17.default.func, import_prop_types17.default.object, import_prop_types17.default.bool])), import_prop_types17.default.func, import_prop_types17.default.object]),
+    variant: import_prop_types17.default.oneOfType([import_prop_types17.default.oneOf(["body1", "body2", "button", "caption", "h1", "h2", "h3", "h4", "h5", "h6", "inherit", "overline", "subtitle1", "subtitle2"]), import_prop_types17.default.string]),
+    variantMapping: import_prop_types17.default.object
   } : void 0;
   var Typography_default = Typography;
 
   // node_modules/@mui/material/AppBar/AppBar.js
   var React32 = __toESM(require_react());
-  var import_prop_types12 = __toESM(require_prop_types());
+  var import_prop_types18 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/AppBar/appBarClasses.js
   function getAppBarUtilityClass(slot) {
@@ -34577,9 +34977,9 @@ const theme2 = createTheme({ palette: {
   var appBarClasses = generateUtilityClasses("MuiAppBar", ["root", "positionFixed", "positionAbsolute", "positionSticky", "positionStatic", "positionRelative", "colorDefault", "colorPrimary", "colorSecondary", "colorInherit", "colorTransparent"]);
 
   // node_modules/@mui/material/AppBar/AppBar.js
-  var import_jsx_runtime12 = __toESM(require_jsx_runtime());
-  var _excluded17 = ["className", "color", "enableColorOnDark", "position"];
-  var useUtilityClasses6 = (ownerState) => {
+  var import_jsx_runtime18 = __toESM(require_jsx_runtime());
+  var _excluded24 = ["className", "color", "enableColorOnDark", "position"];
+  var useUtilityClasses11 = (ownerState) => {
     const {
       color: color2,
       position: position3,
@@ -34663,14 +35063,14 @@ const theme2 = createTheme({ palette: {
       color: color2 = "primary",
       enableColorOnDark = false,
       position: position3 = "fixed"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded17);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded24);
     const ownerState = _extends({}, props, {
       color: color2,
       position: position3,
       enableColorOnDark
     });
-    const classes = useUtilityClasses6(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(AppBarRoot, _extends({
+    const classes = useUtilityClasses11(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(AppBarRoot, _extends({
       square: true,
       component: "header",
       ownerState,
@@ -34680,24 +35080,24 @@ const theme2 = createTheme({ palette: {
     }, other));
   });
   true ? AppBar.propTypes = {
-    children: import_prop_types12.default.node,
-    classes: import_prop_types12.default.object,
-    className: import_prop_types12.default.string,
-    color: import_prop_types12.default.oneOfType([import_prop_types12.default.oneOf(["default", "inherit", "primary", "secondary", "transparent"]), import_prop_types12.default.string]),
-    enableColorOnDark: import_prop_types12.default.bool,
-    position: import_prop_types12.default.oneOf(["absolute", "fixed", "relative", "static", "sticky"]),
-    sx: import_prop_types12.default.oneOfType([import_prop_types12.default.arrayOf(import_prop_types12.default.oneOfType([import_prop_types12.default.func, import_prop_types12.default.object, import_prop_types12.default.bool])), import_prop_types12.default.func, import_prop_types12.default.object])
+    children: import_prop_types18.default.node,
+    classes: import_prop_types18.default.object,
+    className: import_prop_types18.default.string,
+    color: import_prop_types18.default.oneOfType([import_prop_types18.default.oneOf(["default", "inherit", "primary", "secondary", "transparent"]), import_prop_types18.default.string]),
+    enableColorOnDark: import_prop_types18.default.bool,
+    position: import_prop_types18.default.oneOf(["absolute", "fixed", "relative", "static", "sticky"]),
+    sx: import_prop_types18.default.oneOfType([import_prop_types18.default.arrayOf(import_prop_types18.default.oneOfType([import_prop_types18.default.func, import_prop_types18.default.object, import_prop_types18.default.bool])), import_prop_types18.default.func, import_prop_types18.default.object])
   } : void 0;
   var AppBar_default = AppBar;
 
   // node_modules/@mui/material/Avatar/Avatar.js
   var React34 = __toESM(require_react());
-  var import_prop_types13 = __toESM(require_prop_types());
+  var import_prop_types19 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/internal/svg-icons/Person.js
   var React33 = __toESM(require_react());
-  var import_jsx_runtime13 = __toESM(require_jsx_runtime());
-  var Person_default = createSvgIcon(/* @__PURE__ */ (0, import_jsx_runtime13.jsx)("path", {
+  var import_jsx_runtime19 = __toESM(require_jsx_runtime());
+  var Person_default = createSvgIcon(/* @__PURE__ */ (0, import_jsx_runtime19.jsx)("path", {
     d: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
   }), "Person");
 
@@ -34708,9 +35108,9 @@ const theme2 = createTheme({ palette: {
   var avatarClasses = generateUtilityClasses("MuiAvatar", ["root", "colorDefault", "circular", "rounded", "square", "img", "fallback"]);
 
   // node_modules/@mui/material/Avatar/Avatar.js
-  var import_jsx_runtime14 = __toESM(require_jsx_runtime());
-  var _excluded18 = ["alt", "children", "className", "component", "imgProps", "sizes", "src", "srcSet", "variant"];
-  var useUtilityClasses7 = (ownerState) => {
+  var import_jsx_runtime20 = __toESM(require_jsx_runtime());
+  var _excluded25 = ["alt", "children", "className", "component", "imgProps", "sizes", "src", "srcSet", "variant"];
+  var useUtilityClasses12 = (ownerState) => {
     const {
       classes,
       variant,
@@ -34830,7 +35230,7 @@ const theme2 = createTheme({ palette: {
       src,
       srcSet,
       variant = "circular"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded18);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded25);
     let children = null;
     const loaded = useLoaded(_extends({}, imgProps, {
       src,
@@ -34843,9 +35243,9 @@ const theme2 = createTheme({ palette: {
       component,
       variant
     });
-    const classes = useUtilityClasses7(ownerState);
+    const classes = useUtilityClasses12(ownerState);
     if (hasImgNotFailing) {
-      children = /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(AvatarImg, _extends({
+      children = /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(AvatarImg, _extends({
         alt,
         src,
         srcSet,
@@ -34858,11 +35258,11 @@ const theme2 = createTheme({ palette: {
     } else if (hasImg && alt) {
       children = alt[0];
     } else {
-      children = /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(AvatarFallback, {
+      children = /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(AvatarFallback, {
         className: classes.fallback
       });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(AvatarRoot, _extends({
+    return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(AvatarRoot, _extends({
       as: component,
       ownerState,
       className: clsx_m_default(classes.root, className),
@@ -34872,22 +35272,22 @@ const theme2 = createTheme({ palette: {
     }));
   });
   true ? Avatar.propTypes = {
-    alt: import_prop_types13.default.string,
-    children: import_prop_types13.default.node,
-    classes: import_prop_types13.default.object,
-    className: import_prop_types13.default.string,
-    component: import_prop_types13.default.elementType,
-    imgProps: import_prop_types13.default.object,
-    sizes: import_prop_types13.default.string,
-    src: import_prop_types13.default.string,
-    srcSet: import_prop_types13.default.string,
-    sx: import_prop_types13.default.oneOfType([import_prop_types13.default.arrayOf(import_prop_types13.default.oneOfType([import_prop_types13.default.func, import_prop_types13.default.object, import_prop_types13.default.bool])), import_prop_types13.default.func, import_prop_types13.default.object]),
-    variant: import_prop_types13.default.oneOfType([import_prop_types13.default.oneOf(["circular", "rounded", "square"]), import_prop_types13.default.string])
+    alt: import_prop_types19.default.string,
+    children: import_prop_types19.default.node,
+    classes: import_prop_types19.default.object,
+    className: import_prop_types19.default.string,
+    component: import_prop_types19.default.elementType,
+    imgProps: import_prop_types19.default.object,
+    sizes: import_prop_types19.default.string,
+    src: import_prop_types19.default.string,
+    srcSet: import_prop_types19.default.string,
+    sx: import_prop_types19.default.oneOfType([import_prop_types19.default.arrayOf(import_prop_types19.default.oneOfType([import_prop_types19.default.func, import_prop_types19.default.object, import_prop_types19.default.bool])), import_prop_types19.default.func, import_prop_types19.default.object]),
+    variant: import_prop_types19.default.oneOfType([import_prop_types19.default.oneOf(["circular", "rounded", "square"]), import_prop_types19.default.string])
   } : void 0;
   var Avatar_default = Avatar;
 
   // node_modules/@mui/material/Box/Box.js
-  var import_prop_types14 = __toESM(require_prop_types());
+  var import_prop_types20 = __toESM(require_prop_types());
   var defaultTheme2 = createTheme_default2();
   var Box = createBox({
     defaultTheme: defaultTheme2,
@@ -34895,15 +35295,15 @@ const theme2 = createTheme({ palette: {
     generateClassName: ClassNameGenerator_default.generate
   });
   true ? Box.propTypes = {
-    children: import_prop_types14.default.node,
-    component: import_prop_types14.default.elementType,
-    sx: import_prop_types14.default.oneOfType([import_prop_types14.default.arrayOf(import_prop_types14.default.oneOfType([import_prop_types14.default.func, import_prop_types14.default.object, import_prop_types14.default.bool])), import_prop_types14.default.func, import_prop_types14.default.object])
+    children: import_prop_types20.default.node,
+    component: import_prop_types20.default.elementType,
+    sx: import_prop_types20.default.oneOfType([import_prop_types20.default.arrayOf(import_prop_types20.default.oneOfType([import_prop_types20.default.func, import_prop_types20.default.object, import_prop_types20.default.bool])), import_prop_types20.default.func, import_prop_types20.default.object])
   } : void 0;
   var Box_default = Box;
 
   // node_modules/@mui/material/Button/Button.js
   var React36 = __toESM(require_react());
-  var import_prop_types15 = __toESM(require_prop_types());
+  var import_prop_types21 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Button/buttonClasses.js
   function getButtonUtilityClass(slot) {
@@ -34921,10 +35321,10 @@ const theme2 = createTheme({ palette: {
   var ButtonGroupContext_default = ButtonGroupContext;
 
   // node_modules/@mui/material/Button/Button.js
-  var import_jsx_runtime15 = __toESM(require_jsx_runtime());
-  var import_jsx_runtime16 = __toESM(require_jsx_runtime());
-  var _excluded19 = ["children", "color", "component", "className", "disabled", "disableElevation", "disableFocusRipple", "endIcon", "focusVisibleClassName", "fullWidth", "size", "startIcon", "type", "variant"];
-  var useUtilityClasses8 = (ownerState) => {
+  var import_jsx_runtime21 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime22 = __toESM(require_jsx_runtime());
+  var _excluded26 = ["children", "color", "component", "className", "disabled", "disableElevation", "disableFocusRipple", "endIcon", "focusVisibleClassName", "fullWidth", "size", "startIcon", "type", "variant"];
+  var useUtilityClasses13 = (ownerState) => {
     const {
       color: color2,
       disableElevation,
@@ -35140,7 +35540,7 @@ const theme2 = createTheme({ palette: {
       startIcon: startIconProp,
       type,
       variant = "text"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded19);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded26);
     const ownerState = _extends({}, props, {
       color: color2,
       component,
@@ -35152,18 +35552,18 @@ const theme2 = createTheme({ palette: {
       type,
       variant
     });
-    const classes = useUtilityClasses8(ownerState);
-    const startIcon = startIconProp && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(ButtonStartIcon, {
+    const classes = useUtilityClasses13(ownerState);
+    const startIcon = startIconProp && /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(ButtonStartIcon, {
       className: classes.startIcon,
       ownerState,
       children: startIconProp
     });
-    const endIcon = endIconProp && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(ButtonEndIcon, {
+    const endIcon = endIconProp && /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(ButtonEndIcon, {
       className: classes.endIcon,
       ownerState,
       children: endIconProp
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(ButtonRoot, _extends({
+    return /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)(ButtonRoot, _extends({
       ownerState,
       className: clsx_m_default(className, contextProps.className),
       component,
@@ -35178,30 +35578,30 @@ const theme2 = createTheme({ palette: {
     }));
   });
   true ? Button2.propTypes = {
-    children: import_prop_types15.default.node,
-    classes: import_prop_types15.default.object,
-    className: import_prop_types15.default.string,
-    color: import_prop_types15.default.oneOfType([import_prop_types15.default.oneOf(["inherit", "primary", "secondary", "success", "error", "info", "warning"]), import_prop_types15.default.string]),
-    component: import_prop_types15.default.elementType,
-    disabled: import_prop_types15.default.bool,
-    disableElevation: import_prop_types15.default.bool,
-    disableFocusRipple: import_prop_types15.default.bool,
-    disableRipple: import_prop_types15.default.bool,
-    endIcon: import_prop_types15.default.node,
-    focusVisibleClassName: import_prop_types15.default.string,
-    fullWidth: import_prop_types15.default.bool,
-    href: import_prop_types15.default.string,
-    size: import_prop_types15.default.oneOfType([import_prop_types15.default.oneOf(["small", "medium", "large"]), import_prop_types15.default.string]),
-    startIcon: import_prop_types15.default.node,
-    sx: import_prop_types15.default.oneOfType([import_prop_types15.default.arrayOf(import_prop_types15.default.oneOfType([import_prop_types15.default.func, import_prop_types15.default.object, import_prop_types15.default.bool])), import_prop_types15.default.func, import_prop_types15.default.object]),
-    type: import_prop_types15.default.oneOfType([import_prop_types15.default.oneOf(["button", "reset", "submit"]), import_prop_types15.default.string]),
-    variant: import_prop_types15.default.oneOfType([import_prop_types15.default.oneOf(["contained", "outlined", "text"]), import_prop_types15.default.string])
+    children: import_prop_types21.default.node,
+    classes: import_prop_types21.default.object,
+    className: import_prop_types21.default.string,
+    color: import_prop_types21.default.oneOfType([import_prop_types21.default.oneOf(["inherit", "primary", "secondary", "success", "error", "info", "warning"]), import_prop_types21.default.string]),
+    component: import_prop_types21.default.elementType,
+    disabled: import_prop_types21.default.bool,
+    disableElevation: import_prop_types21.default.bool,
+    disableFocusRipple: import_prop_types21.default.bool,
+    disableRipple: import_prop_types21.default.bool,
+    endIcon: import_prop_types21.default.node,
+    focusVisibleClassName: import_prop_types21.default.string,
+    fullWidth: import_prop_types21.default.bool,
+    href: import_prop_types21.default.string,
+    size: import_prop_types21.default.oneOfType([import_prop_types21.default.oneOf(["small", "medium", "large"]), import_prop_types21.default.string]),
+    startIcon: import_prop_types21.default.node,
+    sx: import_prop_types21.default.oneOfType([import_prop_types21.default.arrayOf(import_prop_types21.default.oneOfType([import_prop_types21.default.func, import_prop_types21.default.object, import_prop_types21.default.bool])), import_prop_types21.default.func, import_prop_types21.default.object]),
+    type: import_prop_types21.default.oneOfType([import_prop_types21.default.oneOf(["button", "reset", "submit"]), import_prop_types21.default.string]),
+    variant: import_prop_types21.default.oneOfType([import_prop_types21.default.oneOf(["contained", "outlined", "text"]), import_prop_types21.default.string])
   } : void 0;
   var Button_default = Button2;
 
   // node_modules/@mui/material/Card/Card.js
   var React37 = __toESM(require_react());
-  var import_prop_types16 = __toESM(require_prop_types());
+  var import_prop_types22 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Card/cardClasses.js
   function getCardUtilityClass(slot) {
@@ -35210,9 +35610,9 @@ const theme2 = createTheme({ palette: {
   var cardClasses = generateUtilityClasses("MuiCard", ["root"]);
 
   // node_modules/@mui/material/Card/Card.js
-  var import_jsx_runtime17 = __toESM(require_jsx_runtime());
-  var _excluded20 = ["className", "raised"];
-  var useUtilityClasses9 = (ownerState) => {
+  var import_jsx_runtime23 = __toESM(require_jsx_runtime());
+  var _excluded27 = ["className", "raised"];
+  var useUtilityClasses14 = (ownerState) => {
     const {
       classes
     } = ownerState;
@@ -35238,12 +35638,12 @@ const theme2 = createTheme({ palette: {
     const {
       className,
       raised = false
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded20);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded27);
     const ownerState = _extends({}, props, {
       raised
     });
-    const classes = useUtilityClasses9(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(CardRoot, _extends({
+    const classes = useUtilityClasses14(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardRoot, _extends({
       className: clsx_m_default(classes.root, className),
       elevation: raised ? 8 : void 0,
       ref,
@@ -35251,22 +35651,22 @@ const theme2 = createTheme({ palette: {
     }, other));
   });
   true ? Card.propTypes = {
-    children: import_prop_types16.default.node,
-    classes: import_prop_types16.default.object,
-    className: import_prop_types16.default.string,
-    raised: chainPropTypes(import_prop_types16.default.bool, (props) => {
+    children: import_prop_types22.default.node,
+    classes: import_prop_types22.default.object,
+    className: import_prop_types22.default.string,
+    raised: chainPropTypes(import_prop_types22.default.bool, (props) => {
       if (props.raised && props.variant === "outlined") {
         return new Error('MUI: Combining `raised={true}` with `variant="outlined"` has no effect.');
       }
       return null;
     }),
-    sx: import_prop_types16.default.oneOfType([import_prop_types16.default.arrayOf(import_prop_types16.default.oneOfType([import_prop_types16.default.func, import_prop_types16.default.object, import_prop_types16.default.bool])), import_prop_types16.default.func, import_prop_types16.default.object])
+    sx: import_prop_types22.default.oneOfType([import_prop_types22.default.arrayOf(import_prop_types22.default.oneOfType([import_prop_types22.default.func, import_prop_types22.default.object, import_prop_types22.default.bool])), import_prop_types22.default.func, import_prop_types22.default.object])
   } : void 0;
   var Card_default = Card;
 
   // node_modules/@mui/material/CardContent/CardContent.js
   var React38 = __toESM(require_react());
-  var import_prop_types17 = __toESM(require_prop_types());
+  var import_prop_types23 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/CardContent/cardContentClasses.js
   function getCardContentUtilityClass(slot) {
@@ -35275,9 +35675,9 @@ const theme2 = createTheme({ palette: {
   var cardContentClasses = generateUtilityClasses("MuiCardContent", ["root"]);
 
   // node_modules/@mui/material/CardContent/CardContent.js
-  var import_jsx_runtime18 = __toESM(require_jsx_runtime());
-  var _excluded21 = ["className", "component"];
-  var useUtilityClasses10 = (ownerState) => {
+  var import_jsx_runtime24 = __toESM(require_jsx_runtime());
+  var _excluded28 = ["className", "component"];
+  var useUtilityClasses15 = (ownerState) => {
     const {
       classes
     } = ownerState;
@@ -35306,12 +35706,12 @@ const theme2 = createTheme({ palette: {
     const {
       className,
       component = "div"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded21);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded28);
     const ownerState = _extends({}, props, {
       component
     });
-    const classes = useUtilityClasses10(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(CardContentRoot, _extends({
+    const classes = useUtilityClasses15(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(CardContentRoot, _extends({
       as: component,
       className: clsx_m_default(classes.root, className),
       ownerState,
@@ -35319,17 +35719,17 @@ const theme2 = createTheme({ palette: {
     }, other));
   });
   true ? CardContent.propTypes = {
-    children: import_prop_types17.default.node,
-    classes: import_prop_types17.default.object,
-    className: import_prop_types17.default.string,
-    component: import_prop_types17.default.elementType,
-    sx: import_prop_types17.default.oneOfType([import_prop_types17.default.arrayOf(import_prop_types17.default.oneOfType([import_prop_types17.default.func, import_prop_types17.default.object, import_prop_types17.default.bool])), import_prop_types17.default.func, import_prop_types17.default.object])
+    children: import_prop_types23.default.node,
+    classes: import_prop_types23.default.object,
+    className: import_prop_types23.default.string,
+    component: import_prop_types23.default.elementType,
+    sx: import_prop_types23.default.oneOfType([import_prop_types23.default.arrayOf(import_prop_types23.default.oneOfType([import_prop_types23.default.func, import_prop_types23.default.object, import_prop_types23.default.bool])), import_prop_types23.default.func, import_prop_types23.default.object])
   } : void 0;
   var CardContent_default = CardContent;
 
   // node_modules/@mui/material/Container/Container.js
   var React39 = __toESM(require_react());
-  var import_prop_types18 = __toESM(require_prop_types());
+  var import_prop_types24 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Container/containerClasses.js
   function getContainerUtilityClass(slot) {
@@ -35338,9 +35738,9 @@ const theme2 = createTheme({ palette: {
   var containerClasses = generateUtilityClasses("MuiContainer", ["root", "disableGutters", "fixed", "maxWidthXs", "maxWidthSm", "maxWidthMd", "maxWidthLg", "maxWidthXl"]);
 
   // node_modules/@mui/material/Container/Container.js
-  var import_jsx_runtime19 = __toESM(require_jsx_runtime());
-  var _excluded23 = ["className", "component", "disableGutters", "fixed", "maxWidth"];
-  var useUtilityClasses11 = (ownerState) => {
+  var import_jsx_runtime25 = __toESM(require_jsx_runtime());
+  var _excluded29 = ["className", "component", "disableGutters", "fixed", "maxWidth"];
+  var useUtilityClasses16 = (ownerState) => {
     const {
       classes,
       fixed,
@@ -35411,15 +35811,15 @@ const theme2 = createTheme({ palette: {
       disableGutters = false,
       fixed = false,
       maxWidth: maxWidth2 = "lg"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded23);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded29);
     const ownerState = _extends({}, props, {
       component,
       disableGutters,
       fixed,
       maxWidth: maxWidth2
     });
-    const classes = useUtilityClasses11(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(ContainerRoot, _extends({
+    const classes = useUtilityClasses16(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(ContainerRoot, _extends({
       as: component,
       ownerState,
       className: clsx_m_default(classes.root, className),
@@ -35427,20 +35827,20 @@ const theme2 = createTheme({ palette: {
     }, other));
   });
   true ? Container.propTypes = {
-    children: import_prop_types18.default.node,
-    classes: import_prop_types18.default.object,
-    className: import_prop_types18.default.string,
-    component: import_prop_types18.default.elementType,
-    disableGutters: import_prop_types18.default.bool,
-    fixed: import_prop_types18.default.bool,
-    maxWidth: import_prop_types18.default.oneOfType([import_prop_types18.default.oneOf(["xs", "sm", "md", "lg", "xl", false]), import_prop_types18.default.string]),
-    sx: import_prop_types18.default.oneOfType([import_prop_types18.default.arrayOf(import_prop_types18.default.oneOfType([import_prop_types18.default.func, import_prop_types18.default.object, import_prop_types18.default.bool])), import_prop_types18.default.func, import_prop_types18.default.object])
+    children: import_prop_types24.default.node,
+    classes: import_prop_types24.default.object,
+    className: import_prop_types24.default.string,
+    component: import_prop_types24.default.elementType,
+    disableGutters: import_prop_types24.default.bool,
+    fixed: import_prop_types24.default.bool,
+    maxWidth: import_prop_types24.default.oneOfType([import_prop_types24.default.oneOf(["xs", "sm", "md", "lg", "xl", false]), import_prop_types24.default.string]),
+    sx: import_prop_types24.default.oneOfType([import_prop_types24.default.arrayOf(import_prop_types24.default.oneOfType([import_prop_types24.default.func, import_prop_types24.default.object, import_prop_types24.default.bool])), import_prop_types24.default.func, import_prop_types24.default.object])
   } : void 0;
   var Container_default = Container;
 
   // node_modules/@mui/material/Grid/Grid.js
   var React41 = __toESM(require_react());
-  var import_prop_types19 = __toESM(require_prop_types());
+  var import_prop_types25 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Grid/GridContext.js
   var React40 = __toESM(require_react());
@@ -35475,8 +35875,8 @@ const theme2 = createTheme({ palette: {
   var gridClasses_default = gridClasses;
 
   // node_modules/@mui/material/Grid/Grid.js
-  var import_jsx_runtime20 = __toESM(require_jsx_runtime());
-  var _excluded24 = ["className", "columns", "columnSpacing", "component", "container", "direction", "item", "lg", "md", "rowSpacing", "sm", "spacing", "wrap", "xl", "xs", "zeroMinWidth"];
+  var import_jsx_runtime26 = __toESM(require_jsx_runtime());
+  var _excluded30 = ["className", "columns", "columnSpacing", "component", "container", "direction", "item", "lg", "md", "rowSpacing", "sm", "spacing", "wrap", "xl", "xs", "zeroMinWidth"];
   function getOffset(val) {
     const parse2 = parseFloat(val);
     return `${parse2}${String(val).replace(String(parse2), "") || "px"}`;
@@ -35678,7 +36078,7 @@ const theme2 = createTheme({ palette: {
   }, ownerState.wrap !== "wrap" && {
     flexWrap: ownerState.wrap
   }), generateDirection, generateRowGap, generateColumnGap, generateGrid);
-  var useUtilityClasses12 = (ownerState) => {
+  var useUtilityClasses17 = (ownerState) => {
     const {
       classes,
       container,
@@ -35721,7 +36121,7 @@ const theme2 = createTheme({ palette: {
       xl = false,
       xs = false,
       zeroMinWidth = false
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded24);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded30);
     const rowSpacing = rowSpacingProp || spacing2;
     const columnSpacing = columnSpacingProp || spacing2;
     const columnsContext = React41.useContext(GridContext_default);
@@ -35741,10 +36141,10 @@ const theme2 = createTheme({ palette: {
       xs,
       zeroMinWidth
     });
-    const classes = useUtilityClasses12(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(GridContext_default.Provider, {
+    const classes = useUtilityClasses17(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(GridContext_default.Provider, {
       value: columns,
-      children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(GridRoot, _extends({
+      children: /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(GridRoot, _extends({
         ownerState,
         className: clsx_m_default(classes.root, className),
         as: component,
@@ -35753,25 +36153,25 @@ const theme2 = createTheme({ palette: {
     });
   });
   true ? Grid.propTypes = {
-    children: import_prop_types19.default.node,
-    classes: import_prop_types19.default.object,
-    className: import_prop_types19.default.string,
-    columns: import_prop_types19.default.oneOfType([import_prop_types19.default.arrayOf(import_prop_types19.default.number), import_prop_types19.default.number, import_prop_types19.default.object]),
-    columnSpacing: import_prop_types19.default.oneOfType([import_prop_types19.default.arrayOf(import_prop_types19.default.oneOfType([import_prop_types19.default.number, import_prop_types19.default.string])), import_prop_types19.default.number, import_prop_types19.default.object, import_prop_types19.default.string]),
-    component: import_prop_types19.default.elementType,
-    container: import_prop_types19.default.bool,
-    direction: import_prop_types19.default.oneOfType([import_prop_types19.default.oneOf(["column-reverse", "column", "row-reverse", "row"]), import_prop_types19.default.arrayOf(import_prop_types19.default.oneOf(["column-reverse", "column", "row-reverse", "row"])), import_prop_types19.default.object]),
-    item: import_prop_types19.default.bool,
-    lg: import_prop_types19.default.oneOfType([import_prop_types19.default.oneOf(["auto"]), import_prop_types19.default.number, import_prop_types19.default.bool]),
-    md: import_prop_types19.default.oneOfType([import_prop_types19.default.oneOf(["auto"]), import_prop_types19.default.number, import_prop_types19.default.bool]),
-    rowSpacing: import_prop_types19.default.oneOfType([import_prop_types19.default.arrayOf(import_prop_types19.default.oneOfType([import_prop_types19.default.number, import_prop_types19.default.string])), import_prop_types19.default.number, import_prop_types19.default.object, import_prop_types19.default.string]),
-    sm: import_prop_types19.default.oneOfType([import_prop_types19.default.oneOf(["auto"]), import_prop_types19.default.number, import_prop_types19.default.bool]),
-    spacing: import_prop_types19.default.oneOfType([import_prop_types19.default.arrayOf(import_prop_types19.default.oneOfType([import_prop_types19.default.number, import_prop_types19.default.string])), import_prop_types19.default.number, import_prop_types19.default.object, import_prop_types19.default.string]),
-    sx: import_prop_types19.default.oneOfType([import_prop_types19.default.arrayOf(import_prop_types19.default.oneOfType([import_prop_types19.default.func, import_prop_types19.default.object, import_prop_types19.default.bool])), import_prop_types19.default.func, import_prop_types19.default.object]),
-    wrap: import_prop_types19.default.oneOf(["nowrap", "wrap-reverse", "wrap"]),
-    xl: import_prop_types19.default.oneOfType([import_prop_types19.default.oneOf(["auto"]), import_prop_types19.default.number, import_prop_types19.default.bool]),
-    xs: import_prop_types19.default.oneOfType([import_prop_types19.default.oneOf(["auto"]), import_prop_types19.default.number, import_prop_types19.default.bool]),
-    zeroMinWidth: import_prop_types19.default.bool
+    children: import_prop_types25.default.node,
+    classes: import_prop_types25.default.object,
+    className: import_prop_types25.default.string,
+    columns: import_prop_types25.default.oneOfType([import_prop_types25.default.arrayOf(import_prop_types25.default.number), import_prop_types25.default.number, import_prop_types25.default.object]),
+    columnSpacing: import_prop_types25.default.oneOfType([import_prop_types25.default.arrayOf(import_prop_types25.default.oneOfType([import_prop_types25.default.number, import_prop_types25.default.string])), import_prop_types25.default.number, import_prop_types25.default.object, import_prop_types25.default.string]),
+    component: import_prop_types25.default.elementType,
+    container: import_prop_types25.default.bool,
+    direction: import_prop_types25.default.oneOfType([import_prop_types25.default.oneOf(["column-reverse", "column", "row-reverse", "row"]), import_prop_types25.default.arrayOf(import_prop_types25.default.oneOf(["column-reverse", "column", "row-reverse", "row"])), import_prop_types25.default.object]),
+    item: import_prop_types25.default.bool,
+    lg: import_prop_types25.default.oneOfType([import_prop_types25.default.oneOf(["auto"]), import_prop_types25.default.number, import_prop_types25.default.bool]),
+    md: import_prop_types25.default.oneOfType([import_prop_types25.default.oneOf(["auto"]), import_prop_types25.default.number, import_prop_types25.default.bool]),
+    rowSpacing: import_prop_types25.default.oneOfType([import_prop_types25.default.arrayOf(import_prop_types25.default.oneOfType([import_prop_types25.default.number, import_prop_types25.default.string])), import_prop_types25.default.number, import_prop_types25.default.object, import_prop_types25.default.string]),
+    sm: import_prop_types25.default.oneOfType([import_prop_types25.default.oneOf(["auto"]), import_prop_types25.default.number, import_prop_types25.default.bool]),
+    spacing: import_prop_types25.default.oneOfType([import_prop_types25.default.arrayOf(import_prop_types25.default.oneOfType([import_prop_types25.default.number, import_prop_types25.default.string])), import_prop_types25.default.number, import_prop_types25.default.object, import_prop_types25.default.string]),
+    sx: import_prop_types25.default.oneOfType([import_prop_types25.default.arrayOf(import_prop_types25.default.oneOfType([import_prop_types25.default.func, import_prop_types25.default.object, import_prop_types25.default.bool])), import_prop_types25.default.func, import_prop_types25.default.object]),
+    wrap: import_prop_types25.default.oneOf(["nowrap", "wrap-reverse", "wrap"]),
+    xl: import_prop_types25.default.oneOfType([import_prop_types25.default.oneOf(["auto"]), import_prop_types25.default.number, import_prop_types25.default.bool]),
+    xs: import_prop_types25.default.oneOfType([import_prop_types25.default.oneOf(["auto"]), import_prop_types25.default.number, import_prop_types25.default.bool]),
+    zeroMinWidth: import_prop_types25.default.bool
   } : void 0;
   if (true) {
     const requireProp = requirePropFactory_default("Grid", Grid);
@@ -35788,518 +36188,9 @@ const theme2 = createTheme({ palette: {
   }
   var Grid_default = Grid;
 
-  // node_modules/@mui/material/Stack/Stack.js
-  var React42 = __toESM(require_react());
-  var import_prop_types20 = __toESM(require_prop_types());
-  var import_jsx_runtime21 = __toESM(require_jsx_runtime());
-  var _excluded25 = ["component", "direction", "spacing", "divider", "children"];
-  function joinChildren(children, separator) {
-    const childrenArray = React42.Children.toArray(children).filter(Boolean);
-    return childrenArray.reduce((output, child, index) => {
-      output.push(child);
-      if (index < childrenArray.length - 1) {
-        output.push(/* @__PURE__ */ React42.cloneElement(separator, {
-          key: `separator-${index}`
-        }));
-      }
-      return output;
-    }, []);
-  }
-  var getSideFromDirection = (direction) => {
-    return {
-      row: "Left",
-      "row-reverse": "Right",
-      column: "Top",
-      "column-reverse": "Bottom"
-    }[direction];
-  };
-  var style3 = ({
-    ownerState,
-    theme
-  }) => {
-    let styles = _extends({
-      display: "flex"
-    }, handleBreakpoints({
-      theme
-    }, resolveBreakpointValues({
-      values: ownerState.direction,
-      breakpoints: theme.breakpoints.values
-    }), (propValue) => ({
-      flexDirection: propValue
-    })));
-    if (ownerState.spacing) {
-      const transformer = createUnarySpacing(theme);
-      const base = Object.keys(theme.breakpoints.values).reduce((acc, breakpoint) => {
-        if (ownerState.spacing[breakpoint] != null || ownerState.direction[breakpoint] != null) {
-          acc[breakpoint] = true;
-        }
-        return acc;
-      }, {});
-      const directionValues = resolveBreakpointValues({
-        values: ownerState.direction,
-        base
-      });
-      const spacingValues = resolveBreakpointValues({
-        values: ownerState.spacing,
-        base
-      });
-      const styleFromPropValue = (propValue, breakpoint) => {
-        return {
-          "& > :not(style) + :not(style)": {
-            margin: 0,
-            [`margin${getSideFromDirection(breakpoint ? directionValues[breakpoint] : ownerState.direction)}`]: getValue2(transformer, propValue)
-          }
-        };
-      };
-      styles = deepmerge(styles, handleBreakpoints({
-        theme
-      }, spacingValues, styleFromPropValue));
-    }
-    return styles;
-  };
-  var StackRoot = styled_default("div", {
-    name: "MuiStack",
-    slot: "Root",
-    overridesResolver: (props, styles) => {
-      return [styles.root];
-    }
-  })(style3);
-  var Stack = /* @__PURE__ */ React42.forwardRef(function Stack2(inProps, ref) {
-    const themeProps = useThemeProps2({
-      props: inProps,
-      name: "MuiStack"
-    });
-    const props = extendSxProp(themeProps);
-    const {
-      component = "div",
-      direction = "column",
-      spacing: spacing2 = 0,
-      divider,
-      children
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded25);
-    const ownerState = {
-      direction,
-      spacing: spacing2
-    };
-    return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(StackRoot, _extends({
-      as: component,
-      ownerState,
-      ref
-    }, other, {
-      children: divider ? joinChildren(children, divider) : children
-    }));
-  });
-  true ? Stack.propTypes = {
-    children: import_prop_types20.default.node,
-    component: import_prop_types20.default.elementType,
-    direction: import_prop_types20.default.oneOfType([import_prop_types20.default.oneOf(["column-reverse", "column", "row-reverse", "row"]), import_prop_types20.default.arrayOf(import_prop_types20.default.oneOf(["column-reverse", "column", "row-reverse", "row"])), import_prop_types20.default.object]),
-    divider: import_prop_types20.default.node,
-    spacing: import_prop_types20.default.oneOfType([import_prop_types20.default.arrayOf(import_prop_types20.default.oneOfType([import_prop_types20.default.number, import_prop_types20.default.string])), import_prop_types20.default.number, import_prop_types20.default.object, import_prop_types20.default.string]),
-    sx: import_prop_types20.default.oneOfType([import_prop_types20.default.arrayOf(import_prop_types20.default.oneOfType([import_prop_types20.default.func, import_prop_types20.default.object, import_prop_types20.default.bool])), import_prop_types20.default.func, import_prop_types20.default.object])
-  } : void 0;
-  var Stack_default = Stack;
-
-  // node_modules/@mui/material/Table/Table.js
-  var React44 = __toESM(require_react());
-  var import_prop_types21 = __toESM(require_prop_types());
-
-  // node_modules/@mui/material/Table/TableContext.js
-  var React43 = __toESM(require_react());
-  var TableContext = /* @__PURE__ */ React43.createContext();
-  if (true) {
-    TableContext.displayName = "TableContext";
-  }
-  var TableContext_default = TableContext;
-
-  // node_modules/@mui/material/Table/tableClasses.js
-  function getTableUtilityClass(slot) {
-    return generateUtilityClass("MuiTable", slot);
-  }
-  var tableClasses = generateUtilityClasses("MuiTable", ["root", "stickyHeader"]);
-
-  // node_modules/@mui/material/Table/Table.js
-  var import_jsx_runtime22 = __toESM(require_jsx_runtime());
-  var _excluded26 = ["className", "component", "padding", "size", "stickyHeader"];
-  var useUtilityClasses13 = (ownerState) => {
-    const {
-      classes,
-      stickyHeader
-    } = ownerState;
-    const slots = {
-      root: ["root", stickyHeader && "stickyHeader"]
-    };
-    return composeClasses(slots, getTableUtilityClass, classes);
-  };
-  var TableRoot = styled_default("table", {
-    name: "MuiTable",
-    slot: "Root",
-    overridesResolver: (props, styles) => {
-      const {
-        ownerState
-      } = props;
-      return [styles.root, ownerState.stickyHeader && styles.stickyHeader];
-    }
-  })(({
-    theme,
-    ownerState
-  }) => _extends({
-    display: "table",
-    width: "100%",
-    borderCollapse: "collapse",
-    borderSpacing: 0,
-    "& caption": _extends({}, theme.typography.body2, {
-      padding: theme.spacing(2),
-      color: theme.palette.text.secondary,
-      textAlign: "left",
-      captionSide: "bottom"
-    })
-  }, ownerState.stickyHeader && {
-    borderCollapse: "separate"
-  }));
-  var defaultComponent = "table";
-  var Table = /* @__PURE__ */ React44.forwardRef(function Table2(inProps, ref) {
-    const props = useThemeProps2({
-      props: inProps,
-      name: "MuiTable"
-    });
-    const {
-      className,
-      component = defaultComponent,
-      padding: padding2 = "normal",
-      size = "medium",
-      stickyHeader = false
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded26);
-    const ownerState = _extends({}, props, {
-      component,
-      padding: padding2,
-      size,
-      stickyHeader
-    });
-    const classes = useUtilityClasses13(ownerState);
-    const table = React44.useMemo(() => ({
-      padding: padding2,
-      size,
-      stickyHeader
-    }), [padding2, size, stickyHeader]);
-    return /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(TableContext_default.Provider, {
-      value: table,
-      children: /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(TableRoot, _extends({
-        as: component,
-        role: component === defaultComponent ? null : "table",
-        ref,
-        className: clsx_m_default(classes.root, className),
-        ownerState
-      }, other))
-    });
-  });
-  true ? Table.propTypes = {
-    children: import_prop_types21.default.node,
-    classes: import_prop_types21.default.object,
-    className: import_prop_types21.default.string,
-    component: import_prop_types21.default.elementType,
-    padding: import_prop_types21.default.oneOf(["checkbox", "none", "normal"]),
-    size: import_prop_types21.default.oneOfType([import_prop_types21.default.oneOf(["medium", "small"]), import_prop_types21.default.string]),
-    stickyHeader: import_prop_types21.default.bool,
-    sx: import_prop_types21.default.oneOfType([import_prop_types21.default.arrayOf(import_prop_types21.default.oneOfType([import_prop_types21.default.func, import_prop_types21.default.object, import_prop_types21.default.bool])), import_prop_types21.default.func, import_prop_types21.default.object])
-  } : void 0;
-  var Table_default = Table;
-
-  // node_modules/@mui/material/TableBody/TableBody.js
-  var React46 = __toESM(require_react());
-  var import_prop_types22 = __toESM(require_prop_types());
-
-  // node_modules/@mui/material/Table/Tablelvl2Context.js
-  var React45 = __toESM(require_react());
-  var Tablelvl2Context = /* @__PURE__ */ React45.createContext();
-  if (true) {
-    Tablelvl2Context.displayName = "Tablelvl2Context";
-  }
-  var Tablelvl2Context_default = Tablelvl2Context;
-
-  // node_modules/@mui/material/TableBody/tableBodyClasses.js
-  function getTableBodyUtilityClass(slot) {
-    return generateUtilityClass("MuiTableBody", slot);
-  }
-  var tableBodyClasses = generateUtilityClasses("MuiTableBody", ["root"]);
-
-  // node_modules/@mui/material/TableBody/TableBody.js
-  var import_jsx_runtime23 = __toESM(require_jsx_runtime());
-  var _excluded27 = ["className", "component"];
-  var useUtilityClasses14 = (ownerState) => {
-    const {
-      classes
-    } = ownerState;
-    const slots = {
-      root: ["root"]
-    };
-    return composeClasses(slots, getTableBodyUtilityClass, classes);
-  };
-  var TableBodyRoot = styled_default("tbody", {
-    name: "MuiTableBody",
-    slot: "Root",
-    overridesResolver: (props, styles) => styles.root
-  })({
-    display: "table-row-group"
-  });
-  var tablelvl2 = {
-    variant: "body"
-  };
-  var defaultComponent2 = "tbody";
-  var TableBody = /* @__PURE__ */ React46.forwardRef(function TableBody2(inProps, ref) {
-    const props = useThemeProps2({
-      props: inProps,
-      name: "MuiTableBody"
-    });
-    const {
-      className,
-      component = defaultComponent2
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded27);
-    const ownerState = _extends({}, props, {
-      component
-    });
-    const classes = useUtilityClasses14(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Tablelvl2Context_default.Provider, {
-      value: tablelvl2,
-      children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TableBodyRoot, _extends({
-        className: clsx_m_default(classes.root, className),
-        as: component,
-        ref,
-        role: component === defaultComponent2 ? null : "rowgroup",
-        ownerState
-      }, other))
-    });
-  });
-  true ? TableBody.propTypes = {
-    children: import_prop_types22.default.node,
-    classes: import_prop_types22.default.object,
-    className: import_prop_types22.default.string,
-    component: import_prop_types22.default.elementType,
-    sx: import_prop_types22.default.oneOfType([import_prop_types22.default.arrayOf(import_prop_types22.default.oneOfType([import_prop_types22.default.func, import_prop_types22.default.object, import_prop_types22.default.bool])), import_prop_types22.default.func, import_prop_types22.default.object])
-  } : void 0;
-  var TableBody_default = TableBody;
-
-  // node_modules/@mui/material/TableCell/TableCell.js
-  var React47 = __toESM(require_react());
-  var import_prop_types23 = __toESM(require_prop_types());
-
-  // node_modules/@mui/material/TableCell/tableCellClasses.js
-  function getTableCellUtilityClass(slot) {
-    return generateUtilityClass("MuiTableCell", slot);
-  }
-  var tableCellClasses = generateUtilityClasses("MuiTableCell", ["root", "head", "body", "footer", "sizeSmall", "sizeMedium", "paddingCheckbox", "paddingNone", "alignLeft", "alignCenter", "alignRight", "alignJustify", "stickyHeader"]);
-  var tableCellClasses_default = tableCellClasses;
-
-  // node_modules/@mui/material/TableCell/TableCell.js
-  var import_jsx_runtime24 = __toESM(require_jsx_runtime());
-  var _excluded28 = ["align", "className", "component", "padding", "scope", "size", "sortDirection", "variant"];
-  var useUtilityClasses15 = (ownerState) => {
-    const {
-      classes,
-      variant,
-      align,
-      padding: padding2,
-      size,
-      stickyHeader
-    } = ownerState;
-    const slots = {
-      root: ["root", variant, stickyHeader && "stickyHeader", align !== "inherit" && `align${capitalize_default(align)}`, padding2 !== "normal" && `padding${capitalize_default(padding2)}`, `size${capitalize_default(size)}`]
-    };
-    return composeClasses(slots, getTableCellUtilityClass, classes);
-  };
-  var TableCellRoot = styled_default("td", {
-    name: "MuiTableCell",
-    slot: "Root",
-    overridesResolver: (props, styles) => {
-      const {
-        ownerState
-      } = props;
-      return [styles.root, styles[ownerState.variant], styles[`size${capitalize_default(ownerState.size)}`], ownerState.padding !== "normal" && styles[`padding${capitalize_default(ownerState.padding)}`], ownerState.align !== "inherit" && styles[`align${capitalize_default(ownerState.align)}`], ownerState.stickyHeader && styles.stickyHeader];
-    }
-  })(({
-    theme,
-    ownerState
-  }) => _extends({}, theme.typography.body2, {
-    display: "table-cell",
-    verticalAlign: "inherit",
-    borderBottom: `1px solid
-    ${theme.palette.mode === "light" ? lighten(alpha(theme.palette.divider, 1), 0.88) : darken(alpha(theme.palette.divider, 1), 0.68)}`,
-    textAlign: "left",
-    padding: 16
-  }, ownerState.variant === "head" && {
-    color: theme.palette.text.primary,
-    lineHeight: theme.typography.pxToRem(24),
-    fontWeight: theme.typography.fontWeightMedium
-  }, ownerState.variant === "body" && {
-    color: theme.palette.text.primary
-  }, ownerState.variant === "footer" && {
-    color: theme.palette.text.secondary,
-    lineHeight: theme.typography.pxToRem(21),
-    fontSize: theme.typography.pxToRem(12)
-  }, ownerState.size === "small" && {
-    padding: "6px 16px",
-    [`&.${tableCellClasses_default.paddingCheckbox}`]: {
-      width: 24,
-      padding: "0 12px 0 16px",
-      "& > *": {
-        padding: 0
-      }
-    }
-  }, ownerState.padding === "checkbox" && {
-    width: 48,
-    padding: "0 0 0 4px"
-  }, ownerState.padding === "none" && {
-    padding: 0
-  }, ownerState.align === "left" && {
-    textAlign: "left"
-  }, ownerState.align === "center" && {
-    textAlign: "center"
-  }, ownerState.align === "right" && {
-    textAlign: "right",
-    flexDirection: "row-reverse"
-  }, ownerState.align === "justify" && {
-    textAlign: "justify"
-  }, ownerState.stickyHeader && {
-    position: "sticky",
-    top: 0,
-    zIndex: 2,
-    backgroundColor: theme.palette.background.default
-  }));
-  var TableCell = /* @__PURE__ */ React47.forwardRef(function TableCell2(inProps, ref) {
-    const props = useThemeProps2({
-      props: inProps,
-      name: "MuiTableCell"
-    });
-    const {
-      align = "inherit",
-      className,
-      component: componentProp,
-      padding: paddingProp,
-      scope: scopeProp,
-      size: sizeProp,
-      sortDirection,
-      variant: variantProp
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded28);
-    const table = React47.useContext(TableContext_default);
-    const tablelvl23 = React47.useContext(Tablelvl2Context_default);
-    const isHeadCell = tablelvl23 && tablelvl23.variant === "head";
-    let component;
-    if (componentProp) {
-      component = componentProp;
-    } else {
-      component = isHeadCell ? "th" : "td";
-    }
-    let scope = scopeProp;
-    if (!scope && isHeadCell) {
-      scope = "col";
-    }
-    const variant = variantProp || tablelvl23 && tablelvl23.variant;
-    const ownerState = _extends({}, props, {
-      align,
-      component,
-      padding: paddingProp || (table && table.padding ? table.padding : "normal"),
-      size: sizeProp || (table && table.size ? table.size : "medium"),
-      sortDirection,
-      stickyHeader: variant === "head" && table && table.stickyHeader,
-      variant
-    });
-    const classes = useUtilityClasses15(ownerState);
-    let ariaSort = null;
-    if (sortDirection) {
-      ariaSort = sortDirection === "asc" ? "ascending" : "descending";
-    }
-    return /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(TableCellRoot, _extends({
-      as: component,
-      ref,
-      className: clsx_m_default(classes.root, className),
-      "aria-sort": ariaSort,
-      scope,
-      ownerState
-    }, other));
-  });
-  true ? TableCell.propTypes = {
-    align: import_prop_types23.default.oneOf(["center", "inherit", "justify", "left", "right"]),
-    children: import_prop_types23.default.node,
-    classes: import_prop_types23.default.object,
-    className: import_prop_types23.default.string,
-    component: import_prop_types23.default.elementType,
-    padding: import_prop_types23.default.oneOf(["checkbox", "none", "normal"]),
-    scope: import_prop_types23.default.string,
-    size: import_prop_types23.default.oneOf(["small", "medium"]),
-    sortDirection: import_prop_types23.default.oneOf(["asc", "desc", false]),
-    sx: import_prop_types23.default.oneOfType([import_prop_types23.default.arrayOf(import_prop_types23.default.oneOfType([import_prop_types23.default.func, import_prop_types23.default.object, import_prop_types23.default.bool])), import_prop_types23.default.func, import_prop_types23.default.object]),
-    variant: import_prop_types23.default.oneOf(["body", "footer", "head"])
-  } : void 0;
-  var TableCell_default = TableCell;
-
-  // node_modules/@mui/material/TableHead/TableHead.js
-  var React48 = __toESM(require_react());
-  var import_prop_types24 = __toESM(require_prop_types());
-
-  // node_modules/@mui/material/TableHead/tableHeadClasses.js
-  function getTableHeadUtilityClass(slot) {
-    return generateUtilityClass("MuiTableHead", slot);
-  }
-  var tableHeadClasses = generateUtilityClasses("MuiTableHead", ["root"]);
-
-  // node_modules/@mui/material/TableHead/TableHead.js
-  var import_jsx_runtime25 = __toESM(require_jsx_runtime());
-  var _excluded29 = ["className", "component"];
-  var useUtilityClasses16 = (ownerState) => {
-    const {
-      classes
-    } = ownerState;
-    const slots = {
-      root: ["root"]
-    };
-    return composeClasses(slots, getTableHeadUtilityClass, classes);
-  };
-  var TableHeadRoot = styled_default("thead", {
-    name: "MuiTableHead",
-    slot: "Root",
-    overridesResolver: (props, styles) => styles.root
-  })({
-    display: "table-header-group"
-  });
-  var tablelvl22 = {
-    variant: "head"
-  };
-  var defaultComponent3 = "thead";
-  var TableHead = /* @__PURE__ */ React48.forwardRef(function TableHead2(inProps, ref) {
-    const props = useThemeProps2({
-      props: inProps,
-      name: "MuiTableHead"
-    });
-    const {
-      className,
-      component = defaultComponent3
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded29);
-    const ownerState = _extends({}, props, {
-      component
-    });
-    const classes = useUtilityClasses16(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(Tablelvl2Context_default.Provider, {
-      value: tablelvl22,
-      children: /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(TableHeadRoot, _extends({
-        as: component,
-        className: clsx_m_default(classes.root, className),
-        ref,
-        role: component === defaultComponent3 ? null : "rowgroup",
-        ownerState
-      }, other))
-    });
-  });
-  true ? TableHead.propTypes = {
-    children: import_prop_types24.default.node,
-    classes: import_prop_types24.default.object,
-    className: import_prop_types24.default.string,
-    component: import_prop_types24.default.elementType,
-    sx: import_prop_types24.default.oneOfType([import_prop_types24.default.arrayOf(import_prop_types24.default.oneOfType([import_prop_types24.default.func, import_prop_types24.default.object, import_prop_types24.default.bool])), import_prop_types24.default.func, import_prop_types24.default.object])
-  } : void 0;
-  var TableHead_default = TableHead;
-
   // node_modules/@mui/material/Toolbar/Toolbar.js
-  var React49 = __toESM(require_react());
-  var import_prop_types25 = __toESM(require_prop_types());
+  var React42 = __toESM(require_react());
+  var import_prop_types26 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Toolbar/toolbarClasses.js
   function getToolbarUtilityClass(slot) {
@@ -36308,9 +36199,9 @@ const theme2 = createTheme({ palette: {
   var toolbarClasses = generateUtilityClasses("MuiToolbar", ["root", "gutters", "regular", "dense"]);
 
   // node_modules/@mui/material/Toolbar/Toolbar.js
-  var import_jsx_runtime26 = __toESM(require_jsx_runtime());
-  var _excluded30 = ["className", "component", "disableGutters", "variant"];
-  var useUtilityClasses17 = (ownerState) => {
+  var import_jsx_runtime27 = __toESM(require_jsx_runtime());
+  var _excluded31 = ["className", "component", "disableGutters", "variant"];
+  var useUtilityClasses18 = (ownerState) => {
     const {
       classes,
       disableGutters,
@@ -36350,7 +36241,7 @@ const theme2 = createTheme({ palette: {
     theme,
     ownerState
   }) => ownerState.variant === "regular" && theme.mixins.toolbar);
-  var Toolbar = /* @__PURE__ */ React49.forwardRef(function Toolbar2(inProps, ref) {
+  var Toolbar = /* @__PURE__ */ React42.forwardRef(function Toolbar2(inProps, ref) {
     const props = useThemeProps2({
       props: inProps,
       name: "MuiToolbar"
@@ -36360,14 +36251,14 @@ const theme2 = createTheme({ palette: {
       component = "div",
       disableGutters = false,
       variant = "regular"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded30);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded31);
     const ownerState = _extends({}, props, {
       component,
       disableGutters,
       variant
     });
-    const classes = useUtilityClasses17(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(ToolbarRoot, _extends({
+    const classes = useUtilityClasses18(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(ToolbarRoot, _extends({
       as: component,
       className: clsx_m_default(classes.root, className),
       ref,
@@ -36375,462 +36266,309 @@ const theme2 = createTheme({ palette: {
     }, other));
   });
   true ? Toolbar.propTypes = {
-    children: import_prop_types25.default.node,
-    classes: import_prop_types25.default.object,
-    className: import_prop_types25.default.string,
-    component: import_prop_types25.default.elementType,
-    disableGutters: import_prop_types25.default.bool,
-    sx: import_prop_types25.default.oneOfType([import_prop_types25.default.arrayOf(import_prop_types25.default.oneOfType([import_prop_types25.default.func, import_prop_types25.default.object, import_prop_types25.default.bool])), import_prop_types25.default.func, import_prop_types25.default.object]),
-    variant: import_prop_types25.default.oneOfType([import_prop_types25.default.oneOf(["dense", "regular"]), import_prop_types25.default.string])
-  } : void 0;
-  var Toolbar_default = Toolbar;
-
-  // node_modules/@mui/material/TableRow/TableRow.js
-  var React50 = __toESM(require_react());
-  var import_prop_types26 = __toESM(require_prop_types());
-
-  // node_modules/@mui/material/TableRow/tableRowClasses.js
-  function getTableRowUtilityClass(slot) {
-    return generateUtilityClass("MuiTableRow", slot);
-  }
-  var tableRowClasses = generateUtilityClasses("MuiTableRow", ["root", "selected", "hover", "head", "footer"]);
-  var tableRowClasses_default = tableRowClasses;
-
-  // node_modules/@mui/material/TableRow/TableRow.js
-  var import_jsx_runtime27 = __toESM(require_jsx_runtime());
-  var _excluded31 = ["className", "component", "hover", "selected"];
-  var useUtilityClasses18 = (ownerState) => {
-    const {
-      classes,
-      selected,
-      hover,
-      head,
-      footer
-    } = ownerState;
-    const slots = {
-      root: ["root", selected && "selected", hover && "hover", head && "head", footer && "footer"]
-    };
-    return composeClasses(slots, getTableRowUtilityClass, classes);
-  };
-  var TableRowRoot = styled_default("tr", {
-    name: "MuiTableRow",
-    slot: "Root",
-    overridesResolver: (props, styles) => {
-      const {
-        ownerState
-      } = props;
-      return [styles.root, ownerState.head && styles.head, ownerState.footer && styles.footer];
-    }
-  })(({
-    theme
-  }) => ({
-    color: "inherit",
-    display: "table-row",
-    verticalAlign: "middle",
-    outline: 0,
-    [`&.${tableRowClasses_default.hover}:hover`]: {
-      backgroundColor: theme.palette.action.hover
-    },
-    [`&.${tableRowClasses_default.selected}`]: {
-      backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
-      "&:hover": {
-        backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity + theme.palette.action.hoverOpacity)
-      }
-    }
-  }));
-  var defaultComponent4 = "tr";
-  var TableRow = /* @__PURE__ */ React50.forwardRef(function TableRow2(inProps, ref) {
-    const props = useThemeProps2({
-      props: inProps,
-      name: "MuiTableRow"
-    });
-    const {
-      className,
-      component = defaultComponent4,
-      hover = false,
-      selected = false
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded31);
-    const tablelvl23 = React50.useContext(Tablelvl2Context_default);
-    const ownerState = _extends({}, props, {
-      component,
-      hover,
-      selected,
-      head: tablelvl23 && tablelvl23.variant === "head",
-      footer: tablelvl23 && tablelvl23.variant === "footer"
-    });
-    const classes = useUtilityClasses18(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(TableRowRoot, _extends({
-      as: component,
-      ref,
-      className: clsx_m_default(classes.root, className),
-      role: component === defaultComponent4 ? null : "row",
-      ownerState
-    }, other));
-  });
-  true ? TableRow.propTypes = {
     children: import_prop_types26.default.node,
     classes: import_prop_types26.default.object,
     className: import_prop_types26.default.string,
     component: import_prop_types26.default.elementType,
-    hover: import_prop_types26.default.bool,
-    selected: import_prop_types26.default.bool,
-    sx: import_prop_types26.default.oneOfType([import_prop_types26.default.arrayOf(import_prop_types26.default.oneOfType([import_prop_types26.default.func, import_prop_types26.default.object, import_prop_types26.default.bool])), import_prop_types26.default.func, import_prop_types26.default.object])
+    disableGutters: import_prop_types26.default.bool,
+    sx: import_prop_types26.default.oneOfType([import_prop_types26.default.arrayOf(import_prop_types26.default.oneOfType([import_prop_types26.default.func, import_prop_types26.default.object, import_prop_types26.default.bool])), import_prop_types26.default.func, import_prop_types26.default.object]),
+    variant: import_prop_types26.default.oneOfType([import_prop_types26.default.oneOf(["dense", "regular"]), import_prop_types26.default.string])
   } : void 0;
-  var TableRow_default = TableRow;
-
-  // src/components/RegularSeasonGames/RegularSeasonWeekTable.jsx
-  var import_react21 = __toESM(require_react(), 1);
-
-  // src/components/RegularSeasonGames/RegularSeasonWeek.jsx
-  var import_react20 = __toESM(require_react(), 1);
+  var Toolbar_default = Toolbar;
 
   // src/components/RegularSeasonGames/RegularSeasonGamesTable.jsx
-  var import_react23 = __toESM(require_react(), 1);
+  var import_react13 = __toESM(require_react(), 1);
 
   // src/components/RegularSeasonGames/RegularSeasonGame.jsx
-  var import_react22 = __toESM(require_react(), 1);
+  var import_react12 = __toESM(require_react(), 1);
   function RegularSeasonGame(props) {
-    const { game } = props;
-    if (game) {
-      return /* @__PURE__ */ import_react22.default.createElement("div", {
-        className: "row"
-      }, /* @__PURE__ */ import_react22.default.createElement("div", {
-        className: "col-6"
-      }, /* @__PURE__ */ import_react22.default.createElement("img", {
-        src: game.roadImage,
-        alt: "TODO",
-        className: "col-12"
-      })), /* @__PURE__ */ import_react22.default.createElement("div", {
-        className: "col-6"
-      }, /* @__PURE__ */ import_react22.default.createElement("img", {
-        src: game.homeImage,
-        alt: "TODO",
-        className: "col-12"
-      })));
-    } else {
-      return /* @__PURE__ */ import_react22.default.createElement("div", null);
-    }
+    return /* @__PURE__ */ import_react12.default.createElement(Card_default, {
+      variant: "outlined"
+    }, /* @__PURE__ */ import_react12.default.createElement(CardContent_default, {
+      sx: { p: 0, "&:last-child": { pb: 0 } }
+    }, /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
+      container: true
+    }, /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
+      item: true,
+      xs: 5
+    }, /* @__PURE__ */ import_react12.default.createElement(Card_default, null, /* @__PURE__ */ import_react12.default.createElement("img", {
+      src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
+      alt: "TODO",
+      className: "col-12"
+    }))), /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
+      item: true,
+      xs: 2
+    }, /* @__PURE__ */ import_react12.default.createElement(Card_default, null)), /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
+      item: true,
+      xs: 5
+    }, /* @__PURE__ */ import_react12.default.createElement(Card_default, null, /* @__PURE__ */ import_react12.default.createElement("img", {
+      src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
+      alt: "TODO",
+      className: "col-12"
+    }))))));
   }
   RegularSeasonGame.propTypes = {};
 
   // src/components/RegularSeasonGames/RegularSeasonGamesTable.jsx
   function RegularSeasonGamesTable(props) {
     const { games } = props;
-    return /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "row"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-6"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "row"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[0]
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[1]
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[2]
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[3]
-    })))), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-6"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "row"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[4]
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[5]
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[6]
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[7]
-    })))), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-6"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "row"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[8]
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[9]
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[10]
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[11]
-    })))), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-6"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "row"
-    }, /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[12]
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[13]
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[14]
-    })), /* @__PURE__ */ import_react23.default.createElement("div", {
-      className: "col-3"
-    }, /* @__PURE__ */ import_react23.default.createElement(RegularSeasonGame, {
-      game: games[15]
-    })))));
-  }
-  RegularSeasonGamesTable.propTypes = {};
-
-  // src/TempStandings.jsx
-  var import_react24 = __toESM(require_react(), 1);
-  var import_axios = __toESM(require_axios2(), 1);
-
-  // src/components/RegularSeasonGames/MUI_REGULAR_SEASON_GAME_TABLE.jsx
-  var import_react26 = __toESM(require_react(), 1);
-
-  // src/components/RegularSeasonGames/MUI_REGULAR_SEASON_GAME.jsx
-  var import_react25 = __toESM(require_react(), 1);
-  function MuiGame(props) {
-    const { game } = props;
-    return /* @__PURE__ */ import_react25.default.createElement(Card_default, {
-      variant: "outlined"
-    }, /* @__PURE__ */ import_react25.default.createElement(CardContent_default, {
-      sx: { p: 0, "&:last-child": { pb: 0 } }
-    }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-      container: true
-    }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-      item: true,
-      xs: 5
-    }, /* @__PURE__ */ import_react25.default.createElement(Card_default, null, /* @__PURE__ */ import_react25.default.createElement("img", {
-      src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
-      alt: "TODO",
-      className: "col-12"
-    }))), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-      item: true,
-      xs: 2
-    }, /* @__PURE__ */ import_react25.default.createElement(Card_default, null)), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-      item: true,
-      xs: 5
-    }, /* @__PURE__ */ import_react25.default.createElement(Card_default, null, /* @__PURE__ */ import_react25.default.createElement("img", {
-      src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
-      alt: "TODO",
-      className: "col-12"
-    }))))));
-  }
-  MuiGame.propTypes = {};
-
-  // src/components/RegularSeasonGames/MUI_REGULAR_SEASON_GAME_TABLE.jsx
-  function MuiTable(props) {
-    const { games } = props;
-    return /* @__PURE__ */ import_react26.default.createElement(import_react26.default.Fragment, null, /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react13.default.createElement(import_react13.default.Fragment, null, /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       container: true,
       spacing: 1,
       columns: 144
-    }, /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react26.default.createElement(MuiGame, null))));
+    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null))));
   }
-  MuiTable.propTypes = {};
+  RegularSeasonGamesTable.propTypes = {};
 
-  // src/MUI_BAR.jsx
-  var import_react27 = __toESM(require_react(), 1);
-  function MuiBar() {
-    return /* @__PURE__ */ import_react27.default.createElement(AppBar_default, {
+  // src/Header.jsx
+  var import_react14 = __toESM(require_react(), 1);
+  function Header() {
+    return /* @__PURE__ */ import_react14.default.createElement(AppBar_default, {
       position: "static",
       sx: { bgcolor: "#013369" }
-    }, /* @__PURE__ */ import_react27.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react27.default.createElement(Box_default, null, /* @__PURE__ */ import_react27.default.createElement(IconButton_default, {
+    }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement(Box_default, null, /* @__PURE__ */ import_react14.default.createElement(IconButton_default, {
       sx: { p: 0 }
-    }, /* @__PURE__ */ import_react27.default.createElement(Avatar_default, {
+    }, /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
       src: "https://static.www.nfl.com/image/upload/v1554321393/league/nvfr7ogywskqrfaiu38m.svg",
       alt: "NFL Logo"
-    }))), /* @__PURE__ */ import_react27.default.createElement(Typography_default, {
+    }))), /* @__PURE__ */ import_react14.default.createElement(Typography_default, {
       variant: "h6",
       sx: { flexGrow: 1 }
-    }, "NFL Playoff Seeder 2022"), /* @__PURE__ */ import_react27.default.createElement(Button_default, {
+    }, "NFL Playoff Seeder 2022"), /* @__PURE__ */ import_react14.default.createElement(Button_default, {
       color: "inherit"
     }, "Reset")));
   }
 
   // src/components/PlayoffGames/MUI_PLAYOFF_COL.jsx
-  var import_react28 = __toESM(require_react(), 1);
+  var import_react18 = __toESM(require_react(), 1);
+
+  // src/components/PlayoffGames/WildCardGame.jsx
+  var import_react17 = __toESM(require_react(), 1);
+
+  // src/components/PlayoffGames/TeamInfoLeft.jsx
+  var import_react15 = __toESM(require_react(), 1);
+  function TeamInfoLeft(props) {
+    const { seed, team, wins, losses, ties } = props;
+    let seedString = "";
+    switch (seed) {
+      case 1:
+        seedString = "1st Seed";
+        break;
+      case 2:
+        seedString = "2nd Seed";
+        break;
+      case 3:
+        seedString = "3rd Seed";
+        break;
+      default:
+        seedString = seed + "th Seed";
+    }
+    return /* @__PURE__ */ import_react15.default.createElement("div", {
+      className: "row",
+      style: { backgroundColor: "yellow" }
+    }, /* @__PURE__ */ import_react15.default.createElement("div", {
+      className: "col-4"
+    }, /* @__PURE__ */ import_react15.default.createElement("img", {
+      src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
+      alt: "TODO",
+      className: "col-12"
+    })), /* @__PURE__ */ import_react15.default.createElement("div", {
+      className: "col-8"
+    }, /* @__PURE__ */ import_react15.default.createElement("div", {
+      className: "row"
+    }, /* @__PURE__ */ import_react15.default.createElement("small", {
+      className: "col-12"
+    }, seedString), /* @__PURE__ */ import_react15.default.createElement("small", {
+      className: "col-12"
+    }, team), ties === 0 ? /* @__PURE__ */ import_react15.default.createElement("small", {
+      className: "col-12"
+    }, wins, "-", losses) : /* @__PURE__ */ import_react15.default.createElement("small", {
+      className: "col-12"
+    }, wins, "-", losses, "-", ties))));
+  }
+  TeamInfoLeft.propTypes = {};
+
+  // src/components/PlayoffGames/TeamInfoRight.jsx
+  var import_react16 = __toESM(require_react(), 1);
+  function TeamInfoRight(props) {
+    const { seed, team, wins, losses, ties } = props;
+    let seedString = "";
+    switch (seed) {
+      case 1:
+        seedString = "1st Seed";
+        break;
+      case 2:
+        seedString = "2nd Seed";
+        break;
+      case 3:
+        seedString = "3rd Seed";
+        break;
+      default:
+        seedString = seed + "th Seed";
+    }
+    return /* @__PURE__ */ import_react16.default.createElement("div", {
+      className: "row",
+      style: { backgroundColor: "yellow" }
+    }, /* @__PURE__ */ import_react16.default.createElement("div", {
+      className: "col-8"
+    }, /* @__PURE__ */ import_react16.default.createElement("div", {
+      className: "row"
+    }, /* @__PURE__ */ import_react16.default.createElement("small", {
+      className: "col-12"
+    }, seedString), /* @__PURE__ */ import_react16.default.createElement("small", {
+      className: "col-12"
+    }, team), ties === 0 ? /* @__PURE__ */ import_react16.default.createElement("small", {
+      className: "col-12"
+    }, wins, "-", losses) : /* @__PURE__ */ import_react16.default.createElement("small", {
+      className: "col-12"
+    }, wins, "-", losses, "-", ties))), /* @__PURE__ */ import_react16.default.createElement("div", {
+      className: "col-4"
+    }, /* @__PURE__ */ import_react16.default.createElement("img", {
+      src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
+      alt: "TODO",
+      className: "col-12"
+    })));
+  }
+  TeamInfoRight.propTypes = {};
+
+  // src/components/PlayoffGames/WildCardGame.jsx
+  function WildCardGame(props) {
+    const { game } = props;
+    return /* @__PURE__ */ import_react17.default.createElement("div", {
+      className: "row"
+    }, /* @__PURE__ */ import_react17.default.createElement("div", {
+      className: "col-6"
+    }, /* @__PURE__ */ import_react17.default.createElement(TeamInfoLeft, {
+      wins: 16,
+      losses: 0,
+      ties: 0,
+      seed: 6,
+      team: "Green Bay"
+    })), /* @__PURE__ */ import_react17.default.createElement("div", {
+      className: "col-6"
+    }, /* @__PURE__ */ import_react17.default.createElement(TeamInfoRight, {
+      wins: 16,
+      losses: 0,
+      ties: 0,
+      seed: 6,
+      team: "Green Bay"
+    })));
+  }
+  WildCardGame.propTypes = {};
+
+  // src/components/PlayoffGames/MUI_PLAYOFF_COL.jsx
   function MuiPlay(props) {
-    return /* @__PURE__ */ import_react28.default.createElement(import_react28.default.Fragment, null, /* @__PURE__ */ import_react28.default.createElement("h4", null, "NFC"), /* @__PURE__ */ import_react28.default.createElement(Card_default, {
+    return /* @__PURE__ */ import_react18.default.createElement(import_react18.default.Fragment, null, /* @__PURE__ */ import_react18.default.createElement("h4", null, "NFC"), /* @__PURE__ */ import_react18.default.createElement(Card_default, {
       variant: "outlined",
       sx: { bgcolor: "#d50a0a" }
-    }, /* @__PURE__ */ import_react28.default.createElement(CardContent_default, null, /* @__PURE__ */ import_react28.default.createElement(WildCardGame, null), /* @__PURE__ */ import_react28.default.createElement(WildCardGame, null), /* @__PURE__ */ import_react28.default.createElement(WildCardGame, null), /* @__PURE__ */ import_react28.default.createElement(WildCardGame, null))));
+    }, /* @__PURE__ */ import_react18.default.createElement(CardContent_default, null, /* @__PURE__ */ import_react18.default.createElement(WildCardGame, null), /* @__PURE__ */ import_react18.default.createElement(WildCardGame, null), /* @__PURE__ */ import_react18.default.createElement(WildCardGame, null), /* @__PURE__ */ import_react18.default.createElement(WildCardGame, null))));
   }
   MuiPlay.propTypes = {};
 
-  // src/components/Standings/MUI_DIVISION_STANDINGS_TABLE.jsx
-  var import_react29 = __toESM(require_react(), 1);
-  function MuiStandingsTable(props) {
-    const { game } = props;
-    return /* @__PURE__ */ import_react29.default.createElement(import_react29.default.Fragment, null, /* @__PURE__ */ import_react29.default.createElement(Table_default, {
-      size: "small"
-    }, /* @__PURE__ */ import_react29.default.createElement(TableHead_default, null, /* @__PURE__ */ import_react29.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react29.default.createElement(TableCell_default, null, "NF NORTH"), /* @__PURE__ */ import_react29.default.createElement(TableCell_default, null, "RECORD"))), /* @__PURE__ */ import_react29.default.createElement(TableBody_default, null, /* @__PURE__ */ import_react29.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react29.default.createElement(TableCell_default, null, "Green Bay"), /* @__PURE__ */ import_react29.default.createElement(TableCell_default, null, "16-0-0")), /* @__PURE__ */ import_react29.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react29.default.createElement(TableCell_default, null, "Green Bay"), /* @__PURE__ */ import_react29.default.createElement(TableCell_default, null, "16-0")), /* @__PURE__ */ import_react29.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react29.default.createElement(TableCell_default, null, "Green Bay"), /* @__PURE__ */ import_react29.default.createElement(TableCell_default, null, "16-0")), /* @__PURE__ */ import_react29.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react29.default.createElement(TableCell_default, null, "Green Bay"), /* @__PURE__ */ import_react29.default.createElement(TableCell_default, null, "16-0")))));
-  }
-  MuiStandingsTable.propTypes = {};
-
-  // src/components/Standings/MUI_TABLE_GROUP.jsx
-  var import_react30 = __toESM(require_react(), 1);
-  function MuiTableGroup(props) {
-    const { game } = props;
-    return /* @__PURE__ */ import_react30.default.createElement(import_react30.default.Fragment, null, /* @__PURE__ */ import_react30.default.createElement(Stack_default, {
-      spacing: 2
-    }, /* @__PURE__ */ import_react30.default.createElement(MuiStandingsTable, null), /* @__PURE__ */ import_react30.default.createElement(MuiStandingsTable, null), /* @__PURE__ */ import_react30.default.createElement(MuiStandingsTable, null), /* @__PURE__ */ import_react30.default.createElement(MuiStandingsTable, null)));
-  }
-  MuiStandingsTable.propTypes = {};
-
   // src/Simulator.jsx
   function Simulator(props) {
-    const [userCurrentWeekNumber, setUserCurrentWeekNumber] = import_react31.default.useState(1);
-    const [currentGames, setCurrentGames] = import_react31.default.useState([]);
-    const initializeGames = (week) => {
-      let games = [];
-      import_axios2.default.get(`https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=${week}`).then((response) => {
-        response.data.events.forEach((game) => {
-          let newGame = {
-            homeTeam: game.competitions[0].competitors[0].team.abbreviation,
-            homeScore: game.competitions[0].competitors[0].score,
-            homeImage: `https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/${game.competitions[0].competitors[0].team.abbreviation}.png`,
-            roadTeam: game.competitions[0].competitors[1].team.abbreviation,
-            roadScore: game.competitions[0].competitors[1].score,
-            roadImage: `https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/${game.competitions[0].competitors[1].team.abbreviation}.png`
-          };
-          games.push(newGame);
-        });
-        setCurrentGames(games);
-      }).catch((error) => {
-        console.log("here");
-        alert("Failed to retrieve movie data");
-        console.error("Failed to retrieve movie data");
-        console.error(error);
-      });
-    };
-    import_react31.default.useEffect(() => {
-      initializeGames(userCurrentWeekNumber);
-    }, [userCurrentWeekNumber]);
-    return /* @__PURE__ */ import_react31.default.createElement(Container_default, {
+    return /* @__PURE__ */ import_react19.default.createElement(Container_default, {
       maxWidth: false,
       disableGutters: true,
       sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react31.default.createElement(MuiBar, null), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Header, null), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       container: true,
       spacing: 3,
       columns: 24,
       sx: { p: 2 }
-    }, /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       item: true
-    }, /* @__PURE__ */ import_react31.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Paper_default, {
       sx: { p: 1 }
-    }, /* @__PURE__ */ import_react31.default.createElement(MuiTable, null))), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(RegularSeasonGamesTable, null))), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       item: true,
       xs: 5
-    }, /* @__PURE__ */ import_react31.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Paper_default, {
       sx: {
         p: 2,
         display: "flex",
         flexDirection: "column"
       }
-    }, /* @__PURE__ */ import_react31.default.createElement(MuiTableGroup, null))), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(DivisionStandingsTable, null))), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       item: true,
       xs: 14
-    }, /* @__PURE__ */ import_react31.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Paper_default, {
       sx: {
         p: 2,
         display: "flex",
         flexDirection: "column"
       }
-    }, /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       container: true,
       spacing: 3
-    }, /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       item: true,
       xs: 6
-    }, /* @__PURE__ */ import_react31.default.createElement(MuiPlay, null)), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(MuiPlay, null)), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       item: true,
       xs: 6
-    }, /* @__PURE__ */ import_react31.default.createElement(MuiPlay, null))))), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(MuiPlay, null))))), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       item: true,
       xs: 5
-    }, /* @__PURE__ */ import_react31.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Paper_default, {
       sx: {
         p: 2,
         display: "flex",
         flexDirection: "column"
       }
-    }, /* @__PURE__ */ import_react31.default.createElement(MuiTableGroup, null)))));
+    }, /* @__PURE__ */ import_react19.default.createElement(DivisionStandingsTable, null)))));
   }
 
   // src/app.jsx
-  import_react_dom.default.render(/* @__PURE__ */ import_react32.default.createElement(Simulator, null), document.getElementById("root"));
+  import_react_dom.default.render(/* @__PURE__ */ import_react20.default.createElement(Simulator, null), document.getElementById("root"));
 })();
 /*
 object-assign

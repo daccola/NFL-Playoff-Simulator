@@ -1,23 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function RegularSeasonGame (props) {
-  const { game } = props
+import { Paper, Grid, Container } from '@mui/material'
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography'
 
-  if(game) {
-    return (
-      <div className="row">
-        <div className="col-6">
-          <img src={game.roadImage} alt="TODO" className = 'col-12'></img>
-        </div>
-        <div className="col-6">
-          <img src={game.homeImage} alt="TODO" className = 'col-12'></img>
-        </div>
-      </div>
-    )
-  } else {
-    return <div></div>
-  }
+export default function RegularSeasonGame (props) {
+  return (
+  	<Card variant="outlined" >
+      <CardContent sx={{p:0,'&:last-child': { pb: 0 }}}>  
+        <Grid container>
+          <Grid item xs={5}>
+            <Card>
+      	      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png" alt="TODO" className = 'col-12'></img>
+            </Card>
+          </ Grid>
+          <Grid item xs={2} >
+            <Card>
+              {/* TODO @ */}
+            </Card>
+          </ Grid>
+          <Grid item xs={5}>
+            <Card>
+              <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png" alt="TODO" className = 'col-12'></img>
+            </Card>
+          </ Grid>  
+		    </ Grid>
+      </CardContent>
+    </Card>
+  )  
 }
 
 RegularSeasonGame.propTypes = {
