@@ -13,7 +13,7 @@ export default function RegularSeasonGame (props) {
       <CardContent sx={{p:0,'&:last-child': { pb: 0 }}}>  
         <Grid container>
           <Grid item xs={5}>
-            <Card>
+            <Card sx={{px:1.5, borderBottom: 4, borderColor: 'red' }}>
       	      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png" alt="TODO" className = 'col-12'></img>
             </Card>
           </ Grid>
@@ -23,11 +23,18 @@ export default function RegularSeasonGame (props) {
             </Card>
           </ Grid>
           <Grid item xs={5}>
-            <Card>
+            <Card sx={{px:1.5, borderBottom: 2, borderColor: 'purple' }}>
               <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png" alt="TODO" className = 'col-12'></img>
             </Card>
-          </ Grid>  
+          </ Grid> 
 		    </ Grid>
+        <Grid container>
+          <Grid item >
+            <Typography variant="body2" >
+              FINAL
+            </Typography>
+          </Grid>
+        </Grid>
       </CardContent>
     </Card>
   )  

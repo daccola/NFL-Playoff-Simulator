@@ -582,7 +582,7 @@
             var newElement = ReactElement(oldElement.type, newKey, oldElement.ref, oldElement._self, oldElement._source, oldElement._owner, oldElement.props);
             return newElement;
           }
-          function cloneElement3(element, config, children) {
+          function cloneElement5(element, config, children) {
             if (!!(element === null || element === void 0)) {
               {
                 throw Error("React.cloneElement(...): The argument must be a React element, but you passed " + element + ".");
@@ -629,7 +629,7 @@
             }
             return ReactElement(element.type, key, ref, self, source, owner, props);
           }
-          function isValidElement3(object) {
+          function isValidElement5(object) {
             return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
           }
           var SEPARATOR = ".";
@@ -691,7 +691,7 @@
                   return c;
                 });
               } else if (mappedChild != null) {
-                if (isValidElement3(mappedChild)) {
+                if (isValidElement5(mappedChild)) {
                   mappedChild = cloneAndReplaceKey(mappedChild, escapedPrefix + (mappedChild.key && (!_child || _child.key !== mappedChild.key) ? escapeUserProvidedKey("" + mappedChild.key) + "/" : "") + childKey);
                 }
                 array.push(mappedChild);
@@ -768,7 +768,7 @@
             }) || [];
           }
           function onlyChild(children) {
-            if (!isValidElement3(children)) {
+            if (!isValidElement5(children)) {
               {
                 throw Error("React.Children.only expected to receive a single React element child.");
               }
@@ -954,7 +954,7 @@
             }
             return lazyType;
           }
-          function forwardRef24(render) {
+          function forwardRef27(render) {
             {
               if (render != null && render.$$typeof === REACT_MEMO_TYPE) {
                 error("forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).");
@@ -1063,7 +1063,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState5(initialState) {
+          function useState6(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1071,11 +1071,11 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useReducer(reducer, initialArg, init);
           }
-          function useRef6(initialValue) {
+          function useRef8(initialValue) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect6(create, deps) {
+          function useEffect8(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1083,15 +1083,15 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useLayoutEffect(create, deps);
           }
-          function useCallback4(callback, deps) {
+          function useCallback5(callback, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useCallback(callback, deps);
           }
-          function useMemo3(create, deps) {
+          function useMemo4(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useMemo(create, deps);
           }
-          function useImperativeHandle3(ref, create, deps) {
+          function useImperativeHandle4(ref, create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useImperativeHandle(ref, create, deps);
           }
@@ -1468,11 +1468,11 @@
             if (Array.isArray(node2)) {
               for (var i = 0; i < node2.length; i++) {
                 var child = node2[i];
-                if (isValidElement3(child)) {
+                if (isValidElement5(child)) {
                   validateExplicitKey(child, parentType);
                 }
               }
-            } else if (isValidElement3(node2)) {
+            } else if (isValidElement5(node2)) {
               if (node2._store) {
                 node2._store.validated = true;
               }
@@ -1483,7 +1483,7 @@
                   var iterator = iteratorFn.call(node2);
                   var step;
                   while (!(step = iterator.next()).done) {
-                    if (isValidElement3(step.value)) {
+                    if (isValidElement5(step.value)) {
                       validateExplicitKey(step.value, parentType);
                     }
                   }
@@ -1604,7 +1604,7 @@
             return validatedFactory;
           }
           function cloneElementWithValidation(element, props, children) {
-            var newElement = cloneElement3.apply(this, arguments);
+            var newElement = cloneElement5.apply(this, arguments);
             for (var i = 2; i < arguments.length; i++) {
               validateChildKeys(arguments[i], newElement.type);
             }
@@ -1622,14 +1622,14 @@
           var createElement$1 = createElementWithValidation;
           var cloneElement$1 = cloneElementWithValidation;
           var createFactory = createFactoryWithValidation;
-          var Children4 = {
+          var Children5 = {
             map: mapChildren,
             forEach: forEachChildren,
             count: countChildren,
             toArray,
             only: onlyChild
           };
-          exports.Children = Children4;
+          exports.Children = Children5;
           exports.Component = Component;
           exports.PureComponent = PureComponent;
           exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals;
@@ -1638,20 +1638,20 @@
           exports.createElement = createElement$1;
           exports.createFactory = createFactory;
           exports.createRef = createRef;
-          exports.forwardRef = forwardRef24;
-          exports.isValidElement = isValidElement3;
+          exports.forwardRef = forwardRef27;
+          exports.isValidElement = isValidElement5;
           exports.lazy = lazy;
           exports.memo = memo2;
-          exports.useCallback = useCallback4;
+          exports.useCallback = useCallback5;
           exports.useContext = useContext9;
           exports.useDebugValue = useDebugValue3;
-          exports.useEffect = useEffect6;
-          exports.useImperativeHandle = useImperativeHandle3;
+          exports.useEffect = useEffect8;
+          exports.useImperativeHandle = useImperativeHandle4;
           exports.useLayoutEffect = useLayoutEffect3;
-          exports.useMemo = useMemo3;
+          exports.useMemo = useMemo4;
           exports.useReducer = useReducer;
-          exports.useRef = useRef6;
-          exports.useState = useState5;
+          exports.useRef = useRef8;
+          exports.useState = useState6;
           exports.version = ReactVersion;
         })();
       }
@@ -1735,9 +1735,9 @@
             var _setTimeout = window.setTimeout;
             var _clearTimeout = window.clearTimeout;
             if (typeof console !== "undefined") {
-              var requestAnimationFrame = window.requestAnimationFrame;
+              var requestAnimationFrame2 = window.requestAnimationFrame;
               var cancelAnimationFrame = window.cancelAnimationFrame;
-              if (typeof requestAnimationFrame !== "function") {
+              if (typeof requestAnimationFrame2 !== "function") {
                 console["error"]("This browser doesn't support requestAnimationFrame. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills");
               }
               if (typeof cancelAnimationFrame !== "function") {
@@ -2459,11 +2459,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React52 = require_react();
+          var React58 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React52.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React58.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format2) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2495,7 +2495,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React52) {
+          if (!React58) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -2507,7 +2507,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment4 = 7;
+          var Fragment5 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -3711,7 +3711,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React52.Children.forEach(children, function(child) {
+            React58.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3722,7 +3722,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React52.Children.forEach(props.children, function(child) {
+                React58.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -4220,15 +4220,15 @@
             };
           }
           var warnValidStyle$1 = warnValidStyle;
-          function createDangerousStringForStyles(styles) {
+          function createDangerousStringForStyles(styles2) {
             {
               var serialized = "";
               var delimiter2 = "";
-              for (var styleName in styles) {
-                if (!styles.hasOwnProperty(styleName)) {
+              for (var styleName in styles2) {
+                if (!styles2.hasOwnProperty(styleName)) {
                   continue;
                 }
-                var styleValue = styles[styleName];
+                var styleValue = styles2[styleName];
                 if (styleValue != null) {
                   var isCustomProperty3 = styleName.indexOf("--") === 0;
                   serialized += delimiter2 + (isCustomProperty3 ? styleName : hyphenateStyleName(styleName)) + ":";
@@ -4239,19 +4239,19 @@
               return serialized || null;
             }
           }
-          function setValueForStyles(node2, styles) {
+          function setValueForStyles(node2, styles2) {
             var style5 = node2.style;
-            for (var styleName in styles) {
-              if (!styles.hasOwnProperty(styleName)) {
+            for (var styleName in styles2) {
+              if (!styles2.hasOwnProperty(styleName)) {
                 continue;
               }
               var isCustomProperty3 = styleName.indexOf("--") === 0;
               {
                 if (!isCustomProperty3) {
-                  warnValidStyle$1(styleName, styles[styleName]);
+                  warnValidStyle$1(styleName, styles2[styleName]);
                 }
               }
-              var styleValue = dangerousStyleValue(styleName, styles[styleName], isCustomProperty3);
+              var styleValue = dangerousStyleValue(styleName, styles2[styleName], isCustomProperty3);
               if (styleName === "float") {
                 styleName = "cssFloat";
               }
@@ -4265,9 +4265,9 @@
           function isValueEmpty(value) {
             return value == null || typeof value === "boolean" || value === "";
           }
-          function expandShorthandMap(styles) {
+          function expandShorthandMap(styles2) {
             var expanded = {};
-            for (var key in styles) {
+            for (var key in styles2) {
               var longhands = shorthandToLonghand[key] || [key];
               for (var i = 0; i < longhands.length; i++) {
                 expanded[longhands[i]] = key;
@@ -7604,8 +7604,8 @@
             }
           }
           function getOffsets(outerNode) {
-            var ownerDocument = outerNode.ownerDocument;
-            var win = ownerDocument && ownerDocument.defaultView || window;
+            var ownerDocument2 = outerNode.ownerDocument;
+            var win = ownerDocument2 && ownerDocument2.defaultView || window;
             var selection = win.getSelection && win.getSelection();
             if (!selection || selection.rangeCount === 0) {
               return null;
@@ -8478,7 +8478,7 @@
           }
           function createElement4(type, props, rootContainerElement, parentNamespace) {
             var isCustomComponentTag;
-            var ownerDocument = getOwnerDocumentFromRootContainer(rootContainerElement);
+            var ownerDocument2 = getOwnerDocumentFromRootContainer(rootContainerElement);
             var domElement;
             var namespaceURI = parentNamespace;
             if (namespaceURI === HTML_NAMESPACE$1) {
@@ -8492,16 +8492,16 @@
                 }
               }
               if (type === "script") {
-                var div = ownerDocument.createElement("div");
+                var div = ownerDocument2.createElement("div");
                 div.innerHTML = "<script><\/script>";
                 var firstChild = div.firstChild;
                 domElement = div.removeChild(firstChild);
               } else if (typeof props.is === "string") {
-                domElement = ownerDocument.createElement(type, {
+                domElement = ownerDocument2.createElement(type, {
                   is: props.is
                 });
               } else {
-                domElement = ownerDocument.createElement(type);
+                domElement = ownerDocument2.createElement(type);
                 if (type === "select") {
                   var node2 = domElement;
                   if (props.multiple) {
@@ -8512,7 +8512,7 @@
                 }
               }
             } else {
-              domElement = ownerDocument.createElementNS(namespaceURI, type);
+              domElement = ownerDocument2.createElementNS(namespaceURI, type);
             }
             {
               if (namespaceURI === HTML_NAMESPACE$1) {
@@ -10915,7 +10915,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React52.Component().refs;
+          var emptyRefsObject = new React58.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -11691,7 +11691,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment4) {
+              if (current2 === null || current2.tag !== Fragment5) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -12059,7 +12059,7 @@
               while (child !== null) {
                 if (child.key === key) {
                   switch (child.tag) {
-                    case Fragment4: {
+                    case Fragment5: {
                       if (element.type === REACT_FRAGMENT_TYPE) {
                         deleteRemainingChildren(returnFiber, child.sibling);
                         var existing = useFiber(child, element.props.children);
@@ -15663,7 +15663,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment4:
+              case Fragment5:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -15830,7 +15830,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef2:
-              case Fragment4:
+              case Fragment5:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -19534,7 +19534,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             return fiber;
           }
           function createFiberFromFragment(elements, mode, lanes, key) {
-            var fiber = createFiber(Fragment4, elements, key, mode);
+            var fiber = createFiber(Fragment5, elements, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -21759,7 +21759,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element2 = REACT_ELEMENT_TYPE;
           var ForwardRef2 = REACT_FORWARD_REF_TYPE;
-          var Fragment4 = REACT_FRAGMENT_TYPE;
+          var Fragment5 = REACT_FRAGMENT_TYPE;
           var Lazy = REACT_LAZY_TYPE;
           var Memo2 = REACT_MEMO_TYPE;
           var Portal = REACT_PORTAL_TYPE;
@@ -21791,7 +21791,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           function isForwardRef(object) {
             return typeOf(object) === REACT_FORWARD_REF_TYPE;
           }
-          function isFragment(object) {
+          function isFragment2(object) {
             return typeOf(object) === REACT_FRAGMENT_TYPE;
           }
           function isLazy(object) {
@@ -21818,7 +21818,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.ContextProvider = ContextProvider;
           exports.Element = Element2;
           exports.ForwardRef = ForwardRef2;
-          exports.Fragment = Fragment4;
+          exports.Fragment = Fragment5;
           exports.Lazy = Lazy;
           exports.Memo = Memo2;
           exports.Portal = Portal;
@@ -21831,7 +21831,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.isContextProvider = isContextProvider;
           exports.isElement = isElement3;
           exports.isForwardRef = isForwardRef;
-          exports.isFragment = isFragment;
+          exports.isFragment = isFragment2;
           exports.isLazy = isLazy;
           exports.isMemo = isMemo;
           exports.isPortal = isPortal;
@@ -21959,7 +21959,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       function emptyFunctionThatReturnsNull() {
         return null;
       }
-      module.exports = function(isValidElement3, throwOnDirectAccess) {
+      module.exports = function(isValidElement5, throwOnDirectAccess) {
         var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
         var FAUX_ITERATOR_SYMBOL = "@@iterator";
         function getIteratorFn(maybeIterable) {
@@ -22079,7 +22079,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         function createElementTypeChecker() {
           function validate(props, propName, componentName, location, propFullName) {
             var propValue = props[propName];
-            if (!isValidElement3(propValue)) {
+            if (!isValidElement5(propValue)) {
               var propType = getPropType(propValue);
               return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
             }
@@ -22259,7 +22259,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               if (Array.isArray(propValue)) {
                 return propValue.every(isNode);
               }
-              if (propValue === null || isValidElement3(propValue)) {
+              if (propValue === null || isValidElement5(propValue)) {
                 return true;
               }
               var iteratorFn = getIteratorFn(propValue);
@@ -22470,7 +22470,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       if (true) {
         (function() {
           "use strict";
-          var React52 = require_react();
+          var React58 = require_react();
           var _assign = require_object_assign();
           var REACT_ELEMENT_TYPE = 60103;
           var REACT_PORTAL_TYPE = 60106;
@@ -22527,7 +22527,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }
             return null;
           }
-          var ReactSharedInternals = React52.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React58.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function error(format2) {
             {
               for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
@@ -23092,7 +23092,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           {
             propTypesMisspellWarningShown = false;
           }
-          function isValidElement3(object) {
+          function isValidElement5(object) {
             {
               return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
             }
@@ -23159,11 +23159,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               if (Array.isArray(node2)) {
                 for (var i = 0; i < node2.length; i++) {
                   var child = node2[i];
-                  if (isValidElement3(child)) {
+                  if (isValidElement5(child)) {
                     validateExplicitKey(child, parentType);
                   }
                 }
-              } else if (isValidElement3(node2)) {
+              } else if (isValidElement5(node2)) {
                 if (node2._store) {
                   node2._store.validated = true;
                 }
@@ -23174,7 +23174,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     var iterator = iteratorFn.call(node2);
                     var step;
                     while (!(step = iterator.next()).done) {
-                      if (isValidElement3(step.value)) {
+                      if (isValidElement5(step.value)) {
                         validateExplicitKey(step.value, parentType);
                       }
                     }
@@ -23419,7 +23419,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           var ContextProvider = REACT_PROVIDER_TYPE;
           var Element2 = REACT_ELEMENT_TYPE;
           var ForwardRef2 = REACT_FORWARD_REF_TYPE;
-          var Fragment4 = REACT_FRAGMENT_TYPE;
+          var Fragment5 = REACT_FRAGMENT_TYPE;
           var Lazy = REACT_LAZY_TYPE;
           var Memo2 = REACT_MEMO_TYPE;
           var Portal = REACT_PORTAL_TYPE;
@@ -23458,7 +23458,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           function isForwardRef(object) {
             return typeOf(object) === REACT_FORWARD_REF_TYPE;
           }
-          function isFragment(object) {
+          function isFragment2(object) {
             return typeOf(object) === REACT_FRAGMENT_TYPE;
           }
           function isLazy(object) {
@@ -23483,7 +23483,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.ContextProvider = ContextProvider;
           exports.Element = Element2;
           exports.ForwardRef = ForwardRef2;
-          exports.Fragment = Fragment4;
+          exports.Fragment = Fragment5;
           exports.Lazy = Lazy;
           exports.Memo = Memo2;
           exports.Portal = Portal;
@@ -23496,7 +23496,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           exports.isContextProvider = isContextProvider;
           exports.isElement = isElement3;
           exports.isForwardRef = isForwardRef;
-          exports.isFragment = isFragment;
+          exports.isFragment = isFragment2;
           exports.isLazy = isLazy;
           exports.isMemo = isMemo;
           exports.isPortal = isPortal;
@@ -23518,6 +23518,210 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         module.exports = null;
       } else {
         module.exports = require_react_is_development2();
+      }
+    }
+  });
+
+  // node_modules/@mui/material/node_modules/react-is/cjs/react-is.development.js
+  var require_react_is_development3 = __commonJS({
+    "node_modules/@mui/material/node_modules/react-is/cjs/react-is.development.js"(exports) {
+      "use strict";
+      if (true) {
+        (function() {
+          "use strict";
+          var REACT_ELEMENT_TYPE = 60103;
+          var REACT_PORTAL_TYPE = 60106;
+          var REACT_FRAGMENT_TYPE = 60107;
+          var REACT_STRICT_MODE_TYPE = 60108;
+          var REACT_PROFILER_TYPE = 60114;
+          var REACT_PROVIDER_TYPE = 60109;
+          var REACT_CONTEXT_TYPE = 60110;
+          var REACT_FORWARD_REF_TYPE = 60112;
+          var REACT_SUSPENSE_TYPE = 60113;
+          var REACT_SUSPENSE_LIST_TYPE = 60120;
+          var REACT_MEMO_TYPE = 60115;
+          var REACT_LAZY_TYPE = 60116;
+          var REACT_BLOCK_TYPE = 60121;
+          var REACT_SERVER_BLOCK_TYPE = 60122;
+          var REACT_FUNDAMENTAL_TYPE = 60117;
+          var REACT_SCOPE_TYPE = 60119;
+          var REACT_OPAQUE_ID_TYPE = 60128;
+          var REACT_DEBUG_TRACING_MODE_TYPE = 60129;
+          var REACT_OFFSCREEN_TYPE = 60130;
+          var REACT_LEGACY_HIDDEN_TYPE = 60131;
+          if (typeof Symbol === "function" && Symbol.for) {
+            var symbolFor = Symbol.for;
+            REACT_ELEMENT_TYPE = symbolFor("react.element");
+            REACT_PORTAL_TYPE = symbolFor("react.portal");
+            REACT_FRAGMENT_TYPE = symbolFor("react.fragment");
+            REACT_STRICT_MODE_TYPE = symbolFor("react.strict_mode");
+            REACT_PROFILER_TYPE = symbolFor("react.profiler");
+            REACT_PROVIDER_TYPE = symbolFor("react.provider");
+            REACT_CONTEXT_TYPE = symbolFor("react.context");
+            REACT_FORWARD_REF_TYPE = symbolFor("react.forward_ref");
+            REACT_SUSPENSE_TYPE = symbolFor("react.suspense");
+            REACT_SUSPENSE_LIST_TYPE = symbolFor("react.suspense_list");
+            REACT_MEMO_TYPE = symbolFor("react.memo");
+            REACT_LAZY_TYPE = symbolFor("react.lazy");
+            REACT_BLOCK_TYPE = symbolFor("react.block");
+            REACT_SERVER_BLOCK_TYPE = symbolFor("react.server.block");
+            REACT_FUNDAMENTAL_TYPE = symbolFor("react.fundamental");
+            REACT_SCOPE_TYPE = symbolFor("react.scope");
+            REACT_OPAQUE_ID_TYPE = symbolFor("react.opaque.id");
+            REACT_DEBUG_TRACING_MODE_TYPE = symbolFor("react.debug_trace_mode");
+            REACT_OFFSCREEN_TYPE = symbolFor("react.offscreen");
+            REACT_LEGACY_HIDDEN_TYPE = symbolFor("react.legacy_hidden");
+          }
+          var enableScopeAPI = false;
+          function isValidElementType(type) {
+            if (typeof type === "string" || typeof type === "function") {
+              return true;
+            }
+            if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || type === REACT_DEBUG_TRACING_MODE_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || type === REACT_LEGACY_HIDDEN_TYPE || enableScopeAPI) {
+              return true;
+            }
+            if (typeof type === "object" && type !== null) {
+              if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_BLOCK_TYPE || type[0] === REACT_SERVER_BLOCK_TYPE) {
+                return true;
+              }
+            }
+            return false;
+          }
+          function typeOf(object) {
+            if (typeof object === "object" && object !== null) {
+              var $$typeof = object.$$typeof;
+              switch ($$typeof) {
+                case REACT_ELEMENT_TYPE:
+                  var type = object.type;
+                  switch (type) {
+                    case REACT_FRAGMENT_TYPE:
+                    case REACT_PROFILER_TYPE:
+                    case REACT_STRICT_MODE_TYPE:
+                    case REACT_SUSPENSE_TYPE:
+                    case REACT_SUSPENSE_LIST_TYPE:
+                      return type;
+                    default:
+                      var $$typeofType = type && type.$$typeof;
+                      switch ($$typeofType) {
+                        case REACT_CONTEXT_TYPE:
+                        case REACT_FORWARD_REF_TYPE:
+                        case REACT_LAZY_TYPE:
+                        case REACT_MEMO_TYPE:
+                        case REACT_PROVIDER_TYPE:
+                          return $$typeofType;
+                        default:
+                          return $$typeof;
+                      }
+                  }
+                case REACT_PORTAL_TYPE:
+                  return $$typeof;
+              }
+            }
+            return void 0;
+          }
+          var ContextConsumer = REACT_CONTEXT_TYPE;
+          var ContextProvider = REACT_PROVIDER_TYPE;
+          var Element2 = REACT_ELEMENT_TYPE;
+          var ForwardRef2 = REACT_FORWARD_REF_TYPE;
+          var Fragment5 = REACT_FRAGMENT_TYPE;
+          var Lazy = REACT_LAZY_TYPE;
+          var Memo2 = REACT_MEMO_TYPE;
+          var Portal = REACT_PORTAL_TYPE;
+          var Profiler = REACT_PROFILER_TYPE;
+          var StrictMode = REACT_STRICT_MODE_TYPE;
+          var Suspense = REACT_SUSPENSE_TYPE;
+          var hasWarnedAboutDeprecatedIsAsyncMode = false;
+          var hasWarnedAboutDeprecatedIsConcurrentMode = false;
+          function isAsyncMode(object) {
+            {
+              if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+                hasWarnedAboutDeprecatedIsAsyncMode = true;
+                console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 18+.");
+              }
+            }
+            return false;
+          }
+          function isConcurrentMode(object) {
+            {
+              if (!hasWarnedAboutDeprecatedIsConcurrentMode) {
+                hasWarnedAboutDeprecatedIsConcurrentMode = true;
+                console["warn"]("The ReactIs.isConcurrentMode() alias has been deprecated, and will be removed in React 18+.");
+              }
+            }
+            return false;
+          }
+          function isContextConsumer(object) {
+            return typeOf(object) === REACT_CONTEXT_TYPE;
+          }
+          function isContextProvider(object) {
+            return typeOf(object) === REACT_PROVIDER_TYPE;
+          }
+          function isElement3(object) {
+            return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+          }
+          function isForwardRef(object) {
+            return typeOf(object) === REACT_FORWARD_REF_TYPE;
+          }
+          function isFragment2(object) {
+            return typeOf(object) === REACT_FRAGMENT_TYPE;
+          }
+          function isLazy(object) {
+            return typeOf(object) === REACT_LAZY_TYPE;
+          }
+          function isMemo(object) {
+            return typeOf(object) === REACT_MEMO_TYPE;
+          }
+          function isPortal(object) {
+            return typeOf(object) === REACT_PORTAL_TYPE;
+          }
+          function isProfiler(object) {
+            return typeOf(object) === REACT_PROFILER_TYPE;
+          }
+          function isStrictMode(object) {
+            return typeOf(object) === REACT_STRICT_MODE_TYPE;
+          }
+          function isSuspense(object) {
+            return typeOf(object) === REACT_SUSPENSE_TYPE;
+          }
+          exports.ContextConsumer = ContextConsumer;
+          exports.ContextProvider = ContextProvider;
+          exports.Element = Element2;
+          exports.ForwardRef = ForwardRef2;
+          exports.Fragment = Fragment5;
+          exports.Lazy = Lazy;
+          exports.Memo = Memo2;
+          exports.Portal = Portal;
+          exports.Profiler = Profiler;
+          exports.StrictMode = StrictMode;
+          exports.Suspense = Suspense;
+          exports.isAsyncMode = isAsyncMode;
+          exports.isConcurrentMode = isConcurrentMode;
+          exports.isContextConsumer = isContextConsumer;
+          exports.isContextProvider = isContextProvider;
+          exports.isElement = isElement3;
+          exports.isForwardRef = isForwardRef;
+          exports.isFragment = isFragment2;
+          exports.isLazy = isLazy;
+          exports.isMemo = isMemo;
+          exports.isPortal = isPortal;
+          exports.isProfiler = isProfiler;
+          exports.isStrictMode = isStrictMode;
+          exports.isSuspense = isSuspense;
+          exports.isValidElementType = isValidElementType;
+          exports.typeOf = typeOf;
+        })();
+      }
+    }
+  });
+
+  // node_modules/@mui/material/node_modules/react-is/index.js
+  var require_react_is3 = __commonJS({
+    "node_modules/@mui/material/node_modules/react-is/index.js"(exports, module) {
+      "use strict";
+      if (false) {
+        module.exports = null;
+      } else {
+        module.exports = require_react_is_development3();
       }
     }
   });
@@ -23606,8 +23810,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       return window;
     }
     if (node2.toString() !== "[object Window]") {
-      var ownerDocument = node2.ownerDocument;
-      return ownerDocument ? ownerDocument.defaultView || window : window;
+      var ownerDocument2 = node2.ownerDocument;
+      return ownerDocument2 ? ownerDocument2.defaultView || window : window;
     }
     return node2;
   }
@@ -29367,8 +29571,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         currentSheet.insert(rule);
       })];
       var serializer = middleware(omnipresentPlugins.concat(stylisPlugins, finalizingPlugins));
-      var stylis = function stylis2(styles) {
-        return serialize(compile(styles), serializer);
+      var stylis = function stylis2(styles2) {
+        return serialize(compile(styles2), serializer);
       };
       _insert = function insert(selector, serialized, sheet, shouldCache) {
         currentSheet = sheet;
@@ -29617,11 +29821,11 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
               next2 = next2.next;
             }
           }
-          var styles = interpolation.styles + ";";
+          var styles2 = interpolation.styles + ";";
           if (interpolation.map !== void 0) {
-            styles += interpolation.map;
+            styles2 += interpolation.map;
           }
-          return styles;
+          return styles2;
         }
         return createStringFromObject(mergedProps, registered, interpolation);
       }
@@ -29713,30 +29917,30 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       return args[0];
     }
     var stringMode = true;
-    var styles = "";
+    var styles2 = "";
     cursor = void 0;
     var strings = args[0];
     if (strings == null || strings.raw === void 0) {
       stringMode = false;
-      styles += handleInterpolation(mergedProps, registered, strings);
+      styles2 += handleInterpolation(mergedProps, registered, strings);
     } else {
       if (strings[0] === void 0) {
         console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR);
       }
-      styles += strings[0];
+      styles2 += strings[0];
     }
     for (var i = 1; i < args.length; i++) {
-      styles += handleInterpolation(mergedProps, registered, args[i]);
+      styles2 += handleInterpolation(mergedProps, registered, args[i]);
       if (stringMode) {
         if (strings[i] === void 0) {
           console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR);
         }
-        styles += strings[i];
+        styles2 += strings[i];
       }
     }
     var sourceMap;
     if (true) {
-      styles = styles.replace(sourceMapPattern, function(match3) {
+      styles2 = styles2.replace(sourceMapPattern, function(match3) {
         sourceMap = match3;
         return "";
       });
@@ -29744,14 +29948,14 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     labelPattern.lastIndex = 0;
     var identifierName = "";
     var match2;
-    while ((match2 = labelPattern.exec(styles)) !== null) {
+    while ((match2 = labelPattern.exec(styles2)) !== null) {
       identifierName += "-" + match2[1];
     }
-    var name = hash_browser_esm_default(styles) + identifierName;
+    var name = hash_browser_esm_default(styles2) + identifierName;
     if (true) {
       return {
         name,
-        styles,
+        styles: styles2,
         map: sourceMap,
         next: cursor,
         toString: function toString() {
@@ -29761,7 +29965,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     }
     return {
       name,
-      styles,
+      styles: styles2,
       next: cursor
     };
   };
@@ -29925,8 +30129,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       console.error("It looks like you're using the css prop on Global, did you mean to use the styles prop instead?");
       warnedAboutCssPropForGlobal = true;
     }
-    var styles = props.styles;
-    var serialized = serializeStyles([styles], void 0, (0, import_react2.useContext)(ThemeContext));
+    var styles2 = props.styles;
+    var serialized = serializeStyles([styles2], void 0, (0, import_react2.useContext)(ThemeContext));
     var sheetRef = (0, import_react2.useRef)();
     useInsertionEffect5(function() {
       var key = cache.key + "-global";
@@ -30162,24 +30366,24 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     var shouldUseAs = !defaultShouldForwardProp("as");
     return function() {
       var args = arguments;
-      var styles = isReal && tag.__emotion_styles !== void 0 ? tag.__emotion_styles.slice(0) : [];
+      var styles2 = isReal && tag.__emotion_styles !== void 0 ? tag.__emotion_styles.slice(0) : [];
       if (identifierName !== void 0) {
-        styles.push("label:" + identifierName + ";");
+        styles2.push("label:" + identifierName + ";");
       }
       if (args[0] == null || args[0].raw === void 0) {
-        styles.push.apply(styles, args);
+        styles2.push.apply(styles2, args);
       } else {
         if (args[0][0] === void 0) {
           console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR2);
         }
-        styles.push(args[0][0]);
+        styles2.push(args[0][0]);
         var len = args.length;
         var i = 1;
         for (; i < len; i++) {
           if (args[0][i] === void 0) {
             console.error(ILLEGAL_ESCAPE_SEQUENCE_ERROR2);
           }
-          styles.push(args[i], args[0][i]);
+          styles2.push(args[i], args[0][i]);
         }
       }
       var Styled = withEmotionCache(function(props, cache, ref) {
@@ -30199,7 +30403,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
         } else if (props.className != null) {
           className = props.className + " ";
         }
-        var serialized = serializeStyles(styles.concat(classInterpolations), cache.registered, mergedProps);
+        var serialized = serializeStyles(styles2.concat(classInterpolations), cache.registered, mergedProps);
         className += cache.key + "-" + serialized.name;
         if (targetClassName !== void 0) {
           className += " " + targetClassName;
@@ -30225,7 +30429,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       Styled.defaultProps = tag.defaultProps;
       Styled.__emotion_real = Styled;
       Styled.__emotion_base = baseTag;
-      Styled.__emotion_styles = styles;
+      Styled.__emotion_styles = styles2;
       Styled.__emotion_forwardProp = shouldForwardProp2;
       Object.defineProperty(Styled, "toString", {
         value: function value() {
@@ -30238,7 +30442,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       Styled.withComponent = function(nextTag, nextOptions) {
         return createStyled2(nextTag, _extends({}, options, nextOptions, {
           shouldForwardProp: composeShouldForwardProps(Styled, nextOptions, true)
-        })).apply(void 0, styles);
+        })).apply(void 0, styles2);
       };
       return Styled;
     };
@@ -30392,14 +30596,14 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   function styled(tag, options) {
     const stylesFactory = emotion_styled_browser_esm_default(tag, options);
     if (true) {
-      return (...styles) => {
+      return (...styles2) => {
         const component = typeof tag === "string" ? `"${tag}"` : "component";
-        if (styles.length === 0) {
+        if (styles2.length === 0) {
           console.error([`MUI: Seems like you called \`styled(${component})()\` without a \`style\` argument.`, 'You must provide a `styles` argument: `styled("div")(styleYouForgotToPass)`.'].join("\n"));
-        } else if (styles.some((style4) => style4 === void 0)) {
+        } else if (styles2.some((style4) => style4 === void 0)) {
           console.error(`MUI: the styled(${component})(...args) API requires all its args to be defined.`);
         }
-        return stylesFactory(...styles);
+        return stylesFactory(...styles2);
       };
     }
     return stylesFactory;
@@ -30519,6 +30723,33 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  // node_modules/@mui/utils/esm/debounce.js
+  function debounce2(func, wait = 166) {
+    let timeout;
+    function debounced(...args) {
+      const later = () => {
+        func.apply(this, args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    }
+    debounced.clear = () => {
+      clearTimeout(timeout);
+    };
+    return debounced;
+  }
+
+  // node_modules/@mui/utils/esm/ownerDocument.js
+  function ownerDocument(node2) {
+    return node2 && node2.ownerDocument || document;
+  }
+
+  // node_modules/@mui/utils/esm/ownerWindow.js
+  function ownerWindow(node2) {
+    const doc = ownerDocument(node2);
+    return doc.defaultView || window;
+  }
+
   // node_modules/@mui/utils/esm/requirePropFactory.js
   function requirePropFactory(componentNameInError, Component) {
     if (false) {
@@ -30555,6 +30786,18 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var React4 = __toESM(require_react());
   var useEnhancedEffect = typeof window !== "undefined" ? React4.useLayoutEffect : React4.useEffect;
   var useEnhancedEffect_default = useEnhancedEffect;
+
+  // node_modules/@mui/utils/esm/unsupportedProp.js
+  function unsupportedProp(props, propName, componentName, location, propFullName) {
+    if (false) {
+      return null;
+    }
+    const propFullNameSafe = propFullName || propName;
+    if (typeof props[propName] !== "undefined") {
+      return new Error(`The prop \`${propFullNameSafe}\` is not supported. Please remove it.`);
+    }
+    return null;
+  }
 
   // node_modules/@mui/utils/esm/useEventCallback.js
   var React5 = __toESM(require_react());
@@ -30681,6 +30924,53 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
       onBlur: handleBlurVisible,
       ref
     };
+  }
+
+  // node_modules/@mui/utils/esm/scrollLeft.js
+  var cachedType;
+  function detectScrollType() {
+    if (cachedType) {
+      return cachedType;
+    }
+    const dummy = document.createElement("div");
+    const container = document.createElement("div");
+    container.style.width = "10px";
+    container.style.height = "1px";
+    dummy.appendChild(container);
+    dummy.dir = "rtl";
+    dummy.style.fontSize = "14px";
+    dummy.style.width = "4px";
+    dummy.style.height = "1px";
+    dummy.style.position = "absolute";
+    dummy.style.top = "-1000px";
+    dummy.style.overflow = "scroll";
+    document.body.appendChild(dummy);
+    cachedType = "reverse";
+    if (dummy.scrollLeft > 0) {
+      cachedType = "default";
+    } else {
+      dummy.scrollLeft = 1;
+      if (dummy.scrollLeft === 0) {
+        cachedType = "negative";
+      }
+    }
+    document.body.removeChild(dummy);
+    return cachedType;
+  }
+  function getNormalizedScrollLeft(element, direction) {
+    const scrollLeft = element.scrollLeft;
+    if (direction !== "rtl") {
+      return scrollLeft;
+    }
+    const type = detectScrollType();
+    switch (type) {
+      case "negative":
+        return element.scrollWidth - element.clientWidth + scrollLeft;
+      case "reverse":
+        return element.scrollWidth - element.clientWidth - scrollLeft;
+      default:
+        return scrollLeft;
+    }
   }
 
   // node_modules/@mui/utils/esm/integerPropType.js
@@ -30924,8 +31214,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
   var style_default = style;
 
   // node_modules/@mui/system/esm/compose.js
-  function compose(...styles) {
-    const handlers = styles.reduce((acc, style4) => {
+  function compose(...styles2) {
+    const handlers = styles2.reduce((acc, style4) => {
       style4.filterProps.forEach((prop) => {
         acc[prop] = style4;
       });
@@ -30939,8 +31229,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
         return acc;
       }, {});
     };
-    fn2.propTypes = true ? styles.reduce((acc, style4) => Object.assign(acc, style4.propTypes), {}) : {};
-    fn2.filterProps = styles.reduce((acc, style4) => acc.concat(style4.filterProps), []);
+    fn2.propTypes = true ? styles2.reduce((acc, style4) => Object.assign(acc, style4.propTypes), {}) : {};
+    fn2.filterProps = styles2.reduce((acc, style4) => acc.concat(style4.filterProps), []);
     return fn2;
   }
   var compose_default = compose;
@@ -31872,7 +32162,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
     });
     return variantsStyles;
   };
-  var variantsResolver = (props, styles, theme, name) => {
+  var variantsResolver = (props, styles2, theme, name) => {
     var _theme$components, _theme$components$nam;
     const {
       ownerState = {}
@@ -31888,7 +32178,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_liter
           }
         });
         if (isMatch) {
-          variantsStyles.push(styles[propsToClassKey(themeVariant.props)]);
+          variantsStyles.push(styles2[propsToClassKey(themeVariant.props)]);
         }
       });
     }
@@ -32929,7 +33219,7 @@ const theme2 = createTheme({ palette: {
     ownerState,
     theme
   }) => {
-    let styles = _extends({
+    let styles2 = _extends({
       display: "flex"
     }, handleBreakpoints({
       theme
@@ -32963,17 +33253,17 @@ const theme2 = createTheme({ palette: {
           }
         };
       };
-      styles = deepmerge(styles, handleBreakpoints({
+      styles2 = deepmerge(styles2, handleBreakpoints({
         theme
       }, spacingValues, styleFromPropValue));
     }
-    return styles;
+    return styles2;
   };
   var StackRoot = styled_default("div", {
     name: "MuiStack",
     slot: "Root",
-    overridesResolver: (props, styles) => {
-      return [styles.root];
+    overridesResolver: (props, styles2) => {
+      return [styles2.root];
     }
   })(style3);
   var Stack = /* @__PURE__ */ React11.forwardRef(function Stack2(inProps, ref) {
@@ -33048,11 +33338,11 @@ const theme2 = createTheme({ palette: {
   var TableRoot = styled_default("table", {
     name: "MuiTable",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.root, ownerState.stickyHeader && styles.stickyHeader];
+      return [styles2.root, ownerState.stickyHeader && styles2.stickyHeader];
     }
   })(({
     theme,
@@ -33152,7 +33442,7 @@ const theme2 = createTheme({ palette: {
   var TableBodyRoot = styled_default("tbody", {
     name: "MuiTableBody",
     slot: "Root",
-    overridesResolver: (props, styles) => styles.root
+    overridesResolver: (props, styles2) => styles2.root
   })({
     display: "table-row-group"
   });
@@ -33227,11 +33517,11 @@ const theme2 = createTheme({ palette: {
   var TableCellRoot = styled_default("td", {
     name: "MuiTableCell",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.root, styles[ownerState.variant], styles[`size${capitalize_default(ownerState.size)}`], ownerState.padding !== "normal" && styles[`padding${capitalize_default(ownerState.padding)}`], ownerState.align !== "inherit" && styles[`align${capitalize_default(ownerState.align)}`], ownerState.stickyHeader && styles.stickyHeader];
+      return [styles2.root, styles2[ownerState.variant], styles2[`size${capitalize_default(ownerState.size)}`], ownerState.padding !== "normal" && styles2[`padding${capitalize_default(ownerState.padding)}`], ownerState.align !== "inherit" && styles2[`align${capitalize_default(ownerState.align)}`], ownerState.stickyHeader && styles2.stickyHeader];
     }
   })(({
     theme,
@@ -33374,7 +33664,7 @@ const theme2 = createTheme({ palette: {
   var TableHeadRoot = styled_default("thead", {
     name: "MuiTableHead",
     slot: "Root",
-    overridesResolver: (props, styles) => styles.root
+    overridesResolver: (props, styles2) => styles2.root
   })({
     display: "table-header-group"
   });
@@ -33445,11 +33735,11 @@ const theme2 = createTheme({ palette: {
   var TableRowRoot = styled_default("tr", {
     name: "MuiTableRow",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.root, ownerState.head && styles.head, ownerState.footer && styles.footer];
+      return [styles2.root, ownerState.head && styles2.head, ownerState.footer && styles2.footer];
     }
   })(({
     theme
@@ -33565,11 +33855,11 @@ const theme2 = createTheme({ palette: {
   var SvgIconRoot = styled_default("svg", {
     name: "MuiSvgIcon",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.root, ownerState.color !== "inherit" && styles[`color${capitalize_default(ownerState.color)}`], styles[`fontSize${capitalize_default(ownerState.fontSize)}`]];
+      return [styles2.root, ownerState.color !== "inherit" && styles2[`color${capitalize_default(ownerState.color)}`], styles2[`fontSize${capitalize_default(ownerState.fontSize)}`]];
     }
   })(({
     theme,
@@ -33676,8 +33966,20 @@ const theme2 = createTheme({ palette: {
     return /* @__PURE__ */ React23.memo(/* @__PURE__ */ React23.forwardRef(Component));
   }
 
+  // node_modules/@mui/material/utils/debounce.js
+  var debounce_default = debounce2;
+
+  // node_modules/@mui/material/utils/ownerDocument.js
+  var ownerDocument_default = ownerDocument;
+
+  // node_modules/@mui/material/utils/ownerWindow.js
+  var ownerWindow_default = ownerWindow;
+
   // node_modules/@mui/material/utils/requirePropFactory.js
   var requirePropFactory_default = requirePropFactory;
+
+  // node_modules/@mui/material/utils/unsupportedProp.js
+  var unsupportedProp_default = unsupportedProp;
 
   // node_modules/@mui/material/utils/useEventCallback.js
   var useEventCallback_default = useEventCallback;
@@ -33946,11 +34248,11 @@ const theme2 = createTheme({ palette: {
   var PaperRoot = styled_default("div", {
     name: "MuiPaper",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.root, styles[ownerState.variant], !ownerState.square && styles.rounded, ownerState.variant === "elevation" && styles[`elevation${ownerState.elevation}`]];
+      return [styles2.root, styles2[ownerState.variant], !ownerState.square && styles2.rounded, ownerState.variant === "elevation" && styles2[`elevation${ownerState.elevation}`]];
     }
   })(({
     theme,
@@ -34406,7 +34708,7 @@ const theme2 = createTheme({ palette: {
   var ButtonBaseRoot = styled_default("button", {
     name: "MuiButtonBase",
     slot: "Root",
-    overridesResolver: (props, styles) => styles.root
+    overridesResolver: (props, styles2) => styles2.root
   })({
     display: "inline-flex",
     alignItems: "center",
@@ -34727,11 +35029,11 @@ const theme2 = createTheme({ palette: {
   var IconButtonRoot = styled_default(ButtonBase_default, {
     name: "MuiIconButton",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.root, ownerState.color !== "default" && styles[`color${capitalize_default(ownerState.color)}`], ownerState.edge && styles[`edge${capitalize_default(ownerState.edge)}`], styles[`size${capitalize_default(ownerState.size)}`]];
+      return [styles2.root, ownerState.color !== "default" && styles2[`color${capitalize_default(ownerState.color)}`], ownerState.edge && styles2[`edge${capitalize_default(ownerState.edge)}`], styles2[`size${capitalize_default(ownerState.size)}`]];
     }
   })(({
     theme,
@@ -34867,11 +35169,11 @@ const theme2 = createTheme({ palette: {
   var TypographyRoot = styled_default("span", {
     name: "MuiTypography",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.root, ownerState.variant && styles[ownerState.variant], ownerState.align !== "inherit" && styles[`align${capitalize_default(ownerState.align)}`], ownerState.noWrap && styles.noWrap, ownerState.gutterBottom && styles.gutterBottom, ownerState.paragraph && styles.paragraph];
+      return [styles2.root, ownerState.variant && styles2[ownerState.variant], ownerState.align !== "inherit" && styles2[`align${capitalize_default(ownerState.align)}`], ownerState.noWrap && styles2.noWrap, ownerState.gutterBottom && styles2.gutterBottom, ownerState.paragraph && styles2.paragraph];
     }
   })(({
     theme,
@@ -34993,11 +35295,11 @@ const theme2 = createTheme({ palette: {
   var AppBarRoot = styled_default(Paper_default, {
     name: "MuiAppBar",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.root, styles[`position${capitalize_default(ownerState.position)}`], styles[`color${capitalize_default(ownerState.color)}`]];
+      return [styles2.root, styles2[`position${capitalize_default(ownerState.position)}`], styles2[`color${capitalize_default(ownerState.color)}`]];
     }
   })(({
     theme,
@@ -35126,11 +35428,11 @@ const theme2 = createTheme({ palette: {
   var AvatarRoot = styled_default("div", {
     name: "MuiAvatar",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.root, styles[ownerState.variant], ownerState.colorDefault && styles.colorDefault];
+      return [styles2.root, styles2[ownerState.variant], ownerState.colorDefault && styles2.colorDefault];
     }
   })(({
     theme,
@@ -35160,7 +35462,7 @@ const theme2 = createTheme({ palette: {
   var AvatarImg = styled_default("img", {
     name: "MuiAvatar",
     slot: "Img",
-    overridesResolver: (props, styles) => styles.img
+    overridesResolver: (props, styles2) => styles2.img
   })({
     width: "100%",
     height: "100%",
@@ -35172,7 +35474,7 @@ const theme2 = createTheme({ palette: {
   var AvatarFallback = styled_default(Person_default, {
     name: "MuiAvatar",
     slot: "Fallback",
-    overridesResolver: (props, styles) => styles.fallback
+    overridesResolver: (props, styles2) => styles2.fallback
   })({
     width: "75%",
     height: "75%"
@@ -35359,11 +35661,11 @@ const theme2 = createTheme({ palette: {
     shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === "classes",
     name: "MuiButton",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.root, styles[ownerState.variant], styles[`${ownerState.variant}${capitalize_default(ownerState.color)}`], styles[`size${capitalize_default(ownerState.size)}`], styles[`${ownerState.variant}Size${capitalize_default(ownerState.size)}`], ownerState.color === "inherit" && styles.colorInherit, ownerState.disableElevation && styles.disableElevation, ownerState.fullWidth && styles.fullWidth];
+      return [styles2.root, styles2[ownerState.variant], styles2[`${ownerState.variant}${capitalize_default(ownerState.color)}`], styles2[`size${capitalize_default(ownerState.size)}`], styles2[`${ownerState.variant}Size${capitalize_default(ownerState.size)}`], ownerState.color === "inherit" && styles2.colorInherit, ownerState.disableElevation && styles2.disableElevation, ownerState.fullWidth && styles2.fullWidth];
     }
   })(({
     theme,
@@ -35485,11 +35787,11 @@ const theme2 = createTheme({ palette: {
   var ButtonStartIcon = styled_default("span", {
     name: "MuiButton",
     slot: "StartIcon",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.startIcon, styles[`iconSize${capitalize_default(ownerState.size)}`]];
+      return [styles2.startIcon, styles2[`iconSize${capitalize_default(ownerState.size)}`]];
     }
   })(({
     ownerState
@@ -35503,11 +35805,11 @@ const theme2 = createTheme({ palette: {
   var ButtonEndIcon = styled_default("span", {
     name: "MuiButton",
     slot: "EndIcon",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.endIcon, styles[`iconSize${capitalize_default(ownerState.size)}`]];
+      return [styles2.endIcon, styles2[`iconSize${capitalize_default(ownerState.size)}`]];
     }
   })(({
     ownerState
@@ -35624,7 +35926,7 @@ const theme2 = createTheme({ palette: {
   var CardRoot = styled_default(Paper_default, {
     name: "MuiCard",
     slot: "Root",
-    overridesResolver: (props, styles) => styles.root
+    overridesResolver: (props, styles2) => styles2.root
   })(() => {
     return {
       overflow: "hidden"
@@ -35689,7 +35991,7 @@ const theme2 = createTheme({ palette: {
   var CardContentRoot = styled_default("div", {
     name: "MuiCardContent",
     slot: "Root",
-    overridesResolver: (props, styles) => styles.root
+    overridesResolver: (props, styles2) => styles2.root
   })(() => {
     return {
       padding: 16,
@@ -35755,11 +36057,11 @@ const theme2 = createTheme({ palette: {
   var ContainerRoot = styled_default("div", {
     name: "MuiContainer",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.root, styles[`maxWidth${capitalize_default(String(ownerState.maxWidth))}`], ownerState.fixed && styles.fixed, ownerState.disableGutters && styles.disableGutters];
+      return [styles2.root, styles2[`maxWidth${capitalize_default(String(ownerState.maxWidth))}`], ownerState.fixed && styles2.fixed, ownerState.disableGutters && styles2.disableGutters];
     }
   })(({
     theme,
@@ -35887,7 +36189,7 @@ const theme2 = createTheme({ palette: {
   }) {
     let size;
     return theme.breakpoints.keys.reduce((globalStyles, breakpoint) => {
-      let styles = {};
+      let styles2 = {};
       if (ownerState[breakpoint]) {
         size = ownerState[breakpoint];
       }
@@ -35895,13 +36197,13 @@ const theme2 = createTheme({ palette: {
         return globalStyles;
       }
       if (size === true) {
-        styles = {
+        styles2 = {
           flexBasis: 0,
           flexGrow: 1,
           maxWidth: "100%"
         };
       } else if (size === "auto") {
-        styles = {
+        styles2 = {
           flexBasis: "auto",
           flexGrow: 0,
           flexShrink: 0,
@@ -35929,16 +36231,16 @@ const theme2 = createTheme({ palette: {
             };
           }
         }
-        styles = _extends({
+        styles2 = _extends({
           flexBasis: width2,
           flexGrow: 0,
           maxWidth: width2
         }, more);
       }
       if (theme.breakpoints.values[breakpoint] === 0) {
-        Object.assign(globalStyles, styles);
+        Object.assign(globalStyles, styles2);
       } else {
-        globalStyles[theme.breakpoints.up(breakpoint)] = styles;
+        globalStyles[theme.breakpoints.up(breakpoint)] = styles2;
       }
       return globalStyles;
     }, {});
@@ -35973,13 +36275,13 @@ const theme2 = createTheme({ palette: {
       container,
       rowSpacing
     } = ownerState;
-    let styles = {};
+    let styles2 = {};
     if (container && rowSpacing !== 0) {
       const rowSpacingValues = resolveBreakpointValues({
         values: rowSpacing,
         breakpoints: theme.breakpoints.values
       });
-      styles = handleBreakpoints({
+      styles2 = handleBreakpoints({
         theme
       }, rowSpacingValues, (propValue) => {
         const themeSpacing = theme.spacing(propValue);
@@ -35994,7 +36296,7 @@ const theme2 = createTheme({ palette: {
         return {};
       });
     }
-    return styles;
+    return styles2;
   }
   function generateColumnGap({
     theme,
@@ -36004,13 +36306,13 @@ const theme2 = createTheme({ palette: {
       container,
       columnSpacing
     } = ownerState;
-    let styles = {};
+    let styles2 = {};
     if (container && columnSpacing !== 0) {
       const columnSpacingValues = resolveBreakpointValues({
         values: columnSpacing,
         breakpoints: theme.breakpoints.values
       });
-      styles = handleBreakpoints({
+      styles2 = handleBreakpoints({
         theme
       }, columnSpacingValues, (propValue) => {
         const themeSpacing = theme.spacing(propValue);
@@ -36026,14 +36328,14 @@ const theme2 = createTheme({ palette: {
         return {};
       });
     }
-    return styles;
+    return styles2;
   }
-  function resolveSpacingClasses(spacing2, container, styles = {}) {
+  function resolveSpacingClasses(spacing2, container, styles2 = {}) {
     if (!container || !spacing2 || spacing2 <= 0) {
       return [];
     }
     if (typeof spacing2 === "string" && !Number.isNaN(Number(spacing2)) || typeof spacing2 === "number") {
-      return [styles[`spacing-xs-${String(spacing2)}`] || `spacing-xs-${String(spacing2)}`];
+      return [styles2[`spacing-xs-${String(spacing2)}`] || `spacing-xs-${String(spacing2)}`];
     }
     const {
       xs,
@@ -36042,12 +36344,12 @@ const theme2 = createTheme({ palette: {
       lg,
       xl
     } = spacing2;
-    return [Number(xs) > 0 && (styles[`spacing-xs-${String(xs)}`] || `spacing-xs-${String(xs)}`), Number(sm) > 0 && (styles[`spacing-sm-${String(sm)}`] || `spacing-sm-${String(sm)}`), Number(md) > 0 && (styles[`spacing-md-${String(md)}`] || `spacing-md-${String(md)}`), Number(lg) > 0 && (styles[`spacing-lg-${String(lg)}`] || `spacing-lg-${String(lg)}`), Number(xl) > 0 && (styles[`spacing-xl-${String(xl)}`] || `spacing-xl-${String(xl)}`)];
+    return [Number(xs) > 0 && (styles2[`spacing-xs-${String(xs)}`] || `spacing-xs-${String(xs)}`), Number(sm) > 0 && (styles2[`spacing-sm-${String(sm)}`] || `spacing-sm-${String(sm)}`), Number(md) > 0 && (styles2[`spacing-md-${String(md)}`] || `spacing-md-${String(md)}`), Number(lg) > 0 && (styles2[`spacing-lg-${String(lg)}`] || `spacing-lg-${String(lg)}`), Number(xl) > 0 && (styles2[`spacing-xl-${String(xl)}`] || `spacing-xl-${String(xl)}`)];
   }
   var GridRoot = styled_default("div", {
     name: "MuiGrid",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         container,
         direction,
@@ -36061,7 +36363,7 @@ const theme2 = createTheme({ palette: {
         xs,
         zeroMinWidth
       } = props.ownerState;
-      return [styles.root, container && styles.container, item && styles.item, zeroMinWidth && styles.zeroMinWidth, ...resolveSpacingClasses(spacing2, container, styles), direction !== "row" && styles[`direction-xs-${String(direction)}`], wrap !== "wrap" && styles[`wrap-xs-${String(wrap)}`], xs !== false && styles[`grid-xs-${String(xs)}`], sm !== false && styles[`grid-sm-${String(sm)}`], md !== false && styles[`grid-md-${String(md)}`], lg !== false && styles[`grid-lg-${String(lg)}`], xl !== false && styles[`grid-xl-${String(xl)}`]];
+      return [styles2.root, container && styles2.container, item && styles2.item, zeroMinWidth && styles2.zeroMinWidth, ...resolveSpacingClasses(spacing2, container, styles2), direction !== "row" && styles2[`direction-xs-${String(direction)}`], wrap !== "wrap" && styles2[`wrap-xs-${String(wrap)}`], xs !== false && styles2[`grid-xs-${String(xs)}`], sm !== false && styles2[`grid-sm-${String(sm)}`], md !== false && styles2[`grid-md-${String(md)}`], lg !== false && styles2[`grid-lg-${String(lg)}`], xl !== false && styles2[`grid-xl-${String(xl)}`]];
     }
   })(({
     ownerState
@@ -36188,9 +36490,204 @@ const theme2 = createTheme({ palette: {
   }
   var Grid_default = Grid;
 
-  // node_modules/@mui/material/Toolbar/Toolbar.js
+  // node_modules/@mui/material/Tab/Tab.js
   var React42 = __toESM(require_react());
   var import_prop_types26 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/Tab/tabClasses.js
+  function getTabUtilityClass(slot) {
+    return generateUtilityClass("MuiTab", slot);
+  }
+  var tabClasses = generateUtilityClasses("MuiTab", ["root", "labelIcon", "textColorInherit", "textColorPrimary", "textColorSecondary", "selected", "disabled", "fullWidth", "wrapped", "iconWrapper"]);
+  var tabClasses_default = tabClasses;
+
+  // node_modules/@mui/material/Tab/Tab.js
+  var import_jsx_runtime27 = __toESM(require_jsx_runtime());
+  var _excluded31 = ["className", "disabled", "disableFocusRipple", "fullWidth", "icon", "iconPosition", "indicator", "label", "onChange", "onClick", "onFocus", "selected", "selectionFollowsFocus", "textColor", "value", "wrapped"];
+  var useUtilityClasses18 = (ownerState) => {
+    const {
+      classes,
+      textColor,
+      fullWidth,
+      wrapped,
+      icon,
+      label,
+      selected,
+      disabled
+    } = ownerState;
+    const slots = {
+      root: ["root", icon && label && "labelIcon", `textColor${capitalize_default(textColor)}`, fullWidth && "fullWidth", wrapped && "wrapped", selected && "selected", disabled && "disabled"],
+      iconWrapper: ["iconWrapper"]
+    };
+    return composeClasses(slots, getTabUtilityClass, classes);
+  };
+  var TabRoot = styled_default(ButtonBase_default, {
+    name: "MuiTab",
+    slot: "Root",
+    overridesResolver: (props, styles2) => {
+      const {
+        ownerState
+      } = props;
+      return [styles2.root, ownerState.label && ownerState.icon && styles2.labelIcon, styles2[`textColor${capitalize_default(ownerState.textColor)}`], ownerState.fullWidth && styles2.fullWidth, ownerState.wrapped && styles2.wrapped];
+    }
+  })(({
+    theme,
+    ownerState
+  }) => _extends({}, theme.typography.button, {
+    maxWidth: 360,
+    minWidth: 90,
+    position: "relative",
+    minHeight: 48,
+    flexShrink: 0,
+    padding: "12px 16px",
+    overflow: "hidden",
+    whiteSpace: "normal",
+    textAlign: "center"
+  }, ownerState.label && {
+    flexDirection: ownerState.iconPosition === "top" || ownerState.iconPosition === "bottom" ? "column" : "row"
+  }, {
+    lineHeight: 1.25
+  }, ownerState.icon && ownerState.label && {
+    minHeight: 72,
+    paddingTop: 9,
+    paddingBottom: 9,
+    [`& > .${tabClasses_default.iconWrapper}`]: _extends({}, ownerState.iconPosition === "top" && {
+      marginBottom: 6
+    }, ownerState.iconPosition === "bottom" && {
+      marginTop: 6
+    }, ownerState.iconPosition === "start" && {
+      marginRight: theme.spacing(1)
+    }, ownerState.iconPosition === "end" && {
+      marginLeft: theme.spacing(1)
+    })
+  }, ownerState.textColor === "inherit" && {
+    color: "inherit",
+    opacity: 0.6,
+    [`&.${tabClasses_default.selected}`]: {
+      opacity: 1
+    },
+    [`&.${tabClasses_default.disabled}`]: {
+      opacity: theme.palette.action.disabledOpacity
+    }
+  }, ownerState.textColor === "primary" && {
+    color: theme.palette.text.secondary,
+    [`&.${tabClasses_default.selected}`]: {
+      color: theme.palette.primary.main
+    },
+    [`&.${tabClasses_default.disabled}`]: {
+      color: theme.palette.text.disabled
+    }
+  }, ownerState.textColor === "secondary" && {
+    color: theme.palette.text.secondary,
+    [`&.${tabClasses_default.selected}`]: {
+      color: theme.palette.secondary.main
+    },
+    [`&.${tabClasses_default.disabled}`]: {
+      color: theme.palette.text.disabled
+    }
+  }, ownerState.fullWidth && {
+    flexShrink: 1,
+    flexGrow: 1,
+    flexBasis: 0,
+    maxWidth: "none"
+  }, ownerState.wrapped && {
+    fontSize: theme.typography.pxToRem(12)
+  }));
+  var Tab2 = /* @__PURE__ */ React42.forwardRef(function Tab3(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiTab"
+    });
+    const {
+      className,
+      disabled = false,
+      disableFocusRipple = false,
+      fullWidth,
+      icon: iconProp,
+      iconPosition = "top",
+      indicator,
+      label,
+      onChange,
+      onClick,
+      onFocus,
+      selected,
+      selectionFollowsFocus,
+      textColor = "inherit",
+      value,
+      wrapped = false
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded31);
+    const ownerState = _extends({}, props, {
+      disabled,
+      disableFocusRipple,
+      selected,
+      icon: !!iconProp,
+      iconPosition,
+      label: !!label,
+      fullWidth,
+      textColor,
+      wrapped
+    });
+    const classes = useUtilityClasses18(ownerState);
+    const icon = iconProp && label && /* @__PURE__ */ React42.isValidElement(iconProp) ? /* @__PURE__ */ React42.cloneElement(iconProp, {
+      className: clsx_m_default(classes.iconWrapper, iconProp.props.className)
+    }) : iconProp;
+    const handleClick = (event) => {
+      if (!selected && onChange) {
+        onChange(event, value);
+      }
+      if (onClick) {
+        onClick(event);
+      }
+    };
+    const handleFocus = (event) => {
+      if (selectionFollowsFocus && !selected && onChange) {
+        onChange(event, value);
+      }
+      if (onFocus) {
+        onFocus(event);
+      }
+    };
+    return /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)(TabRoot, _extends({
+      focusRipple: !disableFocusRipple,
+      className: clsx_m_default(classes.root, className),
+      ref,
+      role: "tab",
+      "aria-selected": selected,
+      disabled,
+      onClick: handleClick,
+      onFocus: handleFocus,
+      ownerState,
+      tabIndex: selected ? 0 : -1
+    }, other, {
+      children: [iconPosition === "top" || iconPosition === "start" ? /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)(React42.Fragment, {
+        children: [icon, label]
+      }) : /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)(React42.Fragment, {
+        children: [label, icon]
+      }), indicator]
+    }));
+  });
+  true ? Tab2.propTypes = {
+    children: unsupportedProp_default,
+    classes: import_prop_types26.default.object,
+    className: import_prop_types26.default.string,
+    disabled: import_prop_types26.default.bool,
+    disableFocusRipple: import_prop_types26.default.bool,
+    disableRipple: import_prop_types26.default.bool,
+    icon: import_prop_types26.default.oneOfType([import_prop_types26.default.element, import_prop_types26.default.string]),
+    iconPosition: import_prop_types26.default.oneOf(["bottom", "end", "start", "top"]),
+    label: import_prop_types26.default.node,
+    onChange: import_prop_types26.default.func,
+    onClick: import_prop_types26.default.func,
+    onFocus: import_prop_types26.default.func,
+    sx: import_prop_types26.default.oneOfType([import_prop_types26.default.arrayOf(import_prop_types26.default.oneOfType([import_prop_types26.default.func, import_prop_types26.default.object, import_prop_types26.default.bool])), import_prop_types26.default.func, import_prop_types26.default.object]),
+    value: import_prop_types26.default.any,
+    wrapped: import_prop_types26.default.bool
+  } : void 0;
+  var Tab_default = Tab2;
+
+  // node_modules/@mui/material/Toolbar/Toolbar.js
+  var React43 = __toESM(require_react());
+  var import_prop_types27 = __toESM(require_prop_types());
 
   // node_modules/@mui/material/Toolbar/toolbarClasses.js
   function getToolbarUtilityClass(slot) {
@@ -36199,9 +36696,9 @@ const theme2 = createTheme({ palette: {
   var toolbarClasses = generateUtilityClasses("MuiToolbar", ["root", "gutters", "regular", "dense"]);
 
   // node_modules/@mui/material/Toolbar/Toolbar.js
-  var import_jsx_runtime27 = __toESM(require_jsx_runtime());
-  var _excluded31 = ["className", "component", "disableGutters", "variant"];
-  var useUtilityClasses18 = (ownerState) => {
+  var import_jsx_runtime28 = __toESM(require_jsx_runtime());
+  var _excluded33 = ["className", "component", "disableGutters", "variant"];
+  var useUtilityClasses19 = (ownerState) => {
     const {
       classes,
       disableGutters,
@@ -36215,11 +36712,11 @@ const theme2 = createTheme({ palette: {
   var ToolbarRoot = styled_default("div", {
     name: "MuiToolbar",
     slot: "Root",
-    overridesResolver: (props, styles) => {
+    overridesResolver: (props, styles2) => {
       const {
         ownerState
       } = props;
-      return [styles.root, !ownerState.disableGutters && styles.gutters, styles[ownerState.variant]];
+      return [styles2.root, !ownerState.disableGutters && styles2.gutters, styles2[ownerState.variant]];
     }
   })(({
     theme,
@@ -36241,7 +36738,7 @@ const theme2 = createTheme({ palette: {
     theme,
     ownerState
   }) => ownerState.variant === "regular" && theme.mixins.toolbar);
-  var Toolbar = /* @__PURE__ */ React42.forwardRef(function Toolbar2(inProps, ref) {
+  var Toolbar = /* @__PURE__ */ React43.forwardRef(function Toolbar2(inProps, ref) {
     const props = useThemeProps2({
       props: inProps,
       name: "MuiToolbar"
@@ -36251,14 +36748,14 @@ const theme2 = createTheme({ palette: {
       component = "div",
       disableGutters = false,
       variant = "regular"
-    } = props, other = _objectWithoutPropertiesLoose(props, _excluded31);
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded33);
     const ownerState = _extends({}, props, {
       component,
       disableGutters,
       variant
     });
-    const classes = useUtilityClasses18(ownerState);
-    return /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(ToolbarRoot, _extends({
+    const classes = useUtilityClasses19(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(ToolbarRoot, _extends({
       as: component,
       className: clsx_m_default(classes.root, className),
       ref,
@@ -36266,15 +36763,833 @@ const theme2 = createTheme({ palette: {
     }, other));
   });
   true ? Toolbar.propTypes = {
-    children: import_prop_types26.default.node,
-    classes: import_prop_types26.default.object,
-    className: import_prop_types26.default.string,
-    component: import_prop_types26.default.elementType,
-    disableGutters: import_prop_types26.default.bool,
-    sx: import_prop_types26.default.oneOfType([import_prop_types26.default.arrayOf(import_prop_types26.default.oneOfType([import_prop_types26.default.func, import_prop_types26.default.object, import_prop_types26.default.bool])), import_prop_types26.default.func, import_prop_types26.default.object]),
-    variant: import_prop_types26.default.oneOfType([import_prop_types26.default.oneOf(["dense", "regular"]), import_prop_types26.default.string])
+    children: import_prop_types27.default.node,
+    classes: import_prop_types27.default.object,
+    className: import_prop_types27.default.string,
+    component: import_prop_types27.default.elementType,
+    disableGutters: import_prop_types27.default.bool,
+    sx: import_prop_types27.default.oneOfType([import_prop_types27.default.arrayOf(import_prop_types27.default.oneOfType([import_prop_types27.default.func, import_prop_types27.default.object, import_prop_types27.default.bool])), import_prop_types27.default.func, import_prop_types27.default.object]),
+    variant: import_prop_types27.default.oneOfType([import_prop_types27.default.oneOf(["dense", "regular"]), import_prop_types27.default.string])
   } : void 0;
   var Toolbar_default = Toolbar;
+
+  // node_modules/@mui/material/internal/svg-icons/KeyboardArrowLeft.js
+  var React44 = __toESM(require_react());
+  var import_jsx_runtime29 = __toESM(require_jsx_runtime());
+  var KeyboardArrowLeft_default = createSvgIcon(/* @__PURE__ */ (0, import_jsx_runtime29.jsx)("path", {
+    d: "M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+  }), "KeyboardArrowLeft");
+
+  // node_modules/@mui/material/internal/svg-icons/KeyboardArrowRight.js
+  var React45 = __toESM(require_react());
+  var import_jsx_runtime30 = __toESM(require_jsx_runtime());
+  var KeyboardArrowRight_default = createSvgIcon(/* @__PURE__ */ (0, import_jsx_runtime30.jsx)("path", {
+    d: "M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+  }), "KeyboardArrowRight");
+
+  // node_modules/@mui/material/Tabs/Tabs.js
+  var React48 = __toESM(require_react());
+  var import_react_is2 = __toESM(require_react_is3());
+  var import_prop_types30 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/internal/animate.js
+  function easeInOutSin(time) {
+    return (1 + Math.sin(Math.PI * time - Math.PI / 2)) / 2;
+  }
+  function animate(property, element, to, options = {}, cb = () => {
+  }) {
+    const {
+      ease = easeInOutSin,
+      duration: duration2 = 300
+    } = options;
+    let start2 = null;
+    const from2 = element[property];
+    let cancelled = false;
+    const cancel = () => {
+      cancelled = true;
+    };
+    const step = (timestamp) => {
+      if (cancelled) {
+        cb(new Error("Animation cancelled"));
+        return;
+      }
+      if (start2 === null) {
+        start2 = timestamp;
+      }
+      const time = Math.min(1, (timestamp - start2) / duration2);
+      element[property] = ease(time) * (to - from2) + from2;
+      if (time >= 1) {
+        requestAnimationFrame(() => {
+          cb(null);
+        });
+        return;
+      }
+      requestAnimationFrame(step);
+    };
+    if (from2 === to) {
+      cb(new Error("Element already at target position"));
+      return cancel;
+    }
+    requestAnimationFrame(step);
+    return cancel;
+  }
+
+  // node_modules/@mui/material/Tabs/ScrollbarSize.js
+  var React46 = __toESM(require_react());
+  var import_prop_types28 = __toESM(require_prop_types());
+  var import_jsx_runtime31 = __toESM(require_jsx_runtime());
+  var _excluded34 = ["onChange"];
+  var styles = {
+    width: 99,
+    height: 99,
+    position: "absolute",
+    top: -9999,
+    overflow: "scroll"
+  };
+  function ScrollbarSize(props) {
+    const {
+      onChange
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded34);
+    const scrollbarHeight = React46.useRef();
+    const nodeRef = React46.useRef(null);
+    const setMeasurements = () => {
+      scrollbarHeight.current = nodeRef.current.offsetHeight - nodeRef.current.clientHeight;
+    };
+    React46.useEffect(() => {
+      const handleResize = debounce_default(() => {
+        const prevHeight = scrollbarHeight.current;
+        setMeasurements();
+        if (prevHeight !== scrollbarHeight.current) {
+          onChange(scrollbarHeight.current);
+        }
+      });
+      const containerWindow = ownerWindow_default(nodeRef.current);
+      containerWindow.addEventListener("resize", handleResize);
+      return () => {
+        handleResize.clear();
+        containerWindow.removeEventListener("resize", handleResize);
+      };
+    }, [onChange]);
+    React46.useEffect(() => {
+      setMeasurements();
+      onChange(scrollbarHeight.current);
+    }, [onChange]);
+    return /* @__PURE__ */ (0, import_jsx_runtime31.jsx)("div", _extends({
+      style: styles,
+      ref: nodeRef
+    }, other));
+  }
+  true ? ScrollbarSize.propTypes = {
+    onChange: import_prop_types28.default.func.isRequired
+  } : void 0;
+
+  // node_modules/@mui/material/TabScrollButton/TabScrollButton.js
+  var React47 = __toESM(require_react());
+  var import_prop_types29 = __toESM(require_prop_types());
+
+  // node_modules/@mui/material/TabScrollButton/tabScrollButtonClasses.js
+  function getTabScrollButtonUtilityClass(slot) {
+    return generateUtilityClass("MuiTabScrollButton", slot);
+  }
+  var tabScrollButtonClasses = generateUtilityClasses("MuiTabScrollButton", ["root", "vertical", "horizontal", "disabled"]);
+  var tabScrollButtonClasses_default = tabScrollButtonClasses;
+
+  // node_modules/@mui/material/TabScrollButton/TabScrollButton.js
+  var import_jsx_runtime32 = __toESM(require_jsx_runtime());
+  var _KeyboardArrowLeft;
+  var _KeyboardArrowRight;
+  var _excluded35 = ["className", "direction", "orientation", "disabled"];
+  var useUtilityClasses20 = (ownerState) => {
+    const {
+      classes,
+      orientation,
+      disabled
+    } = ownerState;
+    const slots = {
+      root: ["root", orientation, disabled && "disabled"]
+    };
+    return composeClasses(slots, getTabScrollButtonUtilityClass, classes);
+  };
+  var TabScrollButtonRoot = styled_default(ButtonBase_default, {
+    name: "MuiTabScrollButton",
+    slot: "Root",
+    overridesResolver: (props, styles2) => {
+      const {
+        ownerState
+      } = props;
+      return [styles2.root, ownerState.orientation && styles2[ownerState.orientation]];
+    }
+  })(({
+    ownerState
+  }) => _extends({
+    width: 40,
+    flexShrink: 0,
+    opacity: 0.8,
+    [`&.${tabScrollButtonClasses_default.disabled}`]: {
+      opacity: 0
+    }
+  }, ownerState.orientation === "vertical" && {
+    width: "100%",
+    height: 40,
+    "& svg": {
+      transform: `rotate(${ownerState.isRtl ? -90 : 90}deg)`
+    }
+  }));
+  var TabScrollButton = /* @__PURE__ */ React47.forwardRef(function TabScrollButton2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiTabScrollButton"
+    });
+    const {
+      className,
+      direction
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded35);
+    const theme = useTheme5();
+    const isRtl = theme.direction === "rtl";
+    const ownerState = _extends({
+      isRtl
+    }, props);
+    const classes = useUtilityClasses20(ownerState);
+    return /* @__PURE__ */ (0, import_jsx_runtime32.jsx)(TabScrollButtonRoot, _extends({
+      component: "div",
+      className: clsx_m_default(classes.root, className),
+      ref,
+      role: null,
+      ownerState,
+      tabIndex: null
+    }, other, {
+      children: direction === "left" ? _KeyboardArrowLeft || (_KeyboardArrowLeft = /* @__PURE__ */ (0, import_jsx_runtime32.jsx)(KeyboardArrowLeft_default, {
+        fontSize: "small"
+      })) : _KeyboardArrowRight || (_KeyboardArrowRight = /* @__PURE__ */ (0, import_jsx_runtime32.jsx)(KeyboardArrowRight_default, {
+        fontSize: "small"
+      }))
+    }));
+  });
+  true ? TabScrollButton.propTypes = {
+    children: import_prop_types29.default.node,
+    classes: import_prop_types29.default.object,
+    className: import_prop_types29.default.string,
+    direction: import_prop_types29.default.oneOf(["left", "right"]).isRequired,
+    disabled: import_prop_types29.default.bool,
+    orientation: import_prop_types29.default.oneOf(["horizontal", "vertical"]).isRequired,
+    sx: import_prop_types29.default.oneOfType([import_prop_types29.default.arrayOf(import_prop_types29.default.oneOfType([import_prop_types29.default.func, import_prop_types29.default.object, import_prop_types29.default.bool])), import_prop_types29.default.func, import_prop_types29.default.object])
+  } : void 0;
+  var TabScrollButton_default = TabScrollButton;
+
+  // node_modules/@mui/material/Tabs/tabsClasses.js
+  function getTabsUtilityClass(slot) {
+    return generateUtilityClass("MuiTabs", slot);
+  }
+  var tabsClasses = generateUtilityClasses("MuiTabs", ["root", "vertical", "flexContainer", "flexContainerVertical", "centered", "scroller", "fixed", "scrollableX", "scrollableY", "hideScrollbar", "scrollButtons", "scrollButtonsHideMobile", "indicator"]);
+  var tabsClasses_default = tabsClasses;
+
+  // node_modules/@mui/material/Tabs/Tabs.js
+  var import_jsx_runtime33 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime34 = __toESM(require_jsx_runtime());
+  var _excluded36 = ["aria-label", "aria-labelledby", "action", "centered", "children", "className", "component", "allowScrollButtonsMobile", "indicatorColor", "onChange", "orientation", "ScrollButtonComponent", "scrollButtons", "selectionFollowsFocus", "TabIndicatorProps", "TabScrollButtonProps", "textColor", "value", "variant", "visibleScrollbar"];
+  var nextItem = (list, item) => {
+    if (list === item) {
+      return list.firstChild;
+    }
+    if (item && item.nextElementSibling) {
+      return item.nextElementSibling;
+    }
+    return list.firstChild;
+  };
+  var previousItem = (list, item) => {
+    if (list === item) {
+      return list.lastChild;
+    }
+    if (item && item.previousElementSibling) {
+      return item.previousElementSibling;
+    }
+    return list.lastChild;
+  };
+  var moveFocus = (list, currentFocus, traversalFunction) => {
+    let wrappedOnce = false;
+    let nextFocus = traversalFunction(list, currentFocus);
+    while (nextFocus) {
+      if (nextFocus === list.firstChild) {
+        if (wrappedOnce) {
+          return;
+        }
+        wrappedOnce = true;
+      }
+      const nextFocusDisabled = nextFocus.disabled || nextFocus.getAttribute("aria-disabled") === "true";
+      if (!nextFocus.hasAttribute("tabindex") || nextFocusDisabled) {
+        nextFocus = traversalFunction(list, nextFocus);
+      } else {
+        nextFocus.focus();
+        return;
+      }
+    }
+  };
+  var useUtilityClasses21 = (ownerState) => {
+    const {
+      vertical,
+      fixed,
+      hideScrollbar,
+      scrollableX,
+      scrollableY,
+      centered,
+      scrollButtonsHideMobile,
+      classes
+    } = ownerState;
+    const slots = {
+      root: ["root", vertical && "vertical"],
+      scroller: ["scroller", fixed && "fixed", hideScrollbar && "hideScrollbar", scrollableX && "scrollableX", scrollableY && "scrollableY"],
+      flexContainer: ["flexContainer", vertical && "flexContainerVertical", centered && "centered"],
+      indicator: ["indicator"],
+      scrollButtons: ["scrollButtons", scrollButtonsHideMobile && "scrollButtonsHideMobile"],
+      scrollableX: [scrollableX && "scrollableX"],
+      hideScrollbar: [hideScrollbar && "hideScrollbar"]
+    };
+    return composeClasses(slots, getTabsUtilityClass, classes);
+  };
+  var TabsRoot = styled_default("div", {
+    name: "MuiTabs",
+    slot: "Root",
+    overridesResolver: (props, styles2) => {
+      const {
+        ownerState
+      } = props;
+      return [{
+        [`& .${tabsClasses_default.scrollButtons}`]: styles2.scrollButtons
+      }, {
+        [`& .${tabsClasses_default.scrollButtons}`]: ownerState.scrollButtonsHideMobile && styles2.scrollButtonsHideMobile
+      }, styles2.root, ownerState.vertical && styles2.vertical];
+    }
+  })(({
+    ownerState,
+    theme
+  }) => _extends({
+    overflow: "hidden",
+    minHeight: 48,
+    WebkitOverflowScrolling: "touch",
+    display: "flex"
+  }, ownerState.vertical && {
+    flexDirection: "column"
+  }, ownerState.scrollButtonsHideMobile && {
+    [`& .${tabsClasses_default.scrollButtons}`]: {
+      [theme.breakpoints.down("sm")]: {
+        display: "none"
+      }
+    }
+  }));
+  var TabsScroller = styled_default("div", {
+    name: "MuiTabs",
+    slot: "Scroller",
+    overridesResolver: (props, styles2) => {
+      const {
+        ownerState
+      } = props;
+      return [styles2.scroller, ownerState.fixed && styles2.fixed, ownerState.hideScrollbar && styles2.hideScrollbar, ownerState.scrollableX && styles2.scrollableX, ownerState.scrollableY && styles2.scrollableY];
+    }
+  })(({
+    ownerState
+  }) => _extends({
+    position: "relative",
+    display: "inline-block",
+    flex: "1 1 auto",
+    whiteSpace: "nowrap"
+  }, ownerState.fixed && {
+    overflowX: "hidden",
+    width: "100%"
+  }, ownerState.hideScrollbar && {
+    scrollbarWidth: "none",
+    "&::-webkit-scrollbar": {
+      display: "none"
+    }
+  }, ownerState.scrollableX && {
+    overflowX: "auto",
+    overflowY: "hidden"
+  }, ownerState.scrollableY && {
+    overflowY: "auto",
+    overflowX: "hidden"
+  }));
+  var FlexContainer = styled_default("div", {
+    name: "MuiTabs",
+    slot: "FlexContainer",
+    overridesResolver: (props, styles2) => {
+      const {
+        ownerState
+      } = props;
+      return [styles2.flexContainer, ownerState.vertical && styles2.flexContainerVertical, ownerState.centered && styles2.centered];
+    }
+  })(({
+    ownerState
+  }) => _extends({
+    display: "flex"
+  }, ownerState.vertical && {
+    flexDirection: "column"
+  }, ownerState.centered && {
+    justifyContent: "center"
+  }));
+  var TabsIndicator = styled_default("span", {
+    name: "MuiTabs",
+    slot: "Indicator",
+    overridesResolver: (props, styles2) => styles2.indicator
+  })(({
+    ownerState,
+    theme
+  }) => _extends({
+    position: "absolute",
+    height: 2,
+    bottom: 0,
+    width: "100%",
+    transition: theme.transitions.create()
+  }, ownerState.indicatorColor === "primary" && {
+    backgroundColor: theme.palette.primary.main
+  }, ownerState.indicatorColor === "secondary" && {
+    backgroundColor: theme.palette.secondary.main
+  }, ownerState.vertical && {
+    height: "100%",
+    width: 2,
+    right: 0
+  }));
+  var TabsScrollbarSize = styled_default(ScrollbarSize, {
+    name: "MuiTabs",
+    slot: "ScrollbarSize"
+  })({
+    overflowX: "auto",
+    overflowY: "hidden",
+    scrollbarWidth: "none",
+    "&::-webkit-scrollbar": {
+      display: "none"
+    }
+  });
+  var defaultIndicatorStyle = {};
+  var warnedOnceTabPresent = false;
+  var Tabs = /* @__PURE__ */ React48.forwardRef(function Tabs2(inProps, ref) {
+    const props = useThemeProps2({
+      props: inProps,
+      name: "MuiTabs"
+    });
+    const theme = useTheme5();
+    const isRtl = theme.direction === "rtl";
+    const {
+      "aria-label": ariaLabel,
+      "aria-labelledby": ariaLabelledBy,
+      action,
+      centered = false,
+      children: childrenProp,
+      className,
+      component = "div",
+      allowScrollButtonsMobile = false,
+      indicatorColor = "primary",
+      onChange,
+      orientation = "horizontal",
+      ScrollButtonComponent = TabScrollButton_default,
+      scrollButtons = "auto",
+      selectionFollowsFocus,
+      TabIndicatorProps = {},
+      TabScrollButtonProps = {},
+      textColor = "primary",
+      value,
+      variant = "standard",
+      visibleScrollbar = false
+    } = props, other = _objectWithoutPropertiesLoose(props, _excluded36);
+    const scrollable = variant === "scrollable";
+    const vertical = orientation === "vertical";
+    const scrollStart = vertical ? "scrollTop" : "scrollLeft";
+    const start2 = vertical ? "top" : "left";
+    const end2 = vertical ? "bottom" : "right";
+    const clientSize = vertical ? "clientHeight" : "clientWidth";
+    const size = vertical ? "height" : "width";
+    const ownerState = _extends({}, props, {
+      component,
+      allowScrollButtonsMobile,
+      indicatorColor,
+      orientation,
+      vertical,
+      scrollButtons,
+      textColor,
+      variant,
+      visibleScrollbar,
+      fixed: !scrollable,
+      hideScrollbar: scrollable && !visibleScrollbar,
+      scrollableX: scrollable && !vertical,
+      scrollableY: scrollable && vertical,
+      centered: centered && !scrollable,
+      scrollButtonsHideMobile: !allowScrollButtonsMobile
+    });
+    const classes = useUtilityClasses21(ownerState);
+    if (true) {
+      if (centered && scrollable) {
+        console.error('MUI: You can not use the `centered={true}` and `variant="scrollable"` properties at the same time on a `Tabs` component.');
+      }
+    }
+    const [mounted, setMounted] = React48.useState(false);
+    const [indicatorStyle, setIndicatorStyle] = React48.useState(defaultIndicatorStyle);
+    const [displayScroll, setDisplayScroll] = React48.useState({
+      start: false,
+      end: false
+    });
+    const [scrollerStyle, setScrollerStyle] = React48.useState({
+      overflow: "hidden",
+      scrollbarWidth: 0
+    });
+    const valueToIndex = /* @__PURE__ */ new Map();
+    const tabsRef = React48.useRef(null);
+    const tabListRef = React48.useRef(null);
+    const getTabsMeta = () => {
+      const tabsNode = tabsRef.current;
+      let tabsMeta;
+      if (tabsNode) {
+        const rect = tabsNode.getBoundingClientRect();
+        tabsMeta = {
+          clientWidth: tabsNode.clientWidth,
+          scrollLeft: tabsNode.scrollLeft,
+          scrollTop: tabsNode.scrollTop,
+          scrollLeftNormalized: getNormalizedScrollLeft(tabsNode, theme.direction),
+          scrollWidth: tabsNode.scrollWidth,
+          top: rect.top,
+          bottom: rect.bottom,
+          left: rect.left,
+          right: rect.right
+        };
+      }
+      let tabMeta;
+      if (tabsNode && value !== false) {
+        const children2 = tabListRef.current.children;
+        if (children2.length > 0) {
+          const tab = children2[valueToIndex.get(value)];
+          if (true) {
+            if (!tab) {
+              console.error([`MUI: The \`value\` provided to the Tabs component is invalid.`, `None of the Tabs' children match with "${value}".`, valueToIndex.keys ? `You can provide one of the following values: ${Array.from(valueToIndex.keys()).join(", ")}.` : null].join("\n"));
+            }
+          }
+          tabMeta = tab ? tab.getBoundingClientRect() : null;
+          if (true) {
+            if (!warnedOnceTabPresent && tabMeta && tabMeta.width === 0 && tabMeta.height === 0) {
+              tabsMeta = null;
+              console.error(["MUI: The `value` provided to the Tabs component is invalid.", `The Tab with this \`value\` ("${value}") is not part of the document layout.`, "Make sure the tab item is present in the document or that it's not `display: none`."].join("\n"));
+              warnedOnceTabPresent = true;
+            }
+          }
+        }
+      }
+      return {
+        tabsMeta,
+        tabMeta
+      };
+    };
+    const updateIndicatorState = useEventCallback_default(() => {
+      const {
+        tabsMeta,
+        tabMeta
+      } = getTabsMeta();
+      let startValue = 0;
+      let startIndicator;
+      if (vertical) {
+        startIndicator = "top";
+        if (tabMeta && tabsMeta) {
+          startValue = tabMeta.top - tabsMeta.top + tabsMeta.scrollTop;
+        }
+      } else {
+        startIndicator = isRtl ? "right" : "left";
+        if (tabMeta && tabsMeta) {
+          const correction = isRtl ? tabsMeta.scrollLeftNormalized + tabsMeta.clientWidth - tabsMeta.scrollWidth : tabsMeta.scrollLeft;
+          startValue = (isRtl ? -1 : 1) * (tabMeta[startIndicator] - tabsMeta[startIndicator] + correction);
+        }
+      }
+      const newIndicatorStyle = {
+        [startIndicator]: startValue,
+        [size]: tabMeta ? tabMeta[size] : 0
+      };
+      if (isNaN(indicatorStyle[startIndicator]) || isNaN(indicatorStyle[size])) {
+        setIndicatorStyle(newIndicatorStyle);
+      } else {
+        const dStart = Math.abs(indicatorStyle[startIndicator] - newIndicatorStyle[startIndicator]);
+        const dSize = Math.abs(indicatorStyle[size] - newIndicatorStyle[size]);
+        if (dStart >= 1 || dSize >= 1) {
+          setIndicatorStyle(newIndicatorStyle);
+        }
+      }
+    });
+    const scroll = (scrollValue, {
+      animation = true
+    } = {}) => {
+      if (animation) {
+        animate(scrollStart, tabsRef.current, scrollValue, {
+          duration: theme.transitions.duration.standard
+        });
+      } else {
+        tabsRef.current[scrollStart] = scrollValue;
+      }
+    };
+    const moveTabsScroll = (delta) => {
+      let scrollValue = tabsRef.current[scrollStart];
+      if (vertical) {
+        scrollValue += delta;
+      } else {
+        scrollValue += delta * (isRtl ? -1 : 1);
+        scrollValue *= isRtl && detectScrollType() === "reverse" ? -1 : 1;
+      }
+      scroll(scrollValue);
+    };
+    const getScrollSize = () => {
+      const containerSize = tabsRef.current[clientSize];
+      let totalSize = 0;
+      const children2 = Array.from(tabListRef.current.children);
+      for (let i = 0; i < children2.length; i += 1) {
+        const tab = children2[i];
+        if (totalSize + tab[clientSize] > containerSize) {
+          break;
+        }
+        totalSize += tab[clientSize];
+      }
+      return totalSize;
+    };
+    const handleStartScrollClick = () => {
+      moveTabsScroll(-1 * getScrollSize());
+    };
+    const handleEndScrollClick = () => {
+      moveTabsScroll(getScrollSize());
+    };
+    const handleScrollbarSizeChange = React48.useCallback((scrollbarWidth) => {
+      setScrollerStyle({
+        overflow: null,
+        scrollbarWidth
+      });
+    }, []);
+    const getConditionalElements = () => {
+      const conditionalElements2 = {};
+      conditionalElements2.scrollbarSizeListener = scrollable ? /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(TabsScrollbarSize, {
+        onChange: handleScrollbarSizeChange,
+        className: clsx_m_default(classes.scrollableX, classes.hideScrollbar)
+      }) : null;
+      const scrollButtonsActive = displayScroll.start || displayScroll.end;
+      const showScrollButtons = scrollable && (scrollButtons === "auto" && scrollButtonsActive || scrollButtons === true);
+      conditionalElements2.scrollButtonStart = showScrollButtons ? /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(ScrollButtonComponent, _extends({
+        orientation,
+        direction: isRtl ? "right" : "left",
+        onClick: handleStartScrollClick,
+        disabled: !displayScroll.start
+      }, TabScrollButtonProps, {
+        className: clsx_m_default(classes.scrollButtons, TabScrollButtonProps.className)
+      })) : null;
+      conditionalElements2.scrollButtonEnd = showScrollButtons ? /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(ScrollButtonComponent, _extends({
+        orientation,
+        direction: isRtl ? "left" : "right",
+        onClick: handleEndScrollClick,
+        disabled: !displayScroll.end
+      }, TabScrollButtonProps, {
+        className: clsx_m_default(classes.scrollButtons, TabScrollButtonProps.className)
+      })) : null;
+      return conditionalElements2;
+    };
+    const scrollSelectedIntoView = useEventCallback_default((animation) => {
+      const {
+        tabsMeta,
+        tabMeta
+      } = getTabsMeta();
+      if (!tabMeta || !tabsMeta) {
+        return;
+      }
+      if (tabMeta[start2] < tabsMeta[start2]) {
+        const nextScrollStart = tabsMeta[scrollStart] + (tabMeta[start2] - tabsMeta[start2]);
+        scroll(nextScrollStart, {
+          animation
+        });
+      } else if (tabMeta[end2] > tabsMeta[end2]) {
+        const nextScrollStart = tabsMeta[scrollStart] + (tabMeta[end2] - tabsMeta[end2]);
+        scroll(nextScrollStart, {
+          animation
+        });
+      }
+    });
+    const updateScrollButtonState = useEventCallback_default(() => {
+      if (scrollable && scrollButtons !== false) {
+        const {
+          scrollTop,
+          scrollHeight,
+          clientHeight,
+          scrollWidth,
+          clientWidth
+        } = tabsRef.current;
+        let showStartScroll;
+        let showEndScroll;
+        if (vertical) {
+          showStartScroll = scrollTop > 1;
+          showEndScroll = scrollTop < scrollHeight - clientHeight - 1;
+        } else {
+          const scrollLeft = getNormalizedScrollLeft(tabsRef.current, theme.direction);
+          showStartScroll = isRtl ? scrollLeft < scrollWidth - clientWidth - 1 : scrollLeft > 1;
+          showEndScroll = !isRtl ? scrollLeft < scrollWidth - clientWidth - 1 : scrollLeft > 1;
+        }
+        if (showStartScroll !== displayScroll.start || showEndScroll !== displayScroll.end) {
+          setDisplayScroll({
+            start: showStartScroll,
+            end: showEndScroll
+          });
+        }
+      }
+    });
+    React48.useEffect(() => {
+      const handleResize = debounce_default(() => {
+        updateIndicatorState();
+        updateScrollButtonState();
+      });
+      const win = ownerWindow_default(tabsRef.current);
+      win.addEventListener("resize", handleResize);
+      let resizeObserver;
+      if (typeof ResizeObserver !== "undefined") {
+        resizeObserver = new ResizeObserver(handleResize);
+        Array.from(tabListRef.current.children).forEach((child) => {
+          resizeObserver.observe(child);
+        });
+      }
+      return () => {
+        handleResize.clear();
+        win.removeEventListener("resize", handleResize);
+        if (resizeObserver) {
+          resizeObserver.disconnect();
+        }
+      };
+    }, [updateIndicatorState, updateScrollButtonState]);
+    const handleTabsScroll = React48.useMemo(() => debounce_default(() => {
+      updateScrollButtonState();
+    }), [updateScrollButtonState]);
+    React48.useEffect(() => {
+      return () => {
+        handleTabsScroll.clear();
+      };
+    }, [handleTabsScroll]);
+    React48.useEffect(() => {
+      setMounted(true);
+    }, []);
+    React48.useEffect(() => {
+      updateIndicatorState();
+      updateScrollButtonState();
+    });
+    React48.useEffect(() => {
+      scrollSelectedIntoView(defaultIndicatorStyle !== indicatorStyle);
+    }, [scrollSelectedIntoView, indicatorStyle]);
+    React48.useImperativeHandle(action, () => ({
+      updateIndicator: updateIndicatorState,
+      updateScrollButtons: updateScrollButtonState
+    }), [updateIndicatorState, updateScrollButtonState]);
+    const indicator = /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(TabsIndicator, _extends({}, TabIndicatorProps, {
+      className: clsx_m_default(classes.indicator, TabIndicatorProps.className),
+      ownerState,
+      style: _extends({}, indicatorStyle, TabIndicatorProps.style)
+    }));
+    let childIndex = 0;
+    const children = React48.Children.map(childrenProp, (child) => {
+      if (!/* @__PURE__ */ React48.isValidElement(child)) {
+        return null;
+      }
+      if (true) {
+        if ((0, import_react_is2.isFragment)(child)) {
+          console.error(["MUI: The Tabs component doesn't accept a Fragment as a child.", "Consider providing an array instead."].join("\n"));
+        }
+      }
+      const childValue = child.props.value === void 0 ? childIndex : child.props.value;
+      valueToIndex.set(childValue, childIndex);
+      const selected = childValue === value;
+      childIndex += 1;
+      return /* @__PURE__ */ React48.cloneElement(child, _extends({
+        fullWidth: variant === "fullWidth",
+        indicator: selected && !mounted && indicator,
+        selected,
+        selectionFollowsFocus,
+        onChange,
+        textColor,
+        value: childValue
+      }, childIndex === 1 && value === false && !child.props.tabIndex ? {
+        tabIndex: 0
+      } : {}));
+    });
+    const handleKeyDown2 = (event) => {
+      const list = tabListRef.current;
+      const currentFocus = ownerDocument_default(list).activeElement;
+      const role = currentFocus.getAttribute("role");
+      if (role !== "tab") {
+        return;
+      }
+      let previousItemKey = orientation === "horizontal" ? "ArrowLeft" : "ArrowUp";
+      let nextItemKey = orientation === "horizontal" ? "ArrowRight" : "ArrowDown";
+      if (orientation === "horizontal" && isRtl) {
+        previousItemKey = "ArrowRight";
+        nextItemKey = "ArrowLeft";
+      }
+      switch (event.key) {
+        case previousItemKey:
+          event.preventDefault();
+          moveFocus(list, currentFocus, previousItem);
+          break;
+        case nextItemKey:
+          event.preventDefault();
+          moveFocus(list, currentFocus, nextItem);
+          break;
+        case "Home":
+          event.preventDefault();
+          moveFocus(list, null, nextItem);
+          break;
+        case "End":
+          event.preventDefault();
+          moveFocus(list, null, previousItem);
+          break;
+        default:
+          break;
+      }
+    };
+    const conditionalElements = getConditionalElements();
+    return /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(TabsRoot, _extends({
+      className: clsx_m_default(classes.root, className),
+      ownerState,
+      ref,
+      as: component
+    }, other, {
+      children: [conditionalElements.scrollButtonStart, conditionalElements.scrollbarSizeListener, /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(TabsScroller, {
+        className: classes.scroller,
+        ownerState,
+        style: {
+          overflow: scrollerStyle.overflow,
+          [vertical ? `margin${isRtl ? "Left" : "Right"}` : "marginBottom"]: visibleScrollbar ? void 0 : -scrollerStyle.scrollbarWidth
+        },
+        ref: tabsRef,
+        onScroll: handleTabsScroll,
+        children: [/* @__PURE__ */ (0, import_jsx_runtime33.jsx)(FlexContainer, {
+          "aria-label": ariaLabel,
+          "aria-labelledby": ariaLabelledBy,
+          "aria-orientation": orientation === "vertical" ? "vertical" : null,
+          className: classes.flexContainer,
+          ownerState,
+          onKeyDown: handleKeyDown2,
+          ref: tabListRef,
+          role: "tablist",
+          children
+        }), mounted && indicator]
+      }), conditionalElements.scrollButtonEnd]
+    }));
+  });
+  true ? Tabs.propTypes = {
+    action: refType_default,
+    allowScrollButtonsMobile: import_prop_types30.default.bool,
+    "aria-label": import_prop_types30.default.string,
+    "aria-labelledby": import_prop_types30.default.string,
+    centered: import_prop_types30.default.bool,
+    children: import_prop_types30.default.node,
+    classes: import_prop_types30.default.object,
+    className: import_prop_types30.default.string,
+    component: import_prop_types30.default.elementType,
+    indicatorColor: import_prop_types30.default.oneOf(["primary", "secondary"]),
+    onChange: import_prop_types30.default.func,
+    orientation: import_prop_types30.default.oneOf(["horizontal", "vertical"]),
+    ScrollButtonComponent: import_prop_types30.default.elementType,
+    scrollButtons: import_prop_types30.default.oneOf(["auto", false, true]),
+    selectionFollowsFocus: import_prop_types30.default.bool,
+    sx: import_prop_types30.default.oneOfType([import_prop_types30.default.arrayOf(import_prop_types30.default.oneOfType([import_prop_types30.default.func, import_prop_types30.default.object, import_prop_types30.default.bool])), import_prop_types30.default.func, import_prop_types30.default.object]),
+    TabIndicatorProps: import_prop_types30.default.object,
+    TabScrollButtonProps: import_prop_types30.default.object,
+    textColor: import_prop_types30.default.oneOf(["inherit", "primary", "secondary"]),
+    value: import_prop_types30.default.any,
+    variant: import_prop_types30.default.oneOf(["fullWidth", "scrollable", "standard"]),
+    visibleScrollbar: import_prop_types30.default.bool
+  } : void 0;
+  var Tabs_default = Tabs;
 
   // src/components/RegularSeasonGames/RegularSeasonGamesTable.jsx
   var import_react13 = __toESM(require_react(), 1);
@@ -36291,7 +37606,9 @@ const theme2 = createTheme({ palette: {
     }, /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
       item: true,
       xs: 5
-    }, /* @__PURE__ */ import_react12.default.createElement(Card_default, null, /* @__PURE__ */ import_react12.default.createElement("img", {
+    }, /* @__PURE__ */ import_react12.default.createElement(Card_default, {
+      sx: { px: 1.5, borderBottom: 4, borderColor: "red" }
+    }, /* @__PURE__ */ import_react12.default.createElement("img", {
       src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
       alt: "TODO",
       className: "col-12"
@@ -36301,11 +37618,19 @@ const theme2 = createTheme({ palette: {
     }, /* @__PURE__ */ import_react12.default.createElement(Card_default, null)), /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
       item: true,
       xs: 5
-    }, /* @__PURE__ */ import_react12.default.createElement(Card_default, null, /* @__PURE__ */ import_react12.default.createElement("img", {
+    }, /* @__PURE__ */ import_react12.default.createElement(Card_default, {
+      sx: { px: 1.5, borderBottom: 2, borderColor: "purple" }
+    }, /* @__PURE__ */ import_react12.default.createElement("img", {
       src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
       alt: "TODO",
       className: "col-12"
-    }))))));
+    })))), /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
+      container: true
+    }, /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
+      item: true
+    }, /* @__PURE__ */ import_react12.default.createElement(Typography_default, {
+      variant: "body2"
+    }, "FINAL")))));
   }
   RegularSeasonGame.propTypes = {};
 
@@ -36314,9 +37639,38 @@ const theme2 = createTheme({ palette: {
     const { games } = props;
     return /* @__PURE__ */ import_react13.default.createElement(import_react13.default.Fragment, null, /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       container: true,
-      spacing: 1,
+      spacing: 2,
       columns: 144
     }, /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+      item: true,
+      xs: 144,
+      sx: { width: "inherit" }
+    }, /* @__PURE__ */ import_react13.default.createElement(Tabs_default, {
+      value: "3",
+      variant: "scrollable",
+      scrollButtons: true
+    }, /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 1"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 2"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 3",
+      value: "3"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 4"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 5"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 6"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 7"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 8"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 9"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 10"
+    }))), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
     }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
@@ -36519,7 +37873,47 @@ const theme2 = createTheme({ palette: {
       maxWidth: false,
       disableGutters: true,
       sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react19.default.createElement(Header, null), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Header, null), /* @__PURE__ */ import_react19.default.createElement(Tabs_default, {
+      value: "3",
+      variant: "scrollable",
+      scrollButtons: true,
+      sx: { maxWidth: "100%" }
+    }, /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 1"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 2"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 3",
+      value: "3"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 4"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 5"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 6"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 7"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 8"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 9"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 10"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 11"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 13"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 14"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 15"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 16"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 17"
+    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
+      label: "Week 18"
+    })), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       container: true,
       spacing: 3,
       columns: 24,

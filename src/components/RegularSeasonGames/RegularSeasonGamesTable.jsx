@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Paper, Grid, Container } from '@mui/material'
+import { Paper, Grid, Container, Button, Tabs, Tab, Card, Box, AppBar } from '@mui/material'
 
 
 import RegularSeasonGame from './RegularSeasonGame.jsx'
@@ -10,80 +10,76 @@ export default function RegularSeasonGamesTable(props) {
   const { games } = props
   return (
     <>
-   
-  	<Grid container spacing={1} columns={144}>
-      {/* <Grid item xs={8}>
-        <Button variant="outlined">1</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">2</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">3</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">4</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">5</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">6</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">7</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">8</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">9</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">10</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">11</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">12</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">13</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">14</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">15</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">16</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">17</Button>
-      </Grid>
-      <Grid item xs={8}>
-        <Button variant="outlined">18</Button>
-      </Grid> */}
-      
-      <Grid item xs={18}>
-        <RegularSeasonGame />
-      </Grid>
-      <Grid item xs={18}>
-        <RegularSeasonGame />
-      </Grid>
-      <Grid item xs={18}>
-        <RegularSeasonGame />
-      </Grid>
-      <Grid item xs={18}>
-        <RegularSeasonGame />
-      </Grid>
-      <Grid item xs={18}>
-        <RegularSeasonGame />
-      </Grid>
-      <Grid item xs={18}>
-        <RegularSeasonGame />
+    
+      	{/* <Grid container spacing={2} columns={144}> */}
+
+    {/* <Box sx={{ maxWidth: { xs: 320, sm: 480 }, bgcolor: 'background.paper' }}> */}
+   {/* <Tabs value="3"
+   variant="scrollable"
+  scrollButtons
+  allowScrollButtonsMobile>
+    <Tab label="1" />
+    <Tab label="2" />
+    <Tab label="3" value="3" />
+    <Tab label="4" />
+    <Tab label="5" />
+    <Tab label="6" />
+    <Tab label="7" />
+    <Tab label="8" />
+    <Tab label="9" />
+    <Tab label="10" />
+    <Tab label="11" />
+    <Tab label="12" />
+    <Tab label="13" />
+    <Tab label="14" />
+    <Tab label="15" />
+    <Tab label="16" />
+    <Tab label="17" />
+    <Tab label="18" />
+  </Tabs> */}
+  {/* </Box> */}
+  {/* </Grid> */}
+  	<Grid container spacing={2} columns={144} > 
+    
+      <Grid item xs={144} sx={{ width: 'inherit' }}>
+      {/* <AppBar position="static" bgcolor="red"> */}
+        <Tabs value="3" variant="scrollable" scrollButtons >
+    <Tab label="Week 1" />
+    <Tab label="Week 2" />
+    <Tab label="Week 3" value="3" />
+    <Tab label="Week 4" />
+    <Tab label="Week 5" />
+    <Tab label="Week 6" />
+    <Tab label="Week 7" />
+    <Tab label="Week 8" />
+    <Tab label="Week 9" />
+    <Tab label="Week 10" />
+    
+
+
+
+
+    </Tabs>
+      {/* </ AppBar> */}
+        {/* <Box display="flex" flexDirection="column" alignItems="stretch" sx={{bgcolor: 'green'}}>
+        <Tabs value="3" variant="scrollable" scrollButtons>
+    <Tab label="Week 1" />
+    <Tab label="Week 2" />
+    <Tab label="Week 3" value="3" />
+    <Tab label="Week 4" />
+    <Tab label="Week 5" />
+    <Tab label="Week 6" />
+    <Tab label="Week 7" />
+    <Tab label="Week 8" />
+    <Tab label="Week 9" />
+    <Tab label="Week 10" />
+    <Tab label="Week 11" />
+    <Tab label="Week 12" />
+
+
+
+    </Tabs>
+        </Box> */}
       </Grid>
       <Grid item xs={18}>
         <RegularSeasonGame />
@@ -115,6 +111,25 @@ export default function RegularSeasonGamesTable(props) {
       <Grid item xs={18}>
         <RegularSeasonGame />
       </Grid>
+      <Grid item xs={18}>
+        <RegularSeasonGame />
+      </Grid>
+      <Grid item xs={18}>
+        <RegularSeasonGame />
+      </Grid>
+      <Grid item xs={18}>
+        <RegularSeasonGame />
+      </Grid>
+      <Grid item xs={18}>
+        <RegularSeasonGame />
+      </Grid>
+      <Grid item xs={18}>
+        <RegularSeasonGame />
+      </Grid>
+      <Grid item xs={18}>
+        <RegularSeasonGame />
+      </Grid>
+     
 
       
 
