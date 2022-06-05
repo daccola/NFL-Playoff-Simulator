@@ -37643,8 +37643,7 @@ const theme2 = createTheme({ palette: {
       columns: 144
     }, /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
-      xs: 144,
-      sx: { width: "inherit" }
+      xs: 144
     }, /* @__PURE__ */ import_react13.default.createElement(Tabs_default, {
       value: "3",
       variant: "scrollable",
@@ -37670,6 +37669,22 @@ const theme2 = createTheme({ palette: {
       label: "Week 9"
     }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
       label: "Week 10"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 11"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 12"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 13"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 14"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 15"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 16"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 17"
+    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+      label: "Week 18"
     }))), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
       item: true,
       xs: 18
@@ -37873,53 +37888,14 @@ const theme2 = createTheme({ palette: {
       maxWidth: false,
       disableGutters: true,
       sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react19.default.createElement(Header, null), /* @__PURE__ */ import_react19.default.createElement(Tabs_default, {
-      value: "3",
-      variant: "scrollable",
-      scrollButtons: true,
-      sx: { maxWidth: "100%" }
-    }, /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 1"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 2"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 3",
-      value: "3"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 4"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 5"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 6"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 7"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 8"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 9"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 10"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 11"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 13"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 14"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 15"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 16"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 17"
-    }), /* @__PURE__ */ import_react19.default.createElement(Tab_default, {
-      label: "Week 18"
-    })), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Header, null), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       container: true,
       spacing: 3,
       columns: 24,
       sx: { p: 2 }
     }, /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
-      item: true
+      item: true,
+      xs: 24
     }, /* @__PURE__ */ import_react19.default.createElement(Paper_default, {
       sx: { p: 1 }
     }, /* @__PURE__ */ import_react19.default.createElement(RegularSeasonGamesTable, null))), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
