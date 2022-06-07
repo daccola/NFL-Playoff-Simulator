@@ -15,28 +15,34 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import WildCardGame from './WildCardGame'
+// import WildCardGame from './WildCardGame'
+import PlayoffGame from './PlayoffGame'
+import ByeContainer from './ByeContainer';
+import WildCardContainer from './WildCardContainer';
 
 
-export default function MuiPlay (props) {
 
-    return (
-			<>
-		    <h4>NFC</h4>
-				<Card variant="outlined" sx={{bgcolor: '#d50a0a' }}>
-          <CardContent >  
-            <WildCardGame />
-						<WildCardGame />
-            <WildCardGame />
-            <WildCardGame />
-
-          </CardContent>
-        </Card>
-				</>
-    )
-  
+export default function ConferenceGamesTable (props) {
+  return (
+    <Grid container spacing={2} > 
+        <Grid item xs={12} >
+        {/* <h4>AFC</h4> */}
+        <Typography variant="h4" align="right">
+        AFC
+    	    </Typography>
+        </Grid>
+        {/* <h4>AFC</h4> */}
+        
+        <Grid item xs={12} >
+          <ByeContainer />
+        </Grid>
+        <Grid item xs={12} >
+          <WildCardContainer />
+        </Grid>
+    </Grid>
+  )  
 }
 
-MuiPlay.propTypes = {
+ConferenceGamesTable.propTypes = {
 // TODO Add PropTypes
 }

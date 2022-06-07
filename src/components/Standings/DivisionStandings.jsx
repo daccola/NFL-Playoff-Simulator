@@ -14,12 +14,12 @@ export default function DivisionStandings (props) {
 			<Table size="small" >
         <TableHead>
           <TableRow>
-            <TableCell>NF NORTH</TableCell>
+            <TableCell>NFC NORTH</TableCell>
             <TableCell>RECORD</TableCell> 
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableRow>
+          <TableRow sx={{p:0, m:0}}>
             <TableCell>Green Bay</TableCell>
             <TableCell>16-0-0</TableCell>
           </TableRow>

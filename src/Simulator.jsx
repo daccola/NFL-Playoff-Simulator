@@ -8,7 +8,9 @@ import { Paper, Grid, Container, Tabs, Tab, AppBar } from '@mui/material'
 import RegularSeasonGamesTable from './components/RegularSeasonGames/RegularSeasonGamesTable';
 
 import Header from './Header';
-import MuiPlay from './components/PlayoffGames/MUI_PLAYOFF_COL.jsx'
+import ConferenceGamesTable from './components/PlayoffGames/ConferenceGamesTable.jsx'
+import AFCPlayoffSeeds from './components/PlayoffGames/AFCPlayoffSeeds.jsx'
+import NFCPlayoffSeeds from './components/PlayoffGames/NFCPlayoffSeeds.jsx'
 
 export default function Simulator(props) {
   return (
@@ -23,7 +25,7 @@ export default function Simulator(props) {
         <Grid item xs={5} >
           <Paper
           sx={{
-              p: 2,
+              p: 1,
               display: 'flex',
               flexDirection: 'column',
             }}
@@ -34,17 +36,18 @@ export default function Simulator(props) {
         <Grid item xs={14}>
           <Paper
             sx={{
-              p: 2,
+              p: 1,
               display: 'flex',
               flexDirection: 'column',
             }}
           >
             <Grid container spacing={3} >
               <Grid item xs={6}>
-                <MuiPlay />
+                <AFCPlayoffSeeds />
               </Grid>
               <Grid item xs={6}>
-                <MuiPlay />
+                {/* <ConferenceGamesTable /> */}
+                <NFCPlayoffSeeds />
               </Grid>
             </Grid>
           </Paper>
@@ -52,7 +55,7 @@ export default function Simulator(props) {
         <Grid item xs={5} >
           <Paper
             sx={{
-              p: 2,
+              p: 1,
               display: 'flex',
               flexDirection: 'column',
             }}

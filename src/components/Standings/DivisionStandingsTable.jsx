@@ -7,12 +7,12 @@ import DivisionStandings from './DivisionStandings';
 export default function DivisionStandingsTable (props) {
   return (
     <>
-      <Stack spacing={2}>
+      {/* <Stack spacing={1}> */}
         <DivisionStandings />
         <DivisionStandings />
         <DivisionStandings />
         <DivisionStandings />
-      </Stack>  	
+      {/* </Stack>  	 */}
     </>		
   )
 }

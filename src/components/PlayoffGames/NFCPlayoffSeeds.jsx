@@ -17,32 +17,31 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 // import WildCardGame from './WildCardGame'
 import PlayoffGame from './PlayoffGame'
-import ByeContainer from './ByeContainer';
+import ByeContainerNFC from './ByeContainerNFC';
 import WildCardContainer from './WildCardContainer';
+import WildCardContainerNFC from './WildCardContainerNFC';
 
 
 
 export default function ConferenceGamesTable (props) {
-
-    return (
-			<>
-		    <h4>NFC</h4>
-				{/* <Card variant="outlined" sx={{bgcolor: '#d50a0a' }}>
-          <CardContent >  
-            {/* <WildCardGame />
-						<WildCardGame />
-            <WildCardGame />
-            <WildCardGame /> */}
-          {/* </CardContent>
-        </Card> */} 
-
-        {/* <PlayoffGame2 /> */}
-
-        <ByeContainer />
-        <WildCardContainer />
-				</>
-    )
-  
+  return (
+    <Grid container spacing={2} > 
+        <Grid item xs={12} >
+        {/* <h4>AFC</h4> */}
+        <Typography variant="h4" align="right">
+        NFC
+    	    </Typography>
+        </Grid>
+        {/* <h4>AFC</h4> */}
+        
+        <Grid item xs={12} >
+          <ByeContainerNFC />
+        </Grid>
+        <Grid item xs={12} >
+          <WildCardContainerNFC />
+        </Grid>
+    </Grid>
+  )  
 }
 
 ConferenceGamesTable.propTypes = {
