@@ -23,11 +23,12 @@ export default function Simulator(props) {
           </Paper>
         </Grid>
         <Grid item xs={5} >
-          <Paper
+          <Paper xs={12} 
           sx={{
               p: 1,
               display: 'flex',
               flexDirection: 'column',
+              height: '100%'
             }}
           >
             <DivisionStandingsTable />
@@ -39,6 +40,7 @@ export default function Simulator(props) {
               p: 1,
               display: 'flex',
               flexDirection: 'column',
+              height: '100%'
             }}
           >
             <Grid container spacing={3} >
@@ -58,6 +60,7 @@ export default function Simulator(props) {
               p: 1,
               display: 'flex',
               flexDirection: 'column',
+              height: '100%'
             }}
           >
             <DivisionStandingsTable />
