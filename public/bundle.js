@@ -1063,7 +1063,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState6(initialState) {
+          function useState7(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1075,7 +1075,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect8(create, deps) {
+          function useEffect9(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1645,13 +1645,13 @@
           exports.useCallback = useCallback5;
           exports.useContext = useContext9;
           exports.useDebugValue = useDebugValue3;
-          exports.useEffect = useEffect8;
+          exports.useEffect = useEffect9;
           exports.useImperativeHandle = useImperativeHandle4;
           exports.useLayoutEffect = useLayoutEffect3;
           exports.useMemo = useMemo4;
           exports.useReducer = useReducer;
           exports.useRef = useRef8;
-          exports.useState = useState6;
+          exports.useState = useState7;
           exports.version = ReactVersion;
         })();
       }
@@ -2459,11 +2459,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React62 = require_react();
+          var React63 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React62.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React63.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format2) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2495,7 +2495,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React62) {
+          if (!React63) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3711,7 +3711,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React62.Children.forEach(children, function(child) {
+            React63.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3722,7 +3722,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React62.Children.forEach(props.children, function(child) {
+                React63.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10915,7 +10915,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React62.Component().refs;
+          var emptyRefsObject = new React63.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -21443,14 +21443,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       var mergeConfig = require_mergeConfig();
       var validator2 = require_validator();
       var validators = validator2.validators;
-      function Axios2(instanceConfig) {
+      function Axios3(instanceConfig) {
         this.defaults = instanceConfig;
         this.interceptors = {
           request: new InterceptorManager(),
           response: new InterceptorManager()
         };
       }
-      Axios2.prototype.request = function request(configOrUrl, config) {
+      Axios3.prototype.request = function request(configOrUrl, config) {
         if (typeof configOrUrl === "string") {
           config = config || {};
           config.url = configOrUrl;
@@ -21518,12 +21518,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
         return promise;
       };
-      Axios2.prototype.getUri = function getUri(config) {
+      Axios3.prototype.getUri = function getUri(config) {
         config = mergeConfig(this.defaults, config);
         return buildURL(config.url, config.params, config.paramsSerializer).replace(/^\?/, "");
       };
       utils.forEach(["delete", "get", "head", "options"], function forEachMethodNoData(method) {
-        Axios2.prototype[method] = function(url, config) {
+        Axios3.prototype[method] = function(url, config) {
           return this.request(mergeConfig(config || {}, {
             method,
             url,
@@ -21532,7 +21532,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         };
       });
       utils.forEach(["post", "put", "patch"], function forEachMethodWithData(method) {
-        Axios2.prototype[method] = function(url, data, config) {
+        Axios3.prototype[method] = function(url, data, config) {
           return this.request(mergeConfig(config || {}, {
             method,
             url,
@@ -21540,7 +21540,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           }));
         };
       });
-      module.exports = Axios2;
+      module.exports = Axios3;
     }
   });
 
@@ -21655,13 +21655,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       "use strict";
       var utils = require_utils();
       var bind = require_bind();
-      var Axios2 = require_Axios();
+      var Axios3 = require_Axios();
       var mergeConfig = require_mergeConfig();
       var defaults = require_defaults();
       function createInstance(defaultConfig) {
-        var context = new Axios2(defaultConfig);
-        var instance = bind(Axios2.prototype.request, context);
-        utils.extend(instance, Axios2.prototype, context);
+        var context = new Axios3(defaultConfig);
+        var instance = bind(Axios3.prototype.request, context);
+        utils.extend(instance, Axios3.prototype, context);
         utils.extend(instance, context);
         instance.create = function create(instanceConfig) {
           return createInstance(mergeConfig(defaultConfig, instanceConfig));
@@ -21669,7 +21669,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         return instance;
       }
       var axios = createInstance(defaults);
-      axios.Axios = Axios2;
+      axios.Axios = Axios3;
       axios.Cancel = require_Cancel();
       axios.CancelToken = require_CancelToken();
       axios.isCancel = require_isCancel();
@@ -22470,7 +22470,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       if (true) {
         (function() {
           "use strict";
-          var React62 = require_react();
+          var React63 = require_react();
           var _assign = require_object_assign();
           var REACT_ELEMENT_TYPE = 60103;
           var REACT_PORTAL_TYPE = 60106;
@@ -22527,7 +22527,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }
             return null;
           }
-          var ReactSharedInternals = React62.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React63.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function error(format2) {
             {
               for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
@@ -28726,12 +28726,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   defineJQueryPlugin(Toast);
 
   // src/app.jsx
-  var import_react26 = __toESM(require_react(), 1);
+  var import_react28 = __toESM(require_react(), 1);
   var import_react_dom = __toESM(require_react_dom(), 1);
 
   // src/Simulator.jsx
-  var import_react25 = __toESM(require_react(), 1);
-  var import_axios = __toESM(require_axios2(), 1);
+  var import_react27 = __toESM(require_react(), 1);
+  var import_axios2 = __toESM(require_axios2(), 1);
 
   // src/components/Standings/DivisionStandingsTable.jsx
   var import_react11 = __toESM(require_react(), 1);
@@ -37422,10 +37422,46 @@ const theme2 = createTheme({ palette: {
   DivisionStandings.propTypes = {};
 
   // src/components/RegularSeasonGames/RegularSeasonGamesTable.jsx
+  var import_react15 = __toESM(require_react(), 1);
+
+  // src/components/RegularSeasonGames/Helper.jsx
+  var import_react12 = __toESM(require_react(), 1);
+  var import_axios = __toESM(require_axios2(), 1);
   var import_react13 = __toESM(require_react(), 1);
+  var useWeeklyGames = () => {
+    const [week, setWeek] = (0, import_react13.useState)("1");
+    const [games, setGames] = (0, import_react13.useState)([]);
+    (0, import_react13.useEffect)(() => {
+      let games2 = [];
+      import_axios.default.get(`https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=${week}`).then((response) => {
+        response.data.events.forEach((game) => {
+          let newGame = {
+            homeTeam: game.competitions[0].competitors[0].team.abbreviation,
+            homeScore: game.competitions[0].competitors[0].score,
+            homeImage: `https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/${game.competitions[0].competitors[0].team.abbreviation}.png`,
+            roadTeam: game.competitions[0].competitors[1].team.abbreviation,
+            roadScore: game.competitions[0].competitors[1].score,
+            roadImage: `https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/${game.competitions[0].competitors[1].team.abbreviation}.png`
+          };
+          games2.push(newGame);
+        });
+        setGames(games2);
+      }).catch((error) => {
+        alert("Failed to retrieve movie data");
+        console.error("Failed to retrieve movie data");
+        console.error(error);
+      });
+    }, [games]);
+    return {
+      week,
+      setWeek,
+      games
+    };
+  };
+  var Helper_default = useWeeklyGames;
 
   // src/components/RegularSeasonGames/RegularSeasonGame.jsx
-  var import_react12 = __toESM(require_react(), 1);
+  var import_react14 = __toESM(require_react(), 1);
 
   // node_modules/@mui/icons-material/esm/AlternateEmail.js
   var import_jsx_runtime33 = __toESM(require_jsx_runtime());
@@ -37435,237 +37471,275 @@ const theme2 = createTheme({ palette: {
 
   // src/components/RegularSeasonGames/RegularSeasonGame.jsx
   function RegularSeasonGame(props) {
-    return /* @__PURE__ */ import_react12.default.createElement(Card_default, {
-      variant: "outlined"
-    }, /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
-      container: true
-    }, /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
-      item: true,
-      xs: 12
-    }, /* @__PURE__ */ import_react12.default.createElement(Card_default, {
-      sx: { px: 0 }
-    }, /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
-      container: true,
-      alignItems: "center"
-    }, /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
-      item: true,
-      xs: 5,
-      sx: { px: 1.5, borderBottom: 4, borderColor: "green" }
-    }, /* @__PURE__ */ import_react12.default.createElement("img", {
-      src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/min.png",
-      alt: "TODO",
-      className: "col-12"
-    })), /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
-      item: true,
-      xs: 2,
-      sx: { px: 0.25 }
-    }, /* @__PURE__ */ import_react12.default.createElement(AlternateEmail_default, {
-      sx: { width: "100%" }
-    })), /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
-      item: true,
-      xs: 5,
-      sx: { px: 1.5, borderBottom: 4, borderColor: "green" }
-    }, /* @__PURE__ */ import_react12.default.createElement("img", {
-      src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
-      alt: "TODO",
-      className: "col-12"
-    })))))), /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
-      container: true
-    }, /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
-      item: true
-    }, /* @__PURE__ */ import_react12.default.createElement(Typography_default, {
-      variant: "body2"
-    }, "FINAL"), /* @__PURE__ */ import_react12.default.createElement(Typography_default, {
-      variant: "body2"
-    }, "December 24, 2022"))));
+    const { games } = props;
+    if (games) {
+      return /* @__PURE__ */ import_react14.default.createElement(Card_default, {
+        variant: "outlined"
+      }, /* @__PURE__ */ import_react14.default.createElement(Grid_default, {
+        container: true
+      }, /* @__PURE__ */ import_react14.default.createElement(Grid_default, {
+        item: true,
+        xs: 12
+      }, /* @__PURE__ */ import_react14.default.createElement(Card_default, {
+        sx: { px: 0 }
+      }, /* @__PURE__ */ import_react14.default.createElement(Grid_default, {
+        container: true,
+        alignItems: "center"
+      }, /* @__PURE__ */ import_react14.default.createElement(Grid_default, {
+        item: true,
+        xs: 5,
+        sx: { px: 1.5, borderBottom: 4, borderColor: "green" }
+      }, /* @__PURE__ */ import_react14.default.createElement("img", {
+        src: games.roadImage,
+        alt: "TODO",
+        className: "col-12"
+      })), /* @__PURE__ */ import_react14.default.createElement(Grid_default, {
+        item: true,
+        xs: 2,
+        sx: { px: 0.25 }
+      }, /* @__PURE__ */ import_react14.default.createElement(AlternateEmail_default, {
+        sx: { width: "100%" }
+      })), /* @__PURE__ */ import_react14.default.createElement(Grid_default, {
+        item: true,
+        xs: 5,
+        sx: { px: 1.5, borderBottom: 4, borderColor: "green" }
+      }, /* @__PURE__ */ import_react14.default.createElement("img", {
+        src: games.homeImage,
+        alt: "TODO",
+        className: "col-12"
+      })))))), /* @__PURE__ */ import_react14.default.createElement(Grid_default, {
+        container: true
+      }, /* @__PURE__ */ import_react14.default.createElement(Grid_default, {
+        item: true
+      }, /* @__PURE__ */ import_react14.default.createElement(Typography_default, {
+        variant: "body2"
+      }, "FINAL"), /* @__PURE__ */ import_react14.default.createElement(Typography_default, {
+        variant: "body2"
+      }, "December 24, 2022"))));
+    } else {
+      return /* @__PURE__ */ import_react14.default.createElement("div", null);
+    }
   }
   RegularSeasonGame.propTypes = {};
 
   // src/components/RegularSeasonGames/RegularSeasonGamesTable.jsx
   function RegularSeasonGamesTable(props) {
-    const { games } = props;
-    const [value, setValue] = import_react13.default.useState("1");
+    const { week, setWeek, games } = Helper_default();
+    const [value, setValue] = import_react15.default.useState("1");
     const handleChange = (event, newValue) => {
       setValue(newValue);
+      setWeek(newValue);
     };
-    return /* @__PURE__ */ import_react13.default.createElement(import_react13.default.Fragment, null, /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       container: true,
       spacing: 2,
       columns: 144
-    }, /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 144
-    }, /* @__PURE__ */ import_react13.default.createElement(Tabs_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(Tabs_default, {
       value,
       onChange: handleChange,
       variant: "scrollable",
       scrollButtons: true
-    }, /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 1",
       value: "1"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 2",
       value: "2"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 3",
       value: "3"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 4",
       value: "4"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 5",
       value: "5"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 6",
       value: "6"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 7",
       value: "7"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 8",
       value: "8"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 9",
       value: "9"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 10",
       value: "10"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 11",
       value: "11"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 12",
       value: "12"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 13",
       value: "13"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 14",
       value: "14"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 15",
       value: "15"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 16",
       value: "16"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 17",
       value: "17"
-    }), /* @__PURE__ */ import_react13.default.createElement(Tab_default, {
+    }), /* @__PURE__ */ import_react15.default.createElement(Tab_default, {
       label: "Week 18",
       value: "18"
-    }))), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }))), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[0]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[1]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[2]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[3]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[4]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[5]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[6]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[7]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[8]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[9]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[10]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[11]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[12]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[13]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null)), /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[14]
+    })), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
       item: true,
       xs: 18
-    }, /* @__PURE__ */ import_react13.default.createElement(RegularSeasonGame, null))));
+    }, /* @__PURE__ */ import_react15.default.createElement(RegularSeasonGame, {
+      games: games[15]
+    })));
   }
   RegularSeasonGamesTable.propTypes = {};
 
   // src/Header.jsx
-  var import_react14 = __toESM(require_react(), 1);
+  var import_react16 = __toESM(require_react(), 1);
   function Header() {
-    return /* @__PURE__ */ import_react14.default.createElement(AppBar_default, {
+    return /* @__PURE__ */ import_react16.default.createElement(AppBar_default, {
       position: "static",
       sx: { bgcolor: "#013369" }
-    }, /* @__PURE__ */ import_react14.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react14.default.createElement(Box_default, null, /* @__PURE__ */ import_react14.default.createElement(IconButton_default, {
+    }, /* @__PURE__ */ import_react16.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react16.default.createElement(Box_default, null, /* @__PURE__ */ import_react16.default.createElement(IconButton_default, {
       sx: { p: 0 }
-    }, /* @__PURE__ */ import_react14.default.createElement(Avatar_default, {
+    }, /* @__PURE__ */ import_react16.default.createElement(Avatar_default, {
       src: "https://static.www.nfl.com/image/upload/v1554321393/league/nvfr7ogywskqrfaiu38m.svg",
       alt: "NFL Logo"
-    }))), /* @__PURE__ */ import_react14.default.createElement(Typography_default, {
+    }))), /* @__PURE__ */ import_react16.default.createElement(Typography_default, {
       variant: "h6",
       sx: { flexGrow: 1 }
-    }, "NFL Playoff Seeder 2022"), /* @__PURE__ */ import_react14.default.createElement(Button_default, {
+    }, "NFL Playoff Seeder 2022"), /* @__PURE__ */ import_react16.default.createElement(Button_default, {
       color: "inherit"
     }, "Reset")));
   }
 
   // src/components/PlayoffGames/ConferenceGamesTable.jsx
-  var import_react20 = __toESM(require_react(), 1);
+  var import_react22 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/PlayoffGame.jsx
-  var import_react17 = __toESM(require_react(), 1);
+  var import_react19 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/TeamInfoRight.jsx
-  var import_react15 = __toESM(require_react(), 1);
+  var import_react17 = __toESM(require_react(), 1);
   function TeamInfoRight(props) {
-    return /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
       container: true,
       columns: 24,
       alignItems: "center"
-    }, /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
       item: true,
       xs: 17,
       sx: { pr: 1 }
-    }, /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
       item: true,
       xs: 17
-    }, /* @__PURE__ */ import_react15.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react17.default.createElement(Typography_default, {
       variant: "body2",
       align: "right"
-    }, "1st Seed")), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
+    }, "1st Seed")), /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
       item: true,
       xs: 17
-    }, /* @__PURE__ */ import_react15.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react17.default.createElement(Typography_default, {
       variant: "body2",
       align: "right"
-    }, "San Francisco")), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
+    }, "San Francisco")), /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
       item: true,
       xs: 17
-    }, /* @__PURE__ */ import_react15.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react17.default.createElement(Typography_default, {
       variant: "body2",
       align: "right"
-    }, "Record: 16-0-0")))), /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
+    }, "Record: 16-0-0")))), /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
       item: true,
       xs: 7
-    }, /* @__PURE__ */ import_react15.default.createElement("img", {
+    }, /* @__PURE__ */ import_react17.default.createElement("img", {
       src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
       alt: "TODO",
       className: "col-12"
@@ -37673,41 +37747,41 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/PlayoffGames/TeamInfoLeft.jsx
-  var import_react16 = __toESM(require_react(), 1);
+  var import_react18 = __toESM(require_react(), 1);
   function TeamInfoLeft(props) {
-    return /* @__PURE__ */ import_react16.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
       container: true,
       columns: 24,
       alignItems: "center"
-    }, /* @__PURE__ */ import_react16.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
       item: true,
       xs: 7
-    }, /* @__PURE__ */ import_react16.default.createElement("img", {
+    }, /* @__PURE__ */ import_react18.default.createElement("img", {
       src: "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png",
       alt: "TODO",
       className: "col-12"
-    })), /* @__PURE__ */ import_react16.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
       item: true,
       xs: 17,
       sx: { pl: 1 }
-    }, /* @__PURE__ */ import_react16.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react16.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
       item: true,
       xs: 17
-    }, /* @__PURE__ */ import_react16.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react18.default.createElement(Typography_default, {
       variant: "body2",
       align: "left"
-    }, "1st Seed")), /* @__PURE__ */ import_react16.default.createElement(Grid_default, {
+    }, "1st Seed")), /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
       item: true,
       xs: 17
-    }, /* @__PURE__ */ import_react16.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react18.default.createElement(Typography_default, {
       variant: "body2",
       align: "left"
-    }, "San Francisco")), /* @__PURE__ */ import_react16.default.createElement(Grid_default, {
+    }, "San Francisco")), /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
       item: true,
       xs: 17
-    }, /* @__PURE__ */ import_react16.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react18.default.createElement(Typography_default, {
       variant: "body2",
       align: "left"
     }, "Record: 16-0-0")))));
@@ -37715,189 +37789,189 @@ const theme2 = createTheme({ palette: {
 
   // src/components/PlayoffGames/PlayoffGame.jsx
   function PlayoffGame(props) {
-    return /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       container: true,
       columns: 18,
       alignItems: "center",
       sx: { border: "1px solid grey", bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       item: true,
       xs: 8
-    }, /* @__PURE__ */ import_react17.default.createElement(TeamInfoLeft, null)), /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(TeamInfoLeft, null)), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       item: true,
       xs: 2
-    }, /* @__PURE__ */ import_react17.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react19.default.createElement(Typography_default, {
       variant: "body2"
-    }, "@")), /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
+    }, "@")), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
       item: true,
       xs: 8
-    }, /* @__PURE__ */ import_react17.default.createElement(TeamInfoRight, null)));
+    }, /* @__PURE__ */ import_react19.default.createElement(TeamInfoRight, null)));
   }
 
   // src/components/PlayoffGames/ByeContainer.jsx
-  var import_react18 = __toESM(require_react(), 1);
+  var import_react20 = __toESM(require_react(), 1);
   function ByeContainer(props) {
-    return /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react20.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react20.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react18.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react20.default.createElement(Typography_default, {
       variant: "body2",
       sx: { px: 1 }
-    }, "FIRST-ROUND BYE")), /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
+    }, "FIRST-ROUND BYE")), /* @__PURE__ */ import_react20.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { px: 0, pb: 0 }
-    }, /* @__PURE__ */ import_react18.default.createElement(PlayoffGame, null)));
+    }, /* @__PURE__ */ import_react20.default.createElement(PlayoffGame, null)));
   }
 
   // src/components/PlayoffGames/WildCardContainer.jsx
-  var import_react19 = __toESM(require_react(), 1);
+  var import_react21 = __toESM(require_react(), 1);
   function WildCardContainer(props) {
-    return /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react19.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react21.default.createElement(Typography_default, {
       variant: "body2",
       sx: { px: 1 }
-    }, "WILD-CARD GAMES")), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
+    }, "WILD-CARD GAMES")), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pb: 1 }
-    }, /* @__PURE__ */ import_react19.default.createElement(PlayoffGame, null)), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react21.default.createElement(PlayoffGame, null)), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pb: 1 }
-    }, /* @__PURE__ */ import_react19.default.createElement(PlayoffGame, null)), /* @__PURE__ */ import_react19.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react21.default.createElement(PlayoffGame, null)), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react19.default.createElement(PlayoffGame, null)));
+    }, /* @__PURE__ */ import_react21.default.createElement(PlayoffGame, null)));
   }
 
   // src/components/PlayoffGames/ConferenceGamesTable.jsx
   function ConferenceGamesTable(props) {
-    return /* @__PURE__ */ import_react20.default.createElement(import_react20.default.Fragment, null, /* @__PURE__ */ import_react20.default.createElement("h4", null, "NFC"), /* @__PURE__ */ import_react20.default.createElement(ByeContainer, null), /* @__PURE__ */ import_react20.default.createElement(WildCardContainer, null));
+    return /* @__PURE__ */ import_react22.default.createElement(import_react22.default.Fragment, null, /* @__PURE__ */ import_react22.default.createElement("h4", null, "NFC"), /* @__PURE__ */ import_react22.default.createElement(ByeContainer, null), /* @__PURE__ */ import_react22.default.createElement(WildCardContainer, null));
   }
   ConferenceGamesTable.propTypes = {};
 
   // src/components/PlayoffGames/AFCPlayoffSeeds.jsx
-  var import_react21 = __toESM(require_react(), 1);
+  var import_react23 = __toESM(require_react(), 1);
   function ConferenceGamesTable2(props) {
-    return /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react23.default.createElement(Grid_default, {
       container: true,
       spacing: 2
-    }, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react23.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react21.default.createElement("h4", null, "AFC"), /* @__PURE__ */ import_react21.default.createElement("h4", null, "AFC"), /* @__PURE__ */ import_react21.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react23.default.createElement("h4", null, "AFC"), /* @__PURE__ */ import_react23.default.createElement("h4", null, "AFC"), /* @__PURE__ */ import_react23.default.createElement(Typography_default, {
       variant: "h4",
       align: "right"
-    }, "AFC")), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+    }, "AFC")), /* @__PURE__ */ import_react23.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react21.default.createElement(ByeContainer, null)), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react23.default.createElement(ByeContainer, null)), /* @__PURE__ */ import_react23.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react21.default.createElement(WildCardContainer, null)));
+    }, /* @__PURE__ */ import_react23.default.createElement(WildCardContainer, null)));
   }
   ConferenceGamesTable2.propTypes = {};
 
   // src/components/PlayoffGames/NFCPlayoffSeeds.jsx
-  var import_react24 = __toESM(require_react(), 1);
+  var import_react26 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/ByeContainerNFC.jsx
-  var import_react22 = __toESM(require_react(), 1);
+  var import_react24 = __toESM(require_react(), 1);
   function ByeContainerNFC(props) {
-    return /* @__PURE__ */ import_react22.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react24.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react22.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react24.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react22.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react24.default.createElement(Typography_default, {
       variant: "body2",
       align: "right",
       sx: { px: 1 }
-    }, "FIRST-ROUND BYE")), /* @__PURE__ */ import_react22.default.createElement(Grid_default, {
+    }, "FIRST-ROUND BYE")), /* @__PURE__ */ import_react24.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { px: 0, pb: 0 }
-    }, /* @__PURE__ */ import_react22.default.createElement(PlayoffGame, null)));
+    }, /* @__PURE__ */ import_react24.default.createElement(PlayoffGame, null)));
   }
 
   // src/components/PlayoffGames/WildCardContainerNFC.jsx
-  var import_react23 = __toESM(require_react(), 1);
+  var import_react25 = __toESM(require_react(), 1);
   function WildCardContainerNFC(props) {
-    return /* @__PURE__ */ import_react23.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react23.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react23.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, {
       variant: "body2",
       align: "right",
       sx: { px: 1 }
-    }, "WILD-CARD GAMES")), /* @__PURE__ */ import_react23.default.createElement(Grid_default, {
+    }, "WILD-CARD GAMES")), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pb: 1 }
-    }, /* @__PURE__ */ import_react23.default.createElement(PlayoffGame, null)), /* @__PURE__ */ import_react23.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react25.default.createElement(PlayoffGame, null)), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pb: 1 }
-    }, /* @__PURE__ */ import_react23.default.createElement(PlayoffGame, null)), /* @__PURE__ */ import_react23.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react25.default.createElement(PlayoffGame, null)), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react23.default.createElement(PlayoffGame, null)));
+    }, /* @__PURE__ */ import_react25.default.createElement(PlayoffGame, null)));
   }
 
   // src/components/PlayoffGames/NFCPlayoffSeeds.jsx
   function ConferenceGamesTable3(props) {
-    return /* @__PURE__ */ import_react24.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
       container: true,
       spacing: 2
-    }, /* @__PURE__ */ import_react24.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react24.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, {
       variant: "h4",
       align: "right"
-    }, "NFC")), /* @__PURE__ */ import_react24.default.createElement(Grid_default, {
+    }, "NFC")), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react24.default.createElement(ByeContainerNFC, null)), /* @__PURE__ */ import_react24.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react26.default.createElement(ByeContainerNFC, null)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react24.default.createElement(WildCardContainerNFC, null)));
+    }, /* @__PURE__ */ import_react26.default.createElement(WildCardContainerNFC, null)));
   }
   ConferenceGamesTable3.propTypes = {};
 
   // src/Simulator.jsx
   function Simulator(props) {
-    return /* @__PURE__ */ import_react25.default.createElement(Container_default, {
+    return /* @__PURE__ */ import_react27.default.createElement(Container_default, {
       maxWidth: false,
       disableGutters: true,
       sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react25.default.createElement(Header, null), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Header, null), /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       container: true,
       spacing: 3,
       columns: 24,
       sx: { p: 2 }
-    }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       item: true,
       xs: 24
-    }, /* @__PURE__ */ import_react25.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Paper_default, {
       sx: { p: 1 }
-    }, /* @__PURE__ */ import_react25.default.createElement(RegularSeasonGamesTable, null))), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(RegularSeasonGamesTable, null))), /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       item: true,
       xs: 5
-    }, /* @__PURE__ */ import_react25.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Paper_default, {
       xs: 12,
       sx: {
         p: 1,
@@ -37905,40 +37979,40 @@ const theme2 = createTheme({ palette: {
         flexDirection: "column",
         height: "100%"
       }
-    }, /* @__PURE__ */ import_react25.default.createElement(DivisionStandingsTable, null))), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(DivisionStandingsTable, null))), /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       item: true,
       xs: 14
-    }, /* @__PURE__ */ import_react25.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Paper_default, {
       sx: {
         p: 1,
         display: "flex",
         flexDirection: "column",
         height: "100%"
       }
-    }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       container: true,
       spacing: 3
-    }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       item: true,
       xs: 6
-    }, /* @__PURE__ */ import_react25.default.createElement(ConferenceGamesTable2, null)), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(ConferenceGamesTable2, null)), /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       item: true,
       xs: 6
-    }, /* @__PURE__ */ import_react25.default.createElement(ConferenceGamesTable3, null))))), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(ConferenceGamesTable3, null))))), /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       item: true,
       xs: 5
-    }, /* @__PURE__ */ import_react25.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Paper_default, {
       sx: {
         p: 1,
         display: "flex",
         flexDirection: "column",
         height: "100%"
       }
-    }, /* @__PURE__ */ import_react25.default.createElement(DivisionStandingsTable, null)))));
+    }, /* @__PURE__ */ import_react27.default.createElement(DivisionStandingsTable, null)))));
   }
 
   // src/app.jsx
-  import_react_dom.default.render(/* @__PURE__ */ import_react26.default.createElement(Simulator, null), document.getElementById("root"));
+  import_react_dom.default.render(/* @__PURE__ */ import_react28.default.createElement(Simulator, null), document.getElementById("root"));
 })();
 /*
 object-assign

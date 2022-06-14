@@ -3,20 +3,21 @@ import PropTypes from 'prop-types'
 
 import { Paper, Grid, Container, Button, Tabs, Tab, Card, Box, AppBar } from '@mui/material'
 
-
+import useWeeklyGames from './Helper.jsx'
 import RegularSeasonGame from './RegularSeasonGame.jsx'
 
 export default function RegularSeasonGamesTable(props) {
-  const { games } = props
+  //const { games } = props
+  const { week, setWeek, games } = useWeeklyGames();
 
   const [value, setValue] = React.useState("1");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-  };
+    setWeek(newValue)
+  }
 
   return (
-    <>
   	  <Grid container spacing={2} columns={144} > 
         <Grid item xs={144} >
           <Tabs value={value} onChange={handleChange} variant="scrollable" scrollButtons >
@@ -41,55 +42,54 @@ export default function RegularSeasonGamesTable(props) {
           </Tabs>       
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[0]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[1]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[2]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[3]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[4]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[5]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[6]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[7]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[8]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[9]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[10]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[11]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[12]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[13]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[14]}/>
         </Grid>
         <Grid item xs={18}>
-          <RegularSeasonGame />
+          <RegularSeasonGame games={games[15]}/>
         </Grid>
       </Grid>
-    </>
   )
 }
 

@@ -8,6 +8,9 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography'
 
 export default function RegularSeasonGame (props) {
+  const { games } = props
+
+if(games) {
   return (
   	<Card variant="outlined" >
       <Grid container>
@@ -15,13 +18,13 @@ export default function RegularSeasonGame (props) {
           <Card sx={{px:0}}>
             <Grid container alignItems="center">
               <Grid item xs={5} sx={{px:1.5, borderBottom: 4, borderColor: 'green'}}>
-                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/min.png" alt="TODO" className = 'col-12'></img>
+                <img src={games.roadImage} alt="TODO" className = 'col-12'></img>
               </Grid>
               <Grid item xs={2} sx={{px:0.25}}>
                 <AlternateEmail sx={{ width: '100%' }} />
               </Grid>
               <Grid item xs={5} sx={{px:1.5, borderBottom: 4, borderColor: 'green'}}>
-                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png" alt="TODO" className = 'col-12'></img>
+                <img src={games.homeImage} alt="TODO" className = 'col-12'></img>
               </Grid>
             </ Grid>
           </ Card>
@@ -39,6 +42,11 @@ export default function RegularSeasonGame (props) {
       </Grid>
     </Card>
   )  
+}
+
+else {
+  return <div></div>
+}
 }
 
 RegularSeasonGame.propTypes = {
