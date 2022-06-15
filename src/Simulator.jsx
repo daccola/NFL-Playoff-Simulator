@@ -16,7 +16,7 @@ export default function Simulator(props) {
   return (
     <Container maxWidth={false} disableGutters sx={{bgcolor: '#eeeeee'}}>
       <Header />
-      <Grid container spacing={3} columns={24} sx={{p:2}}>
+      <Grid container spacing={2} columns={24} sx={{p:2}}>
         <Grid item xs={24}>
           <Paper sx={{p:1}}>
             <RegularSeasonGamesTable />
