@@ -13,6 +13,17 @@ import CompletedNonTieGame from './CompletedNonTieGame'
 export default function CompletedGame (props) {
   const { games } = props
 
+  if(games.roadScore === games.homeScore) {
+
+  }
+  else if (games.roadScore > games.homeScore)
+  {
+
+  }
+  else if (games.roadScore < games.homeScore)
+  {
+    
+  }
   return (
     <Card variant="outlined" >
       <Grid container>

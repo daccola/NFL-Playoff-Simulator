@@ -12,13 +12,13 @@ export default function CompletedTieGame (props) {
   
   return (
     <Grid container alignItems="center">
-      <Grid item xs={5} onClick={handleClick} sx={{px:1.5}}>
+      <Grid item xs={5} sx={{px:1.5}}>
         <img src={games.roadImage} alt="TODO" className = 'col-12'></img>
       </Grid>
       <Grid item xs={2} sx={{px:0.25}}>
         <AlternateEmail sx={{ width: '100%' }} />
       </Grid>
-      <Grid item xs={5} sx={{px:1.5, borderBottom: 4, borderColor: 'gray'}}>
+      <Grid item xs={5} sx={{px:1.5, borderBottom: 4, bgcolor: '#a7afc9', borderColor: '#1b48e0'}}>
         <img src={games.homeImage} alt="TODO" className = 'col-12'></img>
       </Grid>
     </ Grid>

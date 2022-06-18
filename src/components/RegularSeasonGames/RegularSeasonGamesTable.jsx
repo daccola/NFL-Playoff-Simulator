@@ -20,7 +20,10 @@ export default function RegularSeasonGamesTable(props) {
   return (
   	<Grid container spacing={2} columns={144} > 
       <Grid item xs={144} >
-        <Tabs value={tabValue} onChange={handleTabChange} variant="scrollable" scrollButtons >
+        <Tabs value={tabValue} onChange={handleTabChange} variant="scrollable" scrollButtons 
+        
+        textColor="secondary"
+  indicatorColor="secondary">
           <Tab label="Week 1" value="1" />
           <Tab label="Week 2" value="2" />
           <Tab label="Week 3" value="3" />

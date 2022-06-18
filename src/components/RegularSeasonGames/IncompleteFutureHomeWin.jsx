@@ -18,7 +18,7 @@ export default function IncompleFutureRoadWin (props) {
       <Grid item xs={2} onClick={isTieClick} sx={{px:0.25}}>
         <AlternateEmail sx={{ width: '100%' }} />
        </Grid>
-      <Grid item xs={5} onClick={isHomeWinClick} sx={{px:1.5, borderBottom: 4, borderColor: 'yellow' }}>
+      <Grid item xs={5} onClick={isHomeWinClick} sx={{px:1.5, borderBottom: 4, borderColor: '#013369' }}>
         <img src={games.homeImage} alt="TODO" className = 'col-12'></img>
       </Grid>
     </ Grid>  

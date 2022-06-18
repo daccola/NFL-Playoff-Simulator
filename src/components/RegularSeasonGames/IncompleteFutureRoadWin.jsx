@@ -12,7 +12,7 @@ export default function IncompleFutureRoadWin (props) {
 
   return (
     <Grid container alignItems="center" >
-      <Grid item xs={5} onClick={isRoadWinClick} sx={{px:1.5, borderBottom: 4, borderColor: 'yellow' }}>
+      <Grid item xs={5} onClick={isRoadWinClick} sx={{px:1.5, borderBottom: 4, borderColor: '#013369' }}>
         <img src={games.roadImage} alt="TODO" className = 'col-12'></img>
       </Grid>
       <Grid item xs={2} onClick={isTieClick} sx={{px:0.25}}>
