@@ -11,11 +11,12 @@ const useWeeklyGames = () => {
 
   useEffect(() => {
     let games = []
-    Axios.get(`https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2021&seasontype=2&week=${week}`)
+    Axios.get(`https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=2022&seasontype=2&week=${week}`)
       .then((response) => {
         response.data.events.forEach((game) => {
           let newGame = {
             completed: game.competitions[0].status.type.completed,
+            info: game.competitions[0].status.type.detail,
             state: game.competitions[0].status.type.state,
             homeTeam: game.competitions[0].competitors[0].team.abbreviation,
             homeScore: parseInt(game.competitions[0].competitors[0].score),

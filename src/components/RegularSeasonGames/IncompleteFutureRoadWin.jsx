@@ -12,14 +12,26 @@ export default function IncompleFutureRoadWin (props) {
 
   return (
     <Grid container alignItems="center" >
-      <Grid item xs={5} onClick={isRoadWinClick} sx={{px:1.5, borderBottom: 4, borderColor: '#013369' }}>
+      <Grid item xs={5} onClick={isRoadWinClick} sx={{px:1.5}}>
         <img src={games.roadImage} alt="TODO" className = 'col-12'></img>
       </Grid>
       <Grid item xs={2} onClick={isTieClick} sx={{px:0.25}}>
         <AlternateEmail sx={{ width: '100%' }} />
        </Grid>
-      <Grid item xs={5} onClick={isHomeWinClick} sx={{px:1.5, borderBottom: 4, borderColor: '#fff'}}>
+      <Grid item xs={5} onClick={isHomeWinClick} sx={{px:1.5}}>
         <img src={games.homeImage} alt="TODO" className = 'col-12'></img>
+      </Grid>
+      <Grid item xs={5} onClick={isRoadWinClick} sx={{px:1.5, borderBottom: 4, borderColor: '#1b48e0' }}>
+        <Typography variant="body2" align="center">
+          _
+        </Typography>
+      </Grid>
+      <Grid item xs={2} onClick={isTieClick} sx={{px:0.25}}>
+      </Grid>
+      <Grid item xs={5} onClick={isHomeWinClick} sx={{px:1.5, borderBottom: 4, borderColor: '#eeeeee', mb:0.5 }}>
+        <Typography variant="body2" align="center">
+          _
+        </Typography>
       </Grid>
     </ Grid>  
     )

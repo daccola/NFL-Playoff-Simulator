@@ -10,6 +10,14 @@ export default function RegularSeasonGamesTable(props) {
   //const { games } = props
   const { week, setWeek, games } = useWeeklyGames();
 
+  let game12 = {
+    completed: true,
+    homeScore: 7,
+    homeImage: `https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/min.png`,
+    roadScore: 45,
+    roadImage: `https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png`,
+  }
+
   const [tabValue, setTabValue] = React.useState("1");
 
   const handleTabChange = (event, newValue) => {
@@ -44,6 +52,9 @@ export default function RegularSeasonGamesTable(props) {
           <Tab label="Week 18" value="18" />
         </Tabs>       
       </Grid>
+      {/* <Grid item xs={18}>
+        <RegularSeasonGame games={game12}/>
+      </Grid> */}
       <Grid item xs={18}>
         <RegularSeasonGame games={games[0]}/>
       </Grid>

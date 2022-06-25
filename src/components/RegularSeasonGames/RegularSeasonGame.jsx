@@ -15,33 +15,56 @@ import IncompleteFutureGame from './IncompleteFutureGame'
 export default function RegularSeasonGame (props) {
   const { games } = props
 
+  //console.log(games)
   // const [flag, setFlag] = React.useState(true);
+  //const gameDayf = games.info.split(" ")
+
+  //const gameDay = gameDayf[0]
 
   // handleClick = () => {
   //   setFlag(!flag)
   // }
 
   if(games) {
+
     if (games.completed){
-      return <CompletedGame games={games} />
-    }
-    else if (games.state === "pre"){
+      //return <CompletedGame games={games} />
       return (
-        <Card variant="outlined" >
+        <Card variant="outlined" sx={{bgcolor:'#eeeeee'}}>
           <Grid container>
             <Grid item xs={12}>
-              <Card sx={{px:0}}>
-                <IncompleteFutureGame games={games} />
-              </ Card>
+              {/* <IncompleteFutureGame games={games} /> */}
+              <CompletedGame games={games} />
             </ Grid>
           </ Grid>
           <Grid container>
-            <Grid item >
-              <Typography variant="body2" >
-                0-0
+            <Grid item xs={12}>
+              <Typography variant="body2" align="center" sx={{ fontWeight: 'bold' }}>
+                FINAL
               </Typography>
-              <Typography variant="body2" >
-                SUN 3:25 PM
+            </Grid>
+          </Grid>
+        </Card>
+      )
+    }
+    else if (games.state === "pre"){
+      const info = games.info.split(" ")
+      const timeParts = info[4].split(":")
+      //clean up with string interopation
+      const centralTime = timeParts[0] === "1" ? "12:" + timeParts[1] : timeParts[0] - 1 + ":" + timeParts[1]
+      const amOrpm = info[4].substring(0,2) === "12" ? "AM" : info[5]
+      const dayTime = info[0].toUpperCase().substring(0,3) + " " + centralTime + " " + amOrpm
+      return (
+        <Card variant="outlined" sx={{bgcolor:'#eeeeee'}}>
+          <Grid container>
+            <Grid item xs={12}>
+              <IncompleteFutureGame games={games} />
+            </ Grid>
+          </ Grid>
+          <Grid container>
+            <Grid item xs={12}>
+              <Typography variant="body2" align="center">
+                {dayTime}
               </Typography>
             </Grid>
           </Grid>
