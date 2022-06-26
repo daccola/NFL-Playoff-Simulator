@@ -15,14 +15,16 @@ export default function ByeContainerNFC (props) {
   return (
     <Grid container >
       <Grid item xs={12} sx={{pt:0}}>
-      <Typography variant="body2" align="right" sx={{px:1}}>
-        FIRST-ROUND BYE
-    	</Typography>
+        <Typography variant="h4" align="left" sx={{px:1}}>
+          NFC
+    	  </Typography>
       </Grid>
-
-      
+      <Grid item xs={12} sx={{pt:0}}>
+        <Typography variant="body2" align="right" sx={{px:1}}>
+          FIRST-ROUND BYE
+    	  </Typography>
+      </Grid>
       <Grid item xs={12} sx={{px:0, pb:0}}>
-                  {/* <TeamInfoLeft2 /> */}
 				<PlayoffGame />
       </Grid>         
     </Grid>

@@ -15,14 +15,16 @@ export default function ByeContainer (props) {
   return (
     <Grid container >
       <Grid item xs={12} sx={{pt:0}}>
-      <Typography variant="body2" sx={{px:1}}>
-        FIRST-ROUND BYE
-    	</Typography>
+        <Typography variant="h4" align="right" sx={{px:1}}>
+          AFC
+    	  </Typography>
       </Grid>
-
-      
+      <Grid item xs={12} sx={{pt:0}}>
+        <Typography variant="body2" sx={{px:1}}>
+          FIRST-ROUND BYE
+    	  </Typography>
+      </Grid>
       <Grid item xs={12} sx={{px:0, pb:0}}>
-                  {/* <TeamInfoLeft2 /> */}
 				<PlayoffGame />
       </Grid>         
     </Grid>

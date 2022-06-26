@@ -27,14 +27,6 @@ export default function ConferenceGamesTable (props) {
   return (
     <Grid container spacing={2} > 
         <Grid item xs={12} >
-        {/* <h4>AFC</h4> */}
-        <Typography variant="h4" align="right">
-        NFC
-    	    </Typography>
-        </Grid>
-        {/* <h4>AFC</h4> */}
-        
-        <Grid item xs={12} >
           <ByeContainerNFC />
         </Grid>
         <Grid item xs={12} >

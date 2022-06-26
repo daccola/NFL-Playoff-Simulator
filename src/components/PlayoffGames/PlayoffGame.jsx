@@ -6,14 +6,15 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { Paper, Grid, Container, Stack, Typography } from '@mui/material'
+import { Paper, Grid, Container, Stack, Typography, Card } from '@mui/material'
 import TeamInfoRight from './TeamInfoRight';
 import TeamInfoLeft2 from './TeamInfoLeft';
 
 
 export default function PlayoffGame (props) {
   return (
-	  <Grid container columns={18} alignItems="center"sx={{border: "1px solid grey", bgcolor:'#eeeeee'}}>
+	<Card variant="outlined" sx={{bgcolor:'#eeeeee'}}>
+	  <Grid container columns={18} alignItems="center">
       <Grid item xs={8} >
   	    <TeamInfoLeft2 />
       </Grid>
@@ -26,5 +27,6 @@ export default function PlayoffGame (props) {
 				<TeamInfoRight />
       </Grid>
     </Grid>
+	</Card>
   )
 }

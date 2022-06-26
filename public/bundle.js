@@ -38260,11 +38260,13 @@ const theme2 = createTheme({ palette: {
 
   // src/components/PlayoffGames/PlayoffGame.jsx
   function PlayoffGame(props) {
-    return /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react28.default.createElement(Card_default, {
+      variant: "outlined",
+      sx: { bgcolor: "#eeeeee" }
+    }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
       container: true,
       columns: 18,
-      alignItems: "center",
-      sx: { border: "1px solid grey", bgcolor: "#eeeeee" }
+      alignItems: "center"
     }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
       item: true,
       xs: 8
@@ -38276,7 +38278,7 @@ const theme2 = createTheme({ palette: {
     }, "@")), /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
       item: true,
       xs: 8
-    }, /* @__PURE__ */ import_react28.default.createElement(TeamInfoRight, null)));
+    }, /* @__PURE__ */ import_react28.default.createElement(TeamInfoRight, null))));
   }
 
   // src/components/PlayoffGames/ByeContainer.jsx
@@ -38285,6 +38287,14 @@ const theme2 = createTheme({ palette: {
     return /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
       container: true
     }, /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
+      item: true,
+      xs: 12,
+      sx: { pt: 0 }
+    }, /* @__PURE__ */ import_react29.default.createElement(Typography_default, {
+      variant: "h4",
+      align: "right",
+      sx: { px: 1 }
+    }, "AFC")), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
@@ -38339,12 +38349,6 @@ const theme2 = createTheme({ palette: {
     }, /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react32.default.createElement("h4", null, "AFC"), /* @__PURE__ */ import_react32.default.createElement("h4", null, "AFC"), /* @__PURE__ */ import_react32.default.createElement(Typography_default, {
-      variant: "h4",
-      align: "right"
-    }, "AFC")), /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
-      item: true,
-      xs: 12
     }, /* @__PURE__ */ import_react32.default.createElement(ByeContainer, null)), /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
       item: true,
       xs: 12
@@ -38361,6 +38365,14 @@ const theme2 = createTheme({ palette: {
     return /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
       container: true
     }, /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
+      item: true,
+      xs: 12,
+      sx: { pt: 0 }
+    }, /* @__PURE__ */ import_react33.default.createElement(Typography_default, {
+      variant: "h4",
+      align: "left",
+      sx: { px: 1 }
+    }, "NFC")), /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
@@ -38408,12 +38420,6 @@ const theme2 = createTheme({ palette: {
       container: true,
       spacing: 2
     }, /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
-      item: true,
-      xs: 12
-    }, /* @__PURE__ */ import_react35.default.createElement(Typography_default, {
-      variant: "h4",
-      align: "right"
-    }, "NFC")), /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
       item: true,
       xs: 12
     }, /* @__PURE__ */ import_react35.default.createElement(ByeContainerNFC, null)), /* @__PURE__ */ import_react35.default.createElement(Grid_default, {

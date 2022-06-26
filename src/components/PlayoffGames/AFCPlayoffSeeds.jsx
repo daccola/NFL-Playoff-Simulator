@@ -24,26 +24,15 @@ import WildCardContainer from './WildCardContainer';
 
 export default function ConferenceGamesTable (props) {
   return (
-    <Grid container spacing={2} > 
-        <Grid item xs={12} >
-        {/* <h4>AFC</h4> */}
-        <h4>AFC</h4>
-        <h4>AFC</h4>
-
-        <Typography variant="h4" align="right">
-        AFC
-    	    </Typography>
-        </Grid>
-        {/* <h4>AFC</h4> */}
-        
-        <Grid item xs={12} >
-          <ByeContainer />
-        </Grid>
-        <Grid item xs={12} >
-          <WildCardContainer />
-        </Grid>
+    <Grid container spacing={2} >
+      <Grid item xs={12} >
+        <ByeContainer />
+      </Grid>
+      <Grid item xs={12} >
+        <WildCardContainer />
+      </Grid>
     </Grid>
-  )  
+  ) 
 }
 
 ConferenceGamesTable.propTypes = {
