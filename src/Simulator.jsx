@@ -8,7 +8,7 @@ import { Paper, Grid, Container, Tabs, Tab, AppBar } from '@mui/material'
 import RegularSeasonGamesTable from './components/RegularSeasonGames/RegularSeasonGamesTable';
 
 import Header from './Header';
-import ConferenceGamesTable from './components/PlayoffGames/ConferenceGamesTable.jsx'
+//import ConferenceGamesTable from './components/PlayoffGames/ConferenceGamesTable.jsx'
 import AFCPlayoffSeeds from './components/PlayoffGames/AFCPlayoffSeeds.jsx'
 import NFCPlayoffSeeds from './components/PlayoffGames/NFCPlayoffSeeds.jsx'
 

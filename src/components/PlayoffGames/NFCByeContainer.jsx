@@ -1,17 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import { Paper, Grid, Container, Stack, Typography } from '@mui/material'
-import TeamInfoRight from './TeamInfoRight';
-import TeamInfoLeft2 from './TeamInfoLeft';
-import PlayoffGame from './PlayoffGame'
 
-export default function ByeContainerNFC (props) {
+import { Grid, Typography, Card } from '@mui/material'
+import TeamInfoRight from './TeamInfoRight';
+
+
+export default function NFCByeContainer (props) {
   return (
     <Grid container >
       <Grid item xs={12} sx={{pt:0}}>
@@ -25,7 +20,15 @@ export default function ByeContainerNFC (props) {
     	  </Typography>
       </Grid>
       <Grid item xs={12} sx={{px:0, pb:0}}>
-				<PlayoffGame />
+        <Card variant="outlined" sx={{bgcolor:'#eeeeee'}}>
+	        <Grid container columns={18} alignItems="center">
+            <Grid item xs={10} >
+            </Grid>
+            <Grid item xs={8} >
+  	          <TeamInfoRight />
+            </Grid>
+          </Grid>
+	      </Card>
       </Grid>         
     </Grid>
   )

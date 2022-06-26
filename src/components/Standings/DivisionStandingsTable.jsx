@@ -10,11 +10,17 @@ export default function DivisionStandingsTable (props) {
     <>
     {/* TODO Look into removing height */}
       <Box sx={{ flexGrow: 1, display: 'flex', height: 124 }}>
-        <Tabs orientation="vertical" variant="scrollable" sx={{ flexGrow: 1, display: 'flex'}}>
+      
+        <Tabs orientation="vertical" spacing={1} variant="scrollable" sx={{ flexGrow: 1, display: 'flex'}}>
+              <DivisionStandings />
+
+              <DivisionStandings />
+              <DivisionStandings />
+              <DivisionStandings />
+
+          {/* <DivisionStandings />
           <DivisionStandings />
-          <DivisionStandings />
-          <DivisionStandings />
-          <DivisionStandings />
+          <DivisionStandings /> */}
         </Tabs>
       </ Box>
     </>		

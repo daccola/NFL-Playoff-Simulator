@@ -7,7 +7,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography'
 
-export default function ImcompleteInProgressGame (props) {
+export default function InProgressGame (props) {
   const { games } = props
 
   return (

@@ -9,26 +9,14 @@ import Typography from '@mui/material/Typography'
 import CompletedGame from './CompletedGame';
 //import IncompleteGame from './IncompletedGame';
 
-import IncompleteFutureGame from './IncompleteFutureGame'
+import FutureGame from './FutureGame'
 
 
 export default function RegularSeasonGame (props) {
   const { games } = props
 
-  //console.log(games)
-  // const [flag, setFlag] = React.useState(true);
-  //const gameDayf = games.info.split(" ")
-
-  //const gameDay = gameDayf[0]
-
-  // handleClick = () => {
-  //   setFlag(!flag)
-  // }
-
   if(games) {
-
     if (games.completed){
-      //return <CompletedGame games={games} />
       return (
         <Card variant="outlined" sx={{bgcolor:'#eeeeee'}}>
           <Grid container>
@@ -58,7 +46,7 @@ export default function RegularSeasonGame (props) {
         <Card variant="outlined" sx={{bgcolor:'#eeeeee'}}>
           <Grid container>
             <Grid item xs={12}>
-              <IncompleteFutureGame games={games} />
+              <FutureGame games={games} />
             </ Grid>
           </ Grid>
           <Grid container>

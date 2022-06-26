@@ -7,12 +7,12 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography'
 
-import IncompleteFutureTie from './IncompleteFutureTie';
-import IncompleteFutureRoadWin from './IncompleteFutureRoadWin';
-import IncompleteFutureHomeWin from './IncompleteFutureHomeWin';
-import IncompleteFutureDefaultGame from './IncompleteFutureDefaultGame'
+import FutureTie from './FutureTie';
+import FutureRoadWin from './FutureRoadWin';
+import FutureHomeWin from './FutureHomeWin';
+import FutureDefaultGame from './FutureDefaultGame'
 
-export default function IncompleteFutureGame (props) {
+export default function FutureGame (props) {
   const { games } = props
 
   const [isTie, setIsTie] = React.useState(false);
@@ -38,15 +38,15 @@ export default function IncompleteFutureGame (props) {
   }
 
   if(isTie) {
-    return <IncompleteFutureTie games={games} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
+    return <FutureTie games={games} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
   }
   else if (isRoadWin) {
-    return <IncompleteFutureRoadWin games={games} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
+    return <FutureRoadWin games={games} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
   }
   else if (isHomeWin){
-    return <IncompleteFutureHomeWin games={games} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
+    return <FutureHomeWin games={games} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
   }
   else {
-    return <IncompleteFutureDefaultGame games={games} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
+    return <FutureDefaultGame games={games} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
   } 
 }

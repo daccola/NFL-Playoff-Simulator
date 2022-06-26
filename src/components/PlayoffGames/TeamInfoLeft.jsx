@@ -1,12 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import { Paper, Grid, Container, Stack, Typography } from '@mui/material'
+import { Paper, Grid, Typography } from '@mui/material'
 
 
 export default function TeamInfoLeft (props) {
