@@ -1,18 +1,50 @@
 import React from 'react'
 import Axios from 'axios'
 
-import DivisionStandingsTable from './components/Standings/DivisionStandingsTable';
 
 import { Paper, Grid, Container, Tabs, Tab, AppBar } from '@mui/material'
 
-import RegularSeasonGamesTable from './components/RegularSeasonGames/RegularSeasonGamesTable';
+//import GetLambda from './components/RegularSeasonGames/GetLambda.jsx'
 
-import Header from './Header';
-//import ConferenceGamesTable from './components/PlayoffGames/ConferenceGamesTable.jsx'
+import Header from './Header'
+import RegularSeasonGamesTable from './components/RegularSeasonGames/RegularSeasonGamesTable.jsx'
+import DivisionStandingsTable from './components/Standings/DivisionStandingsTable.jsx'
 import AFCPlayoffSeeds from './components/PlayoffGames/AFCPlayoffSeeds.jsx'
 import NFCPlayoffSeeds from './components/PlayoffGames/NFCPlayoffSeeds.jsx'
 
+import getAllInfo from './components/RegularSeasonGames/RecordStatsHelper.jsx'
+import { useEffect, useState} from 'react';
+
+
 export default function Simulator(props) {
+  const [info, setInfo] = useState(null);
+
+  //console.log("SIMMM")
+  //const info = getAllInfo();
+  //useEffect(() => {
+    const getAxiosGameInfo = () => {
+      Axios.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod`)
+      .then((response) => {
+        //console.log('ffffff')
+        //console.log(JSON.stringify(response.data.body))
+        setInfo(response.data.body)
+        //console.log('ffffff')
+
+      })
+      .catch((error) => {
+        //TODO
+        alert('Failed to retrieve lambda data')
+        console.error('Failed to retrieve lambda data')
+        console.error(error)
+      })
+    }
+   
+    React.useEffect(() => {
+      getAxiosGameInfo()
+    }, [info])
+ // }, [info]);
+  //const info = GetLambda()
+
   return (
     <Container maxWidth={false} disableGutters sx={{bgcolor: '#eeeeee'}}>
       <Header />
@@ -31,7 +63,7 @@ export default function Simulator(props) {
               height: '100%'
             }}
           >
-            <DivisionStandingsTable />
+            <DivisionStandingsTable conference="AFC" info={info} />
           </Paper>
         </Grid>
         <Grid item xs={14}>
@@ -63,7 +95,7 @@ export default function Simulator(props) {
               height: '100%'
             }}
           >
-            <DivisionStandingsTable />
+            <DivisionStandingsTable conference="NFC" info={info}/>
           </Paper>
         </Grid>        
       </Grid>
