@@ -4,6 +4,8 @@ import { Grid, Typography, Card } from '@mui/material'
 import TeamInfoLeft from './TeamInfoLeft'
 
 export default function AFCByeContainer (props) {
+  const { info } = props
+
   return (
     <Grid container>
       <Grid item xs={12} sx={{pt:0}}>
@@ -20,7 +22,7 @@ export default function AFCByeContainer (props) {
         <Card variant="outlined" sx={{bgcolor:'#eeeeee'}}>
 	        <Grid container columns={18} alignItems="center">
             <Grid item xs={8} >
-  	          <TeamInfoLeft />
+  	          <TeamInfoLeft conference={"AFC"} seedNumber={1} seedString={"1st"} info={info} />
             </Grid>
           </Grid>
 	      </Card>

@@ -48,12 +48,12 @@ export default function DivisionStandings (props) {
     }
   }
 
-  if(standings) {
+  if(divisionStandings) {
     return (
 			<Table size="small" >
         <TableHead>
           <TableRow>
-            <TableCell sx={{p:0, pt:2, px:0.25, fontWeight: 'bold'}}>{conference} {division}</TableCell>
+            <TableCell xs={2} sx={{p:0, pt:2, px:0.25, fontWeight: 'bold'}}>{conference} {division}</TableCell>
             <TableCell sx={{p:0, pt:2, px:0.25, fontWeight: 'bold'}}>RECORD</TableCell> 
           </TableRow>
         </TableHead>

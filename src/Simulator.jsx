@@ -19,17 +19,10 @@ import { useEffect, useState} from 'react';
 export default function Simulator(props) {
   const [info, setInfo] = useState(null);
 
-  //console.log("SIMMM")
-  //const info = getAllInfo();
-  //useEffect(() => {
     const getAxiosGameInfo = () => {
       Axios.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod`)
       .then((response) => {
-        //console.log('ffffff')
-        //console.log(JSON.stringify(response.data.body))
         setInfo(response.data.body)
-        //console.log('ffffff')
-
       })
       .catch((error) => {
         //TODO
@@ -43,7 +36,6 @@ export default function Simulator(props) {
       getAxiosGameInfo()
     }, [info])
  // }, [info]);
-  //const info = GetLambda()
 
   return (
     <Container maxWidth={false} disableGutters sx={{bgcolor: '#eeeeee'}}>
@@ -77,11 +69,11 @@ export default function Simulator(props) {
           >
             <Grid container spacing={3} >
               <Grid item xs={6}>
-                <AFCPlayoffSeeds />
+                <AFCPlayoffSeeds info={info}  />
               </Grid>
               <Grid item xs={6}>
                 {/* <ConferenceGamesTable /> */}
-                <NFCPlayoffSeeds />
+                <NFCPlayoffSeeds info={info} />
               </Grid>
             </Grid>
           </Paper>

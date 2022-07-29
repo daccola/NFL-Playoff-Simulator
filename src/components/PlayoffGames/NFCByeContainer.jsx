@@ -7,6 +7,8 @@ import TeamInfoRight from './TeamInfoRight';
 
 
 export default function NFCByeContainer (props) {
+  const { info } = props
+
   return (
     <Grid container >
       <Grid item xs={12} sx={{pt:0}}>
@@ -25,7 +27,7 @@ export default function NFCByeContainer (props) {
             <Grid item xs={10} >
             </Grid>
             <Grid item xs={8} >
-  	          <TeamInfoRight />
+  	          <TeamInfoRight conference={"NFC"} seedNumber={1} seedString={"1st"} info={info} />
             </Grid>
           </Grid>
 	      </Card>

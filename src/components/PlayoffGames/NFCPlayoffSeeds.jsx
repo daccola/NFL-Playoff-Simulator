@@ -8,14 +8,16 @@ import NFCWildCardContainer from './NFCWildCardContainer';
 
 
 export default function NFCPlayoffSeeds (props) {
+  const { info } = props
+
   return (
     <Grid container spacing={2} > 
-        <Grid item xs={12} >
-          <NFCByeContainer />
-        </Grid>
-        <Grid item xs={12} >
-          <NFCWildCardContainer />
-        </Grid>
+      <Grid item xs={12} >
+        <NFCByeContainer info={info} />
+      </Grid>
+      <Grid item xs={12} >
+        <NFCWildCardContainer info={info} />
+      </Grid>
     </Grid>
   )  
 }
