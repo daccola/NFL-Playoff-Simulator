@@ -39290,8 +39290,9 @@ const theme2 = createTheme({ palette: {
   var import_react39 = __toESM(require_react(), 1);
   function Simulator(props) {
     const [info, setInfo] = (0, import_react39.useState)(null);
+    const year = 2021;
     const getAxiosGameInfo = () => {
-      import_axios3.default.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod`).then((response) => {
+      import_axios3.default.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod?year=${year}`).then((response) => {
         setInfo(response.data.body);
       }).catch((error) => {
         alert("Failed to retrieve lambda data");

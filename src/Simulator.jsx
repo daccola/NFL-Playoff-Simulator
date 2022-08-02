@@ -19,8 +19,10 @@ import { useEffect, useState} from 'react';
 export default function Simulator(props) {
   const [info, setInfo] = useState(null);
 
+  const year = 2021
+
     const getAxiosGameInfo = () => {
-      Axios.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod`)
+      Axios.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod?year=${year}`)
       .then((response) => {
         setInfo(response.data.body)
       })
