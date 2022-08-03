@@ -4,15 +4,12 @@ import Axios from 'axios'
 
 import { Paper, Grid, Container, Tabs, Tab, AppBar } from '@mui/material'
 
-//import GetLambda from './components/RegularSeasonGames/GetLambda.jsx'
-
 import Header from './Header'
 import RegularSeasonGamesTable from './components/RegularSeasonGames/RegularSeasonGamesTable.jsx'
 import DivisionStandingsTable from './components/Standings/DivisionStandingsTable.jsx'
 import AFCPlayoffSeeds from './components/PlayoffGames/AFCPlayoffSeeds.jsx'
 import NFCPlayoffSeeds from './components/PlayoffGames/NFCPlayoffSeeds.jsx'
 
-import getAllInfo from './components/RegularSeasonGames/RecordStatsHelper.jsx'
 import { useEffect, useState} from 'react';
 
 
@@ -21,23 +18,18 @@ export default function Simulator(props) {
 
   const year = 2021
 
-    const getAxiosGameInfo = () => {
-      Axios.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod?year=${year}`)
-      .then((response) => {
-        setInfo(response.data.body)
-      })
-      .catch((error) => {
-        //TODO
-        alert('Failed to retrieve lambda data')
-        console.error('Failed to retrieve lambda data')
-        console.error(error)
-      })
-    }
-   
-    React.useEffect(() => {
-      getAxiosGameInfo()
-    }, [info])
- // }, [info]);
+  React.useEffect(() => {
+    Axios.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod?year=${year}`)
+    .then((response) => {
+      setInfo(response.data.body)
+    })
+    .catch((error) => {
+      //TODO
+      alert('Failed to retrieve lambda data')
+      console.error('Failed to retrieve lambda data')
+      console.error(error)
+    })
+  }, [info])
 
   return (
     <Container maxWidth={false} disableGutters sx={{bgcolor: '#eeeeee'}}>
@@ -45,7 +37,7 @@ export default function Simulator(props) {
       <Grid container spacing={2} columns={24} sx={{p:2}}>
         <Grid item xs={24}>
           <Paper sx={{p:1}}>
-            <RegularSeasonGamesTable />
+            <RegularSeasonGamesTable info={info}/>
           </Paper>
         </Grid>
         <Grid item xs={5} >

@@ -13,16 +13,16 @@ import FutureGame from './FutureGame'
 
 
 export default function RegularSeasonGame (props) {
-  const { games } = props
+  const { game } = props
 
-  if(games) {
-    if (games.completed){
+  if(game) {
+    if (game.completed){
       return (
         <Card variant="outlined" sx={{bgcolor:'#eeeeee'}}>
           <Grid container>
             <Grid item xs={12}>
               {/* <IncompleteFutureGame games={games} /> */}
-              <CompletedGame games={games} />
+              <CompletedGame games={game} />
             </ Grid>
           </ Grid>
           <Grid container>
@@ -35,8 +35,8 @@ export default function RegularSeasonGame (props) {
         </Card>
       )
     }
-    else if (games.state === "pre"){
-      const info = games.info.split(" ")
+    else if (game.state === "pre"){
+      const info = game.info.split(" ")
       const timeParts = info[4].split(":")
       //clean up with string interopation
       const centralTime = timeParts[0] === "1" ? "12:" + timeParts[1] : timeParts[0] - 1 + ":" + timeParts[1]
@@ -46,7 +46,7 @@ export default function RegularSeasonGame (props) {
         <Card variant="outlined" sx={{bgcolor:'#eeeeee'}}>
           <Grid container>
             <Grid item xs={12}>
-              <FutureGame games={games} />
+              <FutureGame games={game} />
             </ Grid>
           </ Grid>
           <Grid container>
@@ -59,7 +59,7 @@ export default function RegularSeasonGame (props) {
         </Card>
       )
     }
-    else if (games.state === "in"){
+    else if (game.state === "in"){
       <h4>drew</h4>
     }
   }
