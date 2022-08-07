@@ -29914,12 +29914,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   defineJQueryPlugin(Toast);
 
   // src/app.jsx
-  var import_react36 = __toESM(require_react(), 1);
-  var import_react_dom = __toESM(require_react_dom(), 1);
+  var import_react36 = __toESM(require_react());
+  var import_react_dom = __toESM(require_react_dom());
 
   // src/Simulator.jsx
-  var import_react34 = __toESM(require_react(), 1);
-  var import_axios = __toESM(require_axios2(), 1);
+  var import_react34 = __toESM(require_react());
+  var import_axios = __toESM(require_axios2());
 
   // node_modules/@mui/material/colors/common.js
   var common = {
@@ -37730,7 +37730,7 @@ const theme2 = createTheme({ palette: {
   var Tabs_default = Tabs;
 
   // src/Header.jsx
-  var import_react10 = __toESM(require_react(), 1);
+  var import_react10 = __toESM(require_react());
   function Header() {
     return /* @__PURE__ */ import_react10.default.createElement(AppBar_default, {
       position: "static",
@@ -37749,10 +37749,10 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/RegularSeasonGamesTable.jsx
-  var import_react21 = __toESM(require_react(), 1);
+  var import_react21 = __toESM(require_react());
 
   // src/components/RegularSeasonGames/RegularSeasonGame.jsx
-  var import_react20 = __toESM(require_react(), 1);
+  var import_react20 = __toESM(require_react());
 
   // node_modules/@mui/icons-material/esm/AlternateEmail.js
   var import_jsx_runtime33 = __toESM(require_jsx_runtime());
@@ -37761,10 +37761,10 @@ const theme2 = createTheme({ palette: {
   }), "AlternateEmail");
 
   // src/components/RegularSeasonGames/CompletedGame.jsx
-  var import_react14 = __toESM(require_react(), 1);
+  var import_react14 = __toESM(require_react());
 
   // src/components/RegularSeasonGames/CompletedTieGame.jsx
-  var import_react11 = __toESM(require_react(), 1);
+  var import_react11 = __toESM(require_react());
   function CompletedTieGame(props) {
     const { games } = props;
     return /* @__PURE__ */ import_react11.default.createElement(Grid_default, {
@@ -37815,7 +37815,7 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/CompletedRoadWin.jsx
-  var import_react12 = __toESM(require_react(), 1);
+  var import_react12 = __toESM(require_react());
   function CompletedTieGame2(props) {
     const { games } = props;
     return /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
@@ -37866,7 +37866,7 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/CompletedHomeWin.jsx
-  var import_react13 = __toESM(require_react(), 1);
+  var import_react13 = __toESM(require_react());
   function CompletedTieGame3(props) {
     const { games } = props;
     return /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
@@ -37935,10 +37935,10 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/FutureGame.jsx
-  var import_react19 = __toESM(require_react(), 1);
+  var import_react19 = __toESM(require_react());
 
   // src/components/RegularSeasonGames/FutureTie.jsx
-  var import_react15 = __toESM(require_react(), 1);
+  var import_react15 = __toESM(require_react());
   function FutureTie(props) {
     const { game, isTieClick: isTieClick2, isRoadWinClick: isRoadWinClick2, isHomeWinClick: isHomeWinClick2 } = props;
     return /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
@@ -37994,7 +37994,7 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/FutureRoadWin.jsx
-  var import_react16 = __toESM(require_react(), 1);
+  var import_react16 = __toESM(require_react());
   function FutureRoadWin(props) {
     const { game, isTieClick: isTieClick2, isRoadWinClick: isRoadWinClick2, isHomeWinClick: isHomeWinClick2 } = props;
     return /* @__PURE__ */ import_react16.default.createElement(Grid_default, {
@@ -38050,7 +38050,7 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/FutureHomeWin.jsx
-  var import_react17 = __toESM(require_react(), 1);
+  var import_react17 = __toESM(require_react());
   function FutureHomeWin(props) {
     const { game, isTieClick: isTieClick2, isRoadWinClick: isRoadWinClick2, isHomeWinClick: isHomeWinClick2 } = props;
     return /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
@@ -38107,7 +38107,7 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/FutureDefaultGame.jsx
-  var import_react18 = __toESM(require_react(), 1);
+  var import_react18 = __toESM(require_react());
   function FutureDefaultGame(props) {
     const { game, isTieClick: isTieClick2, isRoadWinClick: isRoadWinClick2, isHomeWinClick: isHomeWinClick2 } = props;
     return /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
@@ -40749,11 +40749,11 @@ const theme2 = createTheme({ palette: {
   RegularSeasonGamesTable.propTypes = {};
 
   // src/components/Standings/DivisionStandingsTable.jsx
-  var import_react24 = __toESM(require_react(), 1);
+  var import_react24 = __toESM(require_react());
 
   // src/components/Standings/DivisionStandings.jsx
-  var import_react22 = __toESM(require_react(), 1);
-  var import_react23 = __toESM(require_react(), 1);
+  var import_react22 = __toESM(require_react());
+  var import_react23 = __toESM(require_react());
   function DivisionStandings(props) {
     const { conference, division, standings } = props;
     let divisionStandings = null;
@@ -40850,13 +40850,13 @@ const theme2 = createTheme({ palette: {
   DivisionStandings.propTypes = {};
 
   // src/components/PlayoffGames/AFCPlayoffSeeds.jsx
-  var import_react30 = __toESM(require_react(), 1);
+  var import_react30 = __toESM(require_react());
 
   // src/components/PlayoffGames/AFCByeContainer.jsx
-  var import_react26 = __toESM(require_react(), 1);
+  var import_react26 = __toESM(require_react());
 
   // src/components/PlayoffGames/TeamInfoLeft.jsx
-  var import_react25 = __toESM(require_react(), 1);
+  var import_react25 = __toESM(require_react());
   function TeamInfoLeft(props) {
     const { conference, seedNumber, seedString, info } = props;
     let getTeamInfo = null;
@@ -40979,13 +40979,13 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/PlayoffGames/AFCWildCardContainer.jsx
-  var import_react29 = __toESM(require_react(), 1);
+  var import_react29 = __toESM(require_react());
 
   // src/components/PlayoffGames/PlayoffGame.jsx
-  var import_react28 = __toESM(require_react(), 1);
+  var import_react28 = __toESM(require_react());
 
   // src/components/PlayoffGames/TeamInfoRight.jsx
-  var import_react27 = __toESM(require_react(), 1);
+  var import_react27 = __toESM(require_react());
   function TeamInfoRight(props) {
     const { conference, seedNumber, seedString, info } = props;
     let getTeamInfo = null;
@@ -41167,10 +41167,10 @@ const theme2 = createTheme({ palette: {
   AFCPlayoffSeeds.propTypes = {};
 
   // src/components/PlayoffGames/NFCPlayoffSeeds.jsx
-  var import_react33 = __toESM(require_react(), 1);
+  var import_react33 = __toESM(require_react());
 
   // src/components/PlayoffGames/NFCByeContainer.jsx
-  var import_react31 = __toESM(require_react(), 1);
+  var import_react31 = __toESM(require_react());
   function NFCByeContainer(props) {
     const { info } = props;
     return /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
@@ -41217,7 +41217,7 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/PlayoffGames/NFCWildCardContainer.jsx
-  var import_react32 = __toESM(require_react(), 1);
+  var import_react32 = __toESM(require_react());
   function NFCWildCardContainer(props) {
     const { info } = props;
     return /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
@@ -41286,7 +41286,7 @@ const theme2 = createTheme({ palette: {
   NFCPlayoffSeeds.propTypes = {};
 
   // src/Simulator.jsx
-  var import_react35 = __toESM(require_react(), 1);
+  var import_react35 = __toESM(require_react());
   function Simulator(props) {
     const [initialInfo, setInitialInfo] = (0, import_react35.useState)(null);
     const [customizedInfo, setCustomizedInfo] = (0, import_react35.useState)(null);
