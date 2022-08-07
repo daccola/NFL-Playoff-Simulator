@@ -13,40 +13,60 @@ import FutureHomeWin from './FutureHomeWin';
 import FutureDefaultGame from './FutureDefaultGame'
 
 export default function FutureGame (props) {
-  const { games } = props
+  const { week, index, game, updateFunction } = props
 
-  const [isTie, setIsTie] = React.useState(false);
-  const [isRoadWin, setIsRoadWin] = React.useState(false);
-  const [isHomeWin, setIsHomeWin] = React.useState(false);
+  const [isTie, setIsTie] = React.useState(game.tempState === "Tie");
+  const [isRoadWin, setIsRoadWin] = React.useState(game.tempState === "RoadWin");
+  const [isHomeWin, setIsHomeWin] = React.useState(game.tempState === "HomeWin");
 
   isTieClick = () => {
     setIsTie(!isTie)
     setIsRoadWin(false)
     setIsHomeWin(false)
+
+    if(isTie) {
+      updateFunction(week, index, "Default")
+    } else {
+      updateFunction(week, index, "Tie")
+    }
   }
 
   isRoadWinClick = () => {
     setIsRoadWin(!isRoadWin)
     setIsTie(false)
     setIsHomeWin(false)
+
+    if(isRoadWin) {
+      updateFunction(week, index, "Default")
+
+    } else {
+      updateFunction(week, index, "RoadWin")
+    }
   }
 
   isHomeWinClick = () => {
     setIsHomeWin(!isHomeWin)
     setIsRoadWin(false)
     setIsTie(false)
+
+    if(isHomeWin) {
+      updateFunction(week, index, "Default")
+
+    } else {
+      updateFunction(week, index, "HomeWin")
+    }
   }
 
-  if(isTie) {
-    return <FutureTie games={games} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
+  if(game.tempState === "Tie") {
+    return <FutureTie game={game} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
   }
-  else if (isRoadWin) {
-    return <FutureRoadWin games={games} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
+  else if (game.tempState === "RoadWin") {
+    return <FutureRoadWin game={game} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
   }
-  else if (isHomeWin){
-    return <FutureHomeWin games={games} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
+  else if (game.tempState === "HomeWin"){
+    return <FutureHomeWin game={game} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
   }
   else {
-    return <FutureDefaultGame games={games} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
+    return <FutureDefaultGame game={game} isTieClick={isTieClick} isRoadWinClick={isRoadWinClick} isHomeWinClick={isHomeWinClick} />
   } 
 }

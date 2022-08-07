@@ -8,18 +8,18 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography'
 
 export default function FutureRoadWin (props) {
-  const { games, isTieClick, isRoadWinClick, isHomeWinClick } = props
+  const { game, isTieClick, isRoadWinClick, isHomeWinClick } = props
 
   return (
     <Grid container alignItems="center" >
       <Grid item xs={5} onClick={isRoadWinClick} sx={{px:1.5}}>
-        <img src={games.roadImage} alt="TODO" className = 'col-12'></img>
+        <img src={game.roadImage} alt="TODO" className = 'col-12'></img>
       </Grid>
       <Grid item xs={2} onClick={isTieClick} sx={{px:0.25}}>
         <AlternateEmail sx={{ width: '100%' }} />
        </Grid>
       <Grid item xs={5} onClick={isHomeWinClick} sx={{px:1.5}}>
-        <img src={games.homeImage} alt="TODO" className = 'col-12'></img>
+        <img src={game.homeImage} alt="TODO" className = 'col-12'></img>
       </Grid>
       <Grid item xs={5} onClick={isRoadWinClick} sx={{px:1.5, borderBottom: 4, borderColor: '#1b48e0' }}>
         <Typography variant="body2" align="center">

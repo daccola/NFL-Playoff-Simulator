@@ -13,7 +13,7 @@ import FutureGame from './FutureGame'
 
 
 export default function RegularSeasonGame (props) {
-  const { game } = props
+  const { week, index, game, updateFunction } = props
 
   if(game) {
     if (game.completed){
@@ -37,16 +37,21 @@ export default function RegularSeasonGame (props) {
     }
     else if (game.state === "pre"){
       const info = game.info.split(" ")
-      const timeParts = info[4].split(":")
-      //clean up with string interopation
-      const centralTime = timeParts[0] === "1" ? "12:" + timeParts[1] : timeParts[0] - 1 + ":" + timeParts[1]
-      const amOrpm = info[4].substring(0,2) === "12" ? "AM" : info[5]
-      const dayTime = info[0].toUpperCase().substring(0,3) + " " + centralTime + " " + amOrpm
+      //console.log(info)
+      let dayTime = "TBD"
+      if(info[2] !== "TBD") {
+        const timeParts = info[4].split(":")
+        //clean up with string interopation
+        const centralTime = timeParts[0] === "1" ? "12:" + timeParts[1] : timeParts[0] - 1 + ":" + timeParts[1]
+        const amOrpm = info[4].substring(0,2) === "12" ? "AM" : info[5]
+        dayTime = info[0].toUpperCase().substring(0,3) + " " + centralTime + " " + amOrpm
+      }
+      
       return (
         <Card variant="outlined" sx={{bgcolor:'#eeeeee'}}>
           <Grid container>
             <Grid item xs={12}>
-              <FutureGame games={game} />
+              <FutureGame week={week} index={index} game={game} updateFunction={updateFunction}/>
             </ Grid>
           </ Grid>
           <Grid container>

@@ -17,7 +17,7 @@ export default function Header() {
             </IconButton>   
           </Box>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            NFL Playoff Seeder 2022
+            NFL Playoff Seeding 2022
           </Typography>
           <Button color="inherit">Reset</Button>
         </Toolbar>

@@ -14,14 +14,16 @@ import { useEffect, useState} from 'react';
 
 
 export default function Simulator(props) {
-  const [info, setInfo] = useState(null);
+  const [initialInfo, setInitialInfo] = useState(null);
+  const [customizedInfo, setCustomizedInfo] = useState(null);
 
-  const year = 2021
+  const year = 2022
 
   React.useEffect(() => {
     Axios.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod?year=${year}`)
     .then((response) => {
-      setInfo(response.data.body)
+      setInitialInfo(response.data.body)
+      setCustomizedInfo(response.data.body)
     })
     .catch((error) => {
       //TODO
@@ -29,7 +31,22 @@ export default function Simulator(props) {
       console.error('Failed to retrieve lambda data')
       console.error(error)
     })
-  }, [info])
+  }, [])
+
+
+  const updateCustomizedInfo = (week, index, newState) => {
+    const newCustomizedInfo = customizedInfo
+    newCustomizedInfo.gameInfoToDate[week][index].tempState = newState
+    setCustomizedInfo(newCustomizedInfo)
+    //console.log("IN SIMULATER")
+    //console.log(customizedInfo)
+
+    //todo remove
+    // const f = customizedInfo
+    // f.nfcNorthStandings[0].overallRecord[0] = 69
+    // setCustomizedInfo(f)
+    //update all standings
+  }
 
   return (
     <Container maxWidth={false} disableGutters sx={{bgcolor: '#eeeeee'}}>
@@ -37,7 +54,7 @@ export default function Simulator(props) {
       <Grid container spacing={2} columns={24} sx={{p:2}}>
         <Grid item xs={24}>
           <Paper sx={{p:1}}>
-            <RegularSeasonGamesTable info={info}/>
+            <RegularSeasonGamesTable info={customizedInfo} updateFunction={updateCustomizedInfo}/>
           </Paper>
         </Grid>
         <Grid item xs={5} >
@@ -49,7 +66,7 @@ export default function Simulator(props) {
               height: '100%'
             }}
           >
-            <DivisionStandingsTable conference="AFC" info={info} />
+            <DivisionStandingsTable conference="AFC" info={customizedInfo} />
           </Paper>
         </Grid>
         <Grid item xs={14}>
@@ -63,11 +80,11 @@ export default function Simulator(props) {
           >
             <Grid container spacing={3} >
               <Grid item xs={6}>
-                <AFCPlayoffSeeds info={info}  />
+                <AFCPlayoffSeeds info={customizedInfo}  />
               </Grid>
               <Grid item xs={6}>
                 {/* <ConferenceGamesTable /> */}
-                <NFCPlayoffSeeds info={info} />
+                <NFCPlayoffSeeds info={customizedInfo} />
               </Grid>
             </Grid>
           </Paper>
@@ -81,7 +98,7 @@ export default function Simulator(props) {
               height: '100%'
             }}
           >
-            <DivisionStandingsTable conference="NFC" info={info}/>
+            <DivisionStandingsTable conference="NFC" info={customizedInfo}/>
           </Paper>
         </Grid>        
       </Grid>
