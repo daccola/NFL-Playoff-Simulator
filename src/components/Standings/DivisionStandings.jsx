@@ -11,104 +11,81 @@ import { useEffect, useState} from 'react';
 
 
 export default function DivisionStandings (props) {
-  const { conference, division, standings } = props
+  const { conference, division, str } = props
+  const [divisionStandings, setDivisionStandings] = useState([])
 
-  let divisionStandings = null
-
-  if(standings) {
+  useEffect(() => {
     if(conference === 'AFC') {
       if(division === 'North') {
-        divisionStandings = standings.afcNorthStandings
-
+        setDivisionStandings(JSON.parse(str).afcNorthStandings)
       } else if(division === 'South') {
-        divisionStandings = standings.afcSouthStandings
-
+        setDivisionStandings(JSON.parse(str).afcSouthStandings)
       } else if (division === 'East') {
-        divisionStandings = standings.afcEastStandings
-
+        setDivisionStandings(JSON.parse(str).afcEastStandings)
       } else if (division === 'West') {
-        divisionStandings = standings.afcWestStandings
-
+        setDivisionStandings(JSON.parse(str).afcWestStandings)
       }
     } else if (conference === 'NFC') {
-
       if(division === 'North') {
-        divisionStandings = standings.nfcNorthStandings
-
+        setDivisionStandings(JSON.parse(str).nfcNorthStandings)
       } else if(division === 'South') {
-        divisionStandings = standings.nfcSouthStandings
-
+        setDivisionStandings(JSON.parse(str).nfcSouthStandings)
       } else if (division === 'East') {
-        divisionStandings = standings.nfcEastStandings
-
+        setDivisionStandings(JSON.parse(str).nfcEastStandings)
       } else if (division === 'West') {
-        divisionStandings = standings.nfcWestStandings
-
+        setDivisionStandings(JSON.parse(str).nfcWestStandings)
       }
     }
-  }
+  }, [str])
 
-  if(divisionStandings) {
-    return (
-			<Table size="small" >
-        <TableHead>
-          <TableRow>
-            <TableCell xs={2} sx={{p:0, pt:2, px:0.25, fontWeight: 'bold'}}>{conference} {division}</TableCell>
-            <TableCell sx={{p:0, pt:2, px:0.25, fontWeight: 'bold'}}>RECORD</TableCell> 
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          <TableRow sx={{p:0, m:0}}>
-            <TableCell sx={{p:0.25}}>
-              {divisionStandings[0].location}
-            </TableCell>
-            <TableCell sx={{p:0.25}}>
-              {divisionStandings[0].overallRecord[0] + '-' + divisionStandings[0].overallRecord[1]}
-              {divisionStandings[0].overallRecord[2] !== 0 ? '-' + divisionStandings[0].overallRecord[2] : ''}
-            </TableCell>
-          </TableRow>
-					<TableRow>
-            <TableCell sx={{p:0.25}}>
-              {divisionStandings[1].location}
-            </TableCell>
-            <TableCell sx={{p:0.25}}>
-              {divisionStandings[1].overallRecord[0] + '-' + divisionStandings[1].overallRecord[1]}
-              {divisionStandings[1].overallRecord[2] !== 0 ? '-' + divisionStandings[1].overallRecord[2] : ''}
-            </TableCell>
-          </TableRow>
-					<TableRow>
-            <TableCell sx={{p:0.25}}>
-              {divisionStandings[2].location}
-            </TableCell>
-            <TableCell sx={{p:0.25}}>
-              {divisionStandings[2].overallRecord[0] + '-' + divisionStandings[2].overallRecord[1]}
-              {divisionStandings[2].overallRecord[2] !== 0 ? '-' + divisionStandings[2].overallRecord[2] : ''}
-            </TableCell>
-          </TableRow>
-					<TableRow>
-            <TableCell sx={{p:0.25}}>
-              {divisionStandings[3].location}
-            </TableCell>
-            <TableCell sx={{p:0.25}}>
-              {divisionStandings[3].overallRecord[0] + '-' + divisionStandings[3].overallRecord[1]}
-              {divisionStandings[3].overallRecord[2] !== 0 ? '-' + divisionStandings[3].overallRecord[2] : ''}
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>         
-    )
-  } else {
-    return (
-      <Table size="small" >
-        <TableHead>
-          <TableRow>
-            <TableCell sx={{p:0, pt:2, px:0.25, fontWeight: 'bold'}}>{conference} {division}</TableCell>
-            <TableCell sx={{p:0, pt:2, px:0.25, fontWeight: 'bold'}}>RECORD</TableCell> 
-          </TableRow>
-        </TableHead>
-      </Table>  
-    )
-  }
+  return (
+    <Table size="small" >
+      <TableHead>
+        <TableRow>
+          <TableCell xs={2} sx={{p:0, pt:2, px:0.25, fontWeight: 'bold'}}>{conference} {division}</TableCell>
+          <TableCell sx={{p:0, pt:2, px:0.25, fontWeight: 'bold'}}>RECORD</TableCell> 
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow sx={{p:0, m:0}}>
+          <TableCell sx={{p:0.25}}>
+            {divisionStandings.length !== 0 ? divisionStandings[0].location : '' }
+          </TableCell>
+          <TableCell sx={{p:0.25}}>
+            {divisionStandings.length !== 0 ? divisionStandings[0].overallRecord[0] + '-' + divisionStandings[0].overallRecord[1] : '' }
+            {divisionStandings.length !== 0  && divisionStandings[0].overallRecord[2] !== 0 ? '-' + divisionStandings[0].overallRecord[2] : '' }
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell sx={{p:0.25}}>
+            {divisionStandings.length !== 0 ? divisionStandings[1].location : '' }
+          </TableCell>
+          <TableCell sx={{p:0.25}}>
+            {divisionStandings.length !== 0 ? divisionStandings[1].overallRecord[0] + '-' + divisionStandings[1].overallRecord[1] : '' }
+            {divisionStandings.length !== 0  && divisionStandings[1].overallRecord[2] !== 0 ? '-' + divisionStandings[1].overallRecord[2] : '' }
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell sx={{p:0.25}}>
+            {divisionStandings.length !== 0 ? divisionStandings[2].location : '' }
+          </TableCell>
+          <TableCell sx={{p:0.25}}>
+            {divisionStandings.length !== 0 ? divisionStandings[2].overallRecord[0] + '-' + divisionStandings[2].overallRecord[1] : '' }
+            {divisionStandings.length !== 0  && divisionStandings[2].overallRecord[2] !== 0 ? '-' + divisionStandings[2].overallRecord[2] : '' }
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell sx={{p:0.25}}>
+            {divisionStandings.length !== 0 ? divisionStandings[3].location : '' }
+          </TableCell>
+          <TableCell sx={{p:0.25}}>
+            {divisionStandings.length !== 0 ? divisionStandings[3].overallRecord[0] + '-' + divisionStandings[3].overallRecord[1] : '' }
+            {divisionStandings.length !== 0  && divisionStandings[3].overallRecord[2] !== 0 ? '-' + divisionStandings[3].overallRecord[2] : '' }
+          </TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>         
+  )
 }
 
 DivisionStandings.propTypes = {

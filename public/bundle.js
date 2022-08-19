@@ -29914,12 +29914,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   defineJQueryPlugin(Toast);
 
   // src/app.jsx
-  var import_react36 = __toESM(require_react());
-  var import_react_dom = __toESM(require_react_dom());
+  var import_react36 = __toESM(require_react(), 1);
+  var import_react_dom = __toESM(require_react_dom(), 1);
 
   // src/Simulator.jsx
-  var import_react34 = __toESM(require_react());
-  var import_axios = __toESM(require_axios2());
+  var import_react34 = __toESM(require_react(), 1);
+  var import_axios = __toESM(require_axios2(), 1);
 
   // node_modules/@mui/material/colors/common.js
   var common = {
@@ -37730,7 +37730,7 @@ const theme2 = createTheme({ palette: {
   var Tabs_default = Tabs;
 
   // src/Header.jsx
-  var import_react10 = __toESM(require_react());
+  var import_react10 = __toESM(require_react(), 1);
   function Header() {
     return /* @__PURE__ */ import_react10.default.createElement(AppBar_default, {
       position: "static",
@@ -37749,10 +37749,10 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/RegularSeasonGamesTable.jsx
-  var import_react21 = __toESM(require_react());
+  var import_react21 = __toESM(require_react(), 1);
 
   // src/components/RegularSeasonGames/RegularSeasonGame.jsx
-  var import_react20 = __toESM(require_react());
+  var import_react20 = __toESM(require_react(), 1);
 
   // node_modules/@mui/icons-material/esm/AlternateEmail.js
   var import_jsx_runtime33 = __toESM(require_jsx_runtime());
@@ -37761,10 +37761,10 @@ const theme2 = createTheme({ palette: {
   }), "AlternateEmail");
 
   // src/components/RegularSeasonGames/CompletedGame.jsx
-  var import_react14 = __toESM(require_react());
+  var import_react14 = __toESM(require_react(), 1);
 
   // src/components/RegularSeasonGames/CompletedTieGame.jsx
-  var import_react11 = __toESM(require_react());
+  var import_react11 = __toESM(require_react(), 1);
   function CompletedTieGame(props) {
     const { games } = props;
     return /* @__PURE__ */ import_react11.default.createElement(Grid_default, {
@@ -37815,7 +37815,7 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/CompletedRoadWin.jsx
-  var import_react12 = __toESM(require_react());
+  var import_react12 = __toESM(require_react(), 1);
   function CompletedTieGame2(props) {
     const { games } = props;
     return /* @__PURE__ */ import_react12.default.createElement(Grid_default, {
@@ -37866,7 +37866,7 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/CompletedHomeWin.jsx
-  var import_react13 = __toESM(require_react());
+  var import_react13 = __toESM(require_react(), 1);
   function CompletedTieGame3(props) {
     const { games } = props;
     return /* @__PURE__ */ import_react13.default.createElement(Grid_default, {
@@ -37935,10 +37935,10 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/FutureGame.jsx
-  var import_react19 = __toESM(require_react());
+  var import_react19 = __toESM(require_react(), 1);
 
   // src/components/RegularSeasonGames/FutureTie.jsx
-  var import_react15 = __toESM(require_react());
+  var import_react15 = __toESM(require_react(), 1);
   function FutureTie(props) {
     const { game, isTieClick: isTieClick2, isRoadWinClick: isRoadWinClick2, isHomeWinClick: isHomeWinClick2 } = props;
     return /* @__PURE__ */ import_react15.default.createElement(Grid_default, {
@@ -37994,7 +37994,7 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/FutureRoadWin.jsx
-  var import_react16 = __toESM(require_react());
+  var import_react16 = __toESM(require_react(), 1);
   function FutureRoadWin(props) {
     const { game, isTieClick: isTieClick2, isRoadWinClick: isRoadWinClick2, isHomeWinClick: isHomeWinClick2 } = props;
     return /* @__PURE__ */ import_react16.default.createElement(Grid_default, {
@@ -38050,7 +38050,7 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/FutureHomeWin.jsx
-  var import_react17 = __toESM(require_react());
+  var import_react17 = __toESM(require_react(), 1);
   function FutureHomeWin(props) {
     const { game, isTieClick: isTieClick2, isRoadWinClick: isRoadWinClick2, isHomeWinClick: isHomeWinClick2 } = props;
     return /* @__PURE__ */ import_react17.default.createElement(Grid_default, {
@@ -38107,7 +38107,7 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/RegularSeasonGames/FutureDefaultGame.jsx
-  var import_react18 = __toESM(require_react());
+  var import_react18 = __toESM(require_react(), 1);
   function FutureDefaultGame(props) {
     const { game, isTieClick: isTieClick2, isRoadWinClick: isRoadWinClick2, isHomeWinClick: isHomeWinClick2 } = props;
     return /* @__PURE__ */ import_react18.default.createElement(Grid_default, {
@@ -40749,79 +40749,69 @@ const theme2 = createTheme({ palette: {
   RegularSeasonGamesTable.propTypes = {};
 
   // src/components/Standings/DivisionStandingsTable.jsx
-  var import_react24 = __toESM(require_react());
+  var import_react24 = __toESM(require_react(), 1);
 
   // src/components/Standings/DivisionStandings.jsx
-  var import_react22 = __toESM(require_react());
-  var import_react23 = __toESM(require_react());
+  var import_react22 = __toESM(require_react(), 1);
+  var import_react23 = __toESM(require_react(), 1);
   function DivisionStandings(props) {
-    const { conference, division, standings } = props;
-    let divisionStandings = null;
-    if (standings) {
+    const { conference, division, str } = props;
+    const [divisionStandings, setDivisionStandings] = (0, import_react23.useState)([]);
+    (0, import_react23.useEffect)(() => {
       if (conference === "AFC") {
         if (division === "North") {
-          divisionStandings = standings.afcNorthStandings;
+          setDivisionStandings(JSON.parse(str).afcNorthStandings);
         } else if (division === "South") {
-          divisionStandings = standings.afcSouthStandings;
+          setDivisionStandings(JSON.parse(str).afcSouthStandings);
         } else if (division === "East") {
-          divisionStandings = standings.afcEastStandings;
+          setDivisionStandings(JSON.parse(str).afcEastStandings);
         } else if (division === "West") {
-          divisionStandings = standings.afcWestStandings;
+          setDivisionStandings(JSON.parse(str).afcWestStandings);
         }
       } else if (conference === "NFC") {
         if (division === "North") {
-          divisionStandings = standings.nfcNorthStandings;
+          setDivisionStandings(JSON.parse(str).nfcNorthStandings);
         } else if (division === "South") {
-          divisionStandings = standings.nfcSouthStandings;
+          setDivisionStandings(JSON.parse(str).nfcSouthStandings);
         } else if (division === "East") {
-          divisionStandings = standings.nfcEastStandings;
+          setDivisionStandings(JSON.parse(str).nfcEastStandings);
         } else if (division === "West") {
-          divisionStandings = standings.nfcWestStandings;
+          setDivisionStandings(JSON.parse(str).nfcWestStandings);
         }
       }
-    }
-    if (divisionStandings) {
-      return /* @__PURE__ */ import_react22.default.createElement(Table_default, {
-        size: "small"
-      }, /* @__PURE__ */ import_react22.default.createElement(TableHead_default, null, /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
-        xs: 2,
-        sx: { p: 0, pt: 2, px: 0.25, fontWeight: "bold" }
-      }, conference, " ", division), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
-        sx: { p: 0, pt: 2, px: 0.25, fontWeight: "bold" }
-      }, "RECORD"))), /* @__PURE__ */ import_react22.default.createElement(TableBody_default, null, /* @__PURE__ */ import_react22.default.createElement(TableRow_default, {
-        sx: { p: 0, m: 0 }
-      }, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
-        sx: { p: 0.25 }
-      }, divisionStandings[0].location), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
-        sx: { p: 0.25 }
-      }, divisionStandings[0].overallRecord[0] + "-" + divisionStandings[0].overallRecord[1], divisionStandings[0].overallRecord[2] !== 0 ? "-" + divisionStandings[0].overallRecord[2] : "")), /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
-        sx: { p: 0.25 }
-      }, divisionStandings[1].location), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
-        sx: { p: 0.25 }
-      }, divisionStandings[1].overallRecord[0] + "-" + divisionStandings[1].overallRecord[1], divisionStandings[1].overallRecord[2] !== 0 ? "-" + divisionStandings[1].overallRecord[2] : "")), /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
-        sx: { p: 0.25 }
-      }, divisionStandings[2].location), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
-        sx: { p: 0.25 }
-      }, divisionStandings[2].overallRecord[0] + "-" + divisionStandings[2].overallRecord[1], divisionStandings[2].overallRecord[2] !== 0 ? "-" + divisionStandings[2].overallRecord[2] : "")), /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
-        sx: { p: 0.25 }
-      }, divisionStandings[3].location), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
-        sx: { p: 0.25 }
-      }, divisionStandings[3].overallRecord[0] + "-" + divisionStandings[3].overallRecord[1], divisionStandings[3].overallRecord[2] !== 0 ? "-" + divisionStandings[3].overallRecord[2] : ""))));
-    } else {
-      return /* @__PURE__ */ import_react22.default.createElement(Table_default, {
-        size: "small"
-      }, /* @__PURE__ */ import_react22.default.createElement(TableHead_default, null, /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
-        sx: { p: 0, pt: 2, px: 0.25, fontWeight: "bold" }
-      }, conference, " ", division), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
-        sx: { p: 0, pt: 2, px: 0.25, fontWeight: "bold" }
-      }, "RECORD"))));
-    }
+    }, [str]);
+    return /* @__PURE__ */ import_react22.default.createElement(Table_default, {
+      size: "small"
+    }, /* @__PURE__ */ import_react22.default.createElement(TableHead_default, null, /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+      xs: 2,
+      sx: { p: 0, pt: 2, px: 0.25, fontWeight: "bold" }
+    }, conference, " ", division), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+      sx: { p: 0, pt: 2, px: 0.25, fontWeight: "bold" }
+    }, "RECORD"))), /* @__PURE__ */ import_react22.default.createElement(TableBody_default, null, /* @__PURE__ */ import_react22.default.createElement(TableRow_default, {
+      sx: { p: 0, m: 0 }
+    }, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+      sx: { p: 0.25 }
+    }, divisionStandings.length !== 0 ? divisionStandings[0].location : ""), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+      sx: { p: 0.25 }
+    }, divisionStandings.length !== 0 ? divisionStandings[0].overallRecord[0] + "-" + divisionStandings[0].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[0].overallRecord[2] !== 0 ? "-" + divisionStandings[0].overallRecord[2] : "")), /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+      sx: { p: 0.25 }
+    }, divisionStandings.length !== 0 ? divisionStandings[1].location : ""), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+      sx: { p: 0.25 }
+    }, divisionStandings.length !== 0 ? divisionStandings[1].overallRecord[0] + "-" + divisionStandings[1].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[1].overallRecord[2] !== 0 ? "-" + divisionStandings[1].overallRecord[2] : "")), /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+      sx: { p: 0.25 }
+    }, divisionStandings.length !== 0 ? divisionStandings[2].location : ""), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+      sx: { p: 0.25 }
+    }, divisionStandings.length !== 0 ? divisionStandings[2].overallRecord[0] + "-" + divisionStandings[2].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[2].overallRecord[2] !== 0 ? "-" + divisionStandings[2].overallRecord[2] : "")), /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+      sx: { p: 0.25 }
+    }, divisionStandings.length !== 0 ? divisionStandings[3].location : ""), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+      sx: { p: 0.25 }
+    }, divisionStandings.length !== 0 ? divisionStandings[3].overallRecord[0] + "-" + divisionStandings[3].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[3].overallRecord[2] !== 0 ? "-" + divisionStandings[3].overallRecord[2] : ""))));
   }
   DivisionStandings.propTypes = {};
 
   // src/components/Standings/DivisionStandingsTable.jsx
   function DivisionStandingsTable(props) {
-    const { conference, info } = props;
+    const { conference, str } = props;
     return /* @__PURE__ */ import_react24.default.createElement(import_react24.default.Fragment, null, /* @__PURE__ */ import_react24.default.createElement(Box_default, {
       sx: { flexGrow: 1, display: "flex", height: 124 }
     }, /* @__PURE__ */ import_react24.default.createElement(Tabs_default, {
@@ -40832,31 +40822,31 @@ const theme2 = createTheme({ palette: {
     }, /* @__PURE__ */ import_react24.default.createElement(DivisionStandings, {
       conference,
       division: "North",
-      standings: info
+      str
     }), /* @__PURE__ */ import_react24.default.createElement(DivisionStandings, {
       conference,
       division: "South",
-      standings: info
+      str
     }), /* @__PURE__ */ import_react24.default.createElement(DivisionStandings, {
       conference,
       division: "East",
-      standings: info
+      str
     }), /* @__PURE__ */ import_react24.default.createElement(DivisionStandings, {
       conference,
       division: "West",
-      standings: info
+      str
     }))));
   }
   DivisionStandings.propTypes = {};
 
   // src/components/PlayoffGames/AFCPlayoffSeeds.jsx
-  var import_react30 = __toESM(require_react());
+  var import_react30 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/AFCByeContainer.jsx
-  var import_react26 = __toESM(require_react());
+  var import_react26 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/TeamInfoLeft.jsx
-  var import_react25 = __toESM(require_react());
+  var import_react25 = __toESM(require_react(), 1);
   function TeamInfoLeft(props) {
     const { conference, seedNumber, seedString, info } = props;
     let getTeamInfo = null;
@@ -40979,13 +40969,13 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/PlayoffGames/AFCWildCardContainer.jsx
-  var import_react29 = __toESM(require_react());
+  var import_react29 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/PlayoffGame.jsx
-  var import_react28 = __toESM(require_react());
+  var import_react28 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/TeamInfoRight.jsx
-  var import_react27 = __toESM(require_react());
+  var import_react27 = __toESM(require_react(), 1);
   function TeamInfoRight(props) {
     const { conference, seedNumber, seedString, info } = props;
     let getTeamInfo = null;
@@ -41167,10 +41157,10 @@ const theme2 = createTheme({ palette: {
   AFCPlayoffSeeds.propTypes = {};
 
   // src/components/PlayoffGames/NFCPlayoffSeeds.jsx
-  var import_react33 = __toESM(require_react());
+  var import_react33 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/NFCByeContainer.jsx
-  var import_react31 = __toESM(require_react());
+  var import_react31 = __toESM(require_react(), 1);
   function NFCByeContainer(props) {
     const { info } = props;
     return /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
@@ -41217,7 +41207,7 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/PlayoffGames/NFCWildCardContainer.jsx
-  var import_react32 = __toESM(require_react());
+  var import_react32 = __toESM(require_react(), 1);
   function NFCWildCardContainer(props) {
     const { info } = props;
     return /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
@@ -41286,15 +41276,56 @@ const theme2 = createTheme({ palette: {
   NFCPlayoffSeeds.propTypes = {};
 
   // src/Simulator.jsx
-  var import_react35 = __toESM(require_react());
+  var import_react35 = __toESM(require_react(), 1);
   function Simulator(props) {
+    const defaultInfo = {
+      version: "1.0",
+      time: "",
+      teamInfoToDate: {
+        "ARI": {
+          location: "Arizona",
+          abbreviation: "ARI",
+          alternateName: null,
+          conference: "NFC",
+          division: "West",
+          overallRecord: [],
+          conferenceRecord: [],
+          divisionRecord: [],
+          games: []
+        },
+        "ATL": {
+          location: "Atlanta",
+          abbreviation: "ATL",
+          alternateName: null,
+          conference: "NFC",
+          division: "South",
+          overallRecord: [],
+          conferenceRecord: [],
+          divisionRecord: [],
+          games: []
+        }
+      },
+      gameInfoToDate: [],
+      nfcEastStandings: [],
+      nfcNorthStandings: [],
+      nfcSouthStandings: [],
+      nfcWestStandings: [],
+      nfcDivisionChamps: [],
+      afcEastStandings: [],
+      afcNorthStandings: [],
+      afcSouthStandings: [],
+      afcWestStandings: [],
+      afcDivisionChamps: []
+    };
     const [initialInfo, setInitialInfo] = (0, import_react35.useState)(null);
     const [customizedInfo, setCustomizedInfo] = (0, import_react35.useState)(null);
+    const [jsonString, setJsonString] = (0, import_react35.useState)(JSON.stringify(defaultInfo));
     const year = 2022;
     import_react34.default.useEffect(() => {
       import_axios.default.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod?year=${year}`).then((response) => {
         setInitialInfo(response.data.body);
         setCustomizedInfo(response.data.body);
+        setJsonString(JSON.stringify(response.data.body));
       }).catch((error) => {
         alert("Failed to retrieve lambda data");
         console.error("Failed to retrieve lambda data");
@@ -41336,7 +41367,7 @@ const theme2 = createTheme({ palette: {
       }
     }, /* @__PURE__ */ import_react34.default.createElement(DivisionStandingsTable, {
       conference: "AFC",
-      info: customizedInfo
+      str: jsonString
     }))), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
       item: true,
       xs: 14
@@ -41372,7 +41403,7 @@ const theme2 = createTheme({ palette: {
       }
     }, /* @__PURE__ */ import_react34.default.createElement(DivisionStandingsTable, {
       conference: "NFC",
-      info: customizedInfo
+      str: jsonString
     })))));
   }
 
