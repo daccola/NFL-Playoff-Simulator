@@ -10,6 +10,8 @@ import DivisionStandingsTable from './components/Standings/DivisionStandingsTabl
 import AFCPlayoffSeeds from './components/PlayoffGames/AFCPlayoffSeeds.jsx'
 import NFCPlayoffSeeds from './components/PlayoffGames/NFCPlayoffSeeds.jsx'
 
+import updateInfoHelper from './helpers/UpdateInfoHelper.jsx'
+
 import { useEffect, useState} from 'react';
 
 export default function Simulator(props) {
@@ -53,12 +55,13 @@ export default function Simulator(props) {
 
 
   const updateCustomizedInfo = (week, index, newState) => {
-    const newCustomizedInfo = JSON.parse(customizedInfo)
-    newCustomizedInfo.gameInfoToDate[week][index].tempState = newState
+   // const newCustomizedInfo = JSON.parse(customizedInfo)
+    //newCustomizedInfo.gameInfoToDate[week][index].tempState = newState
     //newCustomizedInfo.nfcNorthStandings[0].overallRecord[0] = 12
     //newCustomizedInfo.nfcDivisionChamps[1].overallRecord[0] = 12
-    setCustomizedInfo(JSON.stringify(newCustomizedInfo))
+    //setCustomizedInfo(JSON.stringify(newCustomizedInfo))
 
+    setCustomizedInfo(updateInfoHelper(customizedInfo, week, index, newState))
   }
 
   return (

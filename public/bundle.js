@@ -40834,7 +40834,7 @@ const theme2 = createTheme({ palette: {
     }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, {
       variant: "body2",
       align: "left"
-    }, teamInfo && "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1], teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + getTeamInfo.overallRecord[2])))));
+    }, teamInfo && "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1], teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + teamInfo.overallRecord[2])))));
   }
 
   // src/components/PlayoffGames/AFCByeContainer.jsx
@@ -40935,7 +40935,7 @@ const theme2 = createTheme({ palette: {
     }, /* @__PURE__ */ import_react29.default.createElement(Typography_default, {
       variant: "body2",
       align: "right"
-    }, teamInfo && "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1], teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + getTeamInfo.overallRecord[2])))), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
+    }, teamInfo && "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1], teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + teamInfo.overallRecord[2])))), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
       item: true,
       xs: 7
     }, teamInfo && /* @__PURE__ */ import_react29.default.createElement("img", {
@@ -41166,6 +41166,122 @@ const theme2 = createTheme({ palette: {
   }
   NFCPlayoffSeeds.propTypes = {};
 
+  // src/helpers/GeneralHelpers.jsx
+  function getWonLostTiedPercentage(record) {
+    const totalGames = record[0] + record[1] + record[2];
+    if (totalGames === 0) {
+      return 0;
+    }
+    return (record[0] + record[2] * 0.5) / totalGames;
+  }
+  function sortOnlyByRecord(teams) {
+    const sorted = teams.sort(function(x, y) {
+      var diff = getWonLostTiedPercentage(y.overallRecord) - getWonLostTiedPercentage(x.overallRecord);
+      return diff;
+    });
+    return sorted;
+  }
+
+  // src/helpers/DivisionHelpers.jsx
+  function getTeamsByDivision(conference, division, teamInfo) {
+    const divisionTeams = [];
+    for (const team of Object.keys(teamInfo)) {
+      if (teamInfo[team].conference === conference && teamInfo[team].division === division) {
+        divisionTeams.push(teamInfo[team]);
+      }
+    }
+    return divisionTeams;
+  }
+  function getDivisionStandings(conference, division, teamInfo) {
+    const divisionTeams = getTeamsByDivision(conference, division, teamInfo);
+    const sortedStandings = sortOnlyByRecord(divisionTeams);
+    const wonLostTiedPercentage0 = getWonLostTiedPercentage(sortedStandings[0].overallRecord);
+    const wonLostTiedPercentage1 = getWonLostTiedPercentage(sortedStandings[1].overallRecord);
+    const wonLostTiedPercentage2 = getWonLostTiedPercentage(sortedStandings[2].overallRecord);
+    const wonLostTiedPercentage3 = getWonLostTiedPercentage(sortedStandings[3].overallRecord);
+    if (wonLostTiedPercentage0 === wonLostTiedPercentage1 && wonLostTiedPercentage0 === wonLostTiedPercentage2 && wonLostTiedPercentage0 === wonLostTiedPercentage3) {
+    } else if (wonLostTiedPercentage0 === wonLostTiedPercentage1 && wonLostTiedPercentage0 === wonLostTiedPercentage2) {
+    } else if (wonLostTiedPercentage0 === wonLostTiedPercentage1 && wonLostTiedPercentage0 === wonLostTiedPercentage3) {
+    } else if (wonLostTiedPercentage0 === wonLostTiedPercentage2 && wonLostTiedPercentage0 === wonLostTiedPercentage3) {
+    } else if (wonLostTiedPercentage1 === wonLostTiedPercentage2 && wonLostTiedPercentage1 === wonLostTiedPercentage3) {
+    } else {
+    }
+    return sortedStandings;
+  }
+
+  // src/helpers/DivisionChampionsHelpers.jsx
+  function getDivisionChampionsStandings(teams) {
+    const sortedDivisionChampions = sortOnlyByRecord(teams);
+    return sortedDivisionChampions;
+  }
+
+  // src/helpers/WildCardHelpers.jsx
+  function getWildCardTeams(conference, divisionChamps, teamInfo) {
+    const potentialWildCardTeams = removeInvalidTeams(conference, divisionChamps, teamInfo);
+    const sortedWildCardTeams = sortOnlyByRecord(potentialWildCardTeams);
+    return [sortedWildCardTeams[0], sortedWildCardTeams[1], sortedWildCardTeams[2]];
+  }
+  function removeInvalidTeams(conference, divisionChamps, teamInfo) {
+    let potentialWildCardTeams = Object.values(teamInfo).filter((teams) => teams.conference === conference);
+    divisionChamps.forEach((divisionChamp) => {
+      potentialWildCardTeams = potentialWildCardTeams.filter((teams) => teams.abbreviation !== divisionChamp.abbreviation);
+    });
+    return potentialWildCardTeams;
+  }
+
+  // src/helpers/UpdateInfoHelper.jsx
+  function updateInfoHelper(info, week, index, newState) {
+    const newInfo = JSON.parse(info);
+    const roadTeam = newInfo.gameInfoToDate[week][index].roadTeam;
+    const homeTeam = newInfo.gameInfoToDate[week][index].homeTeam;
+    if (newInfo.gameInfoToDate[week][index].tempState === "RoadWin") {
+      newInfo.teamInfoToDate[roadTeam].overallRecord[0]--;
+      newInfo.teamInfoToDate[roadTeam].games[week].result = "";
+      newInfo.teamInfoToDate[homeTeam].overallRecord[1]--;
+      newInfo.teamInfoToDate[homeTeam].games[week].result = "";
+    } else if (newInfo.gameInfoToDate[week][index].tempState === "HomeWin") {
+      newInfo.teamInfoToDate[roadTeam].overallRecord[1]--;
+      newInfo.teamInfoToDate[roadTeam].games[week].result = "";
+      newInfo.teamInfoToDate[homeTeam].overallRecord[0]--;
+      newInfo.teamInfoToDate[homeTeam].games[week].result = "";
+    } else if (newInfo.gameInfoToDate[week][index].tempState === "Tie") {
+      newInfo.teamInfoToDate[roadTeam].overallRecord[2]--;
+      newInfo.teamInfoToDate[roadTeam].games[week].result = "";
+      newInfo.teamInfoToDate[homeTeam].overallRecord[2]--;
+      newInfo.teamInfoToDate[homeTeam].games[week].result = "";
+    }
+    newInfo.gameInfoToDate[week][index].tempState = newState;
+    if (newState === "RoadWin") {
+      newInfo.teamInfoToDate[roadTeam].overallRecord[0]++;
+      newInfo.teamInfoToDate[roadTeam].games[week].result = "win";
+      newInfo.teamInfoToDate[homeTeam].overallRecord[1]++;
+      newInfo.teamInfoToDate[homeTeam].games[week].result = "loss";
+    } else if (newState === "HomeWin") {
+      newInfo.teamInfoToDate[roadTeam].overallRecord[1]++;
+      newInfo.teamInfoToDate[roadTeam].games[week].result = "loss";
+      newInfo.teamInfoToDate[homeTeam].overallRecord[0]++;
+      newInfo.teamInfoToDate[homeTeam].games[week].result = "win";
+    } else if (newState === "Tie") {
+      newInfo.teamInfoToDate[roadTeam].overallRecord[2]++;
+      newInfo.teamInfoToDate[roadTeam].games[week].result = "tie";
+      newInfo.teamInfoToDate[homeTeam].overallRecord[2]++;
+      newInfo.teamInfoToDate[homeTeam].games[week].result = "tie";
+    }
+    newInfo.nfcEastStandings = getDivisionStandings("NFC", "East", newInfo.teamInfoToDate);
+    newInfo.nfcNorthStandings = getDivisionStandings("NFC", "North", newInfo.teamInfoToDate);
+    newInfo.nfcSouthStandings = getDivisionStandings("NFC", "South", newInfo.teamInfoToDate);
+    newInfo.nfcWestStandings = getDivisionStandings("NFC", "West", newInfo.teamInfoToDate);
+    newInfo.afcEastStandings = getDivisionStandings("AFC", "East", newInfo.teamInfoToDate);
+    newInfo.afcNorthStandings = getDivisionStandings("AFC", "North", newInfo.teamInfoToDate);
+    newInfo.afcSouthStandings = getDivisionStandings("AFC", "South", newInfo.teamInfoToDate);
+    newInfo.afcWestStandings = getDivisionStandings("AFC", "West", newInfo.teamInfoToDate);
+    newInfo.nfcDivisionChamps = getDivisionChampionsStandings([newInfo.nfcEastStandings[0], newInfo.nfcNorthStandings[0], newInfo.nfcSouthStandings[0], newInfo.nfcWestStandings[0]]);
+    newInfo.afcDivisionChamps = getDivisionChampionsStandings([newInfo.afcEastStandings[0], newInfo.afcNorthStandings[0], newInfo.afcSouthStandings[0], newInfo.afcWestStandings[0]]);
+    newInfo.nfcWildCardTeams = getWildCardTeams("NFC", newInfo.nfcDivisionChamps, newInfo.teamInfoToDate);
+    newInfo.afcWildCardTeams = getWildCardTeams("AFC", newInfo.afcDivisionChamps, newInfo.teamInfoToDate);
+    return JSON.stringify(newInfo);
+  }
+
   // src/Simulator.jsx
   var import_react38 = __toESM(require_react(), 1);
   function Simulator(props) {
@@ -41201,9 +41317,7 @@ const theme2 = createTheme({ palette: {
       });
     }, []);
     const updateCustomizedInfo = (week, index, newState) => {
-      const newCustomizedInfo = JSON.parse(customizedInfo);
-      newCustomizedInfo.gameInfoToDate[week][index].tempState = newState;
-      setCustomizedInfo(JSON.stringify(newCustomizedInfo));
+      setCustomizedInfo(updateInfoHelper(customizedInfo, week, index, newState));
     };
     return /* @__PURE__ */ import_react37.default.createElement(Container_default, {
       maxWidth: false,

@@ -43,7 +43,7 @@ export default function TeamInfoRight (props) {
 					<Grid item xs={17}>
 						<Typography variant="body2" align="right">
 							{teamInfo && 'Record: ' + teamInfo.overallRecord[0] + '-' + teamInfo.overallRecord[1]}
-							{teamInfo && teamInfo.overallRecord[2] !== 0 && '-' + getTeamInfo.overallRecord[2]}
+							{teamInfo && teamInfo.overallRecord[2] !== 0 && '-' + teamInfo.overallRecord[2]}
 						</Typography>
 					</Grid>
 				</Grid>
