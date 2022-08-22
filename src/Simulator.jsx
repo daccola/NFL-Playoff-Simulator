@@ -15,6 +15,7 @@ import updateInfoHelper from './helpers/UpdateInfoHelper.jsx'
 import { useEffect, useState} from 'react';
 
 export default function Simulator(props) {
+  const year = 2022
 
   const defaultInfo = {
     version: "1.0",
@@ -34,10 +35,10 @@ export default function Simulator(props) {
     afcDivisionChamps: [],
     afcWildCardTeams: []
   }
+
   const [initialInfo, setInitialInfo] = useState(JSON.stringify(defaultInfo));
   const [customizedInfo, setCustomizedInfo] = useState(JSON.stringify(defaultInfo));
 
-  const year = 2022
 
   React.useEffect(() => {
     Axios.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod?year=${year}`)
@@ -46,27 +47,23 @@ export default function Simulator(props) {
       setCustomizedInfo(JSON.stringify(response.data.body))      
     })
     .catch((error) => {
-      //TODO
-      alert('Failed to retrieve lambda data')
-      console.error('Failed to retrieve lambda data')
+      alert('Failed to retrieve game information')
+      console.error('Failed to retrieve game information')
       console.error(error)
     })
   }, [])
 
+  const onResetClicked = (event) => {
+    setCustomizedInfo(initialInfo)
+  }
 
   const updateCustomizedInfo = (week, index, newState) => {
-   // const newCustomizedInfo = JSON.parse(customizedInfo)
-    //newCustomizedInfo.gameInfoToDate[week][index].tempState = newState
-    //newCustomizedInfo.nfcNorthStandings[0].overallRecord[0] = 12
-    //newCustomizedInfo.nfcDivisionChamps[1].overallRecord[0] = 12
-    //setCustomizedInfo(JSON.stringify(newCustomizedInfo))
-
     setCustomizedInfo(updateInfoHelper(customizedInfo, week, index, newState))
   }
 
   return (
     <Container maxWidth={false} disableGutters sx={{bgcolor: '#eeeeee'}}>
-      <Header />
+      <Header onResetClicked={onResetClicked}/>
       <Grid container spacing={2} columns={24} sx={{p:2}}>
         <Grid item xs={24}>
           <Paper sx={{p:1}}>

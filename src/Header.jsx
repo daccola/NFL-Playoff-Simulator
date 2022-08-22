@@ -7,7 +7,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-export default function Header() {
+export default function Header(props) {
+  const { onResetClicked } = props
+
   return (
       <AppBar position="static" sx={{ bgcolor: '#013369' }}>
         <Toolbar>
@@ -19,7 +21,7 @@ export default function Header() {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             NFL Playoff Seeding 2022
           </Typography>
-          <Button color="inherit">Reset</Button>
+          <Button color="inherit" onClick={onResetClicked}>Reset</Button>
         </Toolbar>
       </AppBar>
   )

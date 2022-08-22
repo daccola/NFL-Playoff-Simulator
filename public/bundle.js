@@ -37731,7 +37731,8 @@ const theme2 = createTheme({ palette: {
 
   // src/Header.jsx
   var import_react10 = __toESM(require_react(), 1);
-  function Header() {
+  function Header(props) {
+    const { onResetClicked } = props;
     return /* @__PURE__ */ import_react10.default.createElement(AppBar_default, {
       position: "static",
       sx: { bgcolor: "#013369" }
@@ -37744,7 +37745,8 @@ const theme2 = createTheme({ palette: {
       variant: "h6",
       sx: { flexGrow: 1 }
     }, "NFL Playoff Seeding 2022"), /* @__PURE__ */ import_react10.default.createElement(Button_default, {
-      color: "inherit"
+      color: "inherit",
+      onClick: onResetClicked
     }, "Reset")));
   }
 
@@ -41285,6 +41287,7 @@ const theme2 = createTheme({ palette: {
   // src/Simulator.jsx
   var import_react38 = __toESM(require_react(), 1);
   function Simulator(props) {
+    const year = 2022;
     const defaultInfo = {
       version: "1.0",
       time: "",
@@ -41305,17 +41308,19 @@ const theme2 = createTheme({ palette: {
     };
     const [initialInfo, setInitialInfo] = (0, import_react38.useState)(JSON.stringify(defaultInfo));
     const [customizedInfo, setCustomizedInfo] = (0, import_react38.useState)(JSON.stringify(defaultInfo));
-    const year = 2022;
     import_react37.default.useEffect(() => {
       import_axios.default.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod?year=${year}`).then((response) => {
         setInitialInfo(JSON.stringify(response.data.body));
         setCustomizedInfo(JSON.stringify(response.data.body));
       }).catch((error) => {
-        alert("Failed to retrieve lambda data");
-        console.error("Failed to retrieve lambda data");
+        alert("Failed to retrieve game information");
+        console.error("Failed to retrieve game information");
         console.error(error);
       });
     }, []);
+    const onResetClicked = (event) => {
+      setCustomizedInfo(initialInfo);
+    };
     const updateCustomizedInfo = (week, index, newState) => {
       setCustomizedInfo(updateInfoHelper(customizedInfo, week, index, newState));
     };
@@ -41323,7 +41328,9 @@ const theme2 = createTheme({ palette: {
       maxWidth: false,
       disableGutters: true,
       sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react37.default.createElement(Header, null), /* @__PURE__ */ import_react37.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react37.default.createElement(Header, {
+      onResetClicked
+    }), /* @__PURE__ */ import_react37.default.createElement(Grid_default, {
       container: true,
       spacing: 2,
       columns: 24,
