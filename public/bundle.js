@@ -1063,7 +1063,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState10(initialState) {
+          function useState11(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1075,7 +1075,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect12(create, deps) {
+          function useEffect13(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1645,13 +1645,13 @@
           exports.useCallback = useCallback5;
           exports.useContext = useContext9;
           exports.useDebugValue = useDebugValue3;
-          exports.useEffect = useEffect12;
+          exports.useEffect = useEffect13;
           exports.useImperativeHandle = useImperativeHandle4;
           exports.useLayoutEffect = useLayoutEffect3;
           exports.useMemo = useMemo4;
           exports.useReducer = useReducer;
           exports.useRef = useRef8;
-          exports.useState = useState10;
+          exports.useState = useState11;
           exports.version = ReactVersion;
         })();
       }
@@ -29914,11 +29914,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   defineJQueryPlugin(Toast);
 
   // src/app.jsx
-  var import_react38 = __toESM(require_react(), 1);
+  var import_react39 = __toESM(require_react(), 1);
   var import_react_dom = __toESM(require_react_dom(), 1);
 
   // src/Simulator.jsx
-  var import_react36 = __toESM(require_react(), 1);
+  var import_react37 = __toESM(require_react(), 1);
   var import_axios = __toESM(require_axios2(), 1);
 
   // node_modules/@mui/material/colors/common.js
@@ -37750,6 +37750,7 @@ const theme2 = createTheme({ palette: {
 
   // src/components/RegularSeasonGames/RegularSeasonGamesTable.jsx
   var import_react21 = __toESM(require_react(), 1);
+  var import_react22 = __toESM(require_react(), 1);
 
   // src/components/RegularSeasonGames/RegularSeasonGame.jsx
   var import_react20 = __toESM(require_react(), 1);
@@ -38297,2467 +38298,2399 @@ const theme2 = createTheme({ palette: {
   function RegularSeasonGamesTable(props) {
     const { info, updateFunction } = props;
     const [tabValue, setTabValue] = import_react21.default.useState("1");
+    const [gameInfo, setGameInfo] = import_react21.default.useState(JSON.parse(info).gameInfoToDate);
+    (0, import_react22.useEffect)(() => {
+      setGameInfo(JSON.parse(info).gameInfoToDate);
+    }, [info]);
     const handleTabChange = (event, newValue) => {
       setTabValue(newValue);
     };
-    if (info) {
-      return /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        container: true,
-        spacing: 1,
-        columns: 144
-      }, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 144
-      }, /* @__PURE__ */ import_react21.default.createElement(Tabs_default, {
-        value: tabValue,
-        onChange: handleTabChange,
-        variant: "scrollable",
-        scrollButtons: true,
-        textColor: "secondary",
-        indicatorColor: "secondary"
-      }, /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 1",
-        value: "1"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 2",
-        value: "2"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 3",
-        value: "3"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 4",
-        value: "4"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 5",
-        value: "5"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 6",
-        value: "6"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 7",
-        value: "7"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 8",
-        value: "8"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 9",
-        value: "9"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 10",
-        value: "10"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 11",
-        value: "11"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 12",
-        value: "12"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 13",
-        value: "13"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 14",
-        value: "14"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 15",
-        value: "15"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 16",
-        value: "16"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 17",
-        value: "17"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 18",
-        value: "18"
-      }))), tabValue === "1" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 0,
-        game: info.gameInfoToDate[1][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 1,
-        game: info.gameInfoToDate[1][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 2,
-        game: info.gameInfoToDate[1][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 3,
-        game: info.gameInfoToDate[1][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 4,
-        game: info.gameInfoToDate[1][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 5,
-        game: info.gameInfoToDate[1][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 6,
-        game: info.gameInfoToDate[1][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 7,
-        game: info.gameInfoToDate[1][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 8,
-        game: info.gameInfoToDate[1][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 9,
-        game: info.gameInfoToDate[1][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 10,
-        game: info.gameInfoToDate[1][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 11,
-        game: info.gameInfoToDate[1][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 12,
-        game: info.gameInfoToDate[1][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 13,
-        game: info.gameInfoToDate[1][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 14,
-        game: info.gameInfoToDate[1][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 1,
-        index: 15,
-        game: info.gameInfoToDate[1][15],
-        updateFunction
-      }))), tabValue === "2" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 0,
-        game: info.gameInfoToDate[2][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 1,
-        game: info.gameInfoToDate[2][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 2,
-        game: info.gameInfoToDate[2][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 3,
-        game: info.gameInfoToDate[2][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 4,
-        game: info.gameInfoToDate[2][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 5,
-        game: info.gameInfoToDate[2][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 6,
-        game: info.gameInfoToDate[2][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 7,
-        game: info.gameInfoToDate[2][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 8,
-        game: info.gameInfoToDate[2][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 9,
-        game: info.gameInfoToDate[2][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 10,
-        game: info.gameInfoToDate[2][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 11,
-        game: info.gameInfoToDate[2][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 12,
-        game: info.gameInfoToDate[2][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 13,
-        game: info.gameInfoToDate[2][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 14,
-        game: info.gameInfoToDate[2][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 2,
-        index: 15,
-        game: info.gameInfoToDate[2][15],
-        updateFunction
-      }))), tabValue === "3" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 0,
-        game: info.gameInfoToDate[3][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 1,
-        game: info.gameInfoToDate[3][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 2,
-        game: info.gameInfoToDate[3][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 3,
-        game: info.gameInfoToDate[3][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 4,
-        game: info.gameInfoToDate[3][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 5,
-        game: info.gameInfoToDate[3][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 6,
-        game: info.gameInfoToDate[3][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 7,
-        game: info.gameInfoToDate[3][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 8,
-        game: info.gameInfoToDate[3][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 9,
-        game: info.gameInfoToDate[3][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 10,
-        game: info.gameInfoToDate[3][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 11,
-        game: info.gameInfoToDate[3][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 12,
-        game: info.gameInfoToDate[3][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 13,
-        game: info.gameInfoToDate[3][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 14,
-        game: info.gameInfoToDate[3][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 3,
-        index: 15,
-        game: info.gameInfoToDate[3][15],
-        updateFunction
-      }))), tabValue === "4" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 0,
-        game: info.gameInfoToDate[2][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 1,
-        game: info.gameInfoToDate[4][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 2,
-        game: info.gameInfoToDate[4][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 3,
-        game: info.gameInfoToDate[4][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 4,
-        game: info.gameInfoToDate[4][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 5,
-        game: info.gameInfoToDate[4][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 6,
-        game: info.gameInfoToDate[4][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 7,
-        game: info.gameInfoToDate[4][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 8,
-        game: info.gameInfoToDate[4][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 9,
-        game: info.gameInfoToDate[4][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 10,
-        game: info.gameInfoToDate[4][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 11,
-        game: info.gameInfoToDate[4][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 12,
-        game: info.gameInfoToDate[4][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 13,
-        game: info.gameInfoToDate[4][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 14,
-        game: info.gameInfoToDate[4][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 4,
-        index: 15,
-        game: info.gameInfoToDate[4][15],
-        updateFunction
-      }))), tabValue === "5" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 0,
-        game: info.gameInfoToDate[5][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 1,
-        game: info.gameInfoToDate[5][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 2,
-        game: info.gameInfoToDate[5][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 3,
-        game: info.gameInfoToDate[5][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 4,
-        game: info.gameInfoToDate[5][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 5,
-        game: info.gameInfoToDate[5][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 6,
-        game: info.gameInfoToDate[5][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 7,
-        game: info.gameInfoToDate[5][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 8,
-        game: info.gameInfoToDate[5][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 9,
-        game: info.gameInfoToDate[5][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 10,
-        game: info.gameInfoToDate[5][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 11,
-        game: info.gameInfoToDate[5][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 12,
-        game: info.gameInfoToDate[5][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 13,
-        game: info.gameInfoToDate[5][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 14,
-        game: info.gameInfoToDate[5][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 5,
-        index: 15,
-        game: info.gameInfoToDate[5][15],
-        updateFunction
-      }))), tabValue === "6" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 0,
-        game: info.gameInfoToDate[6][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 1,
-        game: info.gameInfoToDate[6][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 2,
-        game: info.gameInfoToDate[6][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 3,
-        game: info.gameInfoToDate[6][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 4,
-        game: info.gameInfoToDate[6][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 5,
-        game: info.gameInfoToDate[6][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 6,
-        game: info.gameInfoToDate[6][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 7,
-        game: info.gameInfoToDate[6][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 8,
-        game: info.gameInfoToDate[6][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 9,
-        game: info.gameInfoToDate[6][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 10,
-        game: info.gameInfoToDate[6][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 11,
-        game: info.gameInfoToDate[6][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 12,
-        game: info.gameInfoToDate[6][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 13,
-        game: info.gameInfoToDate[6][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 14,
-        game: info.gameInfoToDate[6][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 6,
-        index: 15,
-        game: info.gameInfoToDate[6][15],
-        updateFunction
-      }))), tabValue === "7" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 0,
-        game: info.gameInfoToDate[6][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 1,
-        game: info.gameInfoToDate[7][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 2,
-        game: info.gameInfoToDate[7][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 3,
-        game: info.gameInfoToDate[7][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 4,
-        game: info.gameInfoToDate[7][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 5,
-        game: info.gameInfoToDate[7][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 6,
-        game: info.gameInfoToDate[7][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 7,
-        game: info.gameInfoToDate[7][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 8,
-        game: info.gameInfoToDate[7][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 9,
-        game: info.gameInfoToDate[7][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 10,
-        game: info.gameInfoToDate[7][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 11,
-        game: info.gameInfoToDate[7][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 12,
-        game: info.gameInfoToDate[7][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 13,
-        game: info.gameInfoToDate[7][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 14,
-        game: info.gameInfoToDate[7][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 7,
-        index: 15,
-        game: info.gameInfoToDate[7][15],
-        updateFunction
-      }))), tabValue === "8" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 0,
-        game: info.gameInfoToDate[8][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 1,
-        game: info.gameInfoToDate[8][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 2,
-        game: info.gameInfoToDate[8][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 3,
-        game: info.gameInfoToDate[8][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 4,
-        game: info.gameInfoToDate[8][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 5,
-        game: info.gameInfoToDate[8][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 6,
-        game: info.gameInfoToDate[8][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 7,
-        game: info.gameInfoToDate[8][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 8,
-        game: info.gameInfoToDate[8][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 9,
-        game: info.gameInfoToDate[8][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 10,
-        game: info.gameInfoToDate[8][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 11,
-        game: info.gameInfoToDate[8][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 12,
-        game: info.gameInfoToDate[8][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 13,
-        game: info.gameInfoToDate[8][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 14,
-        game: info.gameInfoToDate[8][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 8,
-        index: 15,
-        game: info.gameInfoToDate[8][15],
-        updateFunction
-      }))), tabValue === "9" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 0,
-        game: info.gameInfoToDate[9][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 1,
-        game: info.gameInfoToDate[9][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 2,
-        game: info.gameInfoToDate[9][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 3,
-        game: info.gameInfoToDate[9][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 4,
-        game: info.gameInfoToDate[9][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 5,
-        game: info.gameInfoToDate[9][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 6,
-        game: info.gameInfoToDate[9][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 7,
-        game: info.gameInfoToDate[9][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 8,
-        game: info.gameInfoToDate[9][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 9,
-        game: info.gameInfoToDate[9][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 10,
-        game: info.gameInfoToDate[9][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 11,
-        game: info.gameInfoToDate[9][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 12,
-        game: info.gameInfoToDate[9][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 13,
-        game: info.gameInfoToDate[9][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 14,
-        game: info.gameInfoToDate[9][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 9,
-        index: 15,
-        game: info.gameInfoToDate[9][15],
-        updateFunction
-      }))), tabValue === "10" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 0,
-        game: info.gameInfoToDate[10][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 1,
-        game: info.gameInfoToDate[10][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 2,
-        game: info.gameInfoToDate[10][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 3,
-        game: info.gameInfoToDate[10][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 4,
-        game: info.gameInfoToDate[10][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 5,
-        game: info.gameInfoToDate[10][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 6,
-        game: info.gameInfoToDate[10][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 7,
-        game: info.gameInfoToDate[10][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 8,
-        game: info.gameInfoToDate[10][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 9,
-        game: info.gameInfoToDate[10][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 10,
-        game: info.gameInfoToDate[10][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 11,
-        game: info.gameInfoToDate[10][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 12,
-        game: info.gameInfoToDate[10][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 13,
-        game: info.gameInfoToDate[10][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 14,
-        game: info.gameInfoToDate[10][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 10,
-        index: 15,
-        game: info.gameInfoToDate[10][15],
-        updateFunction
-      }))), tabValue === "11" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 0,
-        game: info.gameInfoToDate[11][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 1,
-        game: info.gameInfoToDate[11][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 2,
-        game: info.gameInfoToDate[11][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 3,
-        game: info.gameInfoToDate[11][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 4,
-        game: info.gameInfoToDate[11][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 5,
-        game: info.gameInfoToDate[11][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 6,
-        game: info.gameInfoToDate[11][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 7,
-        game: info.gameInfoToDate[11][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 8,
-        game: info.gameInfoToDate[11][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 9,
-        game: info.gameInfoToDate[11][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 10,
-        game: info.gameInfoToDate[11][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 11,
-        game: info.gameInfoToDate[11][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 12,
-        game: info.gameInfoToDate[11][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 13,
-        game: info.gameInfoToDate[11][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 14,
-        game: info.gameInfoToDate[11][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 11,
-        index: 15,
-        game: info.gameInfoToDate[11][15],
-        updateFunction
-      }))), tabValue === "12" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 0,
-        game: info.gameInfoToDate[12][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 1,
-        game: info.gameInfoToDate[12][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 2,
-        game: info.gameInfoToDate[12][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 3,
-        game: info.gameInfoToDate[12][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 4,
-        game: info.gameInfoToDate[12][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 5,
-        game: info.gameInfoToDate[12][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 6,
-        game: info.gameInfoToDate[12][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 7,
-        game: info.gameInfoToDate[12][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 8,
-        game: info.gameInfoToDate[12][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 9,
-        game: info.gameInfoToDate[12][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 10,
-        game: info.gameInfoToDate[12][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 11,
-        game: info.gameInfoToDate[12][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 12,
-        game: info.gameInfoToDate[12][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 13,
-        game: info.gameInfoToDate[12][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 14,
-        game: info.gameInfoToDate[12][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 12,
-        index: 15,
-        game: info.gameInfoToDate[12][15],
-        updateFunction
-      }))), tabValue === "13" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 0,
-        game: info.gameInfoToDate[13][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 1,
-        game: info.gameInfoToDate[13][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 2,
-        game: info.gameInfoToDate[13][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 3,
-        game: info.gameInfoToDate[13][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 4,
-        game: info.gameInfoToDate[13][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 5,
-        game: info.gameInfoToDate[13][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 6,
-        game: info.gameInfoToDate[13][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 7,
-        game: info.gameInfoToDate[13][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 8,
-        game: info.gameInfoToDate[13][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 9,
-        game: info.gameInfoToDate[13][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 10,
-        game: info.gameInfoToDate[13][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 11,
-        game: info.gameInfoToDate[13][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 12,
-        game: info.gameInfoToDate[13][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 13,
-        game: info.gameInfoToDate[13][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 14,
-        game: info.gameInfoToDate[13][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 13,
-        index: 15,
-        game: info.gameInfoToDate[13][15],
-        updateFunction
-      }))), tabValue === "14" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 0,
-        game: info.gameInfoToDate[14][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 1,
-        game: info.gameInfoToDate[14][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 2,
-        game: info.gameInfoToDate[14][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 3,
-        game: info.gameInfoToDate[14][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 4,
-        game: info.gameInfoToDate[14][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 5,
-        game: info.gameInfoToDate[14][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 6,
-        game: info.gameInfoToDate[14][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 7,
-        game: info.gameInfoToDate[14][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 8,
-        game: info.gameInfoToDate[14][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 9,
-        game: info.gameInfoToDate[14][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 10,
-        game: info.gameInfoToDate[14][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 11,
-        game: info.gameInfoToDate[14][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 12,
-        game: info.gameInfoToDate[14][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 13,
-        game: info.gameInfoToDate[14][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 14,
-        game: info.gameInfoToDate[14][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 14,
-        index: 15,
-        game: info.gameInfoToDate[14][15],
-        updateFunction
-      }))), tabValue === "15" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 0,
-        game: info.gameInfoToDate[15][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 1,
-        game: info.gameInfoToDate[15][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 2,
-        game: info.gameInfoToDate[15][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 3,
-        game: info.gameInfoToDate[15][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 4,
-        game: info.gameInfoToDate[15][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 5,
-        game: info.gameInfoToDate[15][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 6,
-        game: info.gameInfoToDate[15][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 7,
-        game: info.gameInfoToDate[15][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 8,
-        game: info.gameInfoToDate[15][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 9,
-        game: info.gameInfoToDate[15][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 10,
-        game: info.gameInfoToDate[15][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 11,
-        game: info.gameInfoToDate[15][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 12,
-        game: info.gameInfoToDate[15][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 13,
-        game: info.gameInfoToDate[15][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 14,
-        game: info.gameInfoToDate[15][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 15,
-        index: 15,
-        game: info.gameInfoToDate[15][15],
-        updateFunction
-      }))), tabValue === "16" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 0,
-        game: info.gameInfoToDate[16][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 1,
-        game: info.gameInfoToDate[16][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 2,
-        game: info.gameInfoToDate[16][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 3,
-        game: info.gameInfoToDate[16][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 4,
-        game: info.gameInfoToDate[16][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 5,
-        game: info.gameInfoToDate[16][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 6,
-        game: info.gameInfoToDate[16][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 7,
-        game: info.gameInfoToDate[16][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 8,
-        game: info.gameInfoToDate[16][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 9,
-        game: info.gameInfoToDate[16][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 10,
-        game: info.gameInfoToDate[16][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 11,
-        game: info.gameInfoToDate[16][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 12,
-        game: info.gameInfoToDate[16][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 13,
-        game: info.gameInfoToDate[16][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 14,
-        game: info.gameInfoToDate[16][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 16,
-        index: 15,
-        game: info.gameInfoToDate[16][15],
-        updateFunction
-      }))), tabValue === "17" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 0,
-        game: info.gameInfoToDate[17][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 1,
-        game: info.gameInfoToDate[17][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 2,
-        game: info.gameInfoToDate[17][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 3,
-        game: info.gameInfoToDate[17][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 4,
-        game: info.gameInfoToDate[17][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 5,
-        game: info.gameInfoToDate[17][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 6,
-        game: info.gameInfoToDate[17][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 7,
-        game: info.gameInfoToDate[17][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 8,
-        game: info.gameInfoToDate[17][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 9,
-        game: info.gameInfoToDate[17][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 10,
-        game: info.gameInfoToDate[17][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 11,
-        game: info.gameInfoToDate[17][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 12,
-        game: info.gameInfoToDate[17][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 13,
-        game: info.gameInfoToDate[17][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 14,
-        game: info.gameInfoToDate[17][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 17,
-        index: 15,
-        game: info.gameInfoToDate[17][15],
-        updateFunction
-      }))), tabValue === "18" && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 0,
-        game: info.gameInfoToDate[18][0],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 1,
-        game: info.gameInfoToDate[18][1],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 2,
-        game: info.gameInfoToDate[18][2],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 3,
-        game: info.gameInfoToDate[18][3],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 4,
-        game: info.gameInfoToDate[18][4],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 5,
-        game: info.gameInfoToDate[18][5],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 6,
-        game: info.gameInfoToDate[18][6],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 7,
-        game: info.gameInfoToDate[18][7],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 8,
-        game: info.gameInfoToDate[18][8],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 9,
-        game: info.gameInfoToDate[18][9],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 10,
-        game: info.gameInfoToDate[18][10],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 11,
-        game: info.gameInfoToDate[18][11],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 12,
-        game: info.gameInfoToDate[18][12],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 13,
-        game: info.gameInfoToDate[18][13],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 14,
-        game: info.gameInfoToDate[18][14],
-        updateFunction
-      })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 18
-      }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
-        week: 18,
-        index: 15,
-        game: info.gameInfoToDate[18][15],
-        updateFunction
-      }))));
-    } else {
-      return /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        container: true,
-        spacing: 1,
-        columns: 144
-      }, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
-        item: true,
-        xs: 144
-      }, /* @__PURE__ */ import_react21.default.createElement(Tabs_default, {
-        value: tabValue,
-        onChange: handleTabChange,
-        variant: "scrollable",
-        scrollButtons: true,
-        textColor: "secondary",
-        indicatorColor: "secondary"
-      }, /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 1",
-        value: "1"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 2",
-        value: "2"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 3",
-        value: "3"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 4",
-        value: "4"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 5",
-        value: "5"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 6",
-        value: "6"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 7",
-        value: "7"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 8",
-        value: "8"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 9",
-        value: "9"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 10",
-        value: "10"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 11",
-        value: "11"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 12",
-        value: "12"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 13",
-        value: "13"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 14",
-        value: "14"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 15",
-        value: "15"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 16",
-        value: "16"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 17",
-        value: "17"
-      }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
-        label: "Week 18",
-        value: "18"
-      }))));
-    }
+    return /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      container: true,
+      spacing: 1,
+      columns: 144
+    }, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 144
+    }, /* @__PURE__ */ import_react21.default.createElement(Tabs_default, {
+      value: tabValue,
+      onChange: handleTabChange,
+      variant: "scrollable",
+      scrollButtons: true,
+      textColor: "secondary",
+      indicatorColor: "secondary"
+    }, /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 1",
+      value: "1"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 2",
+      value: "2"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 3",
+      value: "3"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 4",
+      value: "4"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 5",
+      value: "5"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 6",
+      value: "6"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 7",
+      value: "7"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 8",
+      value: "8"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 9",
+      value: "9"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 10",
+      value: "10"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 11",
+      value: "11"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 12",
+      value: "12"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 13",
+      value: "13"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 14",
+      value: "14"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 15",
+      value: "15"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 16",
+      value: "16"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 17",
+      value: "17"
+    }), /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
+      label: "Week 18",
+      value: "18"
+    }))), tabValue === "1" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 0,
+      game: gameInfo[1][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 1,
+      game: gameInfo[1][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 2,
+      game: gameInfo[1][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 3,
+      game: gameInfo[1][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 4,
+      game: gameInfo[1][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 5,
+      game: gameInfo[1][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 6,
+      game: gameInfo[1][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 7,
+      game: gameInfo[1][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 8,
+      game: gameInfo[1][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 9,
+      game: gameInfo[1][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 10,
+      game: gameInfo[1][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 11,
+      game: gameInfo[1][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 12,
+      game: gameInfo[1][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 13,
+      game: gameInfo[1][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 14,
+      game: gameInfo[1][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 1,
+      index: 15,
+      game: gameInfo[1][15],
+      updateFunction
+    }))), tabValue === "2" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 0,
+      game: gameInfo[2][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 1,
+      game: gameInfo[2][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 2,
+      game: gameInfo[2][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 3,
+      game: gameInfo[2][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 4,
+      game: gameInfo[2][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 5,
+      game: gameInfo[2][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 6,
+      game: gameInfo[2][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 7,
+      game: gameInfo[2][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 8,
+      game: gameInfo[2][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 9,
+      game: gameInfo[2][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 10,
+      game: gameInfo[2][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 11,
+      game: gameInfo[2][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 12,
+      game: gameInfo[2][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 13,
+      game: gameInfo[2][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 14,
+      game: gameInfo[2][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 2,
+      index: 15,
+      game: gameInfo[2][15],
+      updateFunction
+    }))), tabValue === "3" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 0,
+      game: gameInfo[3][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 1,
+      game: gameInfo[3][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 2,
+      game: gameInfo[3][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 3,
+      game: gameInfo[3][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 4,
+      game: gameInfo[3][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 5,
+      game: gameInfo[3][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 6,
+      game: gameInfo[3][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 7,
+      game: gameInfo[3][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 8,
+      game: gameInfo[3][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 9,
+      game: gameInfo[3][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 10,
+      game: gameInfo[3][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 11,
+      game: gameInfo[3][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 12,
+      game: gameInfo[3][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 13,
+      game: gameInfo[3][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 14,
+      game: gameInfo[3][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 3,
+      index: 15,
+      game: gameInfo[3][15],
+      updateFunction
+    }))), tabValue === "4" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 0,
+      game: gameInfo[2][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 1,
+      game: gameInfo[4][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 2,
+      game: gameInfo[4][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 3,
+      game: gameInfo[4][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 4,
+      game: gameInfo[4][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 5,
+      game: gameInfo[4][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 6,
+      game: gameInfo[4][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 7,
+      game: gameInfo[4][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 8,
+      game: gameInfo[4][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 9,
+      game: gameInfo[4][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 10,
+      game: gameInfo[4][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 11,
+      game: gameInfo[4][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 12,
+      game: gameInfo[4][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 13,
+      game: gameInfo[4][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 14,
+      game: gameInfo[4][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 4,
+      index: 15,
+      game: gameInfo[4][15],
+      updateFunction
+    }))), tabValue === "5" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 0,
+      game: gameInfo[5][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 1,
+      game: gameInfo[5][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 2,
+      game: gameInfo[5][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 3,
+      game: gameInfo[5][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 4,
+      game: gameInfo[5][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 5,
+      game: gameInfo[5][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 6,
+      game: gameInfo[5][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 7,
+      game: gameInfo[5][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 8,
+      game: gameInfo[5][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 9,
+      game: gameInfo[5][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 10,
+      game: gameInfo[5][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 11,
+      game: gameInfo[5][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 12,
+      game: gameInfo[5][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 13,
+      game: gameInfo[5][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 14,
+      game: gameInfo[5][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 5,
+      index: 15,
+      game: gameInfo[5][15],
+      updateFunction
+    }))), tabValue === "6" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 0,
+      game: gameInfo[6][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 1,
+      game: gameInfo[6][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 2,
+      game: gameInfo[6][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 3,
+      game: gameInfo[6][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 4,
+      game: gameInfo[6][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 5,
+      game: gameInfo[6][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 6,
+      game: gameInfo[6][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 7,
+      game: gameInfo[6][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 8,
+      game: gameInfo[6][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 9,
+      game: gameInfo[6][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 10,
+      game: gameInfo[6][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 11,
+      game: gameInfo[6][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 12,
+      game: gameInfo[6][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 13,
+      game: gameInfo[6][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 14,
+      game: gameInfo[6][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 6,
+      index: 15,
+      game: gameInfo[6][15],
+      updateFunction
+    }))), tabValue === "7" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 0,
+      game: gameInfo[6][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 1,
+      game: gameInfo[7][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 2,
+      game: gameInfo[7][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 3,
+      game: gameInfo[7][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 4,
+      game: gameInfo[7][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 5,
+      game: gameInfo[7][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 6,
+      game: gameInfo[7][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 7,
+      game: gameInfo[7][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 8,
+      game: gameInfo[7][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 9,
+      game: gameInfo[7][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 10,
+      game: gameInfo[7][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 11,
+      game: gameInfo[7][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 12,
+      game: gameInfo[7][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 13,
+      game: gameInfo[7][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 14,
+      game: gameInfo[7][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 7,
+      index: 15,
+      game: gameInfo[7][15],
+      updateFunction
+    }))), tabValue === "8" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 0,
+      game: gameInfo[8][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 1,
+      game: gameInfo[8][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 2,
+      game: gameInfo[8][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 3,
+      game: gameInfo[8][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 4,
+      game: gameInfo[8][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 5,
+      game: gameInfo[8][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 6,
+      game: gameInfo[8][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 7,
+      game: gameInfo[8][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 8,
+      game: gameInfo[8][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 9,
+      game: gameInfo[8][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 10,
+      game: gameInfo[8][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 11,
+      game: gameInfo[8][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 12,
+      game: gameInfo[8][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 13,
+      game: gameInfo[8][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 14,
+      game: gameInfo[8][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 8,
+      index: 15,
+      game: gameInfo[8][15],
+      updateFunction
+    }))), tabValue === "9" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 0,
+      game: gameInfo[9][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 1,
+      game: gameInfo[9][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 2,
+      game: gameInfo[9][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 3,
+      game: gameInfo[9][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 4,
+      game: gameInfo[9][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 5,
+      game: gameInfo[9][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 6,
+      game: gameInfo[9][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 7,
+      game: gameInfo[9][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 8,
+      game: gameInfo[9][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 9,
+      game: gameInfo[9][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 10,
+      game: gameInfo[9][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 11,
+      game: gameInfo[9][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 12,
+      game: gameInfo[9][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 13,
+      game: gameInfo[9][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 14,
+      game: gameInfo[9][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 9,
+      index: 15,
+      game: gameInfo[9][15],
+      updateFunction
+    }))), tabValue === "10" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 0,
+      game: gameInfo[10][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 1,
+      game: gameInfo[10][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 2,
+      game: gameInfo[10][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 3,
+      game: gameInfo[10][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 4,
+      game: gameInfo[10][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 5,
+      game: gameInfo[10][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 6,
+      game: gameInfo[10][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 7,
+      game: gameInfo[10][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 8,
+      game: gameInfo[10][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 9,
+      game: gameInfo[10][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 10,
+      game: gameInfo[10][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 11,
+      game: gameInfo[10][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 12,
+      game: gameInfo[10][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 13,
+      game: gameInfo[10][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 14,
+      game: gameInfo[10][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 10,
+      index: 15,
+      game: gameInfo[10][15],
+      updateFunction
+    }))), tabValue === "11" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 0,
+      game: gameInfo[11][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 1,
+      game: gameInfo[11][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 2,
+      game: gameInfo[11][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 3,
+      game: gameInfo[11][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 4,
+      game: gameInfo[11][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 5,
+      game: gameInfo[11][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 6,
+      game: gameInfo[11][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 7,
+      game: gameInfo[11][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 8,
+      game: gameInfo[11][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 9,
+      game: gameInfo[11][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 10,
+      game: gameInfo[11][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 11,
+      game: gameInfo[11][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 12,
+      game: gameInfo[11][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 13,
+      game: gameInfo[11][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 14,
+      game: gameInfo[11][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 11,
+      index: 15,
+      game: gameInfo[11][15],
+      updateFunction
+    }))), tabValue === "12" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 0,
+      game: gameInfo[12][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 1,
+      game: gameInfo[12][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 2,
+      game: gameInfo[12][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 3,
+      game: gameInfo[12][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 4,
+      game: gameInfo[12][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 5,
+      game: gameInfo[12][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 6,
+      game: gameInfo[12][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 7,
+      game: gameInfo[12][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 8,
+      game: gameInfo[12][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 9,
+      game: gameInfo[12][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 10,
+      game: gameInfo[12][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 11,
+      game: gameInfo[12][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 12,
+      game: gameInfo[12][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 13,
+      game: gameInfo[12][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 14,
+      game: gameInfo[12][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 12,
+      index: 15,
+      game: gameInfo[12][15],
+      updateFunction
+    }))), tabValue === "13" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 0,
+      game: gameInfo[13][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 1,
+      game: gameInfo[13][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 2,
+      game: gameInfo[13][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 3,
+      game: gameInfo[13][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 4,
+      game: gameInfo[13][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 5,
+      game: gameInfo[13][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 6,
+      game: gameInfo[13][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 7,
+      game: gameInfo[13][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 8,
+      game: gameInfo[13][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 9,
+      game: gameInfo[13][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 10,
+      game: gameInfo[13][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 11,
+      game: gameInfo[13][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 12,
+      game: gameInfo[13][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 13,
+      game: gameInfo[13][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 14,
+      game: gameInfo[13][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 13,
+      index: 15,
+      game: gameInfo[13][15],
+      updateFunction
+    }))), tabValue === "14" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 0,
+      game: gameInfo[14][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 1,
+      game: gameInfo[14][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 2,
+      game: gameInfo[14][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 3,
+      game: gameInfo[14][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 4,
+      game: gameInfo[14][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 5,
+      game: gameInfo[14][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 6,
+      game: gameInfo[14][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 7,
+      game: gameInfo[14][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 8,
+      game: gameInfo[14][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 9,
+      game: gameInfo[14][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 10,
+      game: gameInfo[14][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 11,
+      game: gameInfo[14][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 12,
+      game: gameInfo[14][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 13,
+      game: gameInfo[14][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 14,
+      game: gameInfo[14][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 14,
+      index: 15,
+      game: gameInfo[14][15],
+      updateFunction
+    }))), tabValue === "15" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 0,
+      game: gameInfo[15][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 1,
+      game: gameInfo[15][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 2,
+      game: gameInfo[15][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 3,
+      game: gameInfo[15][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 4,
+      game: gameInfo[15][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 5,
+      game: gameInfo[15][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 6,
+      game: gameInfo[15][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 7,
+      game: gameInfo[15][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 8,
+      game: gameInfo[15][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 9,
+      game: gameInfo[15][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 10,
+      game: gameInfo[15][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 11,
+      game: gameInfo[15][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 12,
+      game: gameInfo[15][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 13,
+      game: gameInfo[15][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 14,
+      game: gameInfo[15][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 15,
+      index: 15,
+      game: gameInfo[15][15],
+      updateFunction
+    }))), tabValue === "16" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 0,
+      game: gameInfo[16][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 1,
+      game: gameInfo[16][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 2,
+      game: gameInfo[16][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 3,
+      game: gameInfo[16][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 4,
+      game: gameInfo[16][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 5,
+      game: gameInfo[16][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 6,
+      game: gameInfo[16][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 7,
+      game: gameInfo[16][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 8,
+      game: gameInfo[16][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 9,
+      game: gameInfo[16][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 10,
+      game: gameInfo[16][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 11,
+      game: gameInfo[16][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 12,
+      game: gameInfo[16][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 13,
+      game: gameInfo[16][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 14,
+      game: gameInfo[16][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 16,
+      index: 15,
+      game: gameInfo[16][15],
+      updateFunction
+    }))), tabValue === "17" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 0,
+      game: gameInfo[17][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 1,
+      game: gameInfo[17][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 2,
+      game: gameInfo[17][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 3,
+      game: gameInfo[17][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 4,
+      game: gameInfo[17][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 5,
+      game: gameInfo[17][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 6,
+      game: gameInfo[17][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 7,
+      game: gameInfo[17][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 8,
+      game: gameInfo[17][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 9,
+      game: gameInfo[17][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 10,
+      game: gameInfo[17][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 11,
+      game: gameInfo[17][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 12,
+      game: gameInfo[17][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 13,
+      game: gameInfo[17][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 14,
+      game: gameInfo[17][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 17,
+      index: 15,
+      game: gameInfo[17][15],
+      updateFunction
+    }))), tabValue === "18" && gameInfo.length !== 0 && /* @__PURE__ */ import_react21.default.createElement(import_react21.default.Fragment, null, /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 0,
+      game: gameInfo[18][0],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 1,
+      game: gameInfo[18][1],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 2,
+      game: gameInfo[18][2],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 3,
+      game: gameInfo[18][3],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 4,
+      game: gameInfo[18][4],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 5,
+      game: gameInfo[18][5],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 6,
+      game: gameInfo[18][6],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 7,
+      game: gameInfo[18][7],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 8,
+      game: gameInfo[18][8],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 9,
+      game: gameInfo[18][9],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 10,
+      game: gameInfo[18][10],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 11,
+      game: gameInfo[18][11],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 12,
+      game: gameInfo[18][12],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 13,
+      game: gameInfo[18][13],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 14,
+      game: gameInfo[18][14],
+      updateFunction
+    })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
+      item: true,
+      xs: 18
+    }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
+      week: 18,
+      index: 15,
+      game: gameInfo[18][15],
+      updateFunction
+    }))));
   }
   RegularSeasonGamesTable.propTypes = {};
 
   // src/components/Standings/DivisionStandingsTable.jsx
-  var import_react24 = __toESM(require_react(), 1);
+  var import_react25 = __toESM(require_react(), 1);
 
   // src/components/Standings/DivisionStandings.jsx
-  var import_react22 = __toESM(require_react(), 1);
   var import_react23 = __toESM(require_react(), 1);
+  var import_react24 = __toESM(require_react(), 1);
   function DivisionStandings(props) {
     const { conference, division, info } = props;
-    const [divisionStandings, setDivisionStandings] = (0, import_react23.useState)([]);
-    (0, import_react23.useEffect)(() => {
+    const [divisionStandings, setDivisionStandings] = (0, import_react24.useState)([]);
+    (0, import_react24.useEffect)(() => {
       if (conference === "AFC") {
         if (division === "North") {
           setDivisionStandings(JSON.parse(info).afcNorthStandings);
@@ -40780,30 +40713,30 @@ const theme2 = createTheme({ palette: {
         }
       }
     }, [info]);
-    return /* @__PURE__ */ import_react22.default.createElement(Table_default, {
+    return /* @__PURE__ */ import_react23.default.createElement(Table_default, {
       size: "small"
-    }, /* @__PURE__ */ import_react22.default.createElement(TableHead_default, null, /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+    }, /* @__PURE__ */ import_react23.default.createElement(TableHead_default, null, /* @__PURE__ */ import_react23.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       xs: 2,
       sx: { p: 0, pt: 2, px: 0.25, fontWeight: "bold" }
-    }, conference, " ", division), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+    }, conference, " ", division), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0, pt: 2, px: 0.25, fontWeight: "bold" }
-    }, "RECORD"))), /* @__PURE__ */ import_react22.default.createElement(TableBody_default, null, /* @__PURE__ */ import_react22.default.createElement(TableRow_default, {
+    }, "RECORD"))), /* @__PURE__ */ import_react23.default.createElement(TableBody_default, null, /* @__PURE__ */ import_react23.default.createElement(TableRow_default, {
       sx: { p: 0, m: 0 }
-    }, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+    }, /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[0].location : ""), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[0].location : ""), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[0].overallRecord[0] + "-" + divisionStandings[0].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[0].overallRecord[2] !== 0 ? "-" + divisionStandings[0].overallRecord[2] : "")), /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[0].overallRecord[0] + "-" + divisionStandings[0].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[0].overallRecord[2] !== 0 ? "-" + divisionStandings[0].overallRecord[2] : "")), /* @__PURE__ */ import_react23.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[1].location : ""), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[1].location : ""), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[1].overallRecord[0] + "-" + divisionStandings[1].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[1].overallRecord[2] !== 0 ? "-" + divisionStandings[1].overallRecord[2] : "")), /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[1].overallRecord[0] + "-" + divisionStandings[1].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[1].overallRecord[2] !== 0 ? "-" + divisionStandings[1].overallRecord[2] : "")), /* @__PURE__ */ import_react23.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[2].location : ""), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[2].location : ""), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[2].overallRecord[0] + "-" + divisionStandings[2].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[2].overallRecord[2] !== 0 ? "-" + divisionStandings[2].overallRecord[2] : "")), /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[2].overallRecord[0] + "-" + divisionStandings[2].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[2].overallRecord[2] !== 0 ? "-" + divisionStandings[2].overallRecord[2] : "")), /* @__PURE__ */ import_react23.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[3].location : ""), /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[3].location : ""), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
     }, divisionStandings.length !== 0 ? divisionStandings[3].overallRecord[0] + "-" + divisionStandings[3].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[3].overallRecord[2] !== 0 ? "-" + divisionStandings[3].overallRecord[2] : ""))));
   }
@@ -40812,26 +40745,26 @@ const theme2 = createTheme({ palette: {
   // src/components/Standings/DivisionStandingsTable.jsx
   function DivisionStandingsTable(props) {
     const { conference, info } = props;
-    return /* @__PURE__ */ import_react24.default.createElement(import_react24.default.Fragment, null, /* @__PURE__ */ import_react24.default.createElement(Box_default, {
+    return /* @__PURE__ */ import_react25.default.createElement(import_react25.default.Fragment, null, /* @__PURE__ */ import_react25.default.createElement(Box_default, {
       sx: { flexGrow: 1, display: "flex", height: 124 }
-    }, /* @__PURE__ */ import_react24.default.createElement(Tabs_default, {
+    }, /* @__PURE__ */ import_react25.default.createElement(Tabs_default, {
       orientation: "vertical",
       spacing: 1,
       variant: "scrollable",
       sx: { flexGrow: 1, display: "flex" }
-    }, /* @__PURE__ */ import_react24.default.createElement(DivisionStandings, {
+    }, /* @__PURE__ */ import_react25.default.createElement(DivisionStandings, {
       conference,
       division: "North",
       info
-    }), /* @__PURE__ */ import_react24.default.createElement(DivisionStandings, {
+    }), /* @__PURE__ */ import_react25.default.createElement(DivisionStandings, {
       conference,
       division: "South",
       info
-    }), /* @__PURE__ */ import_react24.default.createElement(DivisionStandings, {
+    }), /* @__PURE__ */ import_react25.default.createElement(DivisionStandings, {
       conference,
       division: "East",
       info
-    }), /* @__PURE__ */ import_react24.default.createElement(DivisionStandings, {
+    }), /* @__PURE__ */ import_react25.default.createElement(DivisionStandings, {
       conference,
       division: "West",
       info
@@ -40840,18 +40773,18 @@ const theme2 = createTheme({ palette: {
   DivisionStandings.propTypes = {};
 
   // src/components/PlayoffGames/AFCPlayoffSeeds.jsx
-  var import_react32 = __toESM(require_react(), 1);
+  var import_react33 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/AFCByeContainer.jsx
-  var import_react27 = __toESM(require_react(), 1);
+  var import_react28 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/TeamInfoLeft.jsx
-  var import_react25 = __toESM(require_react(), 1);
   var import_react26 = __toESM(require_react(), 1);
+  var import_react27 = __toESM(require_react(), 1);
   function TeamInfoLeft(props) {
     const { conference, seedNumber, seedString, info } = props;
-    const [teamInfo, getTeamInfo] = (0, import_react26.useState)(null);
-    (0, import_react26.useEffect)(() => {
+    const [teamInfo, getTeamInfo] = (0, import_react27.useState)(null);
+    (0, import_react27.useEffect)(() => {
       if (conference === "AFC") {
         if (seedNumber <= 4) {
           getTeamInfo(JSON.parse(info).afcDivisionChamps[seedNumber - 1]);
@@ -40866,39 +40799,39 @@ const theme2 = createTheme({ palette: {
         }
       }
     }, [info]);
-    return /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
       container: true,
       columns: 24,
       alignItems: "center"
-    }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
       item: true,
       xs: 7
-    }, teamInfo && /* @__PURE__ */ import_react25.default.createElement("img", {
+    }, teamInfo && /* @__PURE__ */ import_react26.default.createElement("img", {
       src: teamInfo.url,
       alt: "TODO",
       className: "col-12"
-    })), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
       item: true,
       xs: 17,
       sx: { pl: 1 }
-    }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
       item: true,
       xs: 17
-    }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, {
       variant: "body2",
       align: "left"
-    }, seedString, " Seed")), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, seedString, " Seed")), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
       item: true,
       xs: 17
-    }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, {
       variant: "body2",
       align: "left"
-    }, teamInfo && teamInfo.location)), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+    }, teamInfo && teamInfo.location)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
       item: true,
       xs: 17
-    }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, {
       variant: "body2",
       align: "left"
     }, teamInfo && "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1], teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + getTeamInfo.overallRecord[2])))));
@@ -40907,39 +40840,39 @@ const theme2 = createTheme({ palette: {
   // src/components/PlayoffGames/AFCByeContainer.jsx
   function AFCByeContainer(props) {
     const { info } = props;
-    return /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react28.default.createElement(Typography_default, {
       variant: "h4",
       align: "right",
       sx: { px: 1 }
-    }, "AFC")), /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
+    }, "AFC")), /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react28.default.createElement(Typography_default, {
       variant: "body2",
       align: "left",
       sx: { px: 1 }
-    }, "FIRST-ROUND BYE")), /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
+    }, "FIRST-ROUND BYE")), /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { p: 0 }
-    }, /* @__PURE__ */ import_react27.default.createElement(Card_default, {
+    }, /* @__PURE__ */ import_react28.default.createElement(Card_default, {
       variant: "outlined",
       sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
       container: true,
       columns: 18,
       alignItems: "center"
-    }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
       item: true,
       xs: 8
-    }, /* @__PURE__ */ import_react27.default.createElement(TeamInfoLeft, {
+    }, /* @__PURE__ */ import_react28.default.createElement(TeamInfoLeft, {
       conference: "AFC",
       seedNumber: 1,
       seedString: "1st",
@@ -40948,18 +40881,18 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/PlayoffGames/AFCWildCardContainer.jsx
-  var import_react31 = __toESM(require_react(), 1);
+  var import_react32 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/PlayoffGame.jsx
-  var import_react30 = __toESM(require_react(), 1);
+  var import_react31 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/TeamInfoRight.jsx
-  var import_react28 = __toESM(require_react(), 1);
   var import_react29 = __toESM(require_react(), 1);
+  var import_react30 = __toESM(require_react(), 1);
   function TeamInfoRight(props) {
     const { conference, seedNumber, seedString, info } = props;
-    const [teamInfo, getTeamInfo] = (0, import_react29.useState)(null);
-    (0, import_react29.useEffect)(() => {
+    const [teamInfo, getTeamInfo] = (0, import_react30.useState)(null);
+    (0, import_react30.useEffect)(() => {
       if (conference === "AFC") {
         if (seedNumber <= 4) {
           getTeamInfo(JSON.parse(info).afcDivisionChamps[seedNumber - 1]);
@@ -40974,38 +40907,38 @@ const theme2 = createTheme({ palette: {
         }
       }
     }, [info]);
-    return /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
       container: true,
       columns: 24,
       alignItems: "center"
-    }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
       item: true,
       xs: 17,
       sx: { pr: 1 }
-    }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
       item: true,
       xs: 17
-    }, /* @__PURE__ */ import_react28.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react29.default.createElement(Typography_default, {
       variant: "body2",
       align: "right"
-    }, seedString, " Seed")), /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+    }, seedString, " Seed")), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
       item: true,
       xs: 17
-    }, /* @__PURE__ */ import_react28.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react29.default.createElement(Typography_default, {
       variant: "body2",
       align: "right"
-    }, teamInfo && teamInfo.location)), /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+    }, teamInfo && teamInfo.location)), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
       item: true,
       xs: 17
-    }, /* @__PURE__ */ import_react28.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react29.default.createElement(Typography_default, {
       variant: "body2",
       align: "right"
-    }, teamInfo && "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1], teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + getTeamInfo.overallRecord[2])))), /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+    }, teamInfo && "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1], teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + getTeamInfo.overallRecord[2])))), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
       item: true,
       xs: 7
-    }, teamInfo && /* @__PURE__ */ import_react28.default.createElement("img", {
+    }, teamInfo && /* @__PURE__ */ import_react29.default.createElement("img", {
       src: teamInfo.url,
       alt: "TODO",
       className: "col-12"
@@ -41015,31 +40948,31 @@ const theme2 = createTheme({ palette: {
   // src/components/PlayoffGames/PlayoffGame.jsx
   function PlayoffGame(props) {
     const { conference, leftSeedNumber, leftSeedString, rightSeedNumber, rightSeedString, info } = props;
-    return /* @__PURE__ */ import_react30.default.createElement(Card_default, {
+    return /* @__PURE__ */ import_react31.default.createElement(Card_default, {
       variant: "outlined",
       sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react30.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
       container: true,
       columns: 18,
       alignItems: "center"
-    }, /* @__PURE__ */ import_react30.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
       item: true,
       xs: 8
-    }, /* @__PURE__ */ import_react30.default.createElement(TeamInfoLeft, {
+    }, /* @__PURE__ */ import_react31.default.createElement(TeamInfoLeft, {
       conference,
       seedNumber: leftSeedNumber,
       seedString: leftSeedString,
       info
-    })), /* @__PURE__ */ import_react30.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
       item: true,
       xs: 2,
       sx: { px: 1.25 }
-    }, /* @__PURE__ */ import_react30.default.createElement(AlternateEmail_default, {
+    }, /* @__PURE__ */ import_react31.default.createElement(AlternateEmail_default, {
       sx: { width: "100%" }
-    })), /* @__PURE__ */ import_react30.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
       item: true,
       xs: 8
-    }, /* @__PURE__ */ import_react30.default.createElement(TeamInfoRight, {
+    }, /* @__PURE__ */ import_react31.default.createElement(TeamInfoRight, {
       conference,
       seedNumber: rightSeedNumber,
       seedString: rightSeedString,
@@ -41050,41 +40983,41 @@ const theme2 = createTheme({ palette: {
   // src/components/PlayoffGames/AFCWildCardContainer.jsx
   function AFCWildCardContainer(props) {
     const { info } = props;
-    return /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react31.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react32.default.createElement(Typography_default, {
       variant: "body2",
       sx: { px: 1 }
-    }, "WILD-CARD GAMES")), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, "WILD-CARD GAMES")), /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pb: 1 }
-    }, /* @__PURE__ */ import_react31.default.createElement(PlayoffGame, {
+    }, /* @__PURE__ */ import_react32.default.createElement(PlayoffGame, {
       conference: "AFC",
       leftSeedNumber: 7,
       leftSeedString: "7th",
       rightSeedNumber: 2,
       rightSeedString: "2nd",
       info
-    })), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pb: 1 }
-    }, /* @__PURE__ */ import_react31.default.createElement(PlayoffGame, {
+    }, /* @__PURE__ */ import_react32.default.createElement(PlayoffGame, {
       conference: "AFC",
       leftSeedNumber: 6,
       leftSeedString: "6th",
       rightSeedNumber: 3,
       rightSeedString: "3rd",
       info
-    })), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react31.default.createElement(PlayoffGame, {
+    }, /* @__PURE__ */ import_react32.default.createElement(PlayoffGame, {
       conference: "AFC",
       leftSeedNumber: 5,
       leftSeedString: "5th",
@@ -41097,76 +41030,29 @@ const theme2 = createTheme({ palette: {
   // src/components/PlayoffGames/AFCPlayoffSeeds.jsx
   function AFCPlayoffSeeds(props) {
     const { info } = props;
-    return /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
       container: true,
       spacing: 2
-    }, /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react32.default.createElement(AFCByeContainer, {
+    }, /* @__PURE__ */ import_react33.default.createElement(AFCByeContainer, {
       info
-    })), /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react32.default.createElement(AFCWildCardContainer, {
+    }, /* @__PURE__ */ import_react33.default.createElement(AFCWildCardContainer, {
       info
     })));
   }
   AFCPlayoffSeeds.propTypes = {};
 
   // src/components/PlayoffGames/NFCPlayoffSeeds.jsx
-  var import_react35 = __toESM(require_react(), 1);
+  var import_react36 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/NFCByeContainer.jsx
-  var import_react33 = __toESM(require_react(), 1);
-  function NFCByeContainer(props) {
-    const { info } = props;
-    return /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
-      container: true
-    }, /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
-      item: true,
-      xs: 12,
-      sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react33.default.createElement(Typography_default, {
-      variant: "h4",
-      align: "left",
-      sx: { px: 1 }
-    }, "NFC")), /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
-      item: true,
-      xs: 12,
-      sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react33.default.createElement(Typography_default, {
-      variant: "body2",
-      align: "right",
-      sx: { px: 1 }
-    }, "FIRST-ROUND BYE")), /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
-      item: true,
-      xs: 12,
-      sx: { px: 0, pb: 0 }
-    }, /* @__PURE__ */ import_react33.default.createElement(Card_default, {
-      variant: "outlined",
-      sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
-      container: true,
-      columns: 18,
-      alignItems: "center"
-    }, /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
-      item: true,
-      xs: 10
-    }), /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
-      item: true,
-      xs: 8
-    }, /* @__PURE__ */ import_react33.default.createElement(TeamInfoRight, {
-      conference: "NFC",
-      seedNumber: 1,
-      seedString: "1st",
-      info
-    }))))));
-  }
-
-  // src/components/PlayoffGames/NFCWildCardContainer.jsx
   var import_react34 = __toESM(require_react(), 1);
-  function NFCWildCardContainer(props) {
+  function NFCByeContainer(props) {
     const { info } = props;
     return /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
       container: true
@@ -41175,35 +41061,82 @@ const theme2 = createTheme({ palette: {
       xs: 12,
       sx: { pt: 0 }
     }, /* @__PURE__ */ import_react34.default.createElement(Typography_default, {
+      variant: "h4",
+      align: "left",
+      sx: { px: 1 }
+    }, "NFC")), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+      item: true,
+      xs: 12,
+      sx: { pt: 0 }
+    }, /* @__PURE__ */ import_react34.default.createElement(Typography_default, {
       variant: "body2",
       align: "right",
       sx: { px: 1 }
-    }, "WILD-CARD GAMES")), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+    }, "FIRST-ROUND BYE")), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+      item: true,
+      xs: 12,
+      sx: { px: 0, pb: 0 }
+    }, /* @__PURE__ */ import_react34.default.createElement(Card_default, {
+      variant: "outlined",
+      sx: { bgcolor: "#eeeeee" }
+    }, /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+      container: true,
+      columns: 18,
+      alignItems: "center"
+    }, /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+      item: true,
+      xs: 10
+    }), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+      item: true,
+      xs: 8
+    }, /* @__PURE__ */ import_react34.default.createElement(TeamInfoRight, {
+      conference: "NFC",
+      seedNumber: 1,
+      seedString: "1st",
+      info
+    }))))));
+  }
+
+  // src/components/PlayoffGames/NFCWildCardContainer.jsx
+  var import_react35 = __toESM(require_react(), 1);
+  function NFCWildCardContainer(props) {
+    const { info } = props;
+    return /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
+      container: true
+    }, /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
+      item: true,
+      xs: 12,
+      sx: { pt: 0 }
+    }, /* @__PURE__ */ import_react35.default.createElement(Typography_default, {
+      variant: "body2",
+      align: "right",
+      sx: { px: 1 }
+    }, "WILD-CARD GAMES")), /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pb: 1 }
-    }, /* @__PURE__ */ import_react34.default.createElement(PlayoffGame, {
+    }, /* @__PURE__ */ import_react35.default.createElement(PlayoffGame, {
       conference: "NFC",
       leftSeedNumber: "7",
       leftSeedString: "7th",
       rightSeedNumber: 2,
       rightSeedString: "2nd",
       info
-    })), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pb: 1 }
-    }, /* @__PURE__ */ import_react34.default.createElement(PlayoffGame, {
+    }, /* @__PURE__ */ import_react35.default.createElement(PlayoffGame, {
       conference: "NFC",
       leftSeedNumber: "6",
       leftSeedString: "6th",
       rightSeedNumber: 3,
       rightSeedString: "3rd",
       info
-    })), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react34.default.createElement(PlayoffGame, {
+    }, /* @__PURE__ */ import_react35.default.createElement(PlayoffGame, {
       conference: "NFC",
       leftSeedNumber: "5",
       leftSeedString: "5th",
@@ -41216,53 +41149,30 @@ const theme2 = createTheme({ palette: {
   // src/components/PlayoffGames/NFCPlayoffSeeds.jsx
   function NFCPlayoffSeeds(props) {
     const { info } = props;
-    return /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
       container: true,
       spacing: 2
-    }, /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react35.default.createElement(NFCByeContainer, {
+    }, /* @__PURE__ */ import_react36.default.createElement(NFCByeContainer, {
       info
-    })), /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react35.default.createElement(NFCWildCardContainer, {
+    }, /* @__PURE__ */ import_react36.default.createElement(NFCWildCardContainer, {
       info
     })));
   }
   NFCPlayoffSeeds.propTypes = {};
 
   // src/Simulator.jsx
-  var import_react37 = __toESM(require_react(), 1);
+  var import_react38 = __toESM(require_react(), 1);
   function Simulator(props) {
     const defaultInfo = {
       version: "1.0",
       time: "",
-      teamInfoToDate: {
-        "ARI": {
-          location: "Arizona",
-          abbreviation: "ARI",
-          alternateName: null,
-          conference: "NFC",
-          division: "West",
-          overallRecord: [],
-          conferenceRecord: [],
-          divisionRecord: [],
-          games: []
-        },
-        "ATL": {
-          location: "Atlanta",
-          abbreviation: "ATL",
-          alternateName: null,
-          conference: "NFC",
-          division: "South",
-          overallRecord: [],
-          conferenceRecord: [],
-          divisionRecord: [],
-          games: []
-        }
-      },
+      teamInfoToDate: {},
       gameInfoToDate: [],
       nfcEastStandings: [],
       nfcNorthStandings: [],
@@ -41277,15 +41187,13 @@ const theme2 = createTheme({ palette: {
       afcDivisionChamps: [],
       afcWildCardTeams: []
     };
-    const [initialInfo, setInitialInfo] = (0, import_react37.useState)(null);
-    const [customizedInfo, setCustomizedInfo] = (0, import_react37.useState)(null);
-    const [jsonString, setJsonString] = (0, import_react37.useState)(JSON.stringify(defaultInfo));
+    const [initialInfo, setInitialInfo] = (0, import_react38.useState)(JSON.stringify(defaultInfo));
+    const [customizedInfo, setCustomizedInfo] = (0, import_react38.useState)(JSON.stringify(defaultInfo));
     const year = 2022;
-    import_react36.default.useEffect(() => {
+    import_react37.default.useEffect(() => {
       import_axios.default.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod?year=${year}`).then((response) => {
-        setInitialInfo(response.data.body);
-        setCustomizedInfo(response.data.body);
-        setJsonString(JSON.stringify(response.data.body));
+        setInitialInfo(JSON.stringify(response.data.body));
+        setCustomizedInfo(JSON.stringify(response.data.body));
       }).catch((error) => {
         alert("Failed to retrieve lambda data");
         console.error("Failed to retrieve lambda data");
@@ -41293,31 +41201,31 @@ const theme2 = createTheme({ palette: {
       });
     }, []);
     const updateCustomizedInfo = (week, index, newState) => {
-      const newCustomizedInfo = customizedInfo;
+      const newCustomizedInfo = JSON.parse(customizedInfo);
       newCustomizedInfo.gameInfoToDate[week][index].tempState = newState;
-      setCustomizedInfo(newCustomizedInfo);
+      setCustomizedInfo(JSON.stringify(newCustomizedInfo));
     };
-    return /* @__PURE__ */ import_react36.default.createElement(Container_default, {
+    return /* @__PURE__ */ import_react37.default.createElement(Container_default, {
       maxWidth: false,
       disableGutters: true,
       sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react36.default.createElement(Header, null), /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react37.default.createElement(Header, null), /* @__PURE__ */ import_react37.default.createElement(Grid_default, {
       container: true,
       spacing: 2,
       columns: 24,
       sx: { p: 2 }
-    }, /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react37.default.createElement(Grid_default, {
       item: true,
       xs: 24
-    }, /* @__PURE__ */ import_react36.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react37.default.createElement(Paper_default, {
       sx: { p: 1 }
-    }, /* @__PURE__ */ import_react36.default.createElement(RegularSeasonGamesTable, {
+    }, /* @__PURE__ */ import_react37.default.createElement(RegularSeasonGamesTable, {
       info: customizedInfo,
       updateFunction: updateCustomizedInfo
-    }))), /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
+    }))), /* @__PURE__ */ import_react37.default.createElement(Grid_default, {
       item: true,
       xs: 5
-    }, /* @__PURE__ */ import_react36.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react37.default.createElement(Paper_default, {
       xs: 12,
       sx: {
         p: 1,
@@ -41325,50 +41233,50 @@ const theme2 = createTheme({ palette: {
         flexDirection: "column",
         height: "100%"
       }
-    }, /* @__PURE__ */ import_react36.default.createElement(DivisionStandingsTable, {
+    }, /* @__PURE__ */ import_react37.default.createElement(DivisionStandingsTable, {
       conference: "AFC",
-      info: jsonString
-    }))), /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
+      info: customizedInfo
+    }))), /* @__PURE__ */ import_react37.default.createElement(Grid_default, {
       item: true,
       xs: 14
-    }, /* @__PURE__ */ import_react36.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react37.default.createElement(Paper_default, {
       sx: {
         p: 1,
         display: "flex",
         flexDirection: "column",
         height: "100%"
       }
-    }, /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react37.default.createElement(Grid_default, {
       container: true,
       spacing: 3
-    }, /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react37.default.createElement(Grid_default, {
       item: true,
       xs: 6
-    }, /* @__PURE__ */ import_react36.default.createElement(AFCPlayoffSeeds, {
-      info: jsonString
-    })), /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react37.default.createElement(AFCPlayoffSeeds, {
+      info: customizedInfo
+    })), /* @__PURE__ */ import_react37.default.createElement(Grid_default, {
       item: true,
       xs: 6
-    }, /* @__PURE__ */ import_react36.default.createElement(NFCPlayoffSeeds, {
-      info: jsonString
-    }))))), /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react37.default.createElement(NFCPlayoffSeeds, {
+      info: customizedInfo
+    }))))), /* @__PURE__ */ import_react37.default.createElement(Grid_default, {
       item: true,
       xs: 5
-    }, /* @__PURE__ */ import_react36.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react37.default.createElement(Paper_default, {
       sx: {
         p: 1,
         display: "flex",
         flexDirection: "column",
         height: "100%"
       }
-    }, /* @__PURE__ */ import_react36.default.createElement(DivisionStandingsTable, {
+    }, /* @__PURE__ */ import_react37.default.createElement(DivisionStandingsTable, {
       conference: "NFC",
-      info: jsonString
+      info: customizedInfo
     })))));
   }
 
   // src/app.jsx
-  import_react_dom.default.render(/* @__PURE__ */ import_react38.default.createElement(Simulator, null), document.getElementById("root"));
+  import_react_dom.default.render(/* @__PURE__ */ import_react39.default.createElement(Simulator, null), document.getElementById("root"));
 })();
 /*
 object-assign

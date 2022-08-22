@@ -17,30 +17,7 @@ export default function Simulator(props) {
   const defaultInfo = {
     version: "1.0",
     time: "",
-    teamInfoToDate: {
-      "ARI": {
-        location: "Arizona",
-        abbreviation: "ARI",
-        alternateName: null,
-        conference: "NFC",
-        division: "West",
-        overallRecord: [],
-        conferenceRecord: [],
-        divisionRecord: [],
-        games: []
-      },
-      "ATL": {
-        location: "Atlanta",
-        abbreviation: "ATL",
-        alternateName: null,
-        conference: "NFC",
-        division: "South",
-        overallRecord: [],
-        conferenceRecord: [],
-        divisionRecord: [],
-        games: []
-      }           
-    },
+    teamInfoToDate: {},
     gameInfoToDate: [],
     nfcEastStandings: [],
     nfcNorthStandings: [],
@@ -55,20 +32,16 @@ export default function Simulator(props) {
     afcDivisionChamps: [],
     afcWildCardTeams: []
   }
-  const [initialInfo, setInitialInfo] = useState(null);
-  const [customizedInfo, setCustomizedInfo] = useState(null);
-  const [jsonString, setJsonString] = useState(JSON.stringify(defaultInfo));
+  const [initialInfo, setInitialInfo] = useState(JSON.stringify(defaultInfo));
+  const [customizedInfo, setCustomizedInfo] = useState(JSON.stringify(defaultInfo));
 
-//set customized info is all nulls
   const year = 2022
 
   React.useEffect(() => {
     Axios.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod?year=${year}`)
     .then((response) => {
-      setInitialInfo(response.data.body)
-      setCustomizedInfo(response.data.body)
-      setJsonString(JSON.stringify(response.data.body))
-      
+      setInitialInfo(JSON.stringify(response.data.body))
+      setCustomizedInfo(JSON.stringify(response.data.body))      
     })
     .catch((error) => {
       //TODO
@@ -80,15 +53,12 @@ export default function Simulator(props) {
 
 
   const updateCustomizedInfo = (week, index, newState) => {
-    const newCustomizedInfo = customizedInfo
+    const newCustomizedInfo = JSON.parse(customizedInfo)
     newCustomizedInfo.gameInfoToDate[week][index].tempState = newState
-    setCustomizedInfo(newCustomizedInfo)
+    //newCustomizedInfo.nfcNorthStandings[0].overallRecord[0] = 12
+    //newCustomizedInfo.nfcDivisionChamps[1].overallRecord[0] = 12
+    setCustomizedInfo(JSON.stringify(newCustomizedInfo))
 
-
-    //  const newObject = JSON.parse(jsonString)
-    //  newObject.nfcNorthStandings[0].overallRecord[0] = 12
-    //  newObject.nfcDivisionChamps[1].overallRecord[0] = 12
-    //  setJsonString(JSON.stringify(newObject))
   }
 
   return (
@@ -109,7 +79,7 @@ export default function Simulator(props) {
               height: '100%'
             }}
           >
-            <DivisionStandingsTable conference="AFC" info={jsonString}/>
+            <DivisionStandingsTable conference="AFC" info={customizedInfo}/>
           </Paper>
         </Grid>
         <Grid item xs={14}>
@@ -123,11 +93,11 @@ export default function Simulator(props) {
           >
             <Grid container spacing={3} >
               <Grid item xs={6}>
-                <AFCPlayoffSeeds info={jsonString}/>
+                <AFCPlayoffSeeds info={customizedInfo}/>
               </Grid>
               <Grid item xs={6}>
                 {/* <ConferenceGamesTable /> */}
-                <NFCPlayoffSeeds info={jsonString}/>
+                <NFCPlayoffSeeds info={customizedInfo}/>
               </Grid>
             </Grid>
           </Paper>
@@ -141,7 +111,7 @@ export default function Simulator(props) {
               height: '100%'
             }}
           >
-            <DivisionStandingsTable conference="NFC" info={jsonString}/>
+            <DivisionStandingsTable conference="NFC" info={customizedInfo}/>
           </Paper>
         </Grid>        
       </Grid>
