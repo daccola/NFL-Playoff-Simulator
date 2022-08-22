@@ -109,7 +109,7 @@ export default function Simulator(props) {
               height: '100%'
             }}
           >
-            <DivisionStandingsTable conference="AFC" str={jsonString}/>
+            <DivisionStandingsTable conference="AFC" info={jsonString}/>
           </Paper>
         </Grid>
         <Grid item xs={14}>
@@ -141,7 +141,7 @@ export default function Simulator(props) {
               height: '100%'
             }}
           >
-            <DivisionStandingsTable conference="NFC" str={jsonString}/>
+            <DivisionStandingsTable conference="NFC" info={jsonString}/>
           </Paper>
         </Grid>        
       </Grid>

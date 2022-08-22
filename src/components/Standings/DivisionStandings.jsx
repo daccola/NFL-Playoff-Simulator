@@ -11,32 +11,32 @@ import { useEffect, useState} from 'react';
 
 
 export default function DivisionStandings (props) {
-  const { conference, division, str } = props
+  const { conference, division, info } = props
   const [divisionStandings, setDivisionStandings] = useState([])
 
   useEffect(() => {
     if(conference === 'AFC') {
       if(division === 'North') {
-        setDivisionStandings(JSON.parse(str).afcNorthStandings)
+        setDivisionStandings(JSON.parse(info).afcNorthStandings)
       } else if(division === 'South') {
-        setDivisionStandings(JSON.parse(str).afcSouthStandings)
+        setDivisionStandings(JSON.parse(info).afcSouthStandings)
       } else if (division === 'East') {
-        setDivisionStandings(JSON.parse(str).afcEastStandings)
+        setDivisionStandings(JSON.parse(info).afcEastStandings)
       } else if (division === 'West') {
-        setDivisionStandings(JSON.parse(str).afcWestStandings)
+        setDivisionStandings(JSON.parse(info).afcWestStandings)
       }
     } else if (conference === 'NFC') {
       if(division === 'North') {
-        setDivisionStandings(JSON.parse(str).nfcNorthStandings)
+        setDivisionStandings(JSON.parse(info).nfcNorthStandings)
       } else if(division === 'South') {
-        setDivisionStandings(JSON.parse(str).nfcSouthStandings)
+        setDivisionStandings(JSON.parse(info).nfcSouthStandings)
       } else if (division === 'East') {
-        setDivisionStandings(JSON.parse(str).nfcEastStandings)
+        setDivisionStandings(JSON.parse(info).nfcEastStandings)
       } else if (division === 'West') {
-        setDivisionStandings(JSON.parse(str).nfcWestStandings)
+        setDivisionStandings(JSON.parse(info).nfcWestStandings)
       }
     }
-  }, [str])
+  }, [info])
 
   return (
     <Table size="small" >

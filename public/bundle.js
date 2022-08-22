@@ -40755,31 +40755,31 @@ const theme2 = createTheme({ palette: {
   var import_react22 = __toESM(require_react(), 1);
   var import_react23 = __toESM(require_react(), 1);
   function DivisionStandings(props) {
-    const { conference, division, str } = props;
+    const { conference, division, info } = props;
     const [divisionStandings, setDivisionStandings] = (0, import_react23.useState)([]);
     (0, import_react23.useEffect)(() => {
       if (conference === "AFC") {
         if (division === "North") {
-          setDivisionStandings(JSON.parse(str).afcNorthStandings);
+          setDivisionStandings(JSON.parse(info).afcNorthStandings);
         } else if (division === "South") {
-          setDivisionStandings(JSON.parse(str).afcSouthStandings);
+          setDivisionStandings(JSON.parse(info).afcSouthStandings);
         } else if (division === "East") {
-          setDivisionStandings(JSON.parse(str).afcEastStandings);
+          setDivisionStandings(JSON.parse(info).afcEastStandings);
         } else if (division === "West") {
-          setDivisionStandings(JSON.parse(str).afcWestStandings);
+          setDivisionStandings(JSON.parse(info).afcWestStandings);
         }
       } else if (conference === "NFC") {
         if (division === "North") {
-          setDivisionStandings(JSON.parse(str).nfcNorthStandings);
+          setDivisionStandings(JSON.parse(info).nfcNorthStandings);
         } else if (division === "South") {
-          setDivisionStandings(JSON.parse(str).nfcSouthStandings);
+          setDivisionStandings(JSON.parse(info).nfcSouthStandings);
         } else if (division === "East") {
-          setDivisionStandings(JSON.parse(str).nfcEastStandings);
+          setDivisionStandings(JSON.parse(info).nfcEastStandings);
         } else if (division === "West") {
-          setDivisionStandings(JSON.parse(str).nfcWestStandings);
+          setDivisionStandings(JSON.parse(info).nfcWestStandings);
         }
       }
-    }, [str]);
+    }, [info]);
     return /* @__PURE__ */ import_react22.default.createElement(Table_default, {
       size: "small"
     }, /* @__PURE__ */ import_react22.default.createElement(TableHead_default, null, /* @__PURE__ */ import_react22.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react22.default.createElement(TableCell_default, {
@@ -40811,7 +40811,7 @@ const theme2 = createTheme({ palette: {
 
   // src/components/Standings/DivisionStandingsTable.jsx
   function DivisionStandingsTable(props) {
-    const { conference, str } = props;
+    const { conference, info } = props;
     return /* @__PURE__ */ import_react24.default.createElement(import_react24.default.Fragment, null, /* @__PURE__ */ import_react24.default.createElement(Box_default, {
       sx: { flexGrow: 1, display: "flex", height: 124 }
     }, /* @__PURE__ */ import_react24.default.createElement(Tabs_default, {
@@ -40822,19 +40822,19 @@ const theme2 = createTheme({ palette: {
     }, /* @__PURE__ */ import_react24.default.createElement(DivisionStandings, {
       conference,
       division: "North",
-      str
+      info
     }), /* @__PURE__ */ import_react24.default.createElement(DivisionStandings, {
       conference,
       division: "South",
-      str
+      info
     }), /* @__PURE__ */ import_react24.default.createElement(DivisionStandings, {
       conference,
       division: "East",
-      str
+      info
     }), /* @__PURE__ */ import_react24.default.createElement(DivisionStandings, {
       conference,
       division: "West",
-      str
+      info
     }))));
   }
   DivisionStandings.propTypes = {};
@@ -41327,7 +41327,7 @@ const theme2 = createTheme({ palette: {
       }
     }, /* @__PURE__ */ import_react36.default.createElement(DivisionStandingsTable, {
       conference: "AFC",
-      str: jsonString
+      info: jsonString
     }))), /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
       item: true,
       xs: 14
@@ -41363,7 +41363,7 @@ const theme2 = createTheme({ palette: {
       }
     }, /* @__PURE__ */ import_react36.default.createElement(DivisionStandingsTable, {
       conference: "NFC",
-      str: jsonString
+      info: jsonString
     })))));
   }
 

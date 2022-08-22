@@ -6,17 +6,17 @@ import DivisionStandings from './DivisionStandings';
 import { Paper, Grid, Container, Tabs, Tab, AppBar, Box } from '@mui/material'
 
 export default function DivisionStandingsTable (props) {
-  const { conference, str } = props
+  const { conference, info } = props
 
   return (
     <>
       {/* TODO Look into removing height */}
       <Box sx={{ flexGrow: 1, display: 'flex', height: 124 }}>
         <Tabs orientation="vertical" spacing={1} variant="scrollable" sx={{ flexGrow: 1, display: 'flex'}}>
-          <DivisionStandings conference={conference} division="North" str={str} />
-          <DivisionStandings conference={conference} division="South" str={str} />
-          <DivisionStandings conference={conference} division="East" str={str} />
-          <DivisionStandings conference={conference} division="West" str={str} />
+          <DivisionStandings conference={conference} division="North" info={info} />
+          <DivisionStandings conference={conference} division="South" info={info} />
+          <DivisionStandings conference={conference} division="East" info={info} />
+          <DivisionStandings conference={conference} division="West" info={info} />
         </Tabs>
       </ Box>
     </>		
