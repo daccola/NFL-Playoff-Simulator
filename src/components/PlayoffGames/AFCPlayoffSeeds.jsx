@@ -14,10 +14,10 @@ export default function AFCPlayoffSeeds (props) {
   return (
     <Grid container spacing={2} >
       <Grid item xs={12} >
-        <AFCByeContainer info={info}/>
+        <AFCByeContainer info={info} />
       </Grid>
       <Grid item xs={12} >
-        <AFCWildCardContainer info={info}/>
+        <AFCWildCardContainer info={info} />
       </Grid>
     </Grid>
   ) 

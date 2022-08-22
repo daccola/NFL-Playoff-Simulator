@@ -1063,7 +1063,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState8(initialState) {
+          function useState10(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1075,7 +1075,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect10(create, deps) {
+          function useEffect12(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1645,13 +1645,13 @@
           exports.useCallback = useCallback5;
           exports.useContext = useContext9;
           exports.useDebugValue = useDebugValue3;
-          exports.useEffect = useEffect10;
+          exports.useEffect = useEffect12;
           exports.useImperativeHandle = useImperativeHandle4;
           exports.useLayoutEffect = useLayoutEffect3;
           exports.useMemo = useMemo4;
           exports.useReducer = useReducer;
           exports.useRef = useRef8;
-          exports.useState = useState8;
+          exports.useState = useState10;
           exports.version = ReactVersion;
         })();
       }
@@ -29914,11 +29914,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   defineJQueryPlugin(Toast);
 
   // src/app.jsx
-  var import_react36 = __toESM(require_react(), 1);
+  var import_react38 = __toESM(require_react(), 1);
   var import_react_dom = __toESM(require_react_dom(), 1);
 
   // src/Simulator.jsx
-  var import_react34 = __toESM(require_react(), 1);
+  var import_react36 = __toESM(require_react(), 1);
   var import_axios = __toESM(require_axios2(), 1);
 
   // node_modules/@mui/material/colors/common.js
@@ -40840,127 +40840,106 @@ const theme2 = createTheme({ palette: {
   DivisionStandings.propTypes = {};
 
   // src/components/PlayoffGames/AFCPlayoffSeeds.jsx
-  var import_react30 = __toESM(require_react(), 1);
+  var import_react32 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/AFCByeContainer.jsx
-  var import_react26 = __toESM(require_react(), 1);
+  var import_react27 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/TeamInfoLeft.jsx
   var import_react25 = __toESM(require_react(), 1);
+  var import_react26 = __toESM(require_react(), 1);
   function TeamInfoLeft(props) {
     const { conference, seedNumber, seedString, info } = props;
-    let getTeamInfo = null;
-    let imageString = "";
-    if (info) {
+    const [teamInfo, getTeamInfo] = (0, import_react26.useState)(null);
+    (0, import_react26.useEffect)(() => {
       if (conference === "AFC") {
         if (seedNumber <= 4) {
-          getTeamInfo = info.afcDivisionChamps[seedNumber - 1];
+          getTeamInfo(JSON.parse(info).afcDivisionChamps[seedNumber - 1]);
         } else if (seedNumber > 4) {
-          getTeamInfo = info.afcWildCardTeams[seedNumber - 5];
+          getTeamInfo(JSON.parse(info).afcWildCardTeams[seedNumber - 5]);
         }
       } else if (conference === "NFC") {
         if (seedNumber <= 4) {
-          getTeamInfo = info.nfcDivisionChamps[seedNumber - 1];
+          getTeamInfo(JSON.parse(info).nfcDivisionChamps[seedNumber - 1]);
         } else if (seedNumber > 4) {
-          getTeamInfo = info.nfcWildCardTeams[seedNumber - 5];
+          getTeamInfo(JSON.parse(info).nfcWildCardTeams[seedNumber - 5]);
         }
       }
-      imageString = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/" + getTeamInfo.abbreviation + ".png";
-    }
-    if (getTeamInfo) {
-      return /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-        container: true,
-        columns: 24,
-        alignItems: "center"
-      }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-        item: true,
-        xs: 7
-      }, /* @__PURE__ */ import_react25.default.createElement("img", {
-        src: imageString,
-        alt: "TODO",
-        className: "col-12"
-      })), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-        item: true,
-        xs: 17,
-        sx: { pl: 1 }
-      }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-        container: true
-      }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-        item: true,
-        xs: 17
-      }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, {
-        variant: "body2",
-        align: "left"
-      }, seedString, " Seed")), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-        item: true,
-        xs: 17
-      }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, {
-        variant: "body2",
-        align: "left"
-      }, getTeamInfo.location)), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-        item: true,
-        xs: 17
-      }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, {
-        variant: "body2",
-        align: "left"
-      }, "Record: ", getTeamInfo.overallRecord[0] + "-" + getTeamInfo.overallRecord[1], getTeamInfo.overallRecord[2] !== 0 ? "-" + getTeamInfo.overallRecord[2] : "")))));
-    } else {
-      return /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-        container: true,
-        columns: 24,
-        alignItems: "center"
-      }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-        item: true,
-        xs: 17,
-        sx: { pl: 1 }
-      }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-        container: true
-      }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
-        item: true,
-        xs: 17
-      }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, {
-        variant: "body2",
-        align: "left"
-      }, seedString, " Seed")))));
-    }
+    }, [info]);
+    return /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+      container: true,
+      columns: 24,
+      alignItems: "center"
+    }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+      item: true,
+      xs: 7
+    }, teamInfo && /* @__PURE__ */ import_react25.default.createElement("img", {
+      src: teamInfo.url,
+      alt: "TODO",
+      className: "col-12"
+    })), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+      item: true,
+      xs: 17,
+      sx: { pl: 1 }
+    }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+      container: true
+    }, /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+      item: true,
+      xs: 17
+    }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, {
+      variant: "body2",
+      align: "left"
+    }, seedString, " Seed")), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+      item: true,
+      xs: 17
+    }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, {
+      variant: "body2",
+      align: "left"
+    }, teamInfo && teamInfo.location)), /* @__PURE__ */ import_react25.default.createElement(Grid_default, {
+      item: true,
+      xs: 17
+    }, /* @__PURE__ */ import_react25.default.createElement(Typography_default, {
+      variant: "body2",
+      align: "left"
+    }, teamInfo && "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1], teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + getTeamInfo.overallRecord[2])))));
   }
 
   // src/components/PlayoffGames/AFCByeContainer.jsx
   function AFCByeContainer(props) {
     const { info } = props;
-    return /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, {
       variant: "h4",
       align: "right",
       sx: { px: 1 }
-    }, "AFC")), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, "AFC")), /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, {
       variant: "body2",
       align: "left",
       sx: { px: 1 }
-    }, "FIRST-ROUND BYE")), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, "FIRST-ROUND BYE")), /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { p: 0 }
-    }, /* @__PURE__ */ import_react26.default.createElement(Card_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Card_default, {
       variant: "outlined",
       sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       container: true,
       columns: 18,
       alignItems: "center"
-    }, /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
       item: true,
       xs: 8
-    }, /* @__PURE__ */ import_react26.default.createElement(TeamInfoLeft, {
+    }, /* @__PURE__ */ import_react27.default.createElement(TeamInfoLeft, {
       conference: "AFC",
       seedNumber: 1,
       seedString: "1st",
@@ -40969,119 +40948,98 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/PlayoffGames/AFCWildCardContainer.jsx
-  var import_react29 = __toESM(require_react(), 1);
+  var import_react31 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/PlayoffGame.jsx
-  var import_react28 = __toESM(require_react(), 1);
+  var import_react30 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/TeamInfoRight.jsx
-  var import_react27 = __toESM(require_react(), 1);
+  var import_react28 = __toESM(require_react(), 1);
+  var import_react29 = __toESM(require_react(), 1);
   function TeamInfoRight(props) {
     const { conference, seedNumber, seedString, info } = props;
-    let getTeamInfo = null;
-    let imageString = "";
-    if (info) {
+    const [teamInfo, getTeamInfo] = (0, import_react29.useState)(null);
+    (0, import_react29.useEffect)(() => {
       if (conference === "AFC") {
         if (seedNumber <= 4) {
-          getTeamInfo = info.afcDivisionChamps[seedNumber - 1];
+          getTeamInfo(JSON.parse(info).afcDivisionChamps[seedNumber - 1]);
         } else if (seedNumber > 4) {
-          getTeamInfo = info.afcWildCardTeams[seedNumber - 5];
+          getTeamInfo(JSON.parse(info).afcWildCardTeams[seedNumber - 5]);
         }
       } else if (conference === "NFC") {
         if (seedNumber <= 4) {
-          getTeamInfo = info.nfcDivisionChamps[seedNumber - 1];
+          getTeamInfo(JSON.parse(info).nfcDivisionChamps[seedNumber - 1]);
         } else if (seedNumber > 4) {
-          getTeamInfo = info.nfcWildCardTeams[seedNumber - 5];
+          getTeamInfo(JSON.parse(info).nfcWildCardTeams[seedNumber - 5]);
         }
       }
-      imageString = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/" + getTeamInfo.abbreviation + ".png";
-    }
-    if (getTeamInfo) {
-      return /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
-        container: true,
-        columns: 24,
-        alignItems: "center"
-      }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
-        item: true,
-        xs: 17,
-        sx: { pr: 1 }
-      }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
-        container: true
-      }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
-        item: true,
-        xs: 17
-      }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, {
-        variant: "body2",
-        align: "right"
-      }, seedString, " Seed")), /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
-        item: true,
-        xs: 17
-      }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, {
-        variant: "body2",
-        align: "right"
-      }, getTeamInfo.location)), /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
-        item: true,
-        xs: 17
-      }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, {
-        variant: "body2",
-        align: "right"
-      }, "Record: ", getTeamInfo.overallRecord[0] + "-" + getTeamInfo.overallRecord[1], getTeamInfo.overallRecord[2] !== 0 ? "-" + getTeamInfo.overallRecord[2] : "")))), /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
-        item: true,
-        xs: 7
-      }, /* @__PURE__ */ import_react27.default.createElement("img", {
-        src: imageString,
-        alt: "TODO",
-        className: "col-12"
-      })));
-    } else {
-      return /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
-        container: true,
-        columns: 24,
-        alignItems: "center"
-      }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
-        item: true,
-        xs: 17,
-        sx: { pr: 1 }
-      }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
-        container: true
-      }, /* @__PURE__ */ import_react27.default.createElement(Grid_default, {
-        item: true,
-        xs: 17
-      }, /* @__PURE__ */ import_react27.default.createElement(Typography_default, {
-        variant: "body2",
-        align: "right"
-      }, seedString, " Seed")))));
-    }
+    }, [info]);
+    return /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+      container: true,
+      columns: 24,
+      alignItems: "center"
+    }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+      item: true,
+      xs: 17,
+      sx: { pr: 1 }
+    }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+      container: true
+    }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+      item: true,
+      xs: 17
+    }, /* @__PURE__ */ import_react28.default.createElement(Typography_default, {
+      variant: "body2",
+      align: "right"
+    }, seedString, " Seed")), /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+      item: true,
+      xs: 17
+    }, /* @__PURE__ */ import_react28.default.createElement(Typography_default, {
+      variant: "body2",
+      align: "right"
+    }, teamInfo && teamInfo.location)), /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+      item: true,
+      xs: 17
+    }, /* @__PURE__ */ import_react28.default.createElement(Typography_default, {
+      variant: "body2",
+      align: "right"
+    }, teamInfo && "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1], teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + getTeamInfo.overallRecord[2])))), /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+      item: true,
+      xs: 7
+    }, teamInfo && /* @__PURE__ */ import_react28.default.createElement("img", {
+      src: teamInfo.url,
+      alt: "TODO",
+      className: "col-12"
+    })));
   }
 
   // src/components/PlayoffGames/PlayoffGame.jsx
   function PlayoffGame(props) {
     const { conference, leftSeedNumber, leftSeedString, rightSeedNumber, rightSeedString, info } = props;
-    return /* @__PURE__ */ import_react28.default.createElement(Card_default, {
+    return /* @__PURE__ */ import_react30.default.createElement(Card_default, {
       variant: "outlined",
       sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react30.default.createElement(Grid_default, {
       container: true,
       columns: 18,
       alignItems: "center"
-    }, /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react30.default.createElement(Grid_default, {
       item: true,
       xs: 8
-    }, /* @__PURE__ */ import_react28.default.createElement(TeamInfoLeft, {
+    }, /* @__PURE__ */ import_react30.default.createElement(TeamInfoLeft, {
       conference,
       seedNumber: leftSeedNumber,
       seedString: leftSeedString,
       info
-    })), /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react30.default.createElement(Grid_default, {
       item: true,
       xs: 2,
       sx: { px: 1.25 }
-    }, /* @__PURE__ */ import_react28.default.createElement(AlternateEmail_default, {
+    }, /* @__PURE__ */ import_react30.default.createElement(AlternateEmail_default, {
       sx: { width: "100%" }
-    })), /* @__PURE__ */ import_react28.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react30.default.createElement(Grid_default, {
       item: true,
       xs: 8
-    }, /* @__PURE__ */ import_react28.default.createElement(TeamInfoRight, {
+    }, /* @__PURE__ */ import_react30.default.createElement(TeamInfoRight, {
       conference,
       seedNumber: rightSeedNumber,
       seedString: rightSeedString,
@@ -41092,41 +41050,41 @@ const theme2 = createTheme({ palette: {
   // src/components/PlayoffGames/AFCWildCardContainer.jsx
   function AFCWildCardContainer(props) {
     const { info } = props;
-    return /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react29.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react31.default.createElement(Typography_default, {
       variant: "body2",
       sx: { px: 1 }
-    }, "WILD-CARD GAMES")), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
+    }, "WILD-CARD GAMES")), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pb: 1 }
-    }, /* @__PURE__ */ import_react29.default.createElement(PlayoffGame, {
+    }, /* @__PURE__ */ import_react31.default.createElement(PlayoffGame, {
       conference: "AFC",
       leftSeedNumber: 7,
       leftSeedString: "7th",
       rightSeedNumber: 2,
       rightSeedString: "2nd",
       info
-    })), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pb: 1 }
-    }, /* @__PURE__ */ import_react29.default.createElement(PlayoffGame, {
+    }, /* @__PURE__ */ import_react31.default.createElement(PlayoffGame, {
       conference: "AFC",
       leftSeedNumber: 6,
       leftSeedString: "6th",
       rightSeedNumber: 3,
       rightSeedString: "3rd",
       info
-    })), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react29.default.createElement(PlayoffGame, {
+    }, /* @__PURE__ */ import_react31.default.createElement(PlayoffGame, {
       conference: "AFC",
       leftSeedNumber: 5,
       leftSeedString: "5th",
@@ -41139,66 +41097,66 @@ const theme2 = createTheme({ palette: {
   // src/components/PlayoffGames/AFCPlayoffSeeds.jsx
   function AFCPlayoffSeeds(props) {
     const { info } = props;
-    return /* @__PURE__ */ import_react30.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
       container: true,
       spacing: 2
-    }, /* @__PURE__ */ import_react30.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react30.default.createElement(AFCByeContainer, {
+    }, /* @__PURE__ */ import_react32.default.createElement(AFCByeContainer, {
       info
-    })), /* @__PURE__ */ import_react30.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react30.default.createElement(AFCWildCardContainer, {
+    }, /* @__PURE__ */ import_react32.default.createElement(AFCWildCardContainer, {
       info
     })));
   }
   AFCPlayoffSeeds.propTypes = {};
 
   // src/components/PlayoffGames/NFCPlayoffSeeds.jsx
-  var import_react33 = __toESM(require_react(), 1);
+  var import_react35 = __toESM(require_react(), 1);
 
   // src/components/PlayoffGames/NFCByeContainer.jsx
-  var import_react31 = __toESM(require_react(), 1);
+  var import_react33 = __toESM(require_react(), 1);
   function NFCByeContainer(props) {
     const { info } = props;
-    return /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react31.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react33.default.createElement(Typography_default, {
       variant: "h4",
       align: "left",
       sx: { px: 1 }
-    }, "NFC")), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, "NFC")), /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react31.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react33.default.createElement(Typography_default, {
       variant: "body2",
       align: "right",
       sx: { px: 1 }
-    }, "FIRST-ROUND BYE")), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, "FIRST-ROUND BYE")), /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { px: 0, pb: 0 }
-    }, /* @__PURE__ */ import_react31.default.createElement(Card_default, {
+    }, /* @__PURE__ */ import_react33.default.createElement(Card_default, {
       variant: "outlined",
       sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
       container: true,
       columns: 18,
       alignItems: "center"
-    }, /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
       item: true,
       xs: 10
-    }), /* @__PURE__ */ import_react31.default.createElement(Grid_default, {
+    }), /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
       item: true,
       xs: 8
-    }, /* @__PURE__ */ import_react31.default.createElement(TeamInfoRight, {
+    }, /* @__PURE__ */ import_react33.default.createElement(TeamInfoRight, {
       conference: "NFC",
       seedNumber: 1,
       seedString: "1st",
@@ -41207,45 +41165,45 @@ const theme2 = createTheme({ palette: {
   }
 
   // src/components/PlayoffGames/NFCWildCardContainer.jsx
-  var import_react32 = __toESM(require_react(), 1);
+  var import_react34 = __toESM(require_react(), 1);
   function NFCWildCardContainer(props) {
     const { info } = props;
-    return /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
       container: true
-    }, /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pt: 0 }
-    }, /* @__PURE__ */ import_react32.default.createElement(Typography_default, {
+    }, /* @__PURE__ */ import_react34.default.createElement(Typography_default, {
       variant: "body2",
       align: "right",
       sx: { px: 1 }
-    }, "WILD-CARD GAMES")), /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
+    }, "WILD-CARD GAMES")), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pb: 1 }
-    }, /* @__PURE__ */ import_react32.default.createElement(PlayoffGame, {
+    }, /* @__PURE__ */ import_react34.default.createElement(PlayoffGame, {
       conference: "NFC",
       leftSeedNumber: "7",
       leftSeedString: "7th",
       rightSeedNumber: 2,
       rightSeedString: "2nd",
       info
-    })), /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
       item: true,
       xs: 12,
       sx: { pb: 1 }
-    }, /* @__PURE__ */ import_react32.default.createElement(PlayoffGame, {
+    }, /* @__PURE__ */ import_react34.default.createElement(PlayoffGame, {
       conference: "NFC",
       leftSeedNumber: "6",
       leftSeedString: "6th",
       rightSeedNumber: 3,
       rightSeedString: "3rd",
       info
-    })), /* @__PURE__ */ import_react32.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react32.default.createElement(PlayoffGame, {
+    }, /* @__PURE__ */ import_react34.default.createElement(PlayoffGame, {
       conference: "NFC",
       leftSeedNumber: "5",
       leftSeedString: "5th",
@@ -41258,25 +41216,25 @@ const theme2 = createTheme({ palette: {
   // src/components/PlayoffGames/NFCPlayoffSeeds.jsx
   function NFCPlayoffSeeds(props) {
     const { info } = props;
-    return /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
+    return /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
       container: true,
       spacing: 2
-    }, /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react33.default.createElement(NFCByeContainer, {
+    }, /* @__PURE__ */ import_react35.default.createElement(NFCByeContainer, {
       info
-    })), /* @__PURE__ */ import_react33.default.createElement(Grid_default, {
+    })), /* @__PURE__ */ import_react35.default.createElement(Grid_default, {
       item: true,
       xs: 12
-    }, /* @__PURE__ */ import_react33.default.createElement(NFCWildCardContainer, {
+    }, /* @__PURE__ */ import_react35.default.createElement(NFCWildCardContainer, {
       info
     })));
   }
   NFCPlayoffSeeds.propTypes = {};
 
   // src/Simulator.jsx
-  var import_react35 = __toESM(require_react(), 1);
+  var import_react37 = __toESM(require_react(), 1);
   function Simulator(props) {
     const defaultInfo = {
       version: "1.0",
@@ -41311,17 +41269,19 @@ const theme2 = createTheme({ palette: {
       nfcSouthStandings: [],
       nfcWestStandings: [],
       nfcDivisionChamps: [],
+      nfcWildCardTeams: [],
       afcEastStandings: [],
       afcNorthStandings: [],
       afcSouthStandings: [],
       afcWestStandings: [],
-      afcDivisionChamps: []
+      afcDivisionChamps: [],
+      afcWildCardTeams: []
     };
-    const [initialInfo, setInitialInfo] = (0, import_react35.useState)(null);
-    const [customizedInfo, setCustomizedInfo] = (0, import_react35.useState)(null);
-    const [jsonString, setJsonString] = (0, import_react35.useState)(JSON.stringify(defaultInfo));
+    const [initialInfo, setInitialInfo] = (0, import_react37.useState)(null);
+    const [customizedInfo, setCustomizedInfo] = (0, import_react37.useState)(null);
+    const [jsonString, setJsonString] = (0, import_react37.useState)(JSON.stringify(defaultInfo));
     const year = 2022;
-    import_react34.default.useEffect(() => {
+    import_react36.default.useEffect(() => {
       import_axios.default.get(`https://egdyeroof9.execute-api.us-east-2.amazonaws.com/Prod?year=${year}`).then((response) => {
         setInitialInfo(response.data.body);
         setCustomizedInfo(response.data.body);
@@ -41337,27 +41297,27 @@ const theme2 = createTheme({ palette: {
       newCustomizedInfo.gameInfoToDate[week][index].tempState = newState;
       setCustomizedInfo(newCustomizedInfo);
     };
-    return /* @__PURE__ */ import_react34.default.createElement(Container_default, {
+    return /* @__PURE__ */ import_react36.default.createElement(Container_default, {
       maxWidth: false,
       disableGutters: true,
       sx: { bgcolor: "#eeeeee" }
-    }, /* @__PURE__ */ import_react34.default.createElement(Header, null), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react36.default.createElement(Header, null), /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
       container: true,
       spacing: 2,
       columns: 24,
       sx: { p: 2 }
-    }, /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
       item: true,
       xs: 24
-    }, /* @__PURE__ */ import_react34.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react36.default.createElement(Paper_default, {
       sx: { p: 1 }
-    }, /* @__PURE__ */ import_react34.default.createElement(RegularSeasonGamesTable, {
+    }, /* @__PURE__ */ import_react36.default.createElement(RegularSeasonGamesTable, {
       info: customizedInfo,
       updateFunction: updateCustomizedInfo
-    }))), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+    }))), /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
       item: true,
       xs: 5
-    }, /* @__PURE__ */ import_react34.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react36.default.createElement(Paper_default, {
       xs: 12,
       sx: {
         p: 1,
@@ -41365,50 +41325,50 @@ const theme2 = createTheme({ palette: {
         flexDirection: "column",
         height: "100%"
       }
-    }, /* @__PURE__ */ import_react34.default.createElement(DivisionStandingsTable, {
+    }, /* @__PURE__ */ import_react36.default.createElement(DivisionStandingsTable, {
       conference: "AFC",
       str: jsonString
-    }))), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+    }))), /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
       item: true,
       xs: 14
-    }, /* @__PURE__ */ import_react34.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react36.default.createElement(Paper_default, {
       sx: {
         p: 1,
         display: "flex",
         flexDirection: "column",
         height: "100%"
       }
-    }, /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
       container: true,
       spacing: 3
-    }, /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
       item: true,
       xs: 6
-    }, /* @__PURE__ */ import_react34.default.createElement(AFCPlayoffSeeds, {
-      info: customizedInfo
-    })), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react36.default.createElement(AFCPlayoffSeeds, {
+      info: jsonString
+    })), /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
       item: true,
       xs: 6
-    }, /* @__PURE__ */ import_react34.default.createElement(NFCPlayoffSeeds, {
-      info: customizedInfo
-    }))))), /* @__PURE__ */ import_react34.default.createElement(Grid_default, {
+    }, /* @__PURE__ */ import_react36.default.createElement(NFCPlayoffSeeds, {
+      info: jsonString
+    }))))), /* @__PURE__ */ import_react36.default.createElement(Grid_default, {
       item: true,
       xs: 5
-    }, /* @__PURE__ */ import_react34.default.createElement(Paper_default, {
+    }, /* @__PURE__ */ import_react36.default.createElement(Paper_default, {
       sx: {
         p: 1,
         display: "flex",
         flexDirection: "column",
         height: "100%"
       }
-    }, /* @__PURE__ */ import_react34.default.createElement(DivisionStandingsTable, {
+    }, /* @__PURE__ */ import_react36.default.createElement(DivisionStandingsTable, {
       conference: "NFC",
       str: jsonString
     })))));
   }
 
   // src/app.jsx
-  import_react_dom.default.render(/* @__PURE__ */ import_react36.default.createElement(Simulator, null), document.getElementById("root"));
+  import_react_dom.default.render(/* @__PURE__ */ import_react38.default.createElement(Simulator, null), document.getElementById("root"));
 })();
 /*
 object-assign

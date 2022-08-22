@@ -47,11 +47,13 @@ export default function Simulator(props) {
     nfcSouthStandings: [],
     nfcWestStandings: [],
     nfcDivisionChamps: [],
+    nfcWildCardTeams: [],
     afcEastStandings: [],
     afcNorthStandings: [],
     afcSouthStandings: [],
     afcWestStandings: [],
-    afcDivisionChamps: []
+    afcDivisionChamps: [],
+    afcWildCardTeams: []
   }
   const [initialInfo, setInitialInfo] = useState(null);
   const [customizedInfo, setCustomizedInfo] = useState(null);
@@ -83,9 +85,10 @@ export default function Simulator(props) {
     setCustomizedInfo(newCustomizedInfo)
 
 
-    // const newObject = JSON.parse(jsonString)
-    // newObject.nfcNorthStandings[0].overallRecord[0] = 12
-    // setJsonString(JSON.stringify(newObject))
+    //  const newObject = JSON.parse(jsonString)
+    //  newObject.nfcNorthStandings[0].overallRecord[0] = 12
+    //  newObject.nfcDivisionChamps[1].overallRecord[0] = 12
+    //  setJsonString(JSON.stringify(newObject))
   }
 
   return (
@@ -120,11 +123,11 @@ export default function Simulator(props) {
           >
             <Grid container spacing={3} >
               <Grid item xs={6}>
-                <AFCPlayoffSeeds info={customizedInfo}  />
+                <AFCPlayoffSeeds info={jsonString}/>
               </Grid>
               <Grid item xs={6}>
                 {/* <ConferenceGamesTable /> */}
-                <NFCPlayoffSeeds info={customizedInfo} />
+                <NFCPlayoffSeeds info={jsonString}/>
               </Grid>
             </Grid>
           </Paper>

@@ -14,13 +14,13 @@ export default function PlayoffGame (props) {
 		<Card variant="outlined" sx={{bgcolor:'#eeeeee'}}>
 	  	<Grid container columns={18} alignItems="center">
     		<Grid item xs={8} >
-  	    	<TeamInfoLeft conference={conference} seedNumber={leftSeedNumber} seedString={leftSeedString} info={info}/>
+  	    	<TeamInfoLeft conference={conference} seedNumber={leftSeedNumber} seedString={leftSeedString} info={info} />
       	</Grid>
 	  		<Grid item xs={2} sx={{px:1.25}}>
       		<AlternateEmail sx={{ width: '100%' }} />
     		</Grid>
   	  	<Grid item xs={8}>
-					<TeamInfoRight conference={conference} seedNumber={rightSeedNumber} seedString={rightSeedString} info={info}/>
+					<TeamInfoRight conference={conference} seedNumber={rightSeedNumber} seedString={rightSeedString} info={info} />
       	</Grid>
     	</Grid>
 		</Card>
