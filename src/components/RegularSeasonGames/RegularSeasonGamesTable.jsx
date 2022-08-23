@@ -9,7 +9,48 @@ import RegularSeasonGame from './RegularSeasonGame.jsx'
 export default function RegularSeasonGamesTable(props) {
   const { info, updateFunction } = props
 
-  const [tabValue, setTabValue] = React.useState("1")
+  let week = ""
+  const dateString = parseInt(new Date().toISOString().replace('-','').replace('-','').substring(0, 8))
+  
+  if(dateString < 20220914) {
+    week = "1"
+  } else if(dateString < 20220921) {
+    week = "2"
+  } else if(dateString < 20220928) {
+    week = "3"
+  } else if(dateString < 20221005) {
+    week = "4"
+  } else if(dateString < 20221012) {
+    week = "5"
+  } else if(dateString < 20221019) {
+    week = "6"
+  } else if(dateString < 20221026) {
+    week = "7"
+  } else if(dateString < 20221102) {
+    week = "8"
+  } else if(dateString < 20221109) {
+    week = "9"
+  } else if(dateString < 20221116) {
+    week = "10"
+  } else if(dateString < 20221123) {
+    week = "11"
+  } else if(dateString < 20221130) {
+    week = "12"
+  } else if(dateString < 20221207) {
+    week = "13"
+  } else if(dateString < 20221214) {
+    week = "14"
+  } else if(dateString < 20221221) {
+    week = "15"
+  } else if(dateString < 20221228) {
+    week = "16"
+  } else if(dateString < 20230104) {
+    week = "17"
+  } else {
+    week = "18"
+  }
+
+  const [tabValue, setTabValue] = React.useState(week)
   const [gameInfo, setGameInfo] = React.useState(JSON.parse(info).gameInfoToDate)
 
   useEffect(() => {
