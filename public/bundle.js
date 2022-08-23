@@ -38319,8 +38319,8 @@ const theme2 = createTheme({ palette: {
       onChange: handleTabChange,
       variant: "scrollable",
       scrollButtons: true,
-      textColor: "secondary",
-      indicatorColor: "secondary"
+      TabIndicatorProps: { style: { background: "#1b48e0" } },
+      sx: { "& .MuiTab-root.Mui-selected": { color: "#1b48e0" } }
     }, /* @__PURE__ */ import_react21.default.createElement(Tab_default, {
       label: "Week 1",
       value: "1"

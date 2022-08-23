@@ -23,7 +23,11 @@ export default function RegularSeasonGamesTable(props) {
   return (
     <Grid container spacing={1} columns={144} > 
       <Grid item xs={144} >
-        <Tabs value={tabValue} onChange={handleTabChange} variant="scrollable" scrollButtons textColor="secondary" indicatorColor="secondary">
+        <Tabs value={tabValue} onChange={handleTabChange} 
+          variant="scrollable" scrollButtons 
+          TabIndicatorProps={{ style: { background: "#1b48e0" } }}
+          sx={{ "& .MuiTab-root.Mui-selected": {color: '#1b48e0'} }}
+        >
           <Tab label="Week 1" value="1" />
           <Tab label="Week 2" value="2" />
           <Tab label="Week 3" value="3" />
