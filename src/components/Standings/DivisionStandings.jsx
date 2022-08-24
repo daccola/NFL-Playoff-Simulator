@@ -49,37 +49,37 @@ export default function DivisionStandings (props) {
       <TableBody>
         <TableRow sx={{p:0, m:0}}>
           <TableCell sx={{p:0.25}}>
-            {divisionStandings.length !== 0 ? divisionStandings[0].location : '' }
+            {divisionStandings.length !== 0 ? divisionStandings[0].location : '_' }
           </TableCell>
           <TableCell sx={{p:0.25}}>
-            {divisionStandings.length !== 0 ? divisionStandings[0].overallRecord[0] + '-' + divisionStandings[0].overallRecord[1] : '' }
+            {divisionStandings.length !== 0 ? divisionStandings[0].overallRecord[0] + '-' + divisionStandings[0].overallRecord[1] : '_' }
             {divisionStandings.length !== 0  && divisionStandings[0].overallRecord[2] !== 0 ? '-' + divisionStandings[0].overallRecord[2] : '' }
           </TableCell>
         </TableRow>
         <TableRow>
           <TableCell sx={{p:0.25}}>
-            {divisionStandings.length !== 0 ? divisionStandings[1].location : '' }
+            {divisionStandings.length !== 0 ? divisionStandings[1].location : '_' }
           </TableCell>
           <TableCell sx={{p:0.25}}>
-            {divisionStandings.length !== 0 ? divisionStandings[1].overallRecord[0] + '-' + divisionStandings[1].overallRecord[1] : '' }
+            {divisionStandings.length !== 0 ? divisionStandings[1].overallRecord[0] + '-' + divisionStandings[1].overallRecord[1] : '_' }
             {divisionStandings.length !== 0  && divisionStandings[1].overallRecord[2] !== 0 ? '-' + divisionStandings[1].overallRecord[2] : '' }
           </TableCell>
         </TableRow>
         <TableRow>
           <TableCell sx={{p:0.25}}>
-            {divisionStandings.length !== 0 ? divisionStandings[2].location : '' }
+            {divisionStandings.length !== 0 ? divisionStandings[2].location : '_' }
           </TableCell>
           <TableCell sx={{p:0.25}}>
-            {divisionStandings.length !== 0 ? divisionStandings[2].overallRecord[0] + '-' + divisionStandings[2].overallRecord[1] : '' }
+            {divisionStandings.length !== 0 ? divisionStandings[2].overallRecord[0] + '-' + divisionStandings[2].overallRecord[1] : '_' }
             {divisionStandings.length !== 0  && divisionStandings[2].overallRecord[2] !== 0 ? '-' + divisionStandings[2].overallRecord[2] : '' }
           </TableCell>
         </TableRow>
         <TableRow>
           <TableCell sx={{p:0.25}}>
-            {divisionStandings.length !== 0 ? divisionStandings[3].location : '' }
+            {divisionStandings.length !== 0 ? divisionStandings[3].location : '_' }
           </TableCell>
           <TableCell sx={{p:0.25}}>
-            {divisionStandings.length !== 0 ? divisionStandings[3].overallRecord[0] + '-' + divisionStandings[3].overallRecord[1] : '' }
+            {divisionStandings.length !== 0 ? divisionStandings[3].overallRecord[0] + '-' + divisionStandings[3].overallRecord[1] : '_' }
             {divisionStandings.length !== 0  && divisionStandings[3].overallRecord[2] !== 0 ? '-' + divisionStandings[3].overallRecord[2] : '' }
           </TableCell>
         </TableRow>

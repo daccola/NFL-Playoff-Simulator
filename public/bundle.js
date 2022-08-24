@@ -38804,7 +38804,7 @@ const theme2 = createTheme({ palette: {
     }, /* @__PURE__ */ import_react21.default.createElement(RegularSeasonGame, {
       week: 4,
       index: 0,
-      game: gameInfo[2][0],
+      game: gameInfo[4][0],
       updateFunction
     })), /* @__PURE__ */ import_react21.default.createElement(Grid_default, {
       item: true,
@@ -40765,21 +40765,21 @@ const theme2 = createTheme({ palette: {
       sx: { p: 0, m: 0 }
     }, /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[0].location : ""), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[0].location : "_"), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[0].overallRecord[0] + "-" + divisionStandings[0].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[0].overallRecord[2] !== 0 ? "-" + divisionStandings[0].overallRecord[2] : "")), /* @__PURE__ */ import_react23.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[0].overallRecord[0] + "-" + divisionStandings[0].overallRecord[1] : "_", divisionStandings.length !== 0 && divisionStandings[0].overallRecord[2] !== 0 ? "-" + divisionStandings[0].overallRecord[2] : "")), /* @__PURE__ */ import_react23.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[1].location : ""), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[1].location : "_"), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[1].overallRecord[0] + "-" + divisionStandings[1].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[1].overallRecord[2] !== 0 ? "-" + divisionStandings[1].overallRecord[2] : "")), /* @__PURE__ */ import_react23.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[1].overallRecord[0] + "-" + divisionStandings[1].overallRecord[1] : "_", divisionStandings.length !== 0 && divisionStandings[1].overallRecord[2] !== 0 ? "-" + divisionStandings[1].overallRecord[2] : "")), /* @__PURE__ */ import_react23.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[2].location : ""), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[2].location : "_"), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[2].overallRecord[0] + "-" + divisionStandings[2].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[2].overallRecord[2] !== 0 ? "-" + divisionStandings[2].overallRecord[2] : "")), /* @__PURE__ */ import_react23.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[2].overallRecord[0] + "-" + divisionStandings[2].overallRecord[1] : "_", divisionStandings.length !== 0 && divisionStandings[2].overallRecord[2] !== 0 ? "-" + divisionStandings[2].overallRecord[2] : "")), /* @__PURE__ */ import_react23.default.createElement(TableRow_default, null, /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[3].location : ""), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
+    }, divisionStandings.length !== 0 ? divisionStandings[3].location : "_"), /* @__PURE__ */ import_react23.default.createElement(TableCell_default, {
       sx: { p: 0.25 }
-    }, divisionStandings.length !== 0 ? divisionStandings[3].overallRecord[0] + "-" + divisionStandings[3].overallRecord[1] : "", divisionStandings.length !== 0 && divisionStandings[3].overallRecord[2] !== 0 ? "-" + divisionStandings[3].overallRecord[2] : ""))));
+    }, divisionStandings.length !== 0 ? divisionStandings[3].overallRecord[0] + "-" + divisionStandings[3].overallRecord[1] : "_", divisionStandings.length !== 0 && divisionStandings[3].overallRecord[2] !== 0 ? "-" + divisionStandings[3].overallRecord[2] : ""))));
   }
   DivisionStandings.propTypes = {};
 
@@ -40869,13 +40869,13 @@ const theme2 = createTheme({ palette: {
     }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, {
       variant: "body2",
       align: "left"
-    }, teamInfo && teamInfo.location)), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
+    }, teamInfo ? teamInfo.location : "_")), /* @__PURE__ */ import_react26.default.createElement(Grid_default, {
       item: true,
       xs: 17
     }, /* @__PURE__ */ import_react26.default.createElement(Typography_default, {
       variant: "body2",
       align: "left"
-    }, teamInfo && "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1], teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + teamInfo.overallRecord[2])))));
+    }, teamInfo ? "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1] : "_", teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + teamInfo.overallRecord[2])))));
   }
 
   // src/components/PlayoffGames/AFCByeContainer.jsx
@@ -40970,13 +40970,13 @@ const theme2 = createTheme({ palette: {
     }, /* @__PURE__ */ import_react29.default.createElement(Typography_default, {
       variant: "body2",
       align: "right"
-    }, teamInfo && teamInfo.location)), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
+    }, teamInfo ? teamInfo.location : "_")), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
       item: true,
       xs: 17
     }, /* @__PURE__ */ import_react29.default.createElement(Typography_default, {
       variant: "body2",
       align: "right"
-    }, teamInfo && "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1], teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + teamInfo.overallRecord[2])))), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
+    }, teamInfo ? "Record: " + teamInfo.overallRecord[0] + "-" + teamInfo.overallRecord[1] : "_", teamInfo && teamInfo.overallRecord[2] !== 0 && "-" + teamInfo.overallRecord[2])))), /* @__PURE__ */ import_react29.default.createElement(Grid_default, {
       item: true,
       xs: 7
     }, teamInfo && /* @__PURE__ */ import_react29.default.createElement("img", {

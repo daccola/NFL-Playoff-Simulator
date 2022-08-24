@@ -252,7 +252,7 @@ export default function RegularSeasonGamesTable(props) {
       {tabValue === "4" && gameInfo.length !== 0 && (
         <>
           <Grid item xs={18}>
-            <RegularSeasonGame week={4} index={0} game={gameInfo[2][0]} updateFunction={updateFunction} />
+            <RegularSeasonGame week={4} index={0} game={gameInfo[4][0]} updateFunction={updateFunction} />
           </Grid>
           <Grid item xs={18}>
             <RegularSeasonGame week={4} index={1} game={gameInfo[4][1]} updateFunction={updateFunction}/>
